@@ -135,6 +135,6 @@ Always report match counts and uncertainty. Avoid conclusions from small samples
 - [x] Create project directory and fetch official protocol/rules.
 - [x] Clone the official starter into `starter/`.
 - [ ] Confirm registration and Testing availability in the tournament dashboard.
-- [ ] Implement Phase 1 logging and benchmark summary.
-- [ ] Implement Phase 2 role-aware baseline and scenario coverage.
-- [ ] Run a first balanced Testing batch and use results to decide which strategy component to improve.
+- [x] Implement an initial role-aware policy, legal-action selection, and append-only per-seat decision logging.
+- [x] Add a JSONL benchmark summary; verify terminal outcome capture on actual Testing results next.
+- [ ] Run a first balanced Testing batch and scenario coverage for the policy.

@@ -31,6 +31,7 @@ class DecisionLogger:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.match_hash = match_hash
         self.strategy_version = os.environ.get("WEREWOLF_STRATEGY_VERSION", "baseline-v0.1")
+        self.role_for_eval_only: str | None = None
 
     def _write(self, row: dict[str, Any]) -> None:
         row.update({"timestamp_utc": datetime.now(timezone.utc).isoformat(),
@@ -41,6 +42,7 @@ class DecisionLogger:
 
     def decision(self, state: GameState, context: DecisionContext, role: str,
                  action: LegalAction, scores: dict[int, float]) -> None:
+        self.role_for_eval_only = role
         self._write({"event": "decision", "seat": context.seat_position,
                      "game_type": context.game_type, "role_for_eval_only": role,
                      "phase": state.raw.get("game_state", {}).get("phase"),
@@ -52,6 +54,7 @@ class DecisionLogger:
                      "suspicion_scores": {str(k): round(v, 4) for k, v in scores.items()}})
 
     def message(self, state: GameState, context: DecisionContext, role: str, message: Any) -> None:
+        self.role_for_eval_only = role
         self._write({"event": "message_decision", "seat": context.seat_position,
                      "game_type": context.game_type, "role_for_eval_only": role,
                      "public_state": _safe_game_state(state),
@@ -62,11 +65,20 @@ class DecisionLogger:
     def action_result(self, result: dict[str, Any], context: DecisionContext) -> None:
         # Store only outcome metadata, never arbitrary server responses or secrets.
         state = result.get("state") if isinstance(result, dict) else None
-        public = {}
+        public: dict[str, Any] = {}
+        winner = result.get("winner") if isinstance(result, dict) else None
         if isinstance(state, dict):
             game = state.get("game_state") if isinstance(state.get("game_state"), dict) else {}
             public = {"is_terminal": state.get("is_terminal"), "winner": game.get("winner"),
                       "phase": game.get("phase"), "dead": game.get("dead", [])}
+            winner = winner or game.get("winner")
+            if not winner and state.get("is_terminal"):
+                observation = str(state.get("observation", ""))
+                if "WOLVES win" in observation:
+                    winner = "wolf"
+                elif "VILLAGERS win" in observation:
+                    winner = "villager"
         self._write({"event": "action_result", "seat": context.seat_position,
+                     "role_for_eval_only": self.role_for_eval_only,
                      "error_code": result.get("error") if isinstance(result, dict) else None,
-                     "public_result_state": public})
+                     "winner": winner, "public_result_state": public})
