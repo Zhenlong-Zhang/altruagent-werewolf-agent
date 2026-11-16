@@ -69,7 +69,9 @@ class WerewolfPolicy:
         if phase == "night_seer":
             # Investigate the most suspicious eligible target; direct findings then
             # constrain later votes through the same private observation.
-            chosen = max(state.legal_actions, key=lambda a: scores.get(_target(a), 0.0))
+            uninvestigated = [a for a in state.legal_actions if _target(a) not in known]
+            candidates = uninvestigated or state.legal_actions
+            chosen = max(candidates, key=lambda a: (scores.get(_target(a), 0.0), -(_target(a) or 0)))
         elif phase == "night_wolf":
             # Remove a likely seer first; otherwise target a socially active player.
             seer_candidates = []
