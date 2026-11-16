@@ -134,7 +134,10 @@ Always report match counts and uncertainty. Avoid conclusions from small samples
 
 - [x] Create project directory and fetch official protocol/rules.
 - [x] Clone the official starter into `starter/`.
-- [ ] Confirm registration and Testing availability in the tournament dashboard.
+- [x] Create a public GitHub project repository and publish project-owned code/docs.
+- [x] Create an isolated Hoffman2 project checkout and Python 3.12 virtual environment.
+- [x] Confirm and preserve the pre-existing cluster task; it completed normally without intervention.
 - [x] Implement an initial role-aware policy, legal-action selection, and append-only per-seat decision logging.
 - [x] Add a JSONL benchmark summary; verify terminal outcome capture on actual Testing results next.
+- [ ] Finish platform registration, create a Testing table, and configure the Official Agent Key privately in the starter `.env`.
 - [ ] Run a first balanced Testing batch and scenario coverage for the policy.
