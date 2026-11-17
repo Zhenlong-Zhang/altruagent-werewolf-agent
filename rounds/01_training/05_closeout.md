@@ -6,7 +6,7 @@ The mixed table runtime can select one experimental seat and uses the same rule 
 
 ## Offline results
 
-Hoffman2 job 1872013 completed in 8 seconds. The benchmark and weights were byte-identical to the initial run. Train, validation and test seeds were disjoint. Validation chose REINFORCE before the test run. There were 840 test seeds reused across three fixed opponent mixes, yielding 2,520 seat-games per method and 840 seed clusters for paired differences.
+Hoffman2 job 1872013 completed in 8 seconds. The benchmark and weights were byte-identical to the initial run. REINFORCE optimized the terminal team reward over 2,400 simulated training games. Train, validation and test seeds were disjoint. Validation chose REINFORCE before the test run. There were 840 test seeds reused across three fixed opponent mixes, yielding 2,520 seat-games per method and 840 seed clusters for paired differences.
 
 | Policy | Test wins | Test rate | Role-standardized rate |
 |---|---:|---:|---:|
@@ -20,7 +20,13 @@ The paired, role-standardized difference for REINFORCE was +0.084 percentage poi
 
 - The first direct-model pilot completed with two model calls falling back to rules. It is an integration failure for the LLM path, not a model win. [Replay](https://platform.altruagent-game.com/replay/b820af51-5795-41f6-87fa-f5492c472009)
 - A scheduled Hoffman2 practice runtime loaded the frozen REINFORCE artifact in seat 4, with rules in the other six seats. The focal seat was a villager and its faction won. The runtime delivered the structured result and was stopped after this match. Slurm job 1872250. [Replay](https://platform.altruagent-game.com/replay/86682c7a-2c1b-41fd-a1cd-f66c394c90ee)
-- Subsequent gameplay, inference, simulation and training will run on Hoffman2. CPU inference environment and public model preparation submitted as Slurm job 1872758.
+- Subsequent gameplay, inference, simulation and training run on Hoffman2. Setup job 1872758 installed the CPU runtime and downloaded Qwen2.5-0.5B-Instruct.
+- The model initially emitted free-form action responses. CPU inference now scores the offered action IDs directly, which constrains these decisions to legal choices. Discussion still uses rules when the response cannot be parsed.
+- The direct model played seer and won in seat 1. The model made both action decisions. Its one discussion attempt fell back to rules. Slurm job 1873392. [Replay](https://platform.altruagent-game.com/replay/f46e3e78-90a4-410b-8a01-7798ebb3abfb)
+- The belief-assisted model played seer and won in seat 5. The model made all three action decisions. Its one discussion attempt fell back to rules. Slurm job 1873501. [Replay](https://platform.altruagent-game.com/replay/d2978634-53bc-4a32-8495-dd84d7b357cb)
+- Search weights loaded in seat 3. The focal seat played wolf and lost. Slurm job 1873774. [Replay](https://platform.altruagent-game.com/replay/5b46ec61-298f-41df-9988-d5c520166e4e)
+
+The four Hoffman2 transfers are individual integration games. Their single-seat scores establish that the variants load, issue actions and receive the authoritative terminal result.
 
 ## Reproduction
 
@@ -28,4 +34,4 @@ Run `python scripts/offline_train.py --out-dir outputs/offline` in a CPU Slurm a
 
 ## Remaining acceptance evidence
 
-Collect successful direct and belief-assisted model decisions in official gameplay. Run a fresh mixed-policy comparison in which each candidate occupies one focal seat. Compare repeated matches with fixed teammate and opponent configurations, rotate roles and seats, and count fallbacks and timeouts. The current runs establish that the offline training pipeline works and that its weights can be loaded on platform. There is no adequately powered official comparison to select a promoted tournament policy.
+Run a fresh mixed-policy comparison in which each candidate occupies one focal seat. Compare repeated matches with fixed teammate and opponent configurations, rotate roles and seats, and count fallbacks and timeouts. The current runs establish that the offline training pipeline works, its weights can be loaded on platform, and both LLM variants can deliver official game actions. The pilot roles were naturally assigned. Both LLM seats were seers, so the two wins provide no comparative ranking across roles or opponents. An official held-out comparison with enough games to select a promoted tournament policy remains open.
