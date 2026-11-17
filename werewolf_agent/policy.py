@@ -49,17 +49,21 @@ class WerewolfPolicy:
         self._last_messaged_day: int | None = None
         self._logger: DecisionLogger | None = None
         self._context: DecisionContext | None = None
+        self._strategy_version: str | None = None
 
     def _ensure_logger(self, context: DecisionContext) -> DecisionLogger:
         if self._logger is None or self._context != context:
             self._context = context
             self._logger = DecisionLogger(context)
+            if self._strategy_version:
+                self._logger.strategy_version = self._strategy_version
         return self._logger
 
     def choose_action(self, state: GameState, context: DecisionContext) -> LegalAction:
         if not state.legal_actions:
             raise ValueError("Werewolf decision requested without legal actions")
         game_state, players = _state_data(state)
+        _all_messages(state, self._messages)
         seat = int(context.seat_position or 0)
         role = parse_role(state.observation) or "unknown"
         known = known_roles(state.observation, seat)
