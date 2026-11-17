@@ -35,6 +35,19 @@ Use `--tournament` only for registered tournament play. Do not commit `.env` or 
 
 ## Project plan
 
+The [training report](rounds/01_training/05_closeout.md) links the offline
+benchmark, frozen weights and official pilot replays. The experimental
+policies are enabled only for practice. Their online comparison uses one
+focal seat with the rule policy in the other six seats.
+
+Use `WEREWOLF_CANDIDATE` to select `direct`, `belief`, `search` or
+`reinforce`. Set `WEREWOLF_CANDIDATE_SEAT` to a zero-based seat. The
+`compare` mode assigns one candidate and seat from the match ID before
+the roles are observed. The LLM modes can use a predownloaded model via
+`WEREWOLF_CPU_MODEL` in a Hoffman2 compute job with PyTorch and
+Transformers installed. Set `OPENAI_MODEL` to the model name for the
+experiment log.
+
 See [WORKPLAN.md](WORKPLAN.md). The next steps are benchmark logging, a balanced Testing batch, and strategy iteration against fixed policy versions. Only adopt imitation learning, RL, or a local simulator if controlled evaluation supports it.
 
 ## Platform rules
