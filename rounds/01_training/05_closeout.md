@@ -28,10 +28,39 @@ The paired, role-standardized difference for REINFORCE was +0.084 percentage poi
 
 The four Hoffman2 transfers are individual integration games. Their single-seat scores establish that the variants load, issue actions and receive the authoritative terminal result.
 
+## Fresh official comparison
+
+The five new games ran together on Hoffman2 job 1873986 after freezing the
+assignment manifest. Each variant occupied seat 2 in one game, with rules
+in the other six seats. The platform drew roles naturally. All 35 seats
+received terminal results, with zero rejected actions in the five focal
+logs. The runtime was stopped after settlement.
+
+| Focal policy | Role | Result | Model actions | Discussion fallbacks |
+|---|---|---|---:|---:|
+| Rules | Villager | Loss | — | — |
+| Direct Qwen | Seer | Win | 4 | 2 |
+| Belief + Qwen | Villager | Win | 2 | 2 |
+| Search | Villager | Win | — | — |
+| REINFORCE | Wolf | Loss | — | — |
+
+The two LLM policies delivered all six requested actions. The four
+discussion attempts used rule fallback after model output could not be
+parsed. Maximum recorded model-call latency was 21.941 seconds for direct
+and 38.873 seconds for belief. This block tests the same seat and teammate
+and opponent policy configuration. The focal roles differ across policies.
+With one game each, the outcomes cannot rank the variants.
+[Official results and replay IDs](../../outputs/official/heldout-1.json)
+
 ## Reproduction
 
 Run `python scripts/offline_train.py --out-dir outputs/offline` in a CPU Slurm allocation. Compare the resulting files with [benchmark.json](../../outputs/offline/benchmark.json) and [weights.json](../../outputs/offline/weights.json). The files are synthetic aggregates and parameters. Raw platform logs remain private. The runtime installation requires the starter patch described in the README. Set `WEREWOLF_CANDIDATE=reinforce`, `WEREWOLF_CANDIDATE_SEAT=3`, and `WEREWOLF_WEIGHTS` to the artifact path, then run the starter with `--match --agent werewolf_agent.entry`.
 
 ## Remaining acceptance evidence
 
-Run a fresh mixed-policy comparison in which each candidate occupies one focal seat. Compare repeated matches with fixed teammate and opponent configurations, rotate roles and seats, and count fallbacks and timeouts. The current runs establish that the offline training pipeline works, its weights can be loaded on platform, and both LLM variants can deliver official game actions. The pilot roles were naturally assigned. Both LLM seats were seers, so the two wins provide no comparative ranking across roles or opponents. An official held-out comparison with enough games to select a promoted tournament policy remains open.
+The first frozen model and evaluation package ships with rules as the
+tournament default. A larger official comparison is still needed to rank
+variants with role coverage, rotated seats, and multiple opponent pools.
+The REINFORCE weights were trained on simulated games. Training on official
+game trajectories and improving language generation remain separate
+experiments.

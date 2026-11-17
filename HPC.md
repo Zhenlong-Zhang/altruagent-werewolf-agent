@@ -22,4 +22,26 @@ pip install -e ".[dev]"
 pip install -e "$HOME/altruagent-werewolf-agent"
 ```
 
-For any future self-play policy search or training, submit a Slurm batch job with `-A pi_ra_lab`, explicit measured memory and walltime, and only the CPU resources the workload uses. Do not run simulations or training on a login node. No compute job is submitted yet: the next useful computation depends on having platform Testing trajectories or a validated local simulator.
+Submit offline training and platform practice through Slurm using the current
+account and an explicit CPU, memory and walltime request. The first offline
+training run used 1 CPU and completed in 8 seconds. Reproduce it from the
+repository checkout:
+
+```bash
+sbatch -A pi_ra_lab -J wolf-offline -c 1 --mem=512M -t 00:08:00 \
+  --wrap='module load python/3.12.13 && python scripts/offline_train.py --out-dir "outputs/h2-$SLURM_JOB_ID"'
+```
+
+The LLM practice runtime needs the CPU PyTorch and Transformers environment
+and a downloaded Qwen model. Set `WEREWOLF_CPU_MODEL` to the model directory
+and `OPENAI_MODEL` to its recorded name. The rules, search and REINFORCE
+variants use the starter environment alone. Source the project's private
+`.env` with shell export enabled inside the Slurm job. The active runtime
+is `python -m agent --match --agent werewolf_agent.entry`.
+
+For a fixed official comparison, set `WEREWOLF_CANDIDATE=manifest` and
+`WEREWOLF_MATCH_MANIFEST` to JSON mapping each match ID to
+`[zero_based_seat, candidate]`. Run
+`python scripts/summarize_comparison.py <manifest> <decision_log_dir>`
+after platform settlement. Replays and model evaluation limits are in the
+[training report](rounds/01_training/05_closeout.md).

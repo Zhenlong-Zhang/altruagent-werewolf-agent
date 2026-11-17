@@ -1,0 +1,72 @@
+[
+  {
+    "match_id": "5749f762-816c-4dfe-b6b0-b36df4ecee19",
+    "seat": 1,
+    "candidate": "rules",
+    "strategy": "focal-rules",
+    "role": "villager",
+    "score": -1.0,
+    "termination": "completed",
+    "model_actions": 0,
+    "action_fallbacks": 0,
+    "speech_fallbacks": 0,
+    "max_model_seconds": null,
+    "rejected_actions": 0
+  },
+  {
+    "match_id": "2b981f88-252f-42f2-bc63-1dca70f70d0d",
+    "seat": 1,
+    "candidate": "direct",
+    "strategy": "direct:Qwen/Qwen2.5-0.5B-Instruct",
+    "role": "seer",
+    "score": 1.0,
+    "termination": "completed",
+    "model_actions": 4,
+    "action_fallbacks": 0,
+    "speech_fallbacks": 2,
+    "max_model_seconds": 21.941,
+    "rejected_actions": 0
+  },
+  {
+    "match_id": "0a6c5686-931a-4a56-976b-ec0655d8a8b9",
+    "seat": 1,
+    "candidate": "belief",
+    "strategy": "belief:Qwen/Qwen2.5-0.5B-Instruct",
+    "role": "villager",
+    "score": 1.0,
+    "termination": "completed",
+    "model_actions": 2,
+    "action_fallbacks": 0,
+    "speech_fallbacks": 2,
+    "max_model_seconds": 38.873,
+    "rejected_actions": 0
+  },
+  {
+    "match_id": "4bf85433-2619-4b97-bfee-f34ea0bd69a7",
+    "seat": 1,
+    "candidate": "search",
+    "strategy": "surrogate-search",
+    "role": "villager",
+    "score": 1.0,
+    "termination": "completed",
+    "model_actions": 0,
+    "action_fallbacks": 0,
+    "speech_fallbacks": 0,
+    "max_model_seconds": null,
+    "rejected_actions": 0
+  },
+  {
+    "match_id": "25d169e6-d81b-40d9-83ce-72bba3fbc314",
+    "seat": 1,
+    "candidate": "reinforce",
+    "strategy": "surrogate-reinforce",
+    "role": "wolf",
+    "score": -1.0,
+    "termination": "completed",
+    "model_actions": 0,
+    "action_fallbacks": 0,
+    "speech_fallbacks": 0,
+    "max_model_seconds": null,
+    "rejected_actions": 0
+  }
+]
