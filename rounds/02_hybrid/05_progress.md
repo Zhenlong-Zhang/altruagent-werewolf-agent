@@ -27,10 +27,19 @@ only one episode. [Pilot summary](../../outputs/hybrid/official-pilot.json)
 Both open Qwen checkpoints made 18 of 21 preferred decisions in the initial
 ascending-order synthetic probe. Inspection showed both always chose the
 smaller seat ID, so the accuracy is fully explained by that shortcut.
-Counterbalanced prompt order and binary strategic judgment are evaluated
-as separate development variants. They are diagnostic checks, never match
-wins. Development logs and full per-case JSON stay on Hoffman2 until
-summarized.
+Hoffman2 job 1874895 repeated every position in both candidate orders.
+With action-ID scoring, Qwen 0.5B preferred the reference option in 30/42
+presentations, versus 22/42 for Qwen 1.5B. Reversing the offered order
+changed the model's leader in 6/21 and 16/21 paired cases respectively.
+The first-option control scored 21/42. The two models' initial 18/21
+scores therefore do not justify choosing either model by size.
+
+The new judgment proposer evaluates each described action or speech
+intent with the same prompt and ranks the Yes/No log odds. It removes
+numeric action IDs from the output vocabulary. Its counterbalanced
+development comparison runs under job 1874954. These small synthetic
+probes measure behavior and latency under controlled presentations.
+Platform win-rate selection uses independent operating data.
 
 ## Selection gate
 

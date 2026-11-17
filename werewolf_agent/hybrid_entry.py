@@ -46,8 +46,8 @@ def create_agent():
     seat = int(os.environ.get("WEREWOLF_CANDIDATE_SEAT", "0"))
     if mode not in MODES or seat not in range(7):
         raise ValueError("Invalid hybrid mode or seat")
-    if not os.environ.get("WEREWOLF_CPU_MODEL"):
-        raise ValueError("Set WEREWOLF_CPU_MODEL inside the Hoffman2 job")
+    if not (os.environ.get("WEREWOLF_MODEL_PATH") or os.environ.get("WEREWOLF_CPU_MODEL")):
+        raise ValueError("Set WEREWOLF_MODEL_PATH inside the Hoffman2 job")
     path = os.environ.get("WEREWOLF_HYBRID_MANIFEST")
     assignments = {}
     if path:

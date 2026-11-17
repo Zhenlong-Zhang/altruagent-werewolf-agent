@@ -33,7 +33,10 @@ class LLMPolicy(WerewolfPolicy):
         self.variant = variant
         self.model = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
         self.local = os.environ.get("WEREWOLF_LOCAL_MODEL") == "1"
-        self.cpu_model = os.environ.get("WEREWOLF_CPU_MODEL")
+        self.cpu_model = os.environ.get("WEREWOLF_MODEL_PATH") or os.environ.get("WEREWOLF_CPU_MODEL")
+        self.model_device = os.environ.get("WEREWOLF_MODEL_DEVICE", "cpu")
+        if self.model_device not in {"cpu", "cuda"}:
+            raise ValueError("WEREWOLF_MODEL_DEVICE must be cpu or cuda")
         self.key = None if self.local or self.cpu_model else os.environ["OPENAI_API_KEY"]
         self.endpoint = ("http://127.0.0.1:18472" if self.local else "https://api.openai.com")
         self.client = httpx.Client(timeout=18 if self.local else 8, trust_env=False)
@@ -113,8 +116,16 @@ class LLMPolicy(WerewolfPolicy):
             if self._cpu is None:
                 torch.set_num_threads(int(os.environ.get("SLURM_CPUS_PER_TASK", "1")))
                 tokenizer = AutoTokenizer.from_pretrained(self.cpu_model, local_files_only=True)
+                if self.model_device == "cuda" and not torch.cuda.is_available():
+                    raise RuntimeError("CUDA is unavailable in this job")
+                dtype = (
+                    torch.bfloat16 if self.model_device == "cuda" and torch.cuda.is_bf16_supported()
+                    else torch.float16 if self.model_device == "cuda"
+                    else torch.float32
+                )
                 model = AutoModelForCausalLM.from_pretrained(
-                    self.cpu_model, local_files_only=True, torch_dtype=torch.float32
+                    self.cpu_model, local_files_only=True, torch_dtype=dtype,
+                    device_map={"": 0} if self.model_device == "cuda" else None,
                 ).eval()
                 self._cpu = (tokenizer, model)
             tokenizer, model = self._cpu
@@ -125,8 +136,9 @@ class LLMPolicy(WerewolfPolicy):
             ):
                 return _judge_proposals(torch, tokenizer, model, view)
             inputs = tokenizer.apply_chat_template(
-                messages, add_generation_prompt=True, return_tensors="pt", return_dict=True
-            )
+                messages, add_generation_prompt=True, return_tensors="pt", return_dict=True,
+                enable_thinking=False,
+            ).to(model.device)
             task = view["task"]
             if task in {"action", "propose_action", "propose_speech"}:
                 proposal = task != "action"
@@ -135,7 +147,7 @@ class LLMPolicy(WerewolfPolicy):
                     '{"ranked_ids":["' if proposal else '{"action_id":"',
                     add_special_tokens=False,
                 )
-                ids = torch.cat((inputs["input_ids"], torch.tensor([prefix])), dim=-1)
+                ids = torch.cat((inputs["input_ids"], torch.tensor([prefix], device=model.device)), dim=-1)
                 tokens = [tokenizer.encode(choice, add_special_tokens=False) for choice in choices]
                 if any(len(token) != 1 for token in tokens):
                     raise ValueError("Expected one-token Werewolf action ids")
@@ -218,8 +230,9 @@ def _judge_proposals(torch, tokenizer, model, view):
     try:
         tokenizer.padding_side = "left"
         batch = tokenizer.apply_chat_template(
-            examples, add_generation_prompt=True, padding=True, return_tensors="pt", return_dict=True
-        )
+            examples, add_generation_prompt=True, padding=True, return_tensors="pt", return_dict=True,
+            enable_thinking=False,
+        ).to(model.device)
     finally:
         tokenizer.padding_side = padding_side
     yes, no = (tokenizer.encode(word, add_special_tokens=False) for word in ("Yes", "No"))

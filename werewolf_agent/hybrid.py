@@ -148,7 +148,8 @@ class HybridPolicy(WerewolfPolicy):
         error = None
         if len(options) > 1:
             try:
-                if not (os.environ.get("WEREWOLF_CPU_MODEL") or os.environ.get("WEREWOLF_LOCAL_MODEL") == "1"):
+                if not (os.environ.get("WEREWOLF_MODEL_PATH") or os.environ.get("WEREWOLF_CPU_MODEL")
+                        or os.environ.get("WEREWOLF_LOCAL_MODEL") == "1"):
                     raise RuntimeError("Hybrid inference requires an explicitly configured local backend")
                 if self._model is None:
                     self._model = LLMPolicy("hybrid")
@@ -217,7 +218,10 @@ class HybridPolicy(WerewolfPolicy):
         else:
             index, probabilities = self.selector.choose(features)
         self._decision_number += 1
-        backend = os.environ.get("WEREWOLF_CPU_MODEL") or os.environ.get("WEREWOLF_LOCAL_MODEL_PATH")
+        backend = (
+            os.environ.get("WEREWOLF_MODEL_PATH") or os.environ.get("WEREWOLF_CPU_MODEL")
+            or os.environ.get("WEREWOLF_LOCAL_MODEL_PATH")
+        )
         model_id = Path(backend).name if backend else (
             self._model.model if isinstance(self._model, LLMPolicy) else "unconfigured")
         self._ensure_logger(context)._write({

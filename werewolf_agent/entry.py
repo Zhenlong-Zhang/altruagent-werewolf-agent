@@ -67,7 +67,7 @@ def create_agent():
     if variant in {"search", "reinforce"}:
         path = os.environ.get("WEREWOLF_WEIGHTS", "outputs/offline/weights.json")
         return MixedTable(seat, variant, read_policy(path, variant))
-    if not (os.environ.get("WEREWOLF_CPU_MODEL") or os.environ.get("WEREWOLF_LOCAL_MODEL") == "1"
+    if not (os.environ.get("WEREWOLF_MODEL_PATH") or os.environ.get("WEREWOLF_CPU_MODEL") or os.environ.get("WEREWOLF_LOCAL_MODEL") == "1"
             or os.environ.get("OPENAI_API_KEY")):
         raise ValueError("The selected candidate requires a model backend")
     if variant in {"compare", "manifest"}:
