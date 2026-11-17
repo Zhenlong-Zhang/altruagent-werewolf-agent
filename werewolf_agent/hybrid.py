@@ -7,6 +7,7 @@ from dataclasses import dataclass
 import json
 from pathlib import Path
 import os
+import re
 import time
 
 import httpx
@@ -17,7 +18,28 @@ from .beliefs import build_suspicion, known_roles, parse_role, seat_from_name
 from .learned import SEER_CLAIM
 from .policy import WerewolfPolicy, _all_messages, _state_data, _target
 from .selector import FEATURES, Selector
-from .variants import LLMPolicy
+from .variants import LLMPolicy, wolf_probabilities
+
+ACCUSATION = re.compile(r"\bPlayer\s*([0-6])\s+(?:is|was)\s+(?:a\s+)?wolf\b", re.I)
+
+
+def credibility_weights(confirmed, vote_scores, public_messages, alive, own_seat):
+    """One weak update per speaker and target, based on earlier beliefs."""
+    prior = wolf_probabilities(confirmed, vote_scores)
+    scores = dict(vote_scores)
+    seen = set()
+    for message in public_messages:
+        speaker = message["sender"]
+        if speaker not in alive or speaker == own_seat:
+            continue
+        for match in ACCUSATION.finditer(message["content"]):
+            target = int(match[1])
+            if target not in alive or target == speaker or (speaker, target) in seen:
+                continue
+            seen.add((speaker, target))
+            trust = 1.0 - prior.get(speaker, 0.5)
+            scores[target] = scores.get(target, 0.) + 0.22 * trust
+    return wolf_probabilities(confirmed, scores)
 
 
 @dataclass(frozen=True)
@@ -37,6 +59,7 @@ class HybridPolicy(WerewolfPolicy):
         self.mode = mode
         self.selector = None if mode == "llm_select" else Selector(mode, weights_path, seed)
         self._strategy_version = mode
+        self._structured_beliefs = os.environ.get("WEREWOLF_PUBLIC_BELIEF") == "1"
         self._model = None
         self._decision_number = 0
         self._pending_action = None
@@ -65,6 +88,16 @@ class HybridPolicy(WerewolfPolicy):
             "messages": [{"sender": m["sender"], "content": str(m["content"])[:240]}
                          for m in self._messages[-10:] if m["type"] == "chat"],
         }
+        if self._structured_beliefs:
+            confirmed = dict(known)
+            for death in result["revealed_deaths"]:
+                if death["seat"] is not None and death["role"] in {"wolf", "seer", "villager"}:
+                    confirmed[death["seat"]] = death["role"]
+            vote_scores = build_suspicion(state.observation, game, players, seat, [])
+            estimates = credibility_weights(confirmed, vote_scores, public, alive, seat)
+            result["estimated_wolf_probabilities"] = {
+                player: round(estimates[player], 3) for player in sorted(alive) if player in estimates
+            }
         return result, scores, activity, claims, votes
 
     def _actions(self, state, view, scores, activity, claims):
@@ -188,7 +221,10 @@ class HybridPolicy(WerewolfPolicy):
             self._model.model if isinstance(self._model, LLMPolicy) else "unconfigured")
         self._ensure_logger(context)._write({
             "event": "hybrid_choice", "decision_id": self._decision_number, "mode": self.mode,
-            "generator_id": f"hybrid-slate-v1:{model_id}",
+            "generator_id": (
+                f"hybrid-slate-v1-credibility:{model_id}" if self._structured_beliefs
+                else f"hybrid-slate-v1:{model_id}"
+            ),
             "sampled": self.mode == "hybrid_collect" and bool(proposed) and len(slate) > 1,
             "delivery_method": ("terminate_messaging" if slate[index].id == "5" else "send_message")
                                if speech else "play_action",
