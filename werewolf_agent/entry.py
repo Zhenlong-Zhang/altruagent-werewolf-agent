@@ -50,6 +50,7 @@ def create_agent():
     if variant in {"search", "reinforce"}:
         path = os.environ.get("WEREWOLF_WEIGHTS", "outputs/offline/weights.json")
         return MixedTable(seat, variant, read_policy(path, variant))
-    if os.environ.get("WEREWOLF_LOCAL_MODEL") != "1" and not os.environ.get("OPENAI_API_KEY"):
+    if not (os.environ.get("WEREWOLF_CPU_MODEL") or os.environ.get("WEREWOLF_LOCAL_MODEL") == "1"
+            or os.environ.get("OPENAI_API_KEY")):
         raise ValueError("The selected LLM candidate requires OPENAI_API_KEY")
     return MixedTable(seat, variant)
