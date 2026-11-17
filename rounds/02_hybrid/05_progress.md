@@ -34,12 +34,30 @@ changed the model's leader in 6/21 and 16/21 paired cases respectively.
 The first-option control scored 21/42. The two models' initial 18/21
 scores therefore do not justify choosing either model by size.
 
-The new judgment proposer evaluates each described action or speech
+The judgment proposer evaluates each described action or speech
 intent with the same prompt and ranks the Yes/No log odds. It removes
 numeric action IDs from the output vocabulary. Its counterbalanced
-development comparison runs under job 1874954. These small synthetic
+development comparison finished under job 1874954. Neither model changed
+its top choice when option order was reversed. The reference first-choice
+counts were 8/42 for Qwen 0.5B and 14/42 for Qwen 1.5B, both lower than the
+action-ID variants. The judgment proposer remains experimental. These small synthetic
 probes measure behavior and latency under controlled presentations.
 Platform win-rate selection uses independent operating data.
+
+## Larger model comparison
+
+Hoffman2 allows two GPUs per user under the current account. The general
+GPU request in job 1875227 received a Tesla P4 with 7,680 MiB. Slurm also
+advertised nodes with 32 GiB and larger devices. Preparation job 1875317
+sets up CUDA PyTorch and downloads Qwen3-8B and Mistral-7B-Instruct-v0.3
+on scratch. Job 1875323 requests a single 32 GiB or larger GPU after
+preparation to compare both families with the same proposal probes.
+The 20B candidate remains a separate hardware and runtime evaluation.
+
+[Hoffman2 Slurm](https://www.hoffman2.idre.ucla.edu/Using-H2/Computing/Computing-Slurm.html)
+[Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B)
+[Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
+[gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b)
 
 ## Selection gate
 
