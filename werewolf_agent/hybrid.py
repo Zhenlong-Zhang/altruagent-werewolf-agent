@@ -59,6 +59,7 @@ class HybridPolicy(WerewolfPolicy):
         self.mode = mode
         self.selector = None if mode == "llm_select" else Selector(mode, weights_path, seed)
         self._strategy_version = mode
+        self.opponent_pool = None
         self._structured_beliefs = os.environ.get("WEREWOLF_PUBLIC_BELIEF") == "1"
         self._model = None
         self._decision_number = 0
@@ -221,6 +222,7 @@ class HybridPolicy(WerewolfPolicy):
             self._model.model if isinstance(self._model, LLMPolicy) else "unconfigured")
         self._ensure_logger(context)._write({
             "event": "hybrid_choice", "decision_id": self._decision_number, "mode": self.mode,
+            "opponent_pool": self.opponent_pool,
             "generator_id": (
                 f"hybrid-slate-v1-credibility:{model_id}" if self._structured_beliefs
                 else f"hybrid-slate-v1:{model_id}"

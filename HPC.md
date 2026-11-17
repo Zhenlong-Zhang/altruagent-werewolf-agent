@@ -45,3 +45,26 @@ For a fixed official comparison, set `WEREWOLF_CANDIDATE=manifest` and
 `python scripts/summarize_comparison.py <manifest> <decision_log_dir>`
 after platform settlement. Replays and model evaluation limits are in the
 [training report](rounds/01_training/05_closeout.md).
+
+## Joint LLM and RL
+
+Apply both starter patches before collecting:
+`patches/starter-game-result.patch` records settlement and
+`patches/starter-message-result.patch` acknowledges speech or pass delivery.
+For this experiment, launch the starter with
+`--match --agent werewolf_agent.hybrid_entry` inside the Slurm job.
+
+- `WEREWOLF_HYBRID_MODE=hybrid_collect` samples the agenda before play.
+  Freeze the local model and starting checkpoint across the collection.
+- `WEREWOLF_HYBRID_MODE=llm_select` selects the first model proposal.
+- `WEREWOLF_HYBRID_MODE=hybrid_greedy` selects using the weights specified in
+  `WEREWOLF_HYBRID_WEIGHTS`. Use fresh Testing games for policy comparison.
+- Optional `WEREWOLF_PUBLIC_BELIEF=1` adds role probabilities with weaker
+  updates from less credible accusers. It changes the proposer ID and
+  requires a separate frozen collection batch.
+
+Use a dedicated `WEREWOLF_LOG_DIR` for training games. In a CPU batch job,
+run `python scripts/train_hybrid.py LOG_DIR --generator-id GENERATOR_ID
+--output NEW_WEIGHTS`. Use `--start OLD_WEIGHTS` when collecting from a
+previous checkpoint. The generator ID is in each `hybrid_choice` log row.
+See the [joint policy contract](rounds/02_hybrid/02_contract.md).
