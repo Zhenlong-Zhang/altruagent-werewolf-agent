@@ -33,7 +33,8 @@ def cases():
         ):
             options = [Option(str(p), f"{phase} Player{p}", p, 0.0) for p in sorted((target, rival))]
             view = dict(common, role=role, phase=phase, private_knowledge=known, messages=messages)
-            yield title, view, options, str(accepted)
+            for order, candidates in (("ascending", options), ("descending", options[::-1])):
+                yield title, view, candidates, str(accepted), order
 
 
 def main():
@@ -42,10 +43,11 @@ def main():
     args = parser.parse_args()
     policy = HybridPolicy("llm_select")
     output = []
-    for label, view, options, expected in cases():
+    for label, view, options, expected, order in cases():
         started = time.monotonic()
         _, ranked, error, _ = policy._propose(view, options, speech=False)
         output.append({"scenario": label, "seat": view["seat"], "preferred_id": expected,
+                       "candidate_order": order, "options": [option.id for option in options],
                        "ranked": ranked, "preferred_first": bool(ranked and ranked[0] == expected),
                        "accepted": bool(ranked), "error": error,
                        "elapsed_seconds": round(time.monotonic() - started, 3)})
@@ -56,6 +58,13 @@ def main():
         print(label, "preferred_first", sum(row["preferred_first"] for row in group),
               "/", len(group), "valid", sum(row["accepted"] for row in group),
               "median_seconds", median(row["elapsed_seconds"] for row in group))
+    print("first_option_control", sum(row["preferred_id"] == row["options"][0] for row in output),
+          "/", len(output))
+    by_case = {}
+    for row in output:
+        by_case.setdefault((row["scenario"], row["seat"]), []).append(row["ranked"][:1])
+    print("order_changed_top1", sum(first != second for first, second in by_case.values()),
+          "/", len(by_case))
     print("max_seconds", max(row["elapsed_seconds"] for row in output))
 
 

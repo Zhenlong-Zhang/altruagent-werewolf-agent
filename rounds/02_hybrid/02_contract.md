@@ -15,6 +15,14 @@ One LLM shortlists two legal actions or role-specific speech intents. The select
 
 Collect one focal seat per game. Freeze proposer, initial selector, opponent population and log directory for a collection batch. Sample from the selector distribution and record the slate, probability vector, delivery acknowledgement and official faction return. Train one on-policy REINFORCE update per batch. Capture collection fallout and latency by role. Missing acknowledgements and mismatched policy/proposer versions are ineligible for this first estimator. Report censored games separately and review whether failures are policy-dependent.
 
+The trainer's 30-game default is a minimum for attempting a first update,
+independent of any claim of improvement. Freeze the checkpoint and move on
+to prospective evaluation before estimating strength. The runtime accepts
+six frozen opponent slots through `WEREWOLF_HYBRID_OPPONENTS`. Use rules,
+direct-model or belief-assisted policies to populate a table and record the
+actual roster in focal logs. Preserve opponent mixes that training did not
+encounter.
+
 ## Competing for the tournament
 
 Benchmark candidate acceptance, speech intent diversity, wolf-finding accuracy and tail decision time on role-balanced development states. Compare a stronger instruction model against the small CPU model on Hoffman2 under the same action deadline. Use a frozen population of distinct policies in training, then keep fresh opponent mixes for final play. Start with the compact intent set and test evidence tracking, stronger proposals, role-specific retrieval and free-form realization singly before combining gains. Protect against opponents that manipulate or flood chat by using verified history and bounded transcript context.
