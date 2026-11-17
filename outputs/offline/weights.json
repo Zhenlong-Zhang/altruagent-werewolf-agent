@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "feature_names": [
+    "suspicion",
+    "seer_claim",
+    "pressure",
+    "activity"
+  ],
+  "approved_for_online": false,
+  "validation_selected": "reinforce",
+  "policies": {
+    "baseline": {
+      "vote": {
+        "suspicion": 1.0,
+        "seer_claim": 0.0,
+        "pressure": 0.0,
+        "activity": 0.0
+      },
+      "night_wolf": {
+        "suspicion": 0.0,
+        "seer_claim": 1.5,
+        "pressure": 0.0,
+        "activity": 1.0
+      },
+      "night_seer": {
+        "suspicion": 1.0,
+        "seer_claim": 0.0,
+        "pressure": 0.0,
+        "activity": 0.0
+      }
+    },
+    "search": {
+      "vote": {
+        "suspicion": 1.0,
+        "seer_claim": 0.0,
+        "pressure": 0.0,
+        "activity": 1.0
+      },
+      "night_wolf": {
+        "suspicion": 1.0,
+        "seer_claim": 1.5,
+        "pressure": 0.0,
+        "activity": 2.0
+      },
+      "night_seer": {
+        "suspicion": 1.0,
+        "seer_claim": 0.0,
+        "pressure": 0.0,
+        "activity": 0.0
+      }
+    },
+    "reinforce": {
+      "vote": {
+        "suspicion": 3.3776179184594897,
+        "seer_claim": 0.44301477406732326,
+        "pressure": -0.12597218005868974,
+        "activity": 0.5090979274299732
+      },
+      "night_wolf": {
+        "suspicion": 0.0026905253733193173,
+        "seer_claim": 2.2625573418595373,
+        "pressure": -0.02854880916667535,
+        "activity": 0.6486901906780584
+      },
+      "night_seer": {
+        "suspicion": 1.1325281409723897,
+        "seer_claim": 0.12170155087702754,
+        "pressure": -0.04949168827508308,
+        "activity": 0.27624798975994874
+      }
+    }
+  }
+}

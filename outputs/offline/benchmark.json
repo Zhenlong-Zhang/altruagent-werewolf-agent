@@ -1,0 +1,813 @@
+{
+  "schema_version": 1,
+  "validation_selected": "reinforce",
+  "seed_ranges": {
+    "train": [
+      10000,
+      12400
+    ],
+    "validation": [
+      20000,
+      20420
+    ],
+    "test": [
+      30000,
+      30840
+    ]
+  },
+  "search_training_range": [
+    10000,
+    10300
+  ],
+  "seed_range_stop_exclusive": true,
+  "train_mix": [
+    "heuristic",
+    "heuristic",
+    "random",
+    "contrarian",
+    "heuristic",
+    "random"
+  ],
+  "validation_mixes": {
+    "mixed": [
+      "heuristic",
+      "heuristic",
+      "random",
+      "contrarian",
+      "heuristic",
+      "random"
+    ],
+    "heuristic": [
+      "heuristic",
+      "heuristic",
+      "heuristic",
+      "heuristic",
+      "heuristic",
+      "heuristic"
+    ]
+  },
+  "test_mixes": {
+    "mixed": [
+      "heuristic",
+      "heuristic",
+      "random",
+      "contrarian",
+      "heuristic",
+      "random"
+    ],
+    "heuristic": [
+      "heuristic",
+      "heuristic",
+      "heuristic",
+      "heuristic",
+      "heuristic",
+      "heuristic"
+    ],
+    "noisy_coordination": [
+      "follower",
+      "random",
+      "follower",
+      "contrarian",
+      "heuristic",
+      "follower"
+    ]
+  },
+  "limitations": [
+    "surrogate engine, no platform results",
+    "stylized public cues and claims, no language model or timing",
+    "the surrogate policies never abstain or vote for known wolf allies; both day actions are legal on the platform",
+    "revealed deaths affect who can act, but role/death history is not an explicit scoring feature",
+    "simulator baseline approximates phase priorities; it does not run the online WerewolfPolicy",
+    "intervals are normal approximations paired by seed, not online performance bounds"
+  ],
+  "validation_aggregate": {
+    "baseline": 0.44047619047619047,
+    "search": 0.43452380952380953,
+    "reinforce": 0.4452380952380952
+  },
+  "test_aggregate": {
+    "baseline": 0.4496031746031746,
+    "search": 0.42103174603174603,
+    "reinforce": 0.4503968253968254
+  },
+  "test_seed_paired_aggregate": {
+    "baseline": {
+      "seed_count": 840,
+      "paired_vs_baseline": 0.0,
+      "paired_normal_95ci": [
+        0.0,
+        0.0
+      ],
+      "standardized_role_weights": {
+        "villager": 0.5714285714285714,
+        "seer": 0.14285714285714285,
+        "wolf": 0.2857142857142857
+      },
+      "standardized_win_rate_by_mix": {
+        "mixed": 0.4409990955364168,
+        "heuristic": 0.4849350144884259,
+        "noisy_coordination": 0.4267779573769151
+      },
+      "standardized_mean_win_rate": 0.45090402246725264,
+      "standardized_paired_vs_baseline": 0.0,
+      "standardized_paired_normal_95ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "search": {
+      "seed_count": 840,
+      "paired_vs_baseline": -0.02857142857142857,
+      "paired_normal_95ci": [
+        -0.0417287357024761,
+        -0.015414121440381038
+      ],
+      "standardized_role_weights": {
+        "villager": 0.5714285714285714,
+        "seer": 0.14285714285714285,
+        "wolf": 0.2857142857142857
+      },
+      "standardized_win_rate_by_mix": {
+        "mixed": 0.381209418940298,
+        "heuristic": 0.4550543280963264,
+        "noisy_coordination": 0.43041344958172667
+      },
+      "standardized_mean_win_rate": 0.422225732206117,
+      "standardized_paired_vs_baseline": -0.028678290261135626,
+      "standardized_paired_normal_95ci": [
+        -0.04186179127077942,
+        -0.015494789251491827
+      ]
+    },
+    "reinforce": {
+      "seed_count": 840,
+      "paired_vs_baseline": 0.0007936507936507937,
+      "paired_normal_95ci": [
+        -0.007066016117531728,
+        0.008653317704833316
+      ],
+      "standardized_role_weights": {
+        "villager": 0.5714285714285714,
+        "seer": 0.14285714285714285,
+        "wolf": 0.2857142857142857
+      },
+      "standardized_win_rate_by_mix": {
+        "mixed": 0.4303190494173393,
+        "heuristic": 0.4897729163553653,
+        "noisy_coordination": 0.4351286880658504
+      },
+      "standardized_mean_win_rate": 0.45174021794618496,
+      "standardized_paired_vs_baseline": 0.0008361954789323632,
+      "standardized_paired_normal_95ci": [
+        -0.007057741841111505,
+        0.008730132798976232
+      ]
+    }
+  },
+  "validation": {
+    "baseline": {
+      "mixed": {
+        "overall": {
+          "wins": 181,
+          "n": 420,
+          "rate": 0.430952380952381,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "villager": {
+          "wins": 73,
+          "n": 233,
+          "rate": 0.3133047210300429,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "seer": {
+          "wins": 18,
+          "n": 67,
+          "rate": 0.26865671641791045,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "wolf": {
+          "wins": 90,
+          "n": 120,
+          "rate": 0.75,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "heuristic": {
+        "overall": {
+          "wins": 189,
+          "n": 420,
+          "rate": 0.45,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "villager": {
+          "wins": 103,
+          "n": 233,
+          "rate": 0.44206008583690987,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "seer": {
+          "wins": 24,
+          "n": 67,
+          "rate": 0.3582089552238806,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "wolf": {
+          "wins": 62,
+          "n": 120,
+          "rate": 0.5166666666666667,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "search": {
+      "mixed": {
+        "overall": {
+          "wins": 181,
+          "n": 420,
+          "rate": 0.430952380952381,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            -0.030992082033430818,
+            0.030992082033430818
+          ]
+        },
+        "villager": {
+          "wins": 69,
+          "n": 233,
+          "rate": 0.296137339055794,
+          "paired_vs_baseline": -0.017167381974248927,
+          "paired_normal_95ci": [
+            -0.06009596151112964,
+            0.025761197562631788
+          ]
+        },
+        "seer": {
+          "wins": 18,
+          "n": 67,
+          "rate": 0.26865671641791045,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            -0.05894903470710221,
+            0.05894903470710221
+          ]
+        },
+        "wolf": {
+          "wins": 94,
+          "n": 120,
+          "rate": 0.7833333333333333,
+          "paired_vs_baseline": 0.03333333333333333,
+          "paired_normal_95ci": [
+            -0.027743710052526217,
+            0.09441037671919289
+          ]
+        }
+      },
+      "heuristic": {
+        "overall": {
+          "wins": 184,
+          "n": 420,
+          "rate": 0.4380952380952381,
+          "paired_vs_baseline": -0.011904761904761904,
+          "paired_normal_95ci": [
+            -0.0387204750500984,
+            0.014910951240574597
+          ]
+        },
+        "villager": {
+          "wins": 99,
+          "n": 233,
+          "rate": 0.4248927038626609,
+          "paired_vs_baseline": -0.017167381974248927,
+          "paired_normal_95ci": [
+            -0.05286509350261263,
+            0.018530329554114773
+          ]
+        },
+        "seer": {
+          "wins": 23,
+          "n": 67,
+          "rate": 0.34328358208955223,
+          "paired_vs_baseline": -0.014925373134328358,
+          "paired_normal_95ci": [
+            -0.04417910447761193,
+            0.014328358208955219
+          ]
+        },
+        "wolf": {
+          "wins": 62,
+          "n": 120,
+          "rate": 0.5166666666666667,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            -0.06136998052634465,
+            0.06136998052634465
+          ]
+        }
+      }
+    },
+    "reinforce": {
+      "mixed": {
+        "overall": {
+          "wins": 184,
+          "n": 420,
+          "rate": 0.4380952380952381,
+          "paired_vs_baseline": 0.007142857142857143,
+          "paired_normal_95ci": [
+            -0.013211442987843994,
+            0.027497157273558278
+          ]
+        },
+        "villager": {
+          "wins": 71,
+          "n": 233,
+          "rate": 0.30472103004291845,
+          "paired_vs_baseline": -0.008583690987124463,
+          "paired_normal_95ci": [
+            -0.032402093486942285,
+            0.015234711512693355
+          ]
+        },
+        "seer": {
+          "wins": 19,
+          "n": 67,
+          "rate": 0.2835820895522388,
+          "paired_vs_baseline": 0.014925373134328358,
+          "paired_normal_95ci": [
+            -0.03599883666763698,
+            0.0658495829362937
+          ]
+        },
+        "wolf": {
+          "wins": 94,
+          "n": 120,
+          "rate": 0.7833333333333333,
+          "paired_vs_baseline": 0.03333333333333333,
+          "paired_normal_95ci": [
+            -0.012669792448501818,
+            0.07933645911516848
+          ]
+        }
+      },
+      "heuristic": {
+        "overall": {
+          "wins": 190,
+          "n": 420,
+          "rate": 0.4523809523809524,
+          "paired_vs_baseline": 0.002380952380952381,
+          "paired_normal_95ci": [
+            -0.014463477509981006,
+            0.01922538227188577
+          ]
+        },
+        "villager": {
+          "wins": 100,
+          "n": 233,
+          "rate": 0.4291845493562232,
+          "paired_vs_baseline": -0.012875536480686695,
+          "paired_normal_95ci": [
+            -0.027382639771831488,
+            0.0016315668104580992
+          ]
+        },
+        "seer": {
+          "wins": 24,
+          "n": 67,
+          "rate": 0.3582089552238806,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            -0.041683262185793116,
+            0.041683262185793116
+          ]
+        },
+        "wolf": {
+          "wins": 66,
+          "n": 120,
+          "rate": 0.55,
+          "paired_vs_baseline": 0.03333333333333333,
+          "paired_normal_95ci": [
+            -0.012669792448501818,
+            0.07933645911516848
+          ]
+        }
+      }
+    }
+  },
+  "test": {
+    "baseline": {
+      "mixed": {
+        "overall": {
+          "wins": 369,
+          "n": 840,
+          "rate": 0.4392857142857143,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "villager": {
+          "wins": 157,
+          "n": 479,
+          "rate": 0.3277661795407098,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "seer": {
+          "wins": 35,
+          "n": 124,
+          "rate": 0.28225806451612906,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "wolf": {
+          "wins": 177,
+          "n": 237,
+          "rate": 0.7468354430379747,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "heuristic": {
+        "overall": {
+          "wins": 407,
+          "n": 840,
+          "rate": 0.4845238095238095,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "villager": {
+          "wins": 221,
+          "n": 479,
+          "rate": 0.4613778705636743,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "seer": {
+          "wins": 55,
+          "n": 124,
+          "rate": 0.4435483870967742,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "wolf": {
+          "wins": 131,
+          "n": 237,
+          "rate": 0.5527426160337553,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "noisy_coordination": {
+        "overall": {
+          "wins": 357,
+          "n": 840,
+          "rate": 0.425,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "villager": {
+          "wins": 129,
+          "n": 479,
+          "rate": 0.26931106471816285,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "seer": {
+          "wins": 37,
+          "n": 124,
+          "rate": 0.29838709677419356,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "wolf": {
+          "wins": 191,
+          "n": 237,
+          "rate": 0.8059071729957806,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "search": {
+      "mixed": {
+        "overall": {
+          "wins": 319,
+          "n": 840,
+          "rate": 0.37976190476190474,
+          "paired_vs_baseline": -0.05952380952380952,
+          "paired_normal_95ci": [
+            -0.08299025541795649,
+            -0.03605736362966255
+          ]
+        },
+        "villager": {
+          "wins": 131,
+          "n": 479,
+          "rate": 0.27348643006263046,
+          "paired_vs_baseline": -0.054279749478079335,
+          "paired_normal_95ci": [
+            -0.08770500384699095,
+            -0.02085449510916771
+          ]
+        },
+        "seer": {
+          "wins": 32,
+          "n": 124,
+          "rate": 0.25806451612903225,
+          "paired_vs_baseline": -0.024193548387096774,
+          "paired_normal_95ci": [
+            -0.065964888867067,
+            0.01757779209287346
+          ]
+        },
+        "wolf": {
+          "wins": 156,
+          "n": 237,
+          "rate": 0.6582278481012658,
+          "paired_vs_baseline": -0.08860759493670886,
+          "paired_normal_95ci": [
+            -0.13178183894792417,
+            -0.04543335092549355
+          ]
+        }
+      },
+      "heuristic": {
+        "overall": {
+          "wins": 382,
+          "n": 840,
+          "rate": 0.45476190476190476,
+          "paired_vs_baseline": -0.02976190476190476,
+          "paired_normal_95ci": [
+            -0.04847700382980821,
+            -0.011046805694001304
+          ]
+        },
+        "villager": {
+          "wins": 209,
+          "n": 479,
+          "rate": 0.4363256784968685,
+          "paired_vs_baseline": -0.025052192066805846,
+          "paired_normal_95ci": [
+            -0.05086089590456797,
+            0.0007565117709562794
+          ]
+        },
+        "seer": {
+          "wins": 53,
+          "n": 124,
+          "rate": 0.4274193548387097,
+          "paired_vs_baseline": -0.016129032258064516,
+          "paired_normal_95ci": [
+            -0.04774193548387096,
+            0.015483870967741932
+          ]
+        },
+        "wolf": {
+          "wins": 120,
+          "n": 237,
+          "rate": 0.5063291139240507,
+          "paired_vs_baseline": -0.046413502109704644,
+          "paired_normal_95ci": [
+            -0.08392730247228758,
+            -0.008899701747121715
+          ]
+        }
+      },
+      "noisy_coordination": {
+        "overall": {
+          "wins": 360,
+          "n": 840,
+          "rate": 0.42857142857142855,
+          "paired_vs_baseline": 0.0035714285714285713,
+          "paired_normal_95ci": [
+            -0.02146452491599098,
+            0.028607382058848125
+          ]
+        },
+        "villager": {
+          "wins": 136,
+          "n": 479,
+          "rate": 0.2839248434237996,
+          "paired_vs_baseline": 0.014613778705636743,
+          "paired_normal_95ci": [
+            -0.019876003381430855,
+            0.049103560792704344
+          ]
+        },
+        "seer": {
+          "wins": 35,
+          "n": 124,
+          "rate": 0.28225806451612906,
+          "paired_vs_baseline": -0.016129032258064516,
+          "paired_normal_95ci": [
+            -0.060927205279025114,
+            0.028669140762896082
+          ]
+        },
+        "wolf": {
+          "wins": 189,
+          "n": 237,
+          "rate": 0.7974683544303798,
+          "paired_vs_baseline": -0.008438818565400843,
+          "paired_normal_95ci": [
+            -0.05815243070838921,
+            0.041274793577587524
+          ]
+        }
+      }
+    },
+    "reinforce": {
+      "mixed": {
+        "overall": {
+          "wins": 360,
+          "n": 840,
+          "rate": 0.42857142857142855,
+          "paired_vs_baseline": -0.010714285714285714,
+          "paired_normal_95ci": [
+            -0.024897336138945098,
+            0.003468764710373667
+          ]
+        },
+        "villager": {
+          "wins": 152,
+          "n": 479,
+          "rate": 0.3173277661795407,
+          "paired_vs_baseline": -0.010438413361169102,
+          "paired_normal_95ci": [
+            -0.02730126942898399,
+            0.006424442706645786
+          ]
+        },
+        "seer": {
+          "wins": 33,
+          "n": 124,
+          "rate": 0.2661290322580645,
+          "paired_vs_baseline": -0.016129032258064516,
+          "paired_normal_95ci": [
+            -0.04774193548387096,
+            0.015483870967741932
+          ]
+        },
+        "wolf": {
+          "wins": 175,
+          "n": 237,
+          "rate": 0.7383966244725738,
+          "paired_vs_baseline": -0.008438818565400843,
+          "paired_normal_95ci": [
+            -0.04157150947398831,
+            0.024693872343186624
+          ]
+        }
+      },
+      "heuristic": {
+        "overall": {
+          "wins": 411,
+          "n": 840,
+          "rate": 0.48928571428571427,
+          "paired_vs_baseline": 0.004761904761904762,
+          "paired_normal_95ci": [
+            -0.006671317894918089,
+            0.016195127418727612
+          ]
+        },
+        "villager": {
+          "wins": 224,
+          "n": 479,
+          "rate": 0.46764091858037576,
+          "paired_vs_baseline": 0.006263048016701462,
+          "paired_normal_95ci": [
+            -0.007310690593363702,
+            0.019836786626766627
+          ]
+        },
+        "seer": {
+          "wins": 54,
+          "n": 124,
+          "rate": 0.43548387096774194,
+          "paired_vs_baseline": -0.008064516129032258,
+          "paired_normal_95ci": [
+            -0.035516187124017426,
+            0.01938715486595291
+          ]
+        },
+        "wolf": {
+          "wins": 133,
+          "n": 237,
+          "rate": 0.5611814345991561,
+          "paired_vs_baseline": 0.008438818565400843,
+          "paired_normal_95ci": [
+            -0.017746574294095242,
+            0.03462421142489693
+          ]
+        }
+      },
+      "noisy_coordination": {
+        "overall": {
+          "wins": 364,
+          "n": 840,
+          "rate": 0.43333333333333335,
+          "paired_vs_baseline": 0.008333333333333333,
+          "paired_normal_95ci": [
+            -0.00506677261248013,
+            0.021733439279146796
+          ]
+        },
+        "villager": {
+          "wins": 136,
+          "n": 479,
+          "rate": 0.2839248434237996,
+          "paired_vs_baseline": 0.014613778705636743,
+          "paired_normal_95ci": [
+            -0.004986864830797256,
+            0.03421442224207074
+          ]
+        },
+        "seer": {
+          "wins": 37,
+          "n": 124,
+          "rate": 0.29838709677419356,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            0.0,
+            0.0
+          ]
+        },
+        "wolf": {
+          "wins": 191,
+          "n": 237,
+          "rate": 0.8059071729957806,
+          "paired_vs_baseline": 0.0,
+          "paired_normal_95ci": [
+            -0.026207518248200137,
+            0.026207518248200137
+          ]
+        }
+      }
+    }
+  }
+}

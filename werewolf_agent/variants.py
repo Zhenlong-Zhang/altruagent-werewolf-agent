@@ -73,6 +73,7 @@ class LLMPolicy(WerewolfPolicy):
             view["estimated_wolf_probabilities"] = wolf_probabilities(known, scores)
         started = time.monotonic()
         answer = {}
+        error_type = None
         try:
             messages = [
                 {"role": "system", "content": (
@@ -91,11 +92,16 @@ class LLMPolicy(WerewolfPolicy):
             parsed = json.loads(content[start:end + 1])
             if isinstance(parsed, dict):
                 answer = parsed
-        except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError, ImportError, OSError, RuntimeError):
-            pass
+        except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError, ImportError, OSError, RuntimeError) as exc:
+            error_type = type(exc).__name__
+        valid = (
+            str(answer.get("action_id")) in {a.action_id for a in state.legal_actions}
+            if task == "action" else isinstance(answer.get("message"), str)
+        )
         logger = self._ensure_logger(context)
         logger._write({"event": "model_call", "seat": seat, "model": self.model,
                        "task": task, "response_received": bool(answer),
+                       "used_fallback": not valid, "error_type": error_type,
                        "elapsed_seconds": round(time.monotonic() - started, 3)})
         return answer, role or "unknown", scores
 
