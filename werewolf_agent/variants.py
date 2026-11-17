@@ -140,7 +140,7 @@ class LLMPolicy(WerewolfPolicy):
                 if any(len(token) != 1 for token in tokens):
                     raise ValueError("Expected one-token Werewolf action ids")
                 with torch.inference_mode():
-                    logits = model(input_ids=ids).logits[0, -1]
+                    logits = model(input_ids=ids, logits_to_keep=1).logits[0, -1]
                 scores = logits[[token[0] for token in tokens]]
                 if proposal:
                     ranks = scores.argsort(descending=True).tolist()[:2]
@@ -214,17 +214,21 @@ def _judge_proposals(torch, tokenizer, model, view):
          {"role": "user", "content": json.dumps(dict(observation, offered_move=option["text"]))}]
         for option in options
     ]
-    batch = tokenizer.apply_chat_template(
-        examples, add_generation_prompt=True, padding=True, return_tensors="pt", return_dict=True
-    )
+    padding_side = tokenizer.padding_side
+    try:
+        tokenizer.padding_side = "left"
+        batch = tokenizer.apply_chat_template(
+            examples, add_generation_prompt=True, padding=True, return_tensors="pt", return_dict=True
+        )
+    finally:
+        tokenizer.padding_side = padding_side
     yes, no = (tokenizer.encode(word, add_special_tokens=False) for word in ("Yes", "No"))
     if len(yes) != 1 or len(no) != 1:
         raise ValueError("Expected Yes and No to be single tokens")
-    # Find the last real token even if the tokenizer pads from the left.
-    positions = torch.arange(batch["input_ids"].shape[1])
-    last = (batch["attention_mask"] * positions).amax(dim=1)
     with torch.inference_mode():
-        logits = model(**batch).logits[torch.arange(len(options)), last]
+        # Left padding puts the next-token prediction in the final position
+        # for every candidate. Only allocate the vocabulary logits we use.
+        logits = model(**batch, logits_to_keep=1).logits[:, -1]
     merits = (logits[:, yes[0]] - logits[:, no[0]]).tolist()
     indices = sorted(range(len(options)), key=lambda i: (-merits[i], options[i]["id"]))[:2]
     return json.dumps({"ranked_ids": [options[i]["id"] for i in indices]})
