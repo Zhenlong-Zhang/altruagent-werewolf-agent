@@ -35,7 +35,7 @@ class LLMPolicy(WerewolfPolicy):
         self.local = os.environ.get("WEREWOLF_LOCAL_MODEL") == "1"
         self.key = None if self.local else os.environ["OPENAI_API_KEY"]
         self.endpoint = ("http://127.0.0.1:18472" if self.local else "https://api.openai.com")
-        self.client = httpx.Client(timeout=8, trust_env=False)
+        self.client = httpx.Client(timeout=18 if self.local else 8, trust_env=False)
 
     def _ask(self, state, context, task):
         game, players = _state_data(state)
@@ -76,7 +76,7 @@ class LLMPolicy(WerewolfPolicy):
                 f"{self.endpoint}/v1/chat/completions",
                 headers={"Authorization": f"Bearer {self.key}"} if self.key else {},
                 json={
-                    "model": self.model,
+                    "model": os.environ.get("WEREWOLF_LOCAL_MODEL_PATH", self.model) if self.local else self.model,
                     "messages": [
                         {"role": "system", "content": (
                             "Play seven-seat Werewolf to maximize your faction's win. "
