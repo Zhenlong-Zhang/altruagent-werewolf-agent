@@ -1,0 +1,18 @@
+{
+  "match_id": "f1e376a7-90f7-4f5b-9bd5-ba6788f30639",
+  "slurm_job_id": 1874432,
+  "seat": 0,
+  "role": "seer",
+  "score": 1.0,
+  "termination_reason": "completed",
+  "decisions": {"night_seer": 1, "speech": 1, "day_vote": 1},
+  "sampled": 2,
+  "sampled_confirmed": 2,
+  "model_fallbacks": 0,
+  "max_model_seconds": 7.748,
+  "generator_id": "hybrid-slate-v1:qwen25-cpu",
+  "checkpoint_id": "c2cdbc1abfba2673",
+  "opponent_pool": ["rules", "rules", "rules", "rules", "rules", "rules"],
+  "trainer_eligible_games": 1,
+  "updated_weights_written": false
+}
