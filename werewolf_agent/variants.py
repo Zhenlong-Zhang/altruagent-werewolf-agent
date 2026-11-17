@@ -121,6 +121,18 @@ class LLMPolicy(WerewolfPolicy):
             inputs = tokenizer.apply_chat_template(
                 messages, add_generation_prompt=True, return_tensors="pt", return_dict=True
             )
+            view = json.loads(messages[-1]["content"])
+            if view["task"] == "action":
+                choices = [item["id"] for item in view["legal_actions"]]
+                prefix = tokenizer.encode('{"action_id":"', add_special_tokens=False)
+                ids = torch.cat((inputs["input_ids"], torch.tensor([prefix])), dim=-1)
+                tokens = [tokenizer.encode(choice, add_special_tokens=False) for choice in choices]
+                if any(len(token) != 1 for token in tokens):
+                    raise ValueError("Expected one-token Werewolf action ids")
+                with torch.inference_mode():
+                    logits = model(input_ids=ids).logits[0, -1]
+                index = int(logits[[token[0] for token in tokens]].argmax())
+                return json.dumps({"action_id": choices[index]})
             with torch.inference_mode():
                 result = model.generate(**inputs, max_new_tokens=80, do_sample=False,
                                         pad_token_id=tokenizer.eos_token_id)
