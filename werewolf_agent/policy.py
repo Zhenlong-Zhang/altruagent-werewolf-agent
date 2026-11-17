@@ -85,10 +85,16 @@ class WerewolfPolicy:
                                                -(_target(a) or 0)))
         else:
             hard_wolves = {p for p, r in known.items() if r == "wolf"}
-            candidates = [a for a in state.legal_actions if _target(a) not in hard_wolves]
-            if not candidates:
-                candidates = list(state.legal_actions)
-            chosen = max(candidates, key=lambda a: (scores.get(_target(a), 0.0), -(_target(a) or 0)))
+            candidates = [
+                a for a in state.legal_actions
+                if _target(a) is not None
+                and (role != "wolf" or _target(a) not in hard_wolves)
+            ] or state.legal_actions
+            chosen = max(candidates, key=lambda a: (
+                role == "seer" and _target(a) in hard_wolves,
+                scores.get(_target(a), 0.0),
+                -(_target(a) or 0),
+            ))
 
         self._ensure_logger(context).decision(state, context, role, chosen, scores)
         return chosen
