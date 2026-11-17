@@ -224,8 +224,9 @@ class HybridPolicy(WerewolfPolicy):
             "event": "hybrid_choice", "decision_id": self._decision_number, "mode": self.mode,
             "opponent_pool": self.opponent_pool,
             "generator_id": (
-                f"hybrid-slate-v1-credibility:{model_id}" if self._structured_beliefs
-                else f"hybrid-slate-v1:{model_id}"
+                "hybrid-slate-v1" + ("-credibility" if self._structured_beliefs else "")
+                + ("-judge" if os.environ.get("WEREWOLF_PROPOSER") == "judge" else "")
+                + f":{model_id}"
             ),
             "sampled": self.mode == "hybrid_collect" and bool(proposed) and len(slate) > 1,
             "delivery_method": ("terminate_messaging" if slate[index].id == "5" else "send_message")
