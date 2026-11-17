@@ -82,3 +82,17 @@ class DecisionLogger:
                      "role_for_eval_only": self.role_for_eval_only,
                      "error_code": result.get("error") if isinstance(result, dict) else None,
                      "winner": winner, "public_result_state": public})
+
+    def game_result(self, state: GameState, context: DecisionContext, role: str | None) -> None:
+        result = state.final_result or {}
+        score = result.get("your_return")
+        if score is None:
+            score = (state.returns or {}).get(context.agent_id)
+        self._write({
+            "event": "game_result",
+            "seat": context.seat_position,
+            "role_for_eval_only": role,
+            "winner": _safe_game_state(state)["winner"],
+            "score": score,
+            "termination_reason": state.termination_reason,
+        })

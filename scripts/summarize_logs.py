@@ -22,7 +22,9 @@ def _wilson(wins: int, n: int, z: float = 1.96) -> tuple[float, float]:
 
 
 def read_matches(root: Path) -> dict[str, dict[str, Any]]:
-    matches: dict[str, dict[str, Any]] = defaultdict(lambda: {"seats": {}, "winner": None})
+    matches: dict[str, dict[str, Any]] = defaultdict(
+        lambda: {"seats": {}, "scores": {}}
+    )
     for path in sorted(root.rglob("*.jsonl")):
         try:
             with path.open(encoding="utf-8") as stream:
@@ -38,8 +40,10 @@ def read_matches(root: Path) -> dict[str, dict[str, Any]]:
             seat = row.get("seat")
             if seat is not None and row.get("role_for_eval_only") in {"wolf", "seer", "villager"}:
                 match["seats"][int(seat)] = row["role_for_eval_only"]
-            if row.get("winner") in {"wolf", "villager"}:
-                match["winner"] = row["winner"]
+            if row.get("event") == "game_result" and seat is not None:
+                score = row.get("score")
+                if row.get("termination_reason") == "completed" and score in (-1, 1):
+                    match["scores"][int(seat)] = score
     return matches
 
 
@@ -48,7 +52,7 @@ def main() -> None:
     parser.add_argument("log_dir", type=Path, help="Directory containing decision JSONL files")
     args = parser.parse_args()
     matches = read_matches(args.log_dir)
-    completed = [m for m in matches.values() if m["winner"] and len(m["seats"]) == 7]
+    completed = [m for m in matches.values() if m["scores"].keys() & m["seats"].keys()]
     print(f"Observed match IDs: {len(matches)}")
     print(f"Matches with a terminal winner and role data: {len(completed)}")
     print(f"Incomplete matches: {len(matches) - len(completed)}")
@@ -58,18 +62,22 @@ def main() -> None:
 
     groups: dict[str, list[bool]] = defaultdict(list)
     for match in completed:
-        winner = match["winner"]
-        for role in match["seats"].values():
-            side = "wolf" if role == "wolf" else "villager"
-            groups[side].append(side == winner)
-            groups["overall"].append(side == winner)
-    for group in ("overall", "wolf", "villager"):
+        for seat, score in match["scores"].items():
+            role = match["seats"].get(seat)
+            if role is not None:
+                groups[role].append(score == 1)
+                groups["overall"].append(score == 1)
+    single_seat_games = all(len(m["scores"]) == 1 for m in completed)
+    for group in ("overall", "wolf", "seer", "villager"):
         observations = groups.get(group, [])
         wins = sum(observations)
-        lo, hi = _wilson(wins, len(observations))
         if observations:
-            print(f"{group:10s} wins={wins}/{len(observations)} rate={wins/len(observations):.3f} "
-                  f"Wilson95=[{lo:.3f}, {hi:.3f}]")
+            interval = ""
+            if single_seat_games:
+                lo, hi = _wilson(wins, len(observations))
+                interval = f" Wilson95=[{lo:.3f}, {hi:.3f}]"
+            print(f"{group:10s} wins={wins}/{len(observations)} "
+                  f"rate={wins/len(observations):.3f}{interval}")
 
 
 if __name__ == "__main__":

@@ -130,6 +130,11 @@ class WerewolfPolicy:
         if self._logger is not None:
             self._logger.action_result(result, context)
 
+    def on_game_result(self, state: GameState, context: DecisionContext) -> None:
+        logger = self._ensure_logger(context)
+        role = logger.role_for_eval_only or parse_role(state.observation)
+        logger.game_result(state, context, role)
+
 
 def create_agent() -> WerewolfPolicy:
     return WerewolfPolicy()

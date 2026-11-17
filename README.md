@@ -23,8 +23,13 @@ In the starter checkout, with its environment active and its `.env` configured p
 
 ```bash
 pip install -e /path/to/werewolf-agent
+git apply /path/to/werewolf-agent/patches/starter-game-result.patch
 python -m agent --match --agent werewolf_agent.entry
 ```
+
+The starter patch calls the policy's terminal hook for every seat, including
+eliminated seats. Run `python scripts/summarize_logs.py data/decision_logs`
+from this repository to summarize logs stored there.
 
 Use `--tournament` only for registered tournament play. Do not commit `.env` or credentials. `WEREWOLF_LOG_DIR` can point to a protected local directory for decision logs; default is `data/decision_logs/`.
 

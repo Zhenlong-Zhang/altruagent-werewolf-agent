@@ -1,0 +1,14 @@
+diff --git a/altruagent/worker.py b/altruagent/worker.py
+index d4cc869..cb034c8 100644
+--- a/altruagent/worker.py
++++ b/altruagent/worker.py
+@@ -371,6 +371,9 @@ def run_tournament_worker(
+             seat_position=grant.seat_position,
+         )
+         final_state = run_game_fn(game, context, contestant)
++        on_game_result = getattr(contestant, "on_game_result", None)
++        if callable(on_game_result):
++            on_game_result(final_state, context)
+         print_line(f"{label} {finished_line(final_state, grant.agent_id, grant.seat_position)}")
+         return EXIT_SUCCESS
+     except KeyboardInterrupt:
