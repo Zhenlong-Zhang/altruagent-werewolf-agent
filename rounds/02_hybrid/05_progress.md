@@ -49,12 +49,14 @@ Platform win-rate selection uses independent operating data.
 Hoffman2 allows two GPUs per user under the current account. The general
 GPU request in job 1875227 received a Tesla P4 with 7,680 MiB. Slurm also
 advertised nodes with 32 GiB and larger devices. Preparation job 1875317
-sets up CUDA PyTorch and downloads Qwen3-8B and Mistral-7B-Instruct-v0.3
-on scratch. Job 1875323 requests a single 32 GiB or larger GPU after
-preparation to compare both families with the same proposal probes.
-The 20B candidate remains a separate hardware and runtime evaluation.
+failed before downloading because the account's shared scratch quota was
+full. Its blocked dependent job 1875323 was canceled. Replacement job
+1875375 requests one GPU with at least 32 GiB and stages Qwen3-8B and
+Mistral-7B-Instruct-v0.3 sequentially on scheduler-managed node-local
+storage. The 20B candidate needs a separate hardware and runtime check.
 
 [Hoffman2 Slurm](https://www.hoffman2.idre.ucla.edu/Using-H2/Computing/Computing-Slurm.html)
+[Hoffman2 temporary storage](https://www.hoffman2.idre.ucla.edu/Using-H2/Storage/Storage.html)
 [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B)
 [Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
 [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b)
