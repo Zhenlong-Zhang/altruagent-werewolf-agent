@@ -1,0 +1,40 @@
+{
+  "training_job": 2122369,
+  "training_dependency": "afterok:2116767",
+  "training_resources": {
+    "cpus": 2,
+    "memory_gib": 8,
+    "time_limit_minutes": 30
+  },
+  "evaluation_job": 2122623,
+  "evaluation_dependency": "afterok:2122369",
+  "evaluation_resources": {
+    "cpus": 8,
+    "memory_gib": 64,
+    "time_limit_hours": 6,
+    "concurrent_games": 1,
+    "model_threads_per_process": 4
+  },
+  "source_manifest": "phase-f-source.json",
+  "evaluation_script": "evaluate-semantic.sbatch",
+  "evaluation_script_sha256": "675caf8bdf5d4d6237592b0b5fcbda972710a5de958c587d8f080952d90a1a59",
+  "cancelled_unstarted_previous_evaluation": 2116775,
+  "evaluation_seed": "r03-ids-guard-heldout-v1",
+  "assignment_namespace": "wolf-policy-v1",
+  "minimum_completed_per_arm": 12,
+  "arms": [
+    "incumbent",
+    "guarded",
+    "sampled",
+    "adapted"
+  ],
+  "status_at_submission": "Pending dependencies; no heldout games created",
+  "gates": [
+    "positive accepted PPO update",
+    "initial policy parity",
+    "fixed advantages and frozen encoder",
+    "KL bounds",
+    "legacy and semantic H2 checks",
+    "two actual HF-process cold/warm readiness before collector"
+  ]
+}

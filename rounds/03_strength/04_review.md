@@ -964,3 +964,34 @@ real frozen-encoder/artifact reload, initial-policy equality, recorded PPO
 trust bounds, cold/warm two-model readiness and a fresh live-delivery
 canary. The benchmark uses synthetic observations and model calls; it does
 not itself establish SDK delivery or stronger tournament play.
+
+## Semantic evaluation batch pre-submission inspection
+
+The Reviewer inspected `evaluate-semantic.sbatch`: all three incumbent/
+guarded/sampled controls point to the original behavior checkpoint, while
+the adapted profile points to job 2122369's schema-2 semantic artifact.
+The proposer, 1-direct/5-rules roster, CPU BF16 revision and four-thread
+per-model setting remain fixed. Global greedy mode plus
+`WEREWOLF_EVALUATE_ONLY=1` prevents training even though individual profiles
+select sampled mode. The driver checks twelve completed games per arm
+both inside and after its loop. Forty-eight is a minimum total: UUID-hashed
+arm imbalance may require additional matches to reach all four minima.
+Report actual assigned/completed counts rather than asserting exactly 48.
+The requested `afterok:2122369` dependency is supplied by submission CLI,
+not embedded in this file.
+
+The Reviewer requested a trained-artifact preflight before any F collector:
+verify accepted PPO epochs are positive, initial parity checks passed and
+saved categorical KL bounds hold. A first-step KL rejection intentionally
+restores the original policy and can still yield a valid zero-update
+artifact with process exit success. Such an artifact should not silently
+be called a trained PPO candidate or trigger a costly strength comparison;
+a zero-update control would need explicit separate interpretation.
+Submission is otherwise statically acceptable subject to that launch check,
+the existing runtime-readiness gate and actual H2 evidence.
+
+All 35 local source hashes in `phase-f-source.json` match the frozen
+manifest at commit `8cfcbfcc6511a20906e982c3fed9de439d033a4a`; source
+archive SHA256 is
+`8f63eb65f50b66b2871071eb658e088c849e147611c6795ac459a6ce527a68b8`.
+This is source correspondence, not execution success or strength promotion.
