@@ -1233,3 +1233,62 @@ new harness/audit versions. H2 default-parity checks must use a frozen
 prefix snapshot, not a prefix summary joined to subsequently growing logs.
 No F outcome selected this design, according to the parent, and no G-derived
 tuning or automatic promotion is accepted.
+
+## Greedy freeze provenance and final analysis batch
+
+The Reviewer independently compared all 37 local file hashes in
+`phase-h-source.json`: zero mismatches. All 33 listed unchanged core files
+match phase G's reference manifest. The only changed existing files are the
+semantic runtime benchmark and H2 preparation driver; the two additions are
+read-only semantic/operations audits. Source commit is
+`1f2ce366c98f5472268141e8f63d9f95a092c7cc`, archive SHA256
+`af71d9fab2352f5f5f8188199d003c60694f61230d1756a7001078503dd3f564`.
+The submitted greedy batch matches its recorded script SHA256. Its new
+preflight explicitly checks tensor digest, semantic checkpoint
+`6ca4df8fd98821e6` and parent file hash in addition to the training gates.
+
+`greedy-final-analysis.sbatch` is a read-only model/log analysis on one CPU
+and 1 GB. It summarizes G with the declared three arms/seed, runs greedy3
+operations validation, records E/F/G pairwise disjointness and seeds with
+input hashes, and propagates the operations status after writing split
+checks. Integrity-clean incompleteness remains exit 2, rather than being
+rewritten as success or dropping unfinished games. The completed F summary
+must exist before this final analysis uses it. No winner-based fitting,
+selection or continuation is implemented by this script.
+
+Static acceptance is granted for the frozen G evaluation and final analysis
+configuration. Actual runtime/default-parity/canary and final outcome review
+remain pending. SDK source/patch identity was parent-reported separately;
+its provenance-file location was requested so it is not represented here as
+independently verified from the H manifest. No additional model/code round
+or policy promotion is accepted by this source review.
+
+## SDK record and final conditional-choice diagnostic
+
+The Reviewer inspected `starter-runtime-source.json` and independently
+matched both local project patch SHA256 values to that record. It names
+SDK HEAD `be680b1435c12569beb8ea1d239538efff8d8f82`, two callback patch
+files and the modified runner/worker hashes plus combined diff digest.
+Those remote working-file/HEAD observations were obtained by the parent
+on H2; the Reviewer did not independently access the remote SDK files.
+The source provenance is now located and its local patch correspondence
+verified, rather than absent from the review record.
+
+The Reviewer statically accepts the new read-only
+`compare_greedy_actions.py` after the operations audit. It verifies the
+legacy parent and semantic metadata/tensor fingerprints, declared G seed,
+NN profile/focal log joins and unique decision/candidate identities.
+For valid warm guarded multi-candidate greedy records it computes the
+legacy D7 argmax on the **same logged features and candidate order**, then
+compares with the recorded semantic index. Forced, fallback, selector-error
+and model-invalid choices remain separately counted. No NN recomputation,
+fitting, alternate trajectory or counterfactual game return is performed.
+
+If no eligible indices change, the result only establishes conditional
+identity on those observed slates; a higher observed win rate cannot be
+attributed to different NN-head choices on that subset. It does not establish
+whole-trajectory equality or remove uncertainty from exclusions/timing.
+This helper does not independently require delivery ACKs for eligibility,
+so use 'recorded choices' wording alongside the operations delivery counts.
+Actual H2 diagnostic results remain pending. No frozen runtime files were
+changed by adding this helper.
