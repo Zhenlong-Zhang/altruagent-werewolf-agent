@@ -16,8 +16,8 @@ from types import SimpleNamespace
 
 
 def run_worker(settings):
-    semantic, checkpoint, log_dir = settings
-    os.environ["WEREWOLF_HYBRID_MODE"] = "hybrid_collect" if semantic else "llm_select"
+    semantic, checkpoint, log_dir, semantic_mode = settings
+    os.environ["WEREWOLF_HYBRID_MODE"] = semantic_mode if semantic else "llm_select"
     os.environ["WEREWOLF_HYBRID_WEIGHTS"] = checkpoint
     os.environ["WEREWOLF_LOG_DIR"] = log_dir
     from werewolf_agent.competition_entry import create_agent
@@ -65,7 +65,7 @@ def run_worker(settings):
                 row = {"scenario": name, "repetition": repetition, "total_seconds": elapsed,
                        "legal": legal,
                        **{key: record.get(key) for key in (
-                           "checkpoint_id", "sampled", "model_valid", "model_error", "model_seconds",
+                           "checkpoint_id", "mode", "sampled", "model_valid", "model_error", "model_seconds",
                            "selector_error", "selector_seconds", "selector_deadline_kind", "used_fallback")}}
                 if not semantic:
                     row.update(model_valid=not record["used_fallback"],
@@ -76,7 +76,7 @@ def run_worker(settings):
             policy.client.close()
         elif policy._model:
             policy._model.client.close()
-    return {"semantic": semantic, "rows": rows,
+    return {"semantic": semantic, "selector_mode": semantic_mode if semantic else "llm_direct", "rows": rows,
             "max_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
 
 
@@ -84,17 +84,22 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--semantic-mode", choices=("hybrid_collect", "hybrid_greedy"), default="hybrid_collect")
     args = parser.parse_args()
     if args.out.exists():
         parser.error("Use a new diagnostic output path")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     settings = [(semantic, str(args.checkpoint.resolve()),
-                 str(args.out.parent / f"runtime-fixture-{int(semantic)}")) for semantic in (False, True)]
+                 str(args.out.parent / f"runtime-fixture-{int(semantic)}"), args.semantic_mode)
+                for semantic in (False, True)]
     with ProcessPoolExecutor(max_workers=2, mp_context=multiprocessing.get_context("spawn")) as pool:
         workers = list(pool.map(run_worker, settings))
     passed = all(row["legal"] and row["model_valid"] and not row["used_fallback"]
                  and row["total_seconds"] <= 30.0
                  for worker in workers for row in worker["rows"])
+    passed = passed and all(row["mode"] == args.semantic_mode
+                            and row["sampled"] == (args.semantic_mode == "hybrid_collect")
+                            for worker in workers if worker["semantic"] for row in worker["rows"])
     result = {"interpretation": "Synthetic full-factory two-process readiness; not heldout win rate.",
               "passed": passed, "workers": workers,
               "cpu_threads_per_process": os.environ.get("WEREWOLF_CPU_THREADS")}

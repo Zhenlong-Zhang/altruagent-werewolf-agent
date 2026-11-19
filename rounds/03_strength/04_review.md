@@ -1161,3 +1161,75 @@ No material source blocker remains for an H2 run on a stable between-games
 snapshot. An integrity-clean partial canary should return exit 2 for
 incompleteness; that is not an integrity failure or a basis for outcome-
 dependent cohort stopping. Actual run evidence remains pending.
+
+## Bounded greedy deployment coverage contract
+
+The Reviewer accepts the design of `17_greedy_validation_contract.md`:
+fresh semantic-greedy versus incumbent-greedy and old guarded-greedy
+profiles close the explicitly untested deployment-mode gap. The trained E
+artifact, proposer, encoder, roster and per-process thread budget stay
+fixed; the tested hash assignment uses a fresh seed with no role/outcome-
+conditioned reassignment. F remains unchanged and no F/G data fit or tune
+parameters.
+
+The finite limit is at least twelve completed games per arm, or seventy-five
+created games, or the three-hour allocation end, whichever occurs first.
+Keep oversampled profiles, all created receipts and unresolved/failed
+outcomes. Caps cannot be extended for favorable wins, roles or significance.
+This bounded coverage is acceptable without inventing a proof-of-strength
+match-count threshold. F/G are exploratory policy-selection evidence;
+incumbent delivery remains the default if results are inconclusive or
+reliability worsens. No additional G-driven tuning round is authorized by
+this contract.
+
+One source-provenance wording repair was requested: the planned benchmark
+`--semantic-mode` and driver changes affect files included in the previous
+35-file manifest. The contract must distinguish unchanged core agent/
+trainer/neural files from newly versioned evaluation harness/audit files,
+instead of claiming all 35 hashes remain identical. A new scoped manifest
+and post-edit static inspection are required before freeze acceptance.
+
+### Greedy coverage harness static acceptance
+
+The Reviewer inspected the additive operations-helper `--profile-set`
+extension. Default `sampled4` retains the prior four-profile mapping;
+`greedy3` explicitly uses incumbent/no-guard/D7/greedy,
+guarded/D7/greedy and nn-greedy/guard/6ca4df8fd98821e6/greedy. All internal
+arm lookups use the selected mapping. Existing generation/thread/hash,
+actual-mass, assignment, no-overlap and all-assigned-resolution checks remain
+in place. No material source blocker was found. H2 omitted-versus-explicit
+sampled4 parity and a real G canary are appropriate execution evidence.
+
+The benchmark's optional `--semantic-mode` defaults to sampled mode, applies
+only to its semantic worker and verifies the actual logged mode/sampled
+flags. The driver forwards an explicit evaluation environment setting with
+the old sampled default preserved. These harness changes are statically
+accepted, pending their H2 execution and new scoped source manifest. The
+exact final G batch file and controller cap handling have not yet been
+independently inspected at this point. Core policy and training files must
+remain unchanged.
+
+### Final greedy batch inspection
+
+The Reviewer inspected `evaluate-greedy.sbatch` before source freeze and
+submission. It uses the new r03h worktree, three greedy profiles with D7,
+D7 and the immutable job-2123930 semantic artifact, guards none/verified/
+verified, the fresh predeclared seed, evaluation-only routing and explicit
+greedy runtime screening. Allocation is eight CPUs/64 GB/three hours, with
+four threads per model. The preflight checks positive accepted epochs,
+training-artifact/report agreement, initial parity, fixed advantages,
+frozen encoder and training KL limits. Thirty-six is a minimum total with
+twelve per-arm completion gates, not an exact final count.
+
+Static batch acceptance is granted. The seventy-five-created cap and
+five-minute creation buffer are explicitly controller-enforced rather than
+implemented inside the batch file; the parent must retain all in-flight/
+unresolved games when either limit is reached. An explicit expected semantic
+fingerprint check in the preflight would further strengthen early detection;
+the frozen artifact manifest and operations helper already pin the expected
+identifier. No frozen core-runtime change is required for that check.
+The revised contract now correctly distinguishes unchanged core code from
+new harness/audit versions. H2 default-parity checks must use a frozen
+prefix snapshot, not a prefix summary joined to subsequently growing logs.
+No F outcome selected this design, according to the parent, and no G-derived
+tuning or automatic promotion is accepted.

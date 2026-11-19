@@ -103,6 +103,7 @@ for model in "${models[@]}"; do
             : "${WEREWOLF_SEMANTIC_CHECKPOINT:?Set the frozen semantic policy artifact}"
             "$python_bin" -m scripts.bench_semantic_runtime \
                 --checkpoint "$WEREWOLF_SEMANTIC_CHECKPOINT" \
+                --semantic-mode "${WEREWOLF_SEMANTIC_BENCH_MODE:-hybrid_collect}" \
                 --out "outputs/hybrid-$SLURM_JOB_ID/semantic-runtime.json"
         fi
         export WEREWOLF_PROPOSER="${WEREWOLF_PROPOSER:-ids}"

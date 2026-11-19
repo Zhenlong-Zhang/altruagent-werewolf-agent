@@ -4,6 +4,8 @@ Keep the competition incumbent until the fresh four-profile comparison supports 
 
 The official starter's current CLI supports `--tournament` for tournament assignments, `--match` for Testing and both flags in one process. Use `werewolf_agent.competition_entry` for the contestant. Practice table factories deliberately fall back to rules for tournament contexts and must not be deployed as the competition agent.
 
+The tested official starter is commit be680b1435c12569beb8ea1d239538efff8d8f82 with the two checked-in settlement/message-result callback patches applied. [SDK provenance](../../outputs/strength-round03/starter-runtime-source.json) records the commit, patch hashes and modified-file hashes. Preserve those callbacks when reproducing delivery and terminal-result accounting.
+
 Freeze these fields together before the competition window:
 
 | Component | Verified setting |

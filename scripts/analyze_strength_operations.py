@@ -24,6 +24,14 @@ PROFILES = {
     "sampled": ("hybrid_collect", GUARD, PARENT_ID),
     "adapted": ("hybrid_collect", GUARD, ADAPTED_ID),
 }
+PROFILE_SETS = {
+    "sampled4": PROFILES,
+    "greedy3": {
+        "incumbent": ("hybrid_greedy", "none", PARENT_ID),
+        "guarded": ("hybrid_greedy", GUARD, PARENT_ID),
+        "nn_greedy": ("hybrid_greedy", GUARD, ADAPTED_ID),
+    },
+}
 POOL = ["direct", "rules", "rules", "rules", "rules", "rules"]
 
 
@@ -82,7 +90,10 @@ def generator(config, guarded, warm=False):
     return prefix + "-cfg-" + digest + ":Qwen3-8B"
 
 
-def analyze(log_dir, summary_path, artifact_path):
+def analyze(log_dir, summary_path, artifact_path, profile_set="sampled4"):
+    if profile_set not in PROFILE_SETS:
+        raise ValueError("Unknown declared operations profile set")
+    profiles = PROFILE_SETS[profile_set]
     summary = json.loads(summary_path.read_text())
     artifact_raw = artifact_path.read_bytes()
     artifact = json.loads(artifact_raw)
@@ -107,7 +118,7 @@ def analyze(log_dir, summary_path, artifact_path):
     games = {}
     for game in summary.get("games", []):
         match, arm = game.get("match_hash"), game.get("assigned_arm")
-        if not isinstance(match, str) or not match or arm not in PROFILES:
+        if not isinstance(match, str) or not match or arm not in profiles:
             issue("malformed_summary_game")
             continue
         if match in games:
@@ -142,14 +153,14 @@ def analyze(log_dir, summary_path, artifact_path):
         by_match[match].append((path, rows))
 
     arm_counts, resolved_counts = Counter(), Counter()
-    counters = {arm: Counter() for arm in PROFILES}
-    timings = {arm: defaultdict(list) for arm in PROFILES}
-    direct_errors = {arm: Counter() for arm in PROFILES}
-    selector_errors = {arm: Counter() for arm in PROFILES}
-    proposer_errors = {arm: Counter() for arm in PROFILES}
-    generation_counts = {arm: Counter() for arm in PROFILES}
-    config_counts = {arm: Counter() for arm in PROFILES}
-    direct_models = {arm: Counter() for arm in PROFILES}
+    counters = {arm: Counter() for arm in profiles}
+    timings = {arm: defaultdict(list) for arm in profiles}
+    direct_errors = {arm: Counter() for arm in profiles}
+    selector_errors = {arm: Counter() for arm in profiles}
+    proposer_errors = {arm: Counter() for arm in profiles}
+    generation_counts = {arm: Counter() for arm in profiles}
+    config_counts = {arm: Counter() for arm in profiles}
+    direct_models = {arm: Counter() for arm in profiles}
 
     def add_time(arm, key, value, match):
         if isinstance(value, bool) or not isinstance(value, (float, int)) or not math.isfinite(value) or value < 0:
@@ -160,7 +171,7 @@ def analyze(log_dir, summary_path, artifact_path):
     for match, game in games.items():
         arm = game["assigned_arm"]
         arm_counts[arm] += 1
-        mode, guard, checkpoint = PROFILES[arm]
+        mode, guard, checkpoint = profiles[arm]
         seat = game.get("assigned_seat")
         if type(seat) is not int or seat not in range(7):
             issue("invalid_assigned_seat", match)
@@ -313,7 +324,7 @@ def analyze(log_dir, summary_path, artifact_path):
             if "selector_seconds" in row:
                 add_time(arm, "focal_selector", row["selector_seconds"], match)
 
-    for arm in PROFILES:
+    for arm in profiles:
         if resolved_counts[arm] < 12:
             missing.append(dict(arm=arm, reason="fewer_than_12_resolved_games", resolved=resolved_counts[arm]))
         expected_resolved = summary.get("arms", {}).get(arm, {}).get("resolved")
@@ -330,7 +341,7 @@ def analyze(log_dir, summary_path, artifact_path):
         "E_F_overlap_hashes": overlap, "assigned_games": len(games),
         "assigned_by_arm": dict(arm_counts), "resolved_by_arm": dict(resolved_counts),
         "expected_profiles": {arm: dict(mode=mode, guard=guard, checkpoint_id=checkpoint)
-                              for arm, (mode, guard, checkpoint) in PROFILES.items()},
+                              for arm, (mode, guard, checkpoint) in profiles.items()},
         "per_arm_operations": {arm: {
             "counts": dict(counters[arm]), "selector_error_counts": dict(selector_errors[arm]),
             "proposer_error_counts": dict(proposer_errors[arm]),
@@ -340,7 +351,7 @@ def analyze(log_dir, summary_path, artifact_path):
             "generator_id_counts": dict(generation_counts[arm]),
             "configuration_counts": [{"configuration": json.loads(key), "count": count}
                                      for key, count in config_counts[arm].items()],
-        } for arm in PROFILES},
+        } for arm in profiles},
         "summary_reference": {key: summary.get(key) for key in
                               ("seed", "assignment_version", "receipt_count", "arms",
                                "observed_model_configurations", "model_configurations_by_arm")},
@@ -359,6 +370,7 @@ def main():
     parser.add_argument("log_dir", type=Path)
     parser.add_argument("--summary", type=Path, required=True)
     parser.add_argument("--training-artifact", type=Path, required=True)
+    parser.add_argument("--profile-set", choices=tuple(PROFILE_SETS), default="sampled4")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     if not args.log_dir.is_dir():
@@ -366,7 +378,7 @@ def main():
     if args.out.exists() or args.out.resolve() in {args.summary.resolve(), args.training_artifact.resolve()}:
         parser.error("Choose a new audit output path")
     try:
-        report = analyze(args.log_dir, args.summary, args.training_artifact)
+        report = analyze(args.log_dir, args.summary, args.training_artifact, args.profile_set)
     except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
         report = {"audit_integrity_passed": False, "cohort_complete": False, "exit_code": 1,
                   "protocol_issues": [{"error": "unreadable_or_structurally_invalid_audit_input",

@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/UCLA-Trustworthy-AI-Lab/altruagent-starter",
+  "head": "be680b1435c12569beb8ea1d239538efff8d8f82",
+  "code_diff_sha256": "6ff606079606271cab5c25b61e5de0cd7aae7f8c2507a8ca62eccf6b940a9298",
+  "code_diff_scope": [
+    "altruagent/runner.py",
+    "altruagent/worker.py"
+  ],
+  "code_diff_size": "2files,8insertions",
+  "project_patches_sha256": {
+    "starter-game-result.patch": "cb153bdf49f9e283b8ba090bdbdb0f6ccca00524303ac0945ec925ec422bb1c8",
+    "starter-message-result.patch": "6aff6b80af6676b7c12eb795d1f6f2f84879a100630913d57831189a66eb61a6"
+  },
+  "purpose": "Record SDK settlement/message-ack callback modifications used throughout E and F; read-only metadata inspection, no SDK mutation.",
+  "modified_files_sha256": {
+    "altruagent/runner.py": "347f7735525bf4d9d14552d2cdb9ee0ea0c60a4dc1f4fb7eda71653ad6504051",
+    "altruagent/worker.py": "75fc4ad124759df218c2592a62d3ba35e6097fe180f855dcf88999d897d0bf25"
+  }
+}
