@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import dataclass
+import hashlib
 import json
 from pathlib import Path
 import os
@@ -16,6 +17,7 @@ from altruagent import SendMessage, TERMINATE_MESSAGING
 
 from .beliefs import build_suspicion, known_roles, parse_role, seat_from_name
 from .learned import SEER_CLAIM
+from .grounding import GUARD_VERSION, PROMPT_VERSION, option_target, permitted_targets, private_roles
 from .policy import WerewolfPolicy, _all_messages, _state_data, _target
 from .selector import FEATURES, Selector
 from .variants import LLMPolicy, wolf_probabilities
@@ -54,9 +56,10 @@ class Option:
 class HybridPolicy(WerewolfPolicy):
     """Select from the same model-generated slate in each experimental mode."""
 
-    def __init__(self, mode, weights_path=None, seed=None):
+    def __init__(self, mode, weights_path=None, seed=None, allow_tournament=False):
         super().__init__()
         self.mode = mode
+        self.allow_tournament = allow_tournament
         self.selector = None if mode == "llm_select" else Selector(mode, weights_path, seed)
         self._strategy_version = mode
         self.opponent_pool = None
@@ -65,6 +68,7 @@ class HybridPolicy(WerewolfPolicy):
         self._decision_number = 0
         self._pending_action = None
         self._pending_speech = None
+        self._candidate_guard = {}
 
     def _view(self, state, context):
         game, players = _state_data(state)
@@ -103,18 +107,49 @@ class HybridPolicy(WerewolfPolicy):
 
     def _actions(self, state, view, scores, activity, claims):
         phase, role, known = view["phase"], view["role"], view["private_knowledge"]
-        candidates = [a for a in state.legal_actions if _target(a) is not None]
-        if phase == "day_vote" and role == "wolf":
-            candidates = [a for a in candidates if known.get(_target(a)) != "wolf"]
-        if phase == "day_vote" and role == "seer":
-            candidates = [a for a in candidates if known.get(_target(a)) == "wolf"] or candidates
-        if phase == "night_seer":
-            candidates = [a for a in candidates if _target(a) not in known] or candidates
+        grounded = os.environ.get("WEREWOLF_PROPOSER") == "grounded"
+        target_of = (lambda action: option_target({"text": action.label})) if grounded else _target
+        candidates = [a for a in state.legal_actions if target_of(a) is not None]
+        self._candidate_guard = {}
+        if grounded:
+            before = list(candidates)
+            allowed, reason = permitted_targets(view, {target_of(action) for action in candidates})
+            candidates = [action for action in candidates if target_of(action) in allowed]
+            self._candidate_guard = dict(version=GUARD_VERSION, reason=reason,
+                                         before_target_ids=[action.action_id for action in before],
+                                         retained_ids=[action.action_id for action in candidates])
+        else:
+            if phase == "day_vote" and role == "wolf":
+                candidates = [a for a in candidates if known.get(_target(a)) != "wolf"]
+            if phase == "day_vote" and role == "seer":
+                verified_guard = os.environ.get("WEREWOLF_EVIDENCE_GUARD") == "verified-innocent-v1"
+                if verified_guard:
+                    known = private_roles(view)
+                    before = list(candidates)
+                candidates = [a for a in candidates if known.get(_target(a)) == "wolf"] or candidates
+                if verified_guard:
+                    has_wolf = any(known.get(_target(action)) == "wolf" for action in candidates)
+                    unknown = [action for action in candidates if _target(action) not in known]
+                    if not has_wolf and unknown:
+                        candidates = unknown
+                    self._candidate_guard = dict(
+                        version="verified-innocent-v1",
+                        reason=("prefer_confirmed_wolf" if has_wolf else
+                                "avoid_confirmed_innocent_when_unknown_available" if unknown else
+                                "all_known_legal_fallback"),
+                        before_target_ids=[action.action_id for action in before],
+                        retained_ids=[action.action_id for action in candidates])
+            if phase == "night_seer":
+                candidates = [a for a in candidates if _target(a) not in known] or candidates
+        used_legal_fallback = not candidates
         candidates = candidates or state.legal_actions
+        if self._candidate_guard:
+            self._candidate_guard["retained_ids"] = [action.action_id for action in candidates]
+            self._candidate_guard["used_all_legal_fallback"] = used_legal_fallback
         largest_activity = max(activity.values(), default=1)
         options = []
         for a in candidates:
-            target = _target(a)
+            target = target_of(a)
             s = (0.8 * (target in claims) + 0.2 * activity[target]/largest_activity
                  if phase == "night_wolf" else max(-1., min(1., scores.get(target, 0.)/4.)))
             options.append(Option(str(a.action_id), str(a.label), target, s, a))
@@ -146,6 +181,8 @@ class HybridPolicy(WerewolfPolicy):
         started = time.monotonic()
         proposals = []
         error = None
+        if self._model is not None:
+            self._model.proposal_diagnostics = {}
         if len(options) > 1:
             try:
                 if not (os.environ.get("WEREWOLF_MODEL_PATH") or os.environ.get("WEREWOLF_CPU_MODEL")
@@ -153,8 +190,12 @@ class HybridPolicy(WerewolfPolicy):
                     raise RuntimeError("Hybrid inference requires an explicitly configured local backend")
                 if self._model is None:
                     self._model = LLMPolicy("hybrid")
+                available = [{"id": o.id, "text": o.label} for o in options]
+                if self._model.proposer == "grounded":
+                    for item, option in zip(available, options):
+                        item["target"] = option.target
                 prompt = dict(view, task="propose_speech" if speech else "propose_action",
-                              available=[{"id": o.id, "text": o.label} for o in options])
+                              available=available)
                 content = self._model._complete([
                     {"role": "system", "content": (
                         "Play seven-seat Werewolf for your faction. Return ONLY a JSON object with "
@@ -196,6 +237,8 @@ class HybridPolicy(WerewolfPolicy):
     def _select(self, context, view, options, votes, speech):
         slate, proposed, error, elapsed = self._propose(view, options, speech)
         role, known = view["role"], view["private_knowledge"]
+        if os.environ.get("WEREWOLF_PROPOSER") == "grounded":
+            known = private_roles(view)
         total = sum(votes.values()) or 1
         features = []
         for o in slate:
@@ -224,14 +267,60 @@ class HybridPolicy(WerewolfPolicy):
         )
         model_id = Path(backend).name if backend else (
             self._model.model if isinstance(self._model, LLMPolicy) else "unconfigured")
+        proposer = os.environ.get("WEREWOLF_PROPOSER", "ids")
+        configuration = self._model.proposal_configuration() if isinstance(self._model, LLMPolicy) else {}
+        configured_identity = {
+            "proposer": proposer,
+            "prompt_version": (PROMPT_VERSION if proposer == "grounded" else
+                               "reasoned-v1" if proposer == "reasoned" else "legacy-v1"),
+            "requested_dtype": os.environ.get("WEREWOLF_MODEL_DTYPE", "auto"),
+            "device": os.environ.get("WEREWOLF_MODEL_DEVICE", "cpu"),
+            "requested_revision": os.environ.get("WEREWOLF_MODEL_REVISION", "unspecified"),
+        }
+        if "WEREWOLF_CPU_THREADS" in os.environ:
+            configured_identity["requested_cpu_threads"] = os.environ["WEREWOLF_CPU_THREADS"]
+        evidence_guard = os.environ.get("WEREWOLF_EVIDENCE_GUARD", "none")
+        if evidence_guard == "verified-innocent-v1":
+            configured_identity["evidence_guard_version"] = evidence_guard
+        elif evidence_guard != "none":
+            configured_identity["requested_evidence_guard"] = evidence_guard
+        if proposer == "reasoned":
+            configured_identity.update(
+                reasoning_max_tokens=os.environ.get("WEREWOLF_REASONING_MAX_TOKENS", "48"),
+                reasoning_seconds=os.environ.get("WEREWOLF_REASONING_SECONDS", "30"),
+            )
+        elif proposer == "grounded":
+            configured_identity.update(candidate_guard_version=GUARD_VERSION,
+                                       proposal_seconds=os.environ.get("WEREWOLF_REASONING_SECONDS", "30"))
+            if os.environ.get("WEREWOLF_GROUNDED_ORDER_BALANCE", "none") == "cyclic":
+                configured_identity["aggregation_version"] = "cyclic-mean-offered-logp-v1"
+        generator = "hybrid-slate-v1" + ("-credibility" if self._structured_beliefs else "")
+        if proposer == "judge":
+            generator += "-judge"
+        elif proposer == "reasoned":
+            generator += "-reasoned-v1"
+        elif proposer == "grounded":
+            generator += "-grounded-v2"
+        if evidence_guard == "verified-innocent-v1":
+            generator += "-verified-innocent-v1"
+        if (proposer in {"reasoned", "grounded"} or "WEREWOLF_MODEL_DTYPE" in os.environ
+                or "WEREWOLF_MODEL_REVISION" in os.environ or "WEREWOLF_CPU_THREADS" in os.environ
+                or evidence_guard != "none"):
+            resolved_identity = dict(configured_identity,
+                                     actual_dtype=configuration.get("actual_dtype", "unloaded"),
+                                     actual_revision=configuration.get("actual_revision", "unresolved"))
+            if "WEREWOLF_CPU_THREADS" in os.environ:
+                resolved_identity["actual_cpu_threads"] = configuration.get("actual_cpu_threads", "unloaded")
+            payload = json.dumps(resolved_identity, sort_keys=True, separators=(",", ":")).encode()
+            generator += "-cfg-" + hashlib.sha256(payload).hexdigest()[:12]
         self._ensure_logger(context)._write({
             "event": "hybrid_choice", "decision_id": self._decision_number, "mode": self.mode,
             "opponent_pool": self.opponent_pool,
-            "generator_id": (
-                "hybrid-slate-v1" + ("-credibility" if self._structured_beliefs else "")
-                + ("-judge" if os.environ.get("WEREWOLF_PROPOSER") == "judge" else "")
-                + f":{model_id}"
-            ),
+            "generator_id": generator + f":{model_id}",
+            "proposer_configuration": configuration or {
+                **configured_identity, "actual_dtype": "unloaded", "actual_revision": "unresolved"},
+            "proposal_diagnostics": dict(getattr(self._model, "proposal_diagnostics", {})),
+            "candidate_guard": self._candidate_guard if not speech else {},
             "sampled": self.mode == "hybrid_collect" and bool(proposed) and len(slate) > 1,
             "delivery_method": ("terminate_messaging" if slate[index].id == "5" else "send_message")
                                if speech else "play_action",
@@ -251,7 +340,7 @@ class HybridPolicy(WerewolfPolicy):
 
     def choose_action(self, state, context):
         self._delivery(context, "_pending_action", {"error": "unconfirmed_before_new_action"})
-        if context.tournament_id is not None or not state.legal_actions:
+        if (context.tournament_id is not None and not self.allow_tournament) or not state.legal_actions:
             return super().choose_action(state, context)
         view, scores, activity, claims, votes = self._view(state, context)
         options = self._actions(state, view, scores, activity, claims)
@@ -261,7 +350,7 @@ class HybridPolicy(WerewolfPolicy):
 
     def choose_message(self, state, context):
         self._delivery(context, "_pending_speech", {"error": "unconfirmed_before_new_message"})
-        if context.tournament_id is not None:
+        if context.tournament_id is not None and not self.allow_tournament:
             return super().choose_message(state, context)
         view, scores, _, _, votes = self._view(state, context)
         if view["day"] == self._last_messaged_day:

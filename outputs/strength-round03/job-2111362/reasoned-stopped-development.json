@@ -1,0 +1,1437 @@
+{
+  "configuration": {
+    "proposer": "reasoned",
+    "prompt_version": "reasoned-v1",
+    "requested_dtype": "bfloat16",
+    "actual_dtype": "bfloat16",
+    "device": "cpu",
+    "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "reasoning_max_tokens": 48,
+    "reasoning_seconds": 30.0
+  },
+  "model_path": "/work/zzl/2111362/wolfreasoner-models.bM5naY/Qwen3-8B",
+  "rows": [
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 0,
+      "candidate_order": "ascending",
+      "options": [
+        "1",
+        "2"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 16.352,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 27,
+        "budget_exhausted": false,
+        "preparation_seconds": 2.43,
+        "elapsed_seconds": 16.334,
+        "generation_seconds": 11.672,
+        "rationale": "Best move: day_vote Player2. Evidence: private_knowledge shows Player2 as wolf, and Player1 has no evidence.",
+        "ranking_seconds": 2.211
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 0,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "1"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.312,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 23,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.311,
+        "generation_seconds": 10.119,
+        "rationale": "Vote Player2. Evidence: private_knowledge shows Player2 is a wolf, and Player3 claims this.",
+        "ranking_seconds": 2.19
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 0,
+      "candidate_order": "ascending",
+      "options": [
+        "1",
+        "2"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 18.984,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 42,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 18.984,
+        "generation_seconds": 16.797,
+        "rationale": "The best move is \"night_wolf Player2\". Evidence: Player1 claims to be seer and confirmed Player4 is wolf, suggesting Player1 might be lying, making Player2 a safer target.",
+        "ranking_seconds": 2.184
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 0,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "1"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "1",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 16.992,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 36,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 16.992,
+        "generation_seconds": 14.752,
+        "rationale": "The best move is \"night_wolf Player1\". Evidence: Player1 claims to be the seer and confirmed Player4 is a wolf, aligning with private knowledge.",
+        "ranking_seconds": 2.236
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 0,
+      "candidate_order": "ascending",
+      "options": [
+        "1",
+        "2"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 15.787,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 33,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.786,
+        "generation_seconds": 13.64,
+        "rationale": "Best move: night_seer Player2. Evidence: Seer's private knowledge identifies Player2 as villager, aligning with role and minimizing wolf threat.",
+        "ranking_seconds": 2.144
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 0,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "1"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.998,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 31,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.998,
+        "generation_seconds": 12.902,
+        "rationale": "Best move: night_seer Player2. Evidence: private_knowledge confirms Player2 is villager, making them a safer target than Player1.",
+        "ranking_seconds": 2.091
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 1,
+      "candidate_order": "ascending",
+      "options": [
+        "2",
+        "3"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "ranked": [
+        "3",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.1,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 28,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.1,
+        "generation_seconds": 11.851,
+        "rationale": "Vote Player3. Evidence shows Player3 is a wolf via private knowledge, and Player4 claims this. Player2 has no evidence.",
+        "ranking_seconds": 2.245
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 1,
+      "candidate_order": "descending",
+      "options": [
+        "3",
+        "2"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "ranked": [
+        "3",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.834,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 30,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.834,
+        "generation_seconds": 12.605,
+        "rationale": "Vote Player3. Evidence: Seer knows Player3 is wolf, wolf's prior accusation, and Player3 is a plausible seer target.",
+        "ranking_seconds": 2.224
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 1,
+      "candidate_order": "ascending",
+      "options": [
+        "2",
+        "3"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "ranked": [
+        "3",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 19.147,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 42,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 19.146,
+        "generation_seconds": 16.886,
+        "rationale": "The best move is \"night_wolf Player3\". Evidence shows Player5 is a wolf, and Player2's claim as seer is unverified, making Player3 a plausible seer to protect.",
+        "ranking_seconds": 2.256
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 1,
+      "candidate_order": "descending",
+      "options": [
+        "3",
+        "2"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "ranked": [
+        "2",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 17.105,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 36,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 17.105,
+        "generation_seconds": 14.766,
+        "rationale": "The best move is \"night_wolf Player2\". Evidence: Player2 claims to be the seer and confirmed Player5 is a wolf, aligning with private knowledge.",
+        "ranking_seconds": 2.335
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 1,
+      "candidate_order": "ascending",
+      "options": [
+        "2",
+        "3"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "ranked": [
+        "3",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 16.552,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 35,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 16.551,
+        "generation_seconds": 14.392,
+        "rationale": "Best move: night_seer Player3. Evidence: private_knowledge identifies Player3 as villager, aligns with seer's role to investigate non-wolves.",
+        "ranking_seconds": 2.153
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 1,
+      "candidate_order": "descending",
+      "options": [
+        "3",
+        "2"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "ranked": [
+        "3",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 15.041,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 31,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.041,
+        "generation_seconds": 12.948,
+        "rationale": "Best move: night_seer Player3. Evidence: private_knowledge confirms Player3 is villager, making them a safer target than Player2.",
+        "ranking_seconds": 2.089
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 2,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "4"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "ranked": [
+        "4",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 15.24,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 31,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.239,
+        "generation_seconds": 12.869,
+        "rationale": "Vote Player4. Evidence shows Player4 is a wolf per private knowledge and Player5's claim, aligning with the revealed death of a wolf.",
+        "ranking_seconds": 2.367
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 2,
+      "candidate_order": "descending",
+      "options": [
+        "4",
+        "3"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "ranked": [
+        "4",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 13.369,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 26,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 13.369,
+        "generation_seconds": 11.183,
+        "rationale": "Vote Player4. Evidence: Seer knows Player4 is wolf, wolf's accusation, and Player3 has no evidence.",
+        "ranking_seconds": 2.182
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 2,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "4"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "ranked": [
+        "4",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 18.434,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 40,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 18.434,
+        "generation_seconds": 16.152,
+        "rationale": "The best move is \"night_wolf Player4\". Evidence shows Player6 is a wolf, and Player3 claims to be the seer, making Player4 a plausible non-wolf target.",
+        "ranking_seconds": 2.277
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 2,
+      "candidate_order": "descending",
+      "options": [
+        "4",
+        "3"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "ranked": [
+        "3",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 16.488,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 37,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 16.487,
+        "generation_seconds": 14.455,
+        "rationale": "The best move is \"night_wolf Player3\". Evidence shows Player3 claims to be the seer and confirmed Player6 as a wolf, aligning with wolf faction goals.",
+        "ranking_seconds": 2.028
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 2,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "4"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "ranked": [
+        "4",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.069,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 26,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.069,
+        "generation_seconds": 10.197,
+        "rationale": "Best move: night_seer Player4. Evidence: private_knowledge confirms Player4 is villager, minimizing wolf risk.",
+        "ranking_seconds": 1.868
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 2,
+      "candidate_order": "descending",
+      "options": [
+        "4",
+        "3"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "ranked": [
+        "4",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.002,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 31,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.002,
+        "generation_seconds": 11.833,
+        "rationale": "Best move: night_seer Player4. Evidence: private_knowledge confirms Player4 is villager, making them a safer target than Player3.",
+        "ranking_seconds": 2.166
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 3,
+      "candidate_order": "ascending",
+      "options": [
+        "4",
+        "5"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "ranked": [
+        "5",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 11.865,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 23,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 11.864,
+        "generation_seconds": 9.895,
+        "rationale": "Vote Player5. Evidence shows Player5 is a wolf per private knowledge and Player4's accusation lacks proof.",
+        "ranking_seconds": 1.966
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 3,
+      "candidate_order": "descending",
+      "options": [
+        "5",
+        "4"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "ranked": [
+        "5",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.834,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 31,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.834,
+        "generation_seconds": 12.427,
+        "rationale": "Vote Player5. Evidence shows Player5 is a wolf per private knowledge and Player6's claim, aligning with the revealed death of a wolf.",
+        "ranking_seconds": 2.404
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 3,
+      "candidate_order": "ascending",
+      "options": [
+        "4",
+        "5"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "ranked": [
+        "5",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 18.743,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 41,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 18.741,
+        "generation_seconds": 16.431,
+        "rationale": "The best move is night_wolf Player5. Evidence shows Player0 is a wolf, and Player4 claims to be the seer, making Player5 a safer target for the wolf's protection.",
+        "ranking_seconds": 2.307
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 3,
+      "candidate_order": "descending",
+      "options": [
+        "5",
+        "4"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "ranked": [
+        "4",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 17.216,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 37,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 17.216,
+        "generation_seconds": 14.979,
+        "rationale": "The best move is \"night_wolf Player4\". Evidence shows Player4 claims to be the seer and confirmed Player0 is a wolf, aligning with wolf faction goals.",
+        "ranking_seconds": 2.233
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 3,
+      "candidate_order": "ascending",
+      "options": [
+        "4",
+        "5"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "ranked": [
+        "5",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.059,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 28,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.059,
+        "generation_seconds": 11.875,
+        "rationale": "Best move: night_seer Player5. Evidence: Seer's private knowledge identifies Player5 as villager, minimizing wolf threat.",
+        "ranking_seconds": 2.181
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 3,
+      "candidate_order": "descending",
+      "options": [
+        "5",
+        "4"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "ranked": [
+        "5",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 15.12,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 31,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.12,
+        "generation_seconds": 13.005,
+        "rationale": "Best move: night_seer Player5. Evidence: private_knowledge confirms Player5 is villager, making them a safer target than Player4.",
+        "ranking_seconds": 2.111
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 4,
+      "candidate_order": "ascending",
+      "options": [
+        "5",
+        "6"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "ranked": [
+        "6",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.338,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 23,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.338,
+        "generation_seconds": 10.147,
+        "rationale": "Vote Player6. Evidence shows Player6 is a wolf, and the seer's private knowledge confirms it.",
+        "ranking_seconds": 2.186
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 4,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "5"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "ranked": [
+        "6",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.343,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 23,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.343,
+        "generation_seconds": 10.139,
+        "rationale": "Vote Player6. Evidence shows Player6 is a wolf via private knowledge, and Player5 has no evidence.",
+        "ranking_seconds": 2.2
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 4,
+      "candidate_order": "ascending",
+      "options": [
+        "5",
+        "6"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "ranked": [
+        "5",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 16.706,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 35,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 16.705,
+        "generation_seconds": 14.285,
+        "rationale": "The best move is night_wolf Player5. Evidence shows Player5 claims to be the seer and confirmed Player1 is a wolf, aligning with private knowledge.",
+        "ranking_seconds": 2.416
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 4,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "5"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "ranked": [
+        "5",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 17.432,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 37,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 17.432,
+        "generation_seconds": 15.129,
+        "rationale": "The best move is \"night_wolf Player5\". Evidence shows Player5 claims to be the seer and confirmed Player1 is a wolf, aligning with wolf faction goals.",
+        "ranking_seconds": 2.297
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 4,
+      "candidate_order": "ascending",
+      "options": [
+        "5",
+        "6"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "ranked": [
+        "6",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.916,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 30,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.916,
+        "generation_seconds": 12.713,
+        "rationale": "Best move: night_seer Player6. Evidence: private_knowledge confirms Player6 is villager, making them a safe target for investigation.",
+        "ranking_seconds": 2.197
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 4,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "5"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "ranked": [
+        "6",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.815,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 30,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.814,
+        "generation_seconds": 12.635,
+        "rationale": "Best move: night_seer Player6. Evidence: private_knowledge confirms Player6 is villager, making them a safe target for investigation.",
+        "ranking_seconds": 2.175
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 5,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "6"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "ranked": [
+        "0",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.477,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 23,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.477,
+        "generation_seconds": 10.153,
+        "rationale": "Vote Player0. Evidence shows Player0 is a wolf via private knowledge and Player6's accusation without evidence.",
+        "ranking_seconds": 2.319
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 5,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "0"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "ranked": [
+        "0",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 11.475,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 20,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 11.474,
+        "generation_seconds": 9.136,
+        "rationale": "Vote Player0. Evidence shows Player0 is a wolf based on private knowledge and prior accusations.",
+        "ranking_seconds": 2.334
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 5,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "6"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "ranked": [
+        "6",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 17.335,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 37,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 17.335,
+        "generation_seconds": 15.046,
+        "rationale": "The best move is \"night_wolf Player6\". Evidence shows Player6 claims to be the seer and confirmed Player2 is a wolf, aligning with wolf faction goals.",
+        "ranking_seconds": 2.286
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 5,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "0"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "ranked": [
+        "6",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 17.009,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 37,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 17.008,
+        "generation_seconds": 14.787,
+        "rationale": "The best move is to night_wolf Player6. Evidence shows Player6 claims to be the seer and confirmed Player2 is a wolf, aligning with wolf faction goals.",
+        "ranking_seconds": 2.217
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 5,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "6"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "ranked": [
+        "6",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 15.542,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 33,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.542,
+        "generation_seconds": 13.457,
+        "rationale": "Best move: night_seer Player6. Evidence: Seer's private knowledge identifies Player6 as a villager, making them a safer target for investigation.",
+        "ranking_seconds": 2.081
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 5,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "0"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "ranked": [
+        "0",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 14.254,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 29,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 14.254,
+        "generation_seconds": 12.118,
+        "rationale": "Best move: night_seer Player0. Evidence: Seer knows Player0 is villager, should target non-wolf for investigation.",
+        "ranking_seconds": 2.133
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 6,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "1"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.179,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 23,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.178,
+        "generation_seconds": 9.941,
+        "rationale": "Vote Player1. Evidence shows Player1 is a wolf, and the seer's private knowledge confirms it.",
+        "ranking_seconds": 2.234
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_confirmed_vote",
+      "seat": 6,
+      "candidate_order": "descending",
+      "options": [
+        "1",
+        "0"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.297,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 23,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.297,
+        "generation_seconds": 10.036,
+        "rationale": "Vote Player1. Evidence shows Player1 is a wolf via private knowledge, and Player0 has no evidence.",
+        "ranking_seconds": 2.257
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 6,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "1"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 17.433,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 39,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 17.433,
+        "generation_seconds": 15.269,
+        "rationale": "The best move is \"night_wolf Player1\". Evidence shows Player3 is a wolf, and Player0 claims to be the seer, making Player1 a plausible seer target.",
+        "ranking_seconds": 2.16
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "wolf_remove_seer",
+      "seat": 6,
+      "candidate_order": "descending",
+      "options": [
+        "1",
+        "0"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "ranked": [
+        "0",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 15.722,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 37,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.722,
+        "generation_seconds": 13.876,
+        "rationale": "The best move is \"night_wolf Player0\". Evidence shows Player0 claims to be the seer and confirmed Player3 is a wolf, aligning with wolf faction goals.",
+        "ranking_seconds": 1.843
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 6,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "1"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 15.977,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 39,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.977,
+        "generation_seconds": 14.212,
+        "rationale": "Best move: night_seer Player1. Evidence: Seer's private knowledge identifies Player1 as villager, aligns with revealed wolf death, and supports targeting a non-wolf.",
+        "ranking_seconds": 1.762
+      }
+    },
+    {
+      "suite": "historical",
+      "scenario": "seer_avoid_repeat",
+      "seat": 6,
+      "candidate_order": "descending",
+      "options": [
+        "1",
+        "0"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 15.699,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 35,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.699,
+        "generation_seconds": 13.581,
+        "rationale": "Best move: Night_seer Player1. Evidence: Private_knowledge confirms Player1 is villager, aligning with seer's role to investigate non-wolves.",
+        "ranking_seconds": 2.114
+      }
+    },
+    {
+      "suite": "fresh",
+      "scenario": "verified_check_over_claim",
+      "seat": 0,
+      "candidate_order": "ascending",
+      "options": [
+        "1",
+        "2"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 12.868,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 26,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 12.868,
+        "generation_seconds": 10.805,
+        "rationale": "The best move is day_vote Player2. Evidence shows Player2 is a wolf via private knowledge and Player3's message.",
+        "ranking_seconds": 2.06
+      }
+    },
+    {
+      "suite": "fresh",
+      "scenario": "verified_check_over_claim",
+      "seat": 0,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "1"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 15.328,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 32,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 15.328,
+        "generation_seconds": 13.176,
+        "rationale": "Vote Player2. Evidence shows Player2 is a wolf via private knowledge and Player3's claim, aligning with seer's role to target wolves.",
+        "ranking_seconds": 2.148
+      }
+    },
+    {
+      "suite": "fresh",
+      "scenario": "investigate_unknown_set",
+      "seat": 0,
+      "candidate_order": "ascending",
+      "options": [
+        "1",
+        "2",
+        "3"
+      ],
+      "expected_ids": [
+        "1",
+        "3"
+      ],
+      "ranked": [
+        "2",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": false,
+      "elapsed_seconds": 16.298,
+      "diagnostics": {
+        "rationale_truncated": false,
+        "rationale_tokens": 35,
+        "budget_exhausted": false,
+        "preparation_seconds": 0.0,
+        "elapsed_seconds": 16.297,
+        "generation_seconds": 14.16,
+        "rationale": "Best move: night_seer Player2. Evidence: Seer's private knowledge identifies Player2 as villager, aligning with revealed wolf death and minimizing wolf threat.",
+        "ranking_seconds": 2.135
+      }
+    }
+  ],
+  "summary": {
+    "historical": {
+      "presentations": 42,
+      "accepted": 42,
+      "scored": 42,
+      "preferred_first": 10,
+      "first_option_control": 21,
+      "order_pairs": 21,
+      "changed_top1": 6,
+      "median_seconds": 15.18,
+      "max_seconds": 19.147
+    },
+    "fresh": {
+      "presentations": 3,
+      "accepted": 3,
+      "scored": 3,
+      "preferred_first": 0,
+      "first_option_control": 2,
+      "order_pairs": 1,
+      "changed_top1": 0,
+      "median_seconds": 15.328,
+      "max_seconds": 16.298
+    }
+  }
+}

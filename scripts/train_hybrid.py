@@ -96,6 +96,7 @@ def main():
     with args.output.open("x") as stream:
         json.dump({"schema_version": 1, "features": FEATURES, "weights": weights,
                    "parent": selector.checkpoint_id, "train_games": len(games),
+                   "update_step": args.step,
                    "generator_id": args.generator_id,
                    "train_roles": roles, "estimator": "on_policy_reinforce",
                    "train_match_hashes": sorted(games)}, stream, indent=2)

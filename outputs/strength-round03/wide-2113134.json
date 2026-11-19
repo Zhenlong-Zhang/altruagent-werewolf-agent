@@ -1,0 +1,951 @@
+{
+  "rows": [
+    {
+      "balance": "none",
+      "scenario": "vote_six",
+      "offered": 6,
+      "accepted": true,
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "error": null,
+      "elapsed_seconds": 7.761116977082565,
+      "configuration": {
+        "proposer": "grounded",
+        "prompt_version": "grounded-v2",
+        "requested_dtype": "bfloat16",
+        "actual_dtype": "bfloat16",
+        "device": "cpu",
+        "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "candidate_guard_version": "hard-evidence-v1",
+        "proposal_seconds": 30.0
+      },
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the villager."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "Vote to eliminate Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "Vote to eliminate Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "2",
+            "text": "Vote to eliminate Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "D",
+            "id": "3",
+            "text": "Vote to eliminate Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "E",
+            "id": "4",
+            "text": "Vote to eliminate Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "F",
+            "id": "5",
+            "text": "Vote to eliminate Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "no_additional_target_constraint",
+        "elapsed_seconds": 7.745
+      }
+    },
+    {
+      "balance": "none",
+      "scenario": "vote_seven_supported_bound",
+      "offered": 7,
+      "accepted": true,
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "error": null,
+      "elapsed_seconds": 4.954955111956224,
+      "configuration": {
+        "proposer": "grounded",
+        "prompt_version": "grounded-v2",
+        "requested_dtype": "bfloat16",
+        "actual_dtype": "bfloat16",
+        "device": "cpu",
+        "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "candidate_guard_version": "hard-evidence-v1",
+        "proposal_seconds": 30.0
+      },
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the villager."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "Vote to eliminate Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "Vote to eliminate Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "2",
+            "text": "Vote to eliminate Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "D",
+            "id": "3",
+            "text": "Vote to eliminate Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "E",
+            "id": "4",
+            "text": "Vote to eliminate Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "F",
+            "id": "5",
+            "text": "Vote to eliminate Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "G",
+            "id": "7",
+            "text": "Abstain",
+            "target": null,
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "no_additional_target_constraint",
+        "elapsed_seconds": 4.955
+      }
+    },
+    {
+      "balance": "none",
+      "scenario": "actual_wolf_speech_five",
+      "offered": 5,
+      "accepted": true,
+      "ranked": [
+        "4",
+        "2"
+      ],
+      "error": null,
+      "elapsed_seconds": 4.820526076946408,
+      "configuration": {
+        "proposer": "grounded",
+        "prompt_version": "grounded-v2",
+        "requested_dtype": "bfloat16",
+        "actual_dtype": "bfloat16",
+        "device": "cpu",
+        "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "candidate_guard_version": "hard-evidence-v1",
+        "proposal_seconds": 30.0
+      },
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the wolf."
+          },
+          {
+            "id": "K5",
+            "source": "known_wolf_pack",
+            "statement": "Player5 is my confirmed wolf partner."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "1",
+            "text": "Before voting, please name your strongest suspect and explain the evidence for that vote.",
+            "target": null,
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "2",
+            "text": "I want to hear Player0's reasoning before deciding. Who are you voting for, and why?",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "3",
+            "text": "I want a clearer explanation from Player1. Can we compare that account with what the table saw before we vote?",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "D",
+            "id": "4",
+            "text": "I lean toward voting for Player0. If you disagree, please explain the strongest reason to choose someone else.",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "E",
+            "id": "5",
+            "text": "Pass: end your turn without sending a public message.",
+            "target": null,
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "no_additional_target_constraint",
+        "elapsed_seconds": 4.82
+      }
+    },
+    {
+      "balance": "cyclic",
+      "scenario": "vote_six",
+      "offered": 6,
+      "accepted": true,
+      "ranked": [
+        "1",
+        "0"
+      ],
+      "error": null,
+      "elapsed_seconds": 28.796822174917907,
+      "configuration": {
+        "proposer": "grounded",
+        "prompt_version": "grounded-v2",
+        "requested_dtype": "bfloat16",
+        "actual_dtype": "bfloat16",
+        "device": "cpu",
+        "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "candidate_guard_version": "hard-evidence-v1",
+        "proposal_seconds": 30.0,
+        "aggregation_version": "cyclic-mean-offered-logp-v1"
+      },
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the villager."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "Vote to eliminate Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "Vote to eliminate Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "2",
+            "text": "Vote to eliminate Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "D",
+            "id": "3",
+            "text": "Vote to eliminate Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "E",
+            "id": "4",
+            "text": "Vote to eliminate Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "F",
+            "id": "5",
+            "text": "Vote to eliminate Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "no_additional_target_constraint",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 6,
+        "completed_passes": 6,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 4.909,
+            "offered_ids": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "normalized_logp": [
+              -19.5,
+              0.0,
+              -21.5,
+              -21.0,
+              -21.25,
+              -21.75
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 4.707,
+            "offered_ids": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "0"
+            ],
+            "normalized_logp": [
+              -24.25,
+              0.0,
+              -20.25,
+              -21.75,
+              -21.5,
+              -22.75
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 4.704,
+            "offered_ids": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "0",
+              "1"
+            ],
+            "normalized_logp": [
+              -21.25,
+              0.0,
+              -23.75,
+              -22.25,
+              -22.75,
+              -22.25
+            ]
+          },
+          {
+            "rotation": 3,
+            "seconds": 4.752,
+            "offered_ids": [
+              "3",
+              "4",
+              "5",
+              "0",
+              "1",
+              "2"
+            ],
+            "normalized_logp": [
+              -21.75,
+              0.0,
+              -21.75,
+              -20.0,
+              -20.75,
+              -22.25
+            ]
+          },
+          {
+            "rotation": 4,
+            "seconds": 4.682,
+            "offered_ids": [
+              "4",
+              "5",
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "normalized_logp": [
+              -25.25,
+              0.0,
+              -26.25,
+              -25.25,
+              -23.25,
+              -23.25
+            ]
+          },
+          {
+            "rotation": 5,
+            "seconds": 4.687,
+            "offered_ids": [
+              "5",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "normalized_logp": [
+              -18.0,
+              0.0,
+              -23.0,
+              -24.25,
+              -24.75,
+              -19.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 28.79,
+        "mean_normalized_logp": [
+          -21.666666666666668,
+          0.0,
+          -22.75,
+          -22.416666666666668,
+          -22.375,
+          -21.875
+        ]
+      }
+    },
+    {
+      "balance": "cyclic",
+      "scenario": "vote_seven_supported_bound",
+      "offered": 7,
+      "accepted": false,
+      "ranked": [],
+      "error": "TimeoutError",
+      "elapsed_seconds": 32.92881928291172,
+      "configuration": {
+        "proposer": "grounded",
+        "prompt_version": "grounded-v2",
+        "requested_dtype": "bfloat16",
+        "actual_dtype": "bfloat16",
+        "device": "cpu",
+        "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "candidate_guard_version": "hard-evidence-v1",
+        "proposal_seconds": 30.0,
+        "aggregation_version": "cyclic-mean-offered-logp-v1"
+      },
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": true,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the villager."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "Vote to eliminate Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "Vote to eliminate Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "2",
+            "text": "Vote to eliminate Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "D",
+            "id": "3",
+            "text": "Vote to eliminate Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "E",
+            "id": "4",
+            "text": "Vote to eliminate Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "F",
+            "id": "5",
+            "text": "Vote to eliminate Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "G",
+            "id": "7",
+            "text": "Abstain",
+            "target": null,
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "no_additional_target_constraint",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 7,
+        "completed_passes": 6,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 4.761,
+            "offered_ids": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "7"
+            ],
+            "normalized_logp": [
+              -19.75,
+              0.0,
+              -21.25,
+              -21.0,
+              -21.25,
+              -22.25,
+              -20.25
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 4.661,
+            "offered_ids": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "7",
+              "0"
+            ],
+            "normalized_logp": [
+              -27.25,
+              0.0,
+              -21.75,
+              -23.25,
+              -23.75,
+              -24.25,
+              -26.5
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 4.792,
+            "offered_ids": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "7",
+              "0",
+              "1"
+            ],
+            "normalized_logp": [
+              -21.5,
+              0.0,
+              -23.25,
+              -23.25,
+              -23.25,
+              -22.75,
+              -22.5
+            ]
+          },
+          {
+            "rotation": 3,
+            "seconds": 4.722,
+            "offered_ids": [
+              "3",
+              "4",
+              "5",
+              "7",
+              "0",
+              "1",
+              "2"
+            ],
+            "normalized_logp": [
+              -20.25,
+              -2.3841855067985307e-07,
+              -19.75,
+              -21.5,
+              -15.5,
+              -20.0,
+              -20.25
+            ]
+          },
+          {
+            "rotation": 4,
+            "seconds": 4.679,
+            "offered_ids": [
+              "4",
+              "5",
+              "7",
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "normalized_logp": [
+              -22.75,
+              0.0,
+              -21.25,
+              -25.75,
+              -19.75,
+              -20.75,
+              -22.5
+            ]
+          },
+          {
+            "rotation": 5,
+            "seconds": 4.758,
+            "offered_ids": [
+              "5",
+              "7",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "normalized_logp": [
+              -25.0,
+              0.0,
+              -25.5,
+              -25.0,
+              -24.75,
+              -21.5,
+              -21.5
+            ]
+          }
+        ],
+        "elapsed_seconds": 32.929
+      }
+    },
+    {
+      "balance": "cyclic",
+      "scenario": "actual_wolf_speech_five",
+      "offered": 5,
+      "accepted": true,
+      "ranked": [
+        "1",
+        "4"
+      ],
+      "error": null,
+      "elapsed_seconds": 23.827825313899666,
+      "configuration": {
+        "proposer": "grounded",
+        "prompt_version": "grounded-v2",
+        "requested_dtype": "bfloat16",
+        "actual_dtype": "bfloat16",
+        "device": "cpu",
+        "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "candidate_guard_version": "hard-evidence-v1",
+        "proposal_seconds": 30.0,
+        "aggregation_version": "cyclic-mean-offered-logp-v1"
+      },
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the wolf."
+          },
+          {
+            "id": "K5",
+            "source": "known_wolf_pack",
+            "statement": "Player5 is my confirmed wolf partner."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "1",
+            "text": "Before voting, please name your strongest suspect and explain the evidence for that vote.",
+            "target": null,
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "2",
+            "text": "I want to hear Player0's reasoning before deciding. Who are you voting for, and why?",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "3",
+            "text": "I want a clearer explanation from Player1. Can we compare that account with what the table saw before we vote?",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "D",
+            "id": "4",
+            "text": "I lean toward voting for Player0. If you disagree, please explain the strongest reason to choose someone else.",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "E",
+            "id": "5",
+            "text": "Pass: end your turn without sending a public message.",
+            "target": null,
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "no_additional_target_constraint",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 5,
+        "completed_passes": 5,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 4.994,
+            "offered_ids": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "normalized_logp": [
+              -3.957495927810669,
+              -1.2074960470199585,
+              -3.707495927810669,
+              -0.4574960172176361,
+              -3.707495927810669
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 4.691,
+            "offered_ids": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "1"
+            ],
+            "normalized_logp": [
+              -0.024360375478863716,
+              -9.274360656738281,
+              -7.274360179901123,
+              -3.774360418319702,
+              -8.024360656738281
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 4.711,
+            "offered_ids": [
+              "3",
+              "4",
+              "5",
+              "1",
+              "2"
+            ],
+            "normalized_logp": [
+              -0.013223567977547646,
+              -5.763223648071289,
+              -6.013223648071289,
+              -5.013223648071289,
+              -7.013223648071289
+            ]
+          },
+          {
+            "rotation": 3,
+            "seconds": 4.688,
+            "offered_ids": [
+              "4",
+              "5",
+              "1",
+              "2",
+              "3"
+            ],
+            "normalized_logp": [
+              -0.7153333425521851,
+              -2.7153334617614746,
+              -1.715333342552185,
+              -1.715333342552185,
+              -2.4653334617614746
+            ]
+          },
+          {
+            "rotation": 4,
+            "seconds": 4.741,
+            "offered_ids": [
+              "5",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "normalized_logp": [
+              -1.329010009765625,
+              -4.579010009765625,
+              -5.329010009765625,
+              -0.3290100395679474,
+              -7.579010009765625
+            ]
+          }
+        ],
+        "elapsed_seconds": 23.826,
+        "mean_normalized_logp": [
+          -1.207884644716978,
+          -4.707884764671325,
+          -4.807884621620178,
+          -2.257884693145752,
+          -5.757884740829468
+        ]
+      }
+    }
+  ],
+  "interpretation": "Latency diagnostic; no win-rate inference."
+}

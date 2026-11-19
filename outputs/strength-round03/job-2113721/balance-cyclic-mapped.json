@@ -1,0 +1,3700 @@
+{
+  "configuration": {
+    "proposer": "grounded",
+    "prompt_version": "grounded-v2",
+    "requested_dtype": "bfloat16",
+    "actual_dtype": "bfloat16",
+    "device": "cpu",
+    "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "candidate_guard_version": "hard-evidence-v1",
+    "proposal_seconds": 30.0,
+    "aggregation_version": "cyclic-mean-offered-logp-v1"
+  },
+  "suite": "mapped",
+  "scenarios_filter": "verified_check_over_claim,investigate_unknown_set",
+  "model_path": "/work/zzl/2113721/wolfreasoner-models.5QqmEU/Qwen3-8B",
+  "rows": [
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 0,
+      "candidate_order": "ascending",
+      "options": [
+        "4",
+        "5"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "offered": [
+        {
+          "id": "4",
+          "target": 1,
+          "label": "day_vote Player1"
+        },
+        {
+          "id": "5",
+          "target": 2,
+          "label": "day_vote Player2"
+        }
+      ],
+      "ranked": [
+        "4",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 6.005,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player0, the seer."
+          },
+          {
+            "id": "K1",
+            "source": "private_investigation",
+            "statement": "I investigated Player1: Player1 is a wolf."
+          },
+          {
+            "id": "K2",
+            "source": "private_investigation",
+            "statement": "I investigated Player2: Player2 is not a wolf."
+          },
+          {
+            "id": "D5",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player5 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "4",
+            "text": "day_vote Player1",
+            "target": "Player1",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "5",
+            "text": "day_vote Player2",
+            "target": "Player2",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.934,
+            "offered_ids": [
+              "4",
+              "5"
+            ],
+            "normalized_logp": [
+              0.0,
+              -25.5
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.618,
+            "offered_ids": [
+              "5",
+              "4"
+            ],
+            "normalized_logp": [
+              0.0,
+              -32.125
+            ]
+          }
+        ],
+        "elapsed_seconds": 5.989,
+        "mean_normalized_logp": [
+          0.0,
+          -28.8125
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 0,
+      "candidate_order": "descending",
+      "options": [
+        "5",
+        "4"
+      ],
+      "expected_ids": [
+        "4"
+      ],
+      "offered": [
+        {
+          "id": "5",
+          "target": 2,
+          "label": "day_vote Player2"
+        },
+        {
+          "id": "4",
+          "target": 1,
+          "label": "day_vote Player1"
+        }
+      ],
+      "ranked": [
+        "4",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.076,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player0, the seer."
+          },
+          {
+            "id": "K1",
+            "source": "private_investigation",
+            "statement": "I investigated Player1: Player1 is a wolf."
+          },
+          {
+            "id": "K2",
+            "source": "private_investigation",
+            "statement": "I investigated Player2: Player2 is not a wolf."
+          },
+          {
+            "id": "D5",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player5 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "5",
+            "text": "day_vote Player2",
+            "target": "Player2",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "4",
+            "text": "day_vote Player1",
+            "target": "Player1",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.581,
+            "offered_ids": [
+              "5",
+              "4"
+            ],
+            "normalized_logp": [
+              -32.125,
+              0.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.493,
+            "offered_ids": [
+              "4",
+              "5"
+            ],
+            "normalized_logp": [
+              -25.5,
+              0.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.074,
+        "mean_normalized_logp": [
+          -28.8125,
+          0.0
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 0,
+      "candidate_order": "ascending",
+      "options": [
+        "4",
+        "5",
+        "6"
+      ],
+      "expected_ids": [
+        "4",
+        "6"
+      ],
+      "offered": [
+        {
+          "id": "4",
+          "target": 1,
+          "label": "night_seer Player1"
+        },
+        {
+          "id": "5",
+          "target": 2,
+          "label": "night_seer Player2"
+        },
+        {
+          "id": "6",
+          "target": 3,
+          "label": "night_seer Player3"
+        }
+      ],
+      "ranked": [
+        "6",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.708,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player0, the seer."
+          },
+          {
+            "id": "K2",
+            "source": "private_investigation",
+            "statement": "I investigated Player2: Player2 is not a wolf."
+          },
+          {
+            "id": "D5",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player5 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "4",
+            "text": "night_seer Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "5",
+            "text": "night_seer Player2",
+            "target": "Player2",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "6",
+            "text": "night_seer Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.564,
+            "offered_ids": [
+              "4",
+              "5",
+              "6"
+            ],
+            "normalized_logp": [
+              -2.578890085220337,
+              -14.828889846801758,
+              -0.07889007776975632
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.527,
+            "offered_ids": [
+              "5",
+              "6",
+              "4"
+            ],
+            "normalized_logp": [
+              -10.000045776367188,
+              -25.250045776367188,
+              -4.541770613286644e-05
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.615,
+            "offered_ids": [
+              "6",
+              "4",
+              "5"
+            ],
+            "normalized_logp": [
+              -0.0009114163694903255,
+              -19.500911712646484,
+              -7.000911235809326
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.706,
+        "mean_normalized_logp": [
+          -4.193282425985672,
+          -19.859949111938477,
+          -2.3599489104284053
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 0,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "5",
+        "4"
+      ],
+      "expected_ids": [
+        "4",
+        "6"
+      ],
+      "offered": [
+        {
+          "id": "6",
+          "target": 3,
+          "label": "night_seer Player3"
+        },
+        {
+          "id": "5",
+          "target": 2,
+          "label": "night_seer Player2"
+        },
+        {
+          "id": "4",
+          "target": 1,
+          "label": "night_seer Player1"
+        }
+      ],
+      "ranked": [
+        "4",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 5.089,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player0, the seer."
+          },
+          {
+            "id": "K2",
+            "source": "private_investigation",
+            "statement": "I investigated Player2: Player2 is not a wolf."
+          },
+          {
+            "id": "D5",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player5 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "6",
+            "text": "night_seer Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "5",
+            "text": "night_seer Player2",
+            "target": "Player2",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "4",
+            "text": "night_seer Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.681,
+            "offered_ids": [
+              "6",
+              "5",
+              "4"
+            ],
+            "normalized_logp": [
+              -0.2519294023513794,
+              -14.75192928314209,
+              -1.5019294023513794
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.704,
+            "offered_ids": [
+              "5",
+              "4",
+              "6"
+            ],
+            "normalized_logp": [
+              -18.75,
+              -25.75,
+              0.0
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.704,
+            "offered_ids": [
+              "4",
+              "6",
+              "5"
+            ],
+            "normalized_logp": [
+              -0.10020658373832703,
+              -17.60020637512207,
+              -2.3502066135406494
+            ]
+          }
+        ],
+        "elapsed_seconds": 5.089,
+        "mean_normalized_logp": [
+          -6.367378662029902,
+          -19.36737855275472,
+          -1.2840453386306763
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 1,
+      "candidate_order": "ascending",
+      "options": [
+        "5",
+        "6"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "offered": [
+        {
+          "id": "5",
+          "target": 2,
+          "label": "day_vote Player2"
+        },
+        {
+          "id": "6",
+          "target": 3,
+          "label": "day_vote Player3"
+        }
+      ],
+      "ranked": [
+        "5",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.298,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player1, the seer."
+          },
+          {
+            "id": "K2",
+            "source": "private_investigation",
+            "statement": "I investigated Player2: Player2 is a wolf."
+          },
+          {
+            "id": "K3",
+            "source": "private_investigation",
+            "statement": "I investigated Player3: Player3 is not a wolf."
+          },
+          {
+            "id": "D6",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player6 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "5",
+            "text": "day_vote Player2",
+            "target": "Player2",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "6",
+            "text": "day_vote Player3",
+            "target": "Player3",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.686,
+            "offered_ids": [
+              "5",
+              "6"
+            ],
+            "normalized_logp": [
+              0.0,
+              -25.25
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.609,
+            "offered_ids": [
+              "6",
+              "5"
+            ],
+            "normalized_logp": [
+              0.0,
+              -32.25
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.295,
+        "mean_normalized_logp": [
+          0.0,
+          -28.75
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 1,
+      "candidate_order": "descending",
+      "options": [
+        "6",
+        "5"
+      ],
+      "expected_ids": [
+        "5"
+      ],
+      "offered": [
+        {
+          "id": "6",
+          "target": 3,
+          "label": "day_vote Player3"
+        },
+        {
+          "id": "5",
+          "target": 2,
+          "label": "day_vote Player2"
+        }
+      ],
+      "ranked": [
+        "5",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.309,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player1, the seer."
+          },
+          {
+            "id": "K2",
+            "source": "private_investigation",
+            "statement": "I investigated Player2: Player2 is a wolf."
+          },
+          {
+            "id": "K3",
+            "source": "private_investigation",
+            "statement": "I investigated Player3: Player3 is not a wolf."
+          },
+          {
+            "id": "D6",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player6 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "6",
+            "text": "day_vote Player3",
+            "target": "Player3",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "5",
+            "text": "day_vote Player2",
+            "target": "Player2",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.673,
+            "offered_ids": [
+              "6",
+              "5"
+            ],
+            "normalized_logp": [
+              -32.25,
+              0.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.635,
+            "offered_ids": [
+              "5",
+              "6"
+            ],
+            "normalized_logp": [
+              -25.25,
+              0.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.308,
+        "mean_normalized_logp": [
+          -28.75,
+          0.0
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 1,
+      "candidate_order": "ascending",
+      "options": [
+        "5",
+        "6",
+        "0"
+      ],
+      "expected_ids": [
+        "0",
+        "5"
+      ],
+      "offered": [
+        {
+          "id": "5",
+          "target": 2,
+          "label": "night_seer Player2"
+        },
+        {
+          "id": "6",
+          "target": 3,
+          "label": "night_seer Player3"
+        },
+        {
+          "id": "0",
+          "target": 4,
+          "label": "night_seer Player4"
+        }
+      ],
+      "ranked": [
+        "0",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.929,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player1, the seer."
+          },
+          {
+            "id": "K3",
+            "source": "private_investigation",
+            "statement": "I investigated Player3: Player3 is not a wolf."
+          },
+          {
+            "id": "D6",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player6 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "5",
+            "text": "night_seer Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "6",
+            "text": "night_seer Player3",
+            "target": "Player3",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "0",
+            "text": "night_seer Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.691,
+            "offered_ids": [
+              "5",
+              "6",
+              "0"
+            ],
+            "normalized_logp": [
+              -2.3502068519592285,
+              -15.10020637512207,
+              -0.10020679980516434
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.614,
+            "offered_ids": [
+              "6",
+              "0",
+              "5"
+            ],
+            "normalized_logp": [
+              -14.250000953674316,
+              -25.0,
+              -5.960462772236497e-07
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.624,
+            "offered_ids": [
+              "0",
+              "5",
+              "6"
+            ],
+            "normalized_logp": [
+              -0.16022419929504395,
+              -18.91022491455078,
+              -1.910224199295044
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.929,
+        "mean_normalized_logp": [
+          -5.586810668309529,
+          -19.670143763224285,
+          -0.6701438650488285
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 1,
+      "candidate_order": "descending",
+      "options": [
+        "0",
+        "6",
+        "5"
+      ],
+      "expected_ids": [
+        "0",
+        "5"
+      ],
+      "offered": [
+        {
+          "id": "0",
+          "target": 4,
+          "label": "night_seer Player4"
+        },
+        {
+          "id": "6",
+          "target": 3,
+          "label": "night_seer Player3"
+        },
+        {
+          "id": "5",
+          "target": 2,
+          "label": "night_seer Player2"
+        }
+      ],
+      "ranked": [
+        "5",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.835,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player1, the seer."
+          },
+          {
+            "id": "K3",
+            "source": "private_investigation",
+            "statement": "I investigated Player3: Player3 is not a wolf."
+          },
+          {
+            "id": "D6",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player6 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "night_seer Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "6",
+            "text": "night_seer Player3",
+            "target": "Player3",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "5",
+            "text": "night_seer Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.631,
+            "offered_ids": [
+              "0",
+              "6",
+              "5"
+            ],
+            "normalized_logp": [
+              -0.008614521473646164,
+              -17.50861358642578,
+              -4.758614540100098
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.608,
+            "offered_ids": [
+              "6",
+              "5",
+              "0"
+            ],
+            "normalized_logp": [
+              -15.5,
+              -26.0,
+              -2.3841855067985307e-07
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.596,
+            "offered_ids": [
+              "5",
+              "0",
+              "6"
+            ],
+            "normalized_logp": [
+              -0.00012337400403339416,
+              -21.750123977661133,
+              -9.000123023986816
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.834,
+        "mean_normalized_logp": [
+          -5.16957929849256,
+          -21.752912521362305,
+          -4.586245934168488
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 2,
+      "candidate_order": "ascending",
+      "options": [
+        "6",
+        "0"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "offered": [
+        {
+          "id": "6",
+          "target": 3,
+          "label": "day_vote Player3"
+        },
+        {
+          "id": "0",
+          "target": 4,
+          "label": "day_vote Player4"
+        }
+      ],
+      "ranked": [
+        "6",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.412,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player2, the seer."
+          },
+          {
+            "id": "K3",
+            "source": "private_investigation",
+            "statement": "I investigated Player3: Player3 is a wolf."
+          },
+          {
+            "id": "K4",
+            "source": "private_investigation",
+            "statement": "I investigated Player4: Player4 is not a wolf."
+          },
+          {
+            "id": "D0",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player0 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "6",
+            "text": "day_vote Player3",
+            "target": "Player3",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "0",
+            "text": "day_vote Player4",
+            "target": "Player4",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.702,
+            "offered_ids": [
+              "6",
+              "0"
+            ],
+            "normalized_logp": [
+              0.0,
+              -22.5
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.71,
+            "offered_ids": [
+              "0",
+              "6"
+            ],
+            "normalized_logp": [
+              0.0,
+              -31.25
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.412,
+        "mean_normalized_logp": [
+          0.0,
+          -26.875
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 2,
+      "candidate_order": "descending",
+      "options": [
+        "0",
+        "6"
+      ],
+      "expected_ids": [
+        "6"
+      ],
+      "offered": [
+        {
+          "id": "0",
+          "target": 4,
+          "label": "day_vote Player4"
+        },
+        {
+          "id": "6",
+          "target": 3,
+          "label": "day_vote Player3"
+        }
+      ],
+      "ranked": [
+        "6",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.368,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player2, the seer."
+          },
+          {
+            "id": "K3",
+            "source": "private_investigation",
+            "statement": "I investigated Player3: Player3 is a wolf."
+          },
+          {
+            "id": "K4",
+            "source": "private_investigation",
+            "statement": "I investigated Player4: Player4 is not a wolf."
+          },
+          {
+            "id": "D0",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player0 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "day_vote Player4",
+            "target": "Player4",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "6",
+            "text": "day_vote Player3",
+            "target": "Player3",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.732,
+            "offered_ids": [
+              "0",
+              "6"
+            ],
+            "normalized_logp": [
+              -31.25,
+              0.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.635,
+            "offered_ids": [
+              "6",
+              "0"
+            ],
+            "normalized_logp": [
+              -22.5,
+              0.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.368,
+        "mean_normalized_logp": [
+          -26.875,
+          0.0
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 2,
+      "candidate_order": "ascending",
+      "options": [
+        "6",
+        "0",
+        "1"
+      ],
+      "expected_ids": [
+        "1",
+        "6"
+      ],
+      "offered": [
+        {
+          "id": "6",
+          "target": 3,
+          "label": "night_seer Player3"
+        },
+        {
+          "id": "0",
+          "target": 4,
+          "label": "night_seer Player4"
+        },
+        {
+          "id": "1",
+          "target": 5,
+          "label": "night_seer Player5"
+        }
+      ],
+      "ranked": [
+        "1",
+        "6"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.967,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player2, the seer."
+          },
+          {
+            "id": "K4",
+            "source": "private_investigation",
+            "statement": "I investigated Player4: Player4 is not a wolf."
+          },
+          {
+            "id": "D0",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player0 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "6",
+            "text": "night_seer Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "0",
+            "text": "night_seer Player4",
+            "target": "Player4",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "1",
+            "text": "night_seer Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.708,
+            "offered_ids": [
+              "6",
+              "0",
+              "1"
+            ],
+            "normalized_logp": [
+              -3.2880427837371826,
+              -13.538043022155762,
+              -0.03804267570376396
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.625,
+            "offered_ids": [
+              "0",
+              "1",
+              "6"
+            ],
+            "normalized_logp": [
+              -17.5,
+              -25.75,
+              0.0
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.634,
+            "offered_ids": [
+              "1",
+              "6",
+              "0"
+            ],
+            "normalized_logp": [
+              -0.01416344940662384,
+              -18.514163970947266,
+              -4.264163494110107
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.967,
+        "mean_normalized_logp": [
+          -6.9340687443812685,
+          -19.267402331034344,
+          -1.4340687232712905
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 2,
+      "candidate_order": "descending",
+      "options": [
+        "1",
+        "0",
+        "6"
+      ],
+      "expected_ids": [
+        "1",
+        "6"
+      ],
+      "offered": [
+        {
+          "id": "1",
+          "target": 5,
+          "label": "night_seer Player5"
+        },
+        {
+          "id": "0",
+          "target": 4,
+          "label": "night_seer Player4"
+        },
+        {
+          "id": "6",
+          "target": 3,
+          "label": "night_seer Player3"
+        }
+      ],
+      "ranked": [
+        "6",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 5.021,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player2, the seer."
+          },
+          {
+            "id": "K4",
+            "source": "private_investigation",
+            "statement": "I investigated Player4: Player4 is not a wolf."
+          },
+          {
+            "id": "D0",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player0 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "1",
+            "text": "night_seer Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "0",
+            "text": "night_seer Player4",
+            "target": "Player4",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "6",
+            "text": "night_seer Player3",
+            "target": "Player3",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.699,
+            "offered_ids": [
+              "1",
+              "0",
+              "6"
+            ],
+            "normalized_logp": [
+              -0.018150195479393005,
+              -15.518150329589844,
+              -4.018150329589844
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.638,
+            "offered_ids": [
+              "0",
+              "6",
+              "1"
+            ],
+            "normalized_logp": [
+              -14.250000953674316,
+              -25.5,
+              -5.960462772236497e-07
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.684,
+            "offered_ids": [
+              "6",
+              "1",
+              "0"
+            ],
+            "normalized_logp": [
+              -3.540453326422721e-05,
+              -22.500036239624023,
+              -10.250035285949707
+            ]
+          }
+        ],
+        "elapsed_seconds": 5.021,
+        "mean_normalized_logp": [
+          -4.7560621845623245,
+          -21.17272885640462,
+          -4.75606207052861
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 3,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "1"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "offered": [
+        {
+          "id": "0",
+          "target": 4,
+          "label": "day_vote Player4"
+        },
+        {
+          "id": "1",
+          "target": 5,
+          "label": "day_vote Player5"
+        }
+      ],
+      "ranked": [
+        "0",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.391,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player3, the seer."
+          },
+          {
+            "id": "K4",
+            "source": "private_investigation",
+            "statement": "I investigated Player4: Player4 is a wolf."
+          },
+          {
+            "id": "K5",
+            "source": "private_investigation",
+            "statement": "I investigated Player5: Player5 is not a wolf."
+          },
+          {
+            "id": "D1",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player1 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "day_vote Player4",
+            "target": "Player4",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "day_vote Player5",
+            "target": "Player5",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.724,
+            "offered_ids": [
+              "0",
+              "1"
+            ],
+            "normalized_logp": [
+              0.0,
+              -22.75
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.667,
+            "offered_ids": [
+              "1",
+              "0"
+            ],
+            "normalized_logp": [
+              0.0,
+              -31.375
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.39,
+        "mean_normalized_logp": [
+          0.0,
+          -27.0625
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 3,
+      "candidate_order": "descending",
+      "options": [
+        "1",
+        "0"
+      ],
+      "expected_ids": [
+        "0"
+      ],
+      "offered": [
+        {
+          "id": "1",
+          "target": 5,
+          "label": "day_vote Player5"
+        },
+        {
+          "id": "0",
+          "target": 4,
+          "label": "day_vote Player4"
+        }
+      ],
+      "ranked": [
+        "0",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.325,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player3, the seer."
+          },
+          {
+            "id": "K4",
+            "source": "private_investigation",
+            "statement": "I investigated Player4: Player4 is a wolf."
+          },
+          {
+            "id": "K5",
+            "source": "private_investigation",
+            "statement": "I investigated Player5: Player5 is not a wolf."
+          },
+          {
+            "id": "D1",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player1 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "1",
+            "text": "day_vote Player5",
+            "target": "Player5",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "0",
+            "text": "day_vote Player4",
+            "target": "Player4",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.705,
+            "offered_ids": [
+              "1",
+              "0"
+            ],
+            "normalized_logp": [
+              -31.375,
+              0.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.62,
+            "offered_ids": [
+              "0",
+              "1"
+            ],
+            "normalized_logp": [
+              -22.75,
+              0.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.324,
+        "mean_normalized_logp": [
+          -27.0625,
+          0.0
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 3,
+      "candidate_order": "ascending",
+      "options": [
+        "0",
+        "1",
+        "2"
+      ],
+      "expected_ids": [
+        "0",
+        "2"
+      ],
+      "offered": [
+        {
+          "id": "0",
+          "target": 4,
+          "label": "night_seer Player4"
+        },
+        {
+          "id": "1",
+          "target": 5,
+          "label": "night_seer Player5"
+        },
+        {
+          "id": "2",
+          "target": 6,
+          "label": "night_seer Player6"
+        }
+      ],
+      "ranked": [
+        "2",
+        "0"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.899,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player3, the seer."
+          },
+          {
+            "id": "K5",
+            "source": "private_investigation",
+            "statement": "I investigated Player5: Player5 is not a wolf."
+          },
+          {
+            "id": "D1",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player1 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "0",
+            "text": "night_seer Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "night_seer Player5",
+            "target": "Player5",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "2",
+            "text": "night_seer Player6",
+            "target": "Player6",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.625,
+            "offered_ids": [
+              "0",
+              "1",
+              "2"
+            ],
+            "normalized_logp": [
+              -4.511047840118408,
+              -16.76104736328125,
+              -0.011047743260860443
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.675,
+            "offered_ids": [
+              "1",
+              "2",
+              "0"
+            ],
+            "normalized_logp": [
+              -13.750000953674316,
+              -27.000001907348633,
+              -1.0728830375228426e-06
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.599,
+            "offered_ids": [
+              "2",
+              "0",
+              "1"
+            ],
+            "normalized_logp": [
+              -0.004078404977917671,
+              -18.504077911376953,
+              -5.504078388214111
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.898,
+        "mean_normalized_logp": [
+          -6.088375732923548,
+          -20.755042394002277,
+          -1.838375734786003
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 3,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "1",
+        "0"
+      ],
+      "expected_ids": [
+        "0",
+        "2"
+      ],
+      "offered": [
+        {
+          "id": "2",
+          "target": 6,
+          "label": "night_seer Player6"
+        },
+        {
+          "id": "1",
+          "target": 5,
+          "label": "night_seer Player5"
+        },
+        {
+          "id": "0",
+          "target": 4,
+          "label": "night_seer Player4"
+        }
+      ],
+      "ranked": [
+        "0",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.831,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player3, the seer."
+          },
+          {
+            "id": "K5",
+            "source": "private_investigation",
+            "statement": "I investigated Player5: Player5 is not a wolf."
+          },
+          {
+            "id": "D1",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player1 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "2",
+            "text": "night_seer Player6",
+            "target": "Player6",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "night_seer Player5",
+            "target": "Player5",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "0",
+            "text": "night_seer Player4",
+            "target": "Player4",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.627,
+            "offered_ids": [
+              "2",
+              "1",
+              "0"
+            ],
+            "normalized_logp": [
+              -2.3502066135406494,
+              -15.85020637512207,
+              -0.10020668804645538
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.599,
+            "offered_ids": [
+              "1",
+              "0",
+              "2"
+            ],
+            "normalized_logp": [
+              -12.500003814697266,
+              -25.250003814697266,
+              -3.6954811548639555e-06
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.604,
+            "offered_ids": [
+              "0",
+              "2",
+              "1"
+            ],
+            "normalized_logp": [
+              -0.03804141283035278,
+              -18.288042068481445,
+              -3.288041353225708
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.829,
+        "mean_normalized_logp": [
+          -4.962750613689423,
+          -19.79608408610026,
+          -1.1294172455844393
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 4,
+      "candidate_order": "ascending",
+      "options": [
+        "1",
+        "2"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "offered": [
+        {
+          "id": "1",
+          "target": 5,
+          "label": "day_vote Player5"
+        },
+        {
+          "id": "2",
+          "target": 6,
+          "label": "day_vote Player6"
+        }
+      ],
+      "ranked": [
+        "1",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.369,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player4, the seer."
+          },
+          {
+            "id": "K5",
+            "source": "private_investigation",
+            "statement": "I investigated Player5: Player5 is a wolf."
+          },
+          {
+            "id": "K6",
+            "source": "private_investigation",
+            "statement": "I investigated Player6: Player6 is not a wolf."
+          },
+          {
+            "id": "D2",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player2 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "1",
+            "text": "day_vote Player5",
+            "target": "Player5",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "2",
+            "text": "day_vote Player6",
+            "target": "Player6",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.71,
+            "offered_ids": [
+              "1",
+              "2"
+            ],
+            "normalized_logp": [
+              0.0,
+              -20.75
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.659,
+            "offered_ids": [
+              "2",
+              "1"
+            ],
+            "normalized_logp": [
+              0.0,
+              -31.5
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.369,
+        "mean_normalized_logp": [
+          0.0,
+          -26.125
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 4,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "1"
+      ],
+      "expected_ids": [
+        "1"
+      ],
+      "offered": [
+        {
+          "id": "2",
+          "target": 6,
+          "label": "day_vote Player6"
+        },
+        {
+          "id": "1",
+          "target": 5,
+          "label": "day_vote Player5"
+        }
+      ],
+      "ranked": [
+        "1",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.301,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player4, the seer."
+          },
+          {
+            "id": "K5",
+            "source": "private_investigation",
+            "statement": "I investigated Player5: Player5 is a wolf."
+          },
+          {
+            "id": "K6",
+            "source": "private_investigation",
+            "statement": "I investigated Player6: Player6 is not a wolf."
+          },
+          {
+            "id": "D2",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player2 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "2",
+            "text": "day_vote Player6",
+            "target": "Player6",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "day_vote Player5",
+            "target": "Player5",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.696,
+            "offered_ids": [
+              "2",
+              "1"
+            ],
+            "normalized_logp": [
+              -31.5,
+              0.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.605,
+            "offered_ids": [
+              "1",
+              "2"
+            ],
+            "normalized_logp": [
+              -20.75,
+              0.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.301,
+        "mean_normalized_logp": [
+          -26.125,
+          0.0
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 4,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "1",
+        "2"
+      ],
+      "expected_ids": [
+        "1",
+        "3"
+      ],
+      "offered": [
+        {
+          "id": "3",
+          "target": 0,
+          "label": "night_seer Player0"
+        },
+        {
+          "id": "1",
+          "target": 5,
+          "label": "night_seer Player5"
+        },
+        {
+          "id": "2",
+          "target": 6,
+          "label": "night_seer Player6"
+        }
+      ],
+      "ranked": [
+        "3",
+        "1"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 5.023,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player4, the seer."
+          },
+          {
+            "id": "K6",
+            "source": "private_investigation",
+            "statement": "I investigated Player6: Player6 is not a wolf."
+          },
+          {
+            "id": "D2",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player2 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "3",
+            "text": "night_seer Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "night_seer Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "2",
+            "text": "night_seer Player6",
+            "target": "Player6",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.72,
+            "offered_ids": [
+              "3",
+              "1",
+              "2"
+            ],
+            "normalized_logp": [
+              -9.50007438659668,
+              -7.486063259420916e-05,
+              -19.25007438659668
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.698,
+            "offered_ids": [
+              "1",
+              "2",
+              "3"
+            ],
+            "normalized_logp": [
+              -0.6931511163711548,
+              -0.6931511163711548,
+              -12.443151473999023
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.603,
+            "offered_ids": [
+              "2",
+              "3",
+              "1"
+            ],
+            "normalized_logp": [
+              -1.6689160474925302e-05,
+              -11.000016212463379,
+              -24.750017166137695
+            ]
+          }
+        ],
+        "elapsed_seconds": 5.021,
+        "mean_normalized_logp": [
+          -3.397747397376103,
+          -3.897747396489043,
+          -18.814414342244465
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 4,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "1",
+        "3"
+      ],
+      "expected_ids": [
+        "1",
+        "3"
+      ],
+      "offered": [
+        {
+          "id": "2",
+          "target": 6,
+          "label": "night_seer Player6"
+        },
+        {
+          "id": "1",
+          "target": 5,
+          "label": "night_seer Player5"
+        },
+        {
+          "id": "3",
+          "target": 0,
+          "label": "night_seer Player0"
+        }
+      ],
+      "ranked": [
+        "1",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.948,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player4, the seer."
+          },
+          {
+            "id": "K6",
+            "source": "private_investigation",
+            "statement": "I investigated Player6: Player6 is not a wolf."
+          },
+          {
+            "id": "D2",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player2 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "2",
+            "text": "night_seer Player6",
+            "target": "Player6",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "1",
+            "text": "night_seer Player5",
+            "target": "Player5",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "3",
+            "text": "night_seer Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.708,
+            "offered_ids": [
+              "2",
+              "1",
+              "3"
+            ],
+            "normalized_logp": [
+              -25.250001907348633,
+              -1.0728830375228426e-06,
+              -13.750000953674316
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.618,
+            "offered_ids": [
+              "1",
+              "3",
+              "2"
+            ],
+            "normalized_logp": [
+              -17.038042068481445,
+              -3.288041353225708,
+              -0.03804141283035278
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.622,
+            "offered_ids": [
+              "3",
+              "2",
+              "1"
+            ],
+            "normalized_logp": [
+              -15.2500581741333,
+              -5.8530047681415454e-05,
+              -9.7500581741333
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.948,
+        "mean_normalized_logp": [
+          -19.179367383321125,
+          -1.0960336520521423,
+          -7.84603351354599
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 5,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "2"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "offered": [
+        {
+          "id": "3",
+          "target": 0,
+          "label": "day_vote Player0"
+        },
+        {
+          "id": "2",
+          "target": 6,
+          "label": "day_vote Player6"
+        }
+      ],
+      "ranked": [
+        "2",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.399,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player5, the seer."
+          },
+          {
+            "id": "K0",
+            "source": "private_investigation",
+            "statement": "I investigated Player0: Player0 is not a wolf."
+          },
+          {
+            "id": "K6",
+            "source": "private_investigation",
+            "statement": "I investigated Player6: Player6 is a wolf."
+          },
+          {
+            "id": "D3",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player3 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "3",
+            "text": "day_vote Player0",
+            "target": "Player0",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "2",
+            "text": "day_vote Player6",
+            "target": "Player6",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.723,
+            "offered_ids": [
+              "3",
+              "2"
+            ],
+            "normalized_logp": [
+              -30.25,
+              0.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.675,
+            "offered_ids": [
+              "2",
+              "3"
+            ],
+            "normalized_logp": [
+              -26.25,
+              0.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.399,
+        "mean_normalized_logp": [
+          -28.25,
+          0.0
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 5,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "3"
+      ],
+      "expected_ids": [
+        "2"
+      ],
+      "offered": [
+        {
+          "id": "2",
+          "target": 6,
+          "label": "day_vote Player6"
+        },
+        {
+          "id": "3",
+          "target": 0,
+          "label": "day_vote Player0"
+        }
+      ],
+      "ranked": [
+        "2",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.407,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player5, the seer."
+          },
+          {
+            "id": "K0",
+            "source": "private_investigation",
+            "statement": "I investigated Player0: Player0 is not a wolf."
+          },
+          {
+            "id": "K6",
+            "source": "private_investigation",
+            "statement": "I investigated Player6: Player6 is a wolf."
+          },
+          {
+            "id": "D3",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player3 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "2",
+            "text": "day_vote Player6",
+            "target": "Player6",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "3",
+            "text": "day_vote Player0",
+            "target": "Player0",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.732,
+            "offered_ids": [
+              "2",
+              "3"
+            ],
+            "normalized_logp": [
+              0.0,
+              -26.25
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.674,
+            "offered_ids": [
+              "3",
+              "2"
+            ],
+            "normalized_logp": [
+              0.0,
+              -30.25
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.407,
+        "mean_normalized_logp": [
+          0.0,
+          -28.25
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 5,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "4",
+        "2"
+      ],
+      "expected_ids": [
+        "2",
+        "4"
+      ],
+      "offered": [
+        {
+          "id": "3",
+          "target": 0,
+          "label": "night_seer Player0"
+        },
+        {
+          "id": "4",
+          "target": 1,
+          "label": "night_seer Player1"
+        },
+        {
+          "id": "2",
+          "target": 6,
+          "label": "night_seer Player6"
+        }
+      ],
+      "ranked": [
+        "4",
+        "2"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 5.05,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player5, the seer."
+          },
+          {
+            "id": "K0",
+            "source": "private_investigation",
+            "statement": "I investigated Player0: Player0 is not a wolf."
+          },
+          {
+            "id": "D3",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player3 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "3",
+            "text": "night_seer Player0",
+            "target": "Player0",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "4",
+            "text": "night_seer Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "2",
+            "text": "night_seer Player6",
+            "target": "Player6",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.723,
+            "offered_ids": [
+              "3",
+              "4",
+              "2"
+            ],
+            "normalized_logp": [
+              -25.500009536743164,
+              -1.0132738680113107e-05,
+              -11.50001049041748
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.706,
+            "offered_ids": [
+              "4",
+              "2",
+              "3"
+            ],
+            "normalized_logp": [
+              -21.500911712646484,
+              -7.000911235809326,
+              -0.0009114163694903255
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.621,
+            "offered_ids": [
+              "2",
+              "3",
+              "4"
+            ],
+            "normalized_logp": [
+              -14.825940132141113,
+              -0.8259397745132446,
+              -0.5759397745132446
+            ]
+          }
+        ],
+        "elapsed_seconds": 5.05,
+        "mean_normalized_logp": [
+          -20.608953793843586,
+          -2.6089537143537505,
+          -4.025620560433405
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 5,
+      "candidate_order": "descending",
+      "options": [
+        "2",
+        "4",
+        "3"
+      ],
+      "expected_ids": [
+        "2",
+        "4"
+      ],
+      "offered": [
+        {
+          "id": "2",
+          "target": 6,
+          "label": "night_seer Player6"
+        },
+        {
+          "id": "4",
+          "target": 1,
+          "label": "night_seer Player1"
+        },
+        {
+          "id": "3",
+          "target": 0,
+          "label": "night_seer Player0"
+        }
+      ],
+      "ranked": [
+        "2",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 5.035,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player5, the seer."
+          },
+          {
+            "id": "K0",
+            "source": "private_investigation",
+            "statement": "I investigated Player0: Player0 is not a wolf."
+          },
+          {
+            "id": "D3",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player3 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "2",
+            "text": "night_seer Player6",
+            "target": "Player6",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "4",
+            "text": "night_seer Player1",
+            "target": "Player1",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "C",
+            "id": "3",
+            "text": "night_seer Player0",
+            "target": "Player0",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.721,
+            "offered_ids": [
+              "2",
+              "4",
+              "3"
+            ],
+            "normalized_logp": [
+              -9.50007438659668,
+              -7.486063259420916e-05,
+              -21.50007438659668
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.697,
+            "offered_ids": [
+              "4",
+              "3",
+              "2"
+            ],
+            "normalized_logp": [
+              -0.03804164379835129,
+              -3.288041591644287,
+              -15.288042068481445
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.617,
+            "offered_ids": [
+              "3",
+              "2",
+              "4"
+            ],
+            "normalized_logp": [
+              0.0,
+              -19.5,
+              -26.75
+            ]
+          }
+        ],
+        "elapsed_seconds": 5.035,
+        "mean_normalized_logp": [
+          -3.179372010131677,
+          -7.596038817425627,
+          -21.179372151692707
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 6,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "4"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "offered": [
+        {
+          "id": "3",
+          "target": 0,
+          "label": "day_vote Player0"
+        },
+        {
+          "id": "4",
+          "target": 1,
+          "label": "day_vote Player1"
+        }
+      ],
+      "ranked": [
+        "3",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.309,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the seer."
+          },
+          {
+            "id": "K0",
+            "source": "private_investigation",
+            "statement": "I investigated Player0: Player0 is a wolf."
+          },
+          {
+            "id": "K1",
+            "source": "private_investigation",
+            "statement": "I investigated Player1: Player1 is not a wolf."
+          },
+          {
+            "id": "D4",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player4 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "3",
+            "text": "day_vote Player0",
+            "target": "Player0",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "4",
+            "text": "day_vote Player1",
+            "target": "Player1",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.653,
+            "offered_ids": [
+              "3",
+              "4"
+            ],
+            "normalized_logp": [
+              0.0,
+              -25.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.656,
+            "offered_ids": [
+              "4",
+              "3"
+            ],
+            "normalized_logp": [
+              0.0,
+              -32.25
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.309,
+        "mean_normalized_logp": [
+          0.0,
+          -28.625
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "verified_check_over_claim",
+      "seat": 6,
+      "candidate_order": "descending",
+      "options": [
+        "4",
+        "3"
+      ],
+      "expected_ids": [
+        "3"
+      ],
+      "offered": [
+        {
+          "id": "4",
+          "target": 1,
+          "label": "day_vote Player1"
+        },
+        {
+          "id": "3",
+          "target": 0,
+          "label": "day_vote Player0"
+        }
+      ],
+      "ranked": [
+        "3",
+        "4"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 3.382,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the seer."
+          },
+          {
+            "id": "K0",
+            "source": "private_investigation",
+            "statement": "I investigated Player0: Player0 is a wolf."
+          },
+          {
+            "id": "K1",
+            "source": "private_investigation",
+            "statement": "I investigated Player1: Player1 is not a wolf."
+          },
+          {
+            "id": "D4",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player4 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "4",
+            "text": "day_vote Player1",
+            "target": "Player1",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "B",
+            "id": "3",
+            "text": "day_vote Player0",
+            "target": "Player0",
+            "confirmed_alignment": "wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "prefer_confirmed_wolf",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 2,
+        "completed_passes": 2,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.729,
+            "offered_ids": [
+              "4",
+              "3"
+            ],
+            "normalized_logp": [
+              -32.25,
+              0.0
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.653,
+            "offered_ids": [
+              "3",
+              "4"
+            ],
+            "normalized_logp": [
+              -25.0,
+              0.0
+            ]
+          }
+        ],
+        "elapsed_seconds": 3.382,
+        "mean_normalized_logp": [
+          -28.625,
+          0.0
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 6,
+      "candidate_order": "ascending",
+      "options": [
+        "3",
+        "4",
+        "5"
+      ],
+      "expected_ids": [
+        "3",
+        "5"
+      ],
+      "offered": [
+        {
+          "id": "3",
+          "target": 0,
+          "label": "night_seer Player0"
+        },
+        {
+          "id": "4",
+          "target": 1,
+          "label": "night_seer Player1"
+        },
+        {
+          "id": "5",
+          "target": 2,
+          "label": "night_seer Player2"
+        }
+      ],
+      "ranked": [
+        "5",
+        "3"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.959,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the seer."
+          },
+          {
+            "id": "K1",
+            "source": "private_investigation",
+            "statement": "I investigated Player1: Player1 is not a wolf."
+          },
+          {
+            "id": "D4",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player4 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "3",
+            "text": "night_seer Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "4",
+            "text": "night_seer Player1",
+            "target": "Player1",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "5",
+            "text": "night_seer Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.654,
+            "offered_ids": [
+              "3",
+              "4",
+              "5"
+            ],
+            "normalized_logp": [
+              -6.002475738525391,
+              -15.25247573852539,
+              -0.0024758896324783564
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.687,
+            "offered_ids": [
+              "4",
+              "5",
+              "3"
+            ],
+            "normalized_logp": [
+              -12.250004768371582,
+              -25.000003814697266,
+              -4.768360213347478e-06
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.618,
+            "offered_ids": [
+              "5",
+              "3",
+              "4"
+            ],
+            "normalized_logp": [
+              -0.12692804634571075,
+              -17.126928329467773,
+              -2.1269280910491943
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.959,
+        "mean_normalized_logp": [
+          -6.126469517747561,
+          -19.126469294230144,
+          -0.7098029163472953
+        ]
+      }
+    },
+    {
+      "suite": "mapped",
+      "scenario": "investigate_unknown_set",
+      "seat": 6,
+      "candidate_order": "descending",
+      "options": [
+        "5",
+        "4",
+        "3"
+      ],
+      "expected_ids": [
+        "3",
+        "5"
+      ],
+      "offered": [
+        {
+          "id": "5",
+          "target": 2,
+          "label": "night_seer Player2"
+        },
+        {
+          "id": "4",
+          "target": 1,
+          "label": "night_seer Player1"
+        },
+        {
+          "id": "3",
+          "target": 0,
+          "label": "night_seer Player0"
+        }
+      ],
+      "ranked": [
+        "3",
+        "5"
+      ],
+      "accepted": true,
+      "error": null,
+      "preferred_first": true,
+      "elapsed_seconds": 4.945,
+      "diagnostics": {
+        "prompt_version": "grounded-v2",
+        "candidate_guard_version": "hard-evidence-v1",
+        "generated_tokens": 0,
+        "budget_exhausted": false,
+        "confirmed_facts": [
+          {
+            "id": "SELF",
+            "source": "own_role",
+            "statement": "I am Player6, the seer."
+          },
+          {
+            "id": "K1",
+            "source": "private_investigation",
+            "statement": "I investigated Player1: Player1 is not a wolf."
+          },
+          {
+            "id": "D4",
+            "source": "public_death_reveal",
+            "statement": "The platform revealed dead Player4 was a wolf."
+          }
+        ],
+        "candidate_annotations": [
+          {
+            "slot": "A",
+            "id": "5",
+            "text": "night_seer Player2",
+            "target": "Player2",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          },
+          {
+            "slot": "B",
+            "id": "4",
+            "text": "night_seer Player1",
+            "target": "Player1",
+            "confirmed_alignment": "non_wolf",
+            "already_investigated": true,
+            "consistent_with_target_constraints": false
+          },
+          {
+            "slot": "C",
+            "id": "3",
+            "text": "night_seer Player0",
+            "target": "Player0",
+            "confirmed_alignment": "unknown",
+            "already_investigated": false,
+            "consistent_with_target_constraints": true
+          }
+        ],
+        "target_constraint": "investigate_unknown_player",
+        "aggregation_version": "cyclic-mean-offered-logp-v1",
+        "required_passes": 3,
+        "completed_passes": 3,
+        "passes": [
+          {
+            "rotation": 0,
+            "seconds": 1.711,
+            "offered_ids": [
+              "5",
+              "4",
+              "3"
+            ],
+            "normalized_logp": [
+              -0.12692825496196747,
+              -15.376928329467773,
+              -2.1269283294677734
+            ]
+          },
+          {
+            "rotation": 1,
+            "seconds": 1.629,
+            "offered_ids": [
+              "4",
+              "3",
+              "5"
+            ],
+            "normalized_logp": [
+              -16.0,
+              -25.25,
+              -1.1920928244535389e-07
+            ]
+          },
+          {
+            "rotation": 2,
+            "seconds": 1.602,
+            "offered_ids": [
+              "3",
+              "5",
+              "4"
+            ],
+            "normalized_logp": [
+              -0.005233753472566605,
+              -18.005233764648438,
+              -5.2552337646484375
+            ]
+          }
+        ],
+        "elapsed_seconds": 4.943,
+        "mean_normalized_logp": [
+          -5.377387336144845,
+          -19.54405403137207,
+          -2.4607207377751643
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "mapped": {
+      "presentations": 28,
+      "accepted": 28,
+      "scored": 28,
+      "preferred_first": 28,
+      "first_option_control": 19,
+      "order_pairs": 14,
+      "changed_top1": 7,
+      "median_seconds": 4.769500000000001,
+      "max_seconds": 6.005
+    }
+  }
+}
