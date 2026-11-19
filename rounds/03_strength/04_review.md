@@ -1292,3 +1292,69 @@ This helper does not independently require delivery ACKs for eligibility,
 so use 'recorded choices' wording alongside the operations delivery counts.
 Actual H2 diagnostic results remain pending. No frozen runtime files were
 changed by adding this helper.
+
+## Completed F outcome and operations audit
+
+The Reviewer independently inspected F's final summary/operations artifacts,
+controller census and raw focal terminal/count metadata. All 53 census
+hashes equal the 53 summarized assignments. All 371 worker-log SHA256 values
+match the operations manifest; the summary digest matches as well. Raw
+focal terminal roles/scores and decision counts reproduce the summary.
+All 251 choices have accepted deliveries, with zero reported fallback or
+delivery errors. The operations audit is complete/integrity-clean with no
+late receipts or E overlap. Sampled/greedy modes, checkpoint identities,
+fixed proposer configuration and four-thread settings match their profiles.
+
+| F profile | Wins / games | Wilson 95% interval |
+| --- | --- | --- |
+| Incumbent greedy | 7/14 (50.0%) | 26.8–73.2% |
+| Guarded greedy | 8/14 (57.1%) | 32.6–78.6% |
+| Old guarded sampled | 6/12 (50.0%) | 25.4–74.6% |
+| Semantic guarded sampled | 5/13 (38.5%) | 17.7–64.5% |
+
+These are broad game-level descriptive intervals. Their overlap is not a
+formal test of a difference, and the sample cannot establish equivalence.
+The semantic sampled arm does not demonstrate a win-rate gain. It received
+seven wolf roles in thirteen games, versus two in twelve for old sampled.
+Both have 50% village and seer subgroup rates; wolf rates are 2/7 and 1/2,
+with very small denominators. Role-standardized semantic/old sampled rates
+are 43.9% and 50.0%; they are exploratory, noisy estimates, not precise
+causal correction. Likewise, guarded's raw 7.1-point lead over incumbent
+reverses under descriptive role standardization (57.5% versus 61.0%).
+There is no consistent basis here to promote either change as stronger.
+Seat imbalance remains visible and uncontrolled game roles make these
+unmatched games. Do not pool F with earlier six-rules-only B results.
+
+Operational acceptance is stronger than strength evidence: all focal choices
+were delivered and the direct opponent returned 127 valid model-call outputs
+without recorded fallback. Eight non-model-backed focal choices are forced
+singletons, not inference failures. Guard actual slate-removal counts are
+three guarded, one sampled and one adapted decision; reason strings alone
+would have exaggerated intervention frequency.
+
+G was predeclared/frozen before F aggregate readout according to the parent.
+The Reviewer inspected the H2 default-parity artifact reporting exact
+omitted-versus-explicit sampled4 JSON equality on the **closed** F cohort.
+Its greedy readiness artifact passes twelve synthetic two-process calls:
+six semantic calls report greedy mode with `sampled=False`; neither worker
+falls back. Maximum observed semantic full-factory call is 7.118 seconds,
+direct model call 16.266 seconds. This supports starting the bounded G
+canary, not a tournament-wide latency guarantee. G gameplay outcomes remain
+unreviewed; no further model tuning round or semantic promotion is accepted.
+
+### Plain-Python diagnostic import repair
+
+The parent/Worker report the first H2 conditional-choice helper failed at
+package import before comparison: importing `werewolf_agent.selector`
+executed the package initializer and required the unavailable SDK in the
+read-only system-Python allocation. This import side effect was missed by
+the earlier static 'standard library' assessment. No runtime/game/model
+file was changed by that diagnostic failure.
+
+The Reviewer inspected and accepts the helper-only repair: load the actual,
+fixed sibling `selector.py` through an importlib file specification, call
+its schema-1 `Selector` directly, and record the source path/SHA256. That
+module's imports are standard-library-only; its lazy schema-2 relative
+import is never invoked by this comparator. No selection algorithm was
+copied and the frozen 37-file runtime remains untouched. Rerun on the
+stable H2 prefix; successful diagnostic results remain pending.

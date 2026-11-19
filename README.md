@@ -2,7 +2,15 @@
 
 A role-aware, inspectable Werewolf policy and match-analysis toolkit for the AltruAgent tournament. The aim is measured playing strength; this repository does not assume that RL is automatically the best method.
 
-## Current status
+## Current strength experiment (19 November 2026)
+
+The frozen Qwen3-8B proposer now supports a frozen MiniLM semantic encoder and a trained attention/PPO actor–critic (30,421 actor parameters, 1,345 critic parameters). The language-model weights remain frozen. Training used30 completed games and136 sampled decisions; the trained artifact is [checkpoint6ca4df8fd98821e6](outputs/strength-round03/job-2123930/selector.json).
+
+The first fresh four-profile comparison completed53 games with251/251 focal decisions acknowledged and no focal fallback or delivery error. Semantic sampled won5/13 versus6/12 for the old sampled control; this does **not** demonstrate improved strength. Greedy controls won7/14 (incumbent) and8/14 (guarded). Intervals are wide and roles differ. [Results and audit](outputs/strength-round03/job-2123942/final-summary.json) preserve every assignment. A separately predeclared, bounded greedy-mode comparison is ongoing; the neural candidate has not been promoted.
+
+Use the dedicated `werewolf_agent.competition_entry` for a selected competition profile; see [release instructions](rounds/03_strength/16_deployment_release.md) and [the frozen validation contract](rounds/03_strength/17_greedy_validation_contract.md). The prototype entry examples below remain historical controls and do not select the experimental neural release automatically.
+
+## Baseline toolkit
 
 - A modular baseline now includes private-role/seer evidence parsing, soft public-vote and message evidence, role-aware actions, a small discussion policy, and legal-action selection.
 - Decision logs are append-only JSONL and intentionally exclude platform tokens and arbitrary raw API payloads.

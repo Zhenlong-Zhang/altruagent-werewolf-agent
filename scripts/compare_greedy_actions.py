@@ -7,15 +7,29 @@ training, alternative trajectories or counterfactual game outcomes.
 import argparse
 from collections import Counter, defaultdict
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
-
-from werewolf_agent.selector import Selector
 
 
 PARENT_ID = "d7ebf7670444067a"
 NN_ID = "6ca4df8fd98821e6"
 GUARD = "verified-innocent-v1"
+SELECTOR_SOURCE = Path(__file__).resolve().parents[1] / "werewolf_agent/selector.py"
+
+
+def load_legacy_selector():
+    """Load the actual sibling implementation without package/SDK startup.
+
+    selector.py itself imports only the standard library. Its optional lazy
+    schema-2 dispatch is never called by this schema-1 diagnostic.
+    """
+    specification = importlib.util.spec_from_file_location("_legacy_selector_readonly_audit", SELECTOR_SOURCE)
+    if specification is None or specification.loader is None:
+        raise ImportError("Cannot locate the frozen sibling legacy selector")
+    module = importlib.util.module_from_spec(specification)
+    specification.loader.exec_module(module)
+    return module.Selector
 
 
 def sha(path):
@@ -35,7 +49,7 @@ def analyze(log_dir, summary_path, artifact_path, old_path):
     summary = json.loads(summary_path.read_text())
     raw = artifact_path.read_bytes()
     artifact = json.loads(raw)
-    old = Selector("hybrid_greedy", old_path)
+    old = load_legacy_selector()("hybrid_greedy", old_path)
     tensor = artifact_path.parent / artifact["weights_file"]
     tensor_hash = sha(tensor)
     nn_id = hashlib.sha256(raw + tensor_hash.encode()).hexdigest()[:16]
@@ -206,6 +220,8 @@ def analyze(log_dir, summary_path, artifact_path, old_path):
         "comparator": {"old_checkpoint_id": old.checkpoint_id, "NN_checkpoint_id": nn_id,
                        "state": "Exact recorded before-decision guarded candidate features/order; first-index greedy ties."},
         "provenance": {"helper_sha256": sha(Path(__file__)), "summary_sha256": sha(summary_path),
+                       "legacy_selector_source_sha256": sha(SELECTOR_SOURCE),
+                       "legacy_selector_source": str(SELECTOR_SOURCE),
                        "old_sha256": sha(old_path), "NN_metadata_sha256": sha(artifact_path),
                        "NN_tensor_sha256": tensor_hash, "E_G_overlap_hashes": overlap,
                        "NN_focal_log_sha256_manifest": sources},
@@ -225,7 +241,7 @@ def main():
         parser.error("Use an actual G decisions directory and a new exclusive output path")
     try:
         report = analyze(args.log_dir, args.summary, args.training_artifact, args.old)
-    except (OSError, ValueError, TypeError, KeyError, IndexError) as exc:
+    except (OSError, ValueError, TypeError, KeyError, IndexError, ImportError) as exc:
         report = {"audit_integrity_passed": False, "observed_NN_logs_complete": False,
                   "protocol_issues": [{"error": "unreadable_or_invalid_comparison_input",
                                        "exception_type": type(exc).__name__}]}

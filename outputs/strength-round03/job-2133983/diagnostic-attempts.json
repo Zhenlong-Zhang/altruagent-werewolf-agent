@@ -1,0 +1,18 @@
+{
+  "first_attempt": {
+    "step": "2133983.2",
+    "purpose": "plain-system-Python conditional-choice diagnostic",
+    "status": "failed before data comparison",
+    "error": "ModuleNotFoundError altruagent via package __init__",
+    "runtime_policy_modified": false
+  },
+  "repair": "Load exact frozen legacy selector file through importlib without package initialization; add selector source hash",
+  "rerun": {
+    "purpose": "stable prefix9 operations and same-slate comparison",
+    "operations_integrity": true,
+    "operations_cohort_complete": false,
+    "expected_operations_exit": 2,
+    "conditional_choice_audit_integrity": true
+  },
+  "interpretation": "Diagnostic implementation repair only; no training or policy changes; failures retained."
+}
