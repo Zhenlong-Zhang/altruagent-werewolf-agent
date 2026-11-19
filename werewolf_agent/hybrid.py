@@ -6,6 +6,7 @@ from collections import Counter
 from dataclasses import dataclass
 import hashlib
 import json
+import math
 from pathlib import Path
 import os
 import re
@@ -19,7 +20,7 @@ from .beliefs import build_suspicion, known_roles, parse_role, seat_from_name
 from .learned import SEER_CLAIM
 from .grounding import GUARD_VERSION, PROMPT_VERSION, option_target, permitted_targets, private_roles
 from .policy import WerewolfPolicy, _all_messages, _state_data, _target
-from .selector import FEATURES, Selector
+from .selector import FEATURES, load_selector
 from .variants import LLMPolicy, wolf_probabilities
 
 ACCUSATION = re.compile(r"\bPlayer\s*([0-6])\s+(?:is|was)\s+(?:a\s+)?wolf\b", re.I)
@@ -60,7 +61,7 @@ class HybridPolicy(WerewolfPolicy):
         super().__init__()
         self.mode = mode
         self.allow_tournament = allow_tournament
-        self.selector = None if mode == "llm_select" else Selector(mode, weights_path, seed)
+        self.selector = None if mode == "llm_select" else load_selector(mode, weights_path, seed)
         self._strategy_version = mode
         self.opponent_pool = None
         self._structured_beliefs = os.environ.get("WEREWOLF_PUBLIC_BELIEF") == "1"
@@ -235,7 +236,9 @@ class HybridPolicy(WerewolfPolicy):
         return result, [o.id for o in proposals if o in result], error, time.monotonic()-started
 
     def _select(self, context, view, options, votes, speech):
+        decision_started = time.monotonic()
         slate, proposed, error, elapsed = self._propose(view, options, speech)
+        selector_error, selector_seconds = None, 0.0
         role, known = view["role"], view["private_knowledge"]
         if os.environ.get("WEREWOLF_PROPOSER") == "grounded":
             known = private_roles(view)
@@ -259,7 +262,34 @@ class HybridPolicy(WerewolfPolicy):
             index = next(j for j, o in enumerate(slate) if o.id == preferred)
             probabilities = [float(j == index) for j in range(len(slate))]
         else:
-            index, probabilities = self.selector.choose(features)
+            if getattr(self.selector, "requires_semantic_context", False):
+                started = time.monotonic()
+                budget = min(5.0, max(0.0, 30.0 - (started - decision_started)))
+                try:
+                    if budget <= 0:
+                        raise TimeoutError("No remaining semantic decision budget")
+                    index, probabilities = self.selector.choose(
+                        features, [o.label for o in slate],
+                        {"day": view["day"], "phase": "speech" if speech else view["phase"]},
+                        deadline=started + budget,
+                    )
+                    selector_seconds = time.monotonic() - started
+                    if selector_seconds > budget:
+                        raise TimeoutError("Semantic selection exceeded remaining budget")
+                    if (type(index) is not int or not 0 <= index < len(slate)
+                            or len(probabilities) != len(slate)
+                            or any(not math.isfinite(p) or p < 0 for p in probabilities)
+                            or (self.mode == "hybrid_collect" and any(p <= 0 for p in probabilities))
+                            or not math.isclose(sum(probabilities), 1.0, abs_tol=1e-9)):
+                        raise ValueError("Invalid semantic selection")
+                except (ValueError, KeyError, IndexError, TypeError, ImportError, OSError,
+                        RuntimeError, AttributeError) as exc:
+                    selector_error = type(exc).__name__
+                    selector_seconds = time.monotonic() - started
+                    index = next(j for j, o in enumerate(slate) if o.id == options[0].id)
+                    probabilities = [float(j == index) for j in range(len(slate))]
+            else:
+                index, probabilities = self.selector.choose(features)
         self._decision_number += 1
         backend = (
             os.environ.get("WEREWOLF_MODEL_PATH") or os.environ.get("WEREWOLF_CPU_MODEL")
@@ -321,7 +351,7 @@ class HybridPolicy(WerewolfPolicy):
                 **configured_identity, "actual_dtype": "unloaded", "actual_revision": "unresolved"},
             "proposal_diagnostics": dict(getattr(self._model, "proposal_diagnostics", {})),
             "candidate_guard": self._candidate_guard if not speech else {},
-            "sampled": self.mode == "hybrid_collect" and bool(proposed) and len(slate) > 1,
+            "sampled": self.mode == "hybrid_collect" and bool(proposed) and len(slate) > 1 and not selector_error,
             "delivery_method": ("terminate_messaging" if slate[index].id == "5" else "send_message")
                                if speech else "play_action",
             "checkpoint_id": self.selector.checkpoint_id if self.selector else "llm_direct",
@@ -330,7 +360,10 @@ class HybridPolicy(WerewolfPolicy):
             "candidate_ids": [o.id for o in slate], "candidate_labels": [o.label for o in slate],
             "model_ranked_ids": proposed, "retained_model_candidates": len(proposed),
             "candidate_sources": ["llm" if o.id in proposed else "rule" for o in slate],
-            "used_fallback": not proposed and len(options) > 1,
+            "used_fallback": (not proposed and len(options) > 1) or bool(selector_error),
+            **({"selector_error": selector_error, "selector_seconds": round(selector_seconds, 3),
+                "selector_deadline_kind": "posthoc_remaining_30s_cap_5s"}
+               if getattr(self.selector, "requires_semantic_context", False) else {}),
             "model_valid": bool(proposed), "model_error": error, "model_seconds": round(elapsed, 3),
             "features": features, "choice_index": index, "probabilities": list(probabilities),
         })

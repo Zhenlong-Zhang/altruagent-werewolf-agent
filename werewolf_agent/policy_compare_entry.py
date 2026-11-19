@@ -8,7 +8,7 @@ from .collection_entry import checked_configuration
 from .competition_entry import create_agent as create_competitor
 from .hybrid_entry import HybridTable
 from .policy import WerewolfPolicy
-from .selector import Selector
+from .selector import load_selector
 from .variants import LLMPolicy
 
 
@@ -65,6 +65,6 @@ def create_agent():
         if (not isinstance(profile['weights'],str) or not profile['weights'].strip()
                 or not Path(profile['weights']).is_file()):
             raise ValueError('Each policy requires an explicit existing checkpoint file')
-        Selector(profile['mode'],profile['weights'])
+        load_selector(profile['mode'],profile['weights'])
     opponents=checked_configuration()
     return PolicyTable(profiles,opponents,os.environ.get('WEREWOLF_POLICY_COMPARE_SEED','r03-policy-v1'))

@@ -788,3 +788,179 @@ excluded from training. The new collection census, eventual selector's
 training hashes and subsequent four-arm evaluation must remain separate.
 No learned checkpoint outcome or policy promotion is accepted at this
 stage; final runtime and held-out evidence are pending.
+
+## Saved-update audit script review
+
+The Reviewer statically inspected the new, standalone
+`scripts/analyze_selector_update.py`. No material blocker was found for an
+H2 run on the actual frozen fitting input. It independently assembles the
+score-function gradient sum, averages by eligible games, applies the
+recorded step and coordinate clipping, and compares saved weights, parent,
+schema, match set/count and role counts. It hashes input files and eligible
+logs. Exclusive output creation cannot replace checkpoints. Reported
+coefficient changes and logged-slate KL/total variation/greedy changes are
+explicitly in-sample distribution diagnostics, not estimates of match
+returns or learning benefit.
+
+This is a reproduction audit with shared eligibility, feature-transform
+and probability helpers, not an independent revalidation of those helpers.
+It requires the entire directory's eligible game set to equal the saved
+training hashes. An additional eligible but unused episode arriving after
+fit would therefore fail that strict snapshot audit without alone proving
+the saved update wrong. Use the actual frozen fit-input directory, or
+separately explain/reconcile extras against the recorded batch. Actual H2
+reproduction evidence is still pending; no mirrored synthetic tests or
+local model execution were requested.
+
+## Semantic actor–critic/PPO proposal boundary
+
+The Reviewer conditionally accepts an isolated semantic-selector experiment
+in new files, pending the Planner's exact written state/interface contract.
+The proposed frozen text encoder, shared candidate network, attention pool,
+bounded residual actor and critic are a new architecture. They must not
+silently replace the incumbent or be described as an established stronger
+policy from thirty games.
+
+Preserve the original feature values in float64 for the linear-base logits;
+a separate float32 neural representation must not round-trip those values.
+Zero-initialized actor residuals must reproduce the logged behavior
+propensities before an update is allowed. The frozen local encoder must
+use evaluation/no-gradient mode, pinned revision and versioned pooling,
+normalization/truncation. Cache identity must include those settings and
+candidate text. Exact context fields must use only acting-seat information
+available at the decision: no terminal reward, winner, future transitions
+or other seats' evaluation roles. Recorded own role can be used because it
+was known to that actor.
+
+The initial old-policy equality is necessary for reusing the frozen E cohort
+as a clipped-PPO batch. Old probabilities and pre-update advantages remain
+frozen across epochs; final evaluation data cannot select steps, architecture
+or stopping settings. The proposed KL rollback must restore the full actor,
+including its twenty linear coefficients. Optimizer-state handling must be
+explicit if training resumes; halting after rollback is an acceptable simpler
+boundary. Critic state after rejection must be declared separately.
+
+A SHA-verified weights-only checkpoint, cheap schema validation and explicit
+encoder/architecture identities are appropriate. Shared encoder inference
+must preserve candidate/ID correspondence and deterministic legal selection.
+Runtime integration, latency and new on-policy/prospective evidence remain
+separate acceptance steps. In-sample coefficient, value-loss, entropy and
+KL diagnostics verify optimization behavior; they do not establish stronger
+play, and bounded KL is not a guarantee of improved game returns.
+
+### Final semantic PPO contract choices
+
+The Reviewer read the Planner's `14_semantic_ppo_contract.md`. The parent
+then explicitly fixed entropy coefficient 0.001 and actor reduction as the
+sum of decision surrogates within each game, averaged over games; advantages
+remain fixed, unnormalized terminal-score advantages from the old zero
+critic. Critic loss is decision-mean MSE. These final choices supersede the
+initial ambiguous negative-mean wording and no-undeclared-entropy statement.
+The Planner and Worker were notified to align contract and implementation.
+
+With those explicit choices, the implementation contract is accepted for
+new isolated files. Require an unequal-episode-length reduction check and
+logged reduction/entropy settings. The original float64 prior equality,
+detached critic representation, frozen encoder, whole-module and optimizer
+rollback, categorical KL limits and exclusion of F data remain required.
+Candidate/context embeddings add semantics only for the recorded coarse
+state and offered labels; they do not create conversational evidence absent
+from the dataset. Final code, H2 execution and prospective benefit remain
+pending independent review.
+
+## Semantic implementation initial inspection
+
+The Reviewer inspected the first `semantic_selector.py` and
+`train_semantic_ppo.py` plus root dispatch integration. The model preserves
+original Python features in a sequential float64 linear prior and uses a
+separate float32 semantic branch. The zero residual/value heads, detached
+critic pool, local frozen mean/L2 encoder and explicit coarse-context
+serialization match the contract. The trainer checks exact initial logits,
+legacy propensity tolerances and zero old value, freezes terminal MC
+advantages, applies game-averaged decision sums plus entropy 0.001, and
+restores model and both optimizer states on rejected steps. Initial code
+inspection found those core mathematics consistent with the agreed design.
+
+A material runtime issue was raised: root's initial call to semantic
+`choose` occurred outside a fallback boundary with no selector budget.
+Encoder loading, corrupt state, nonfinite output or excessive latency could
+therefore abort a decision. The parent agreed to add a semantic-only
+exception/validity boundary, remaining total budget plus a five-second
+selector cap, pre/post checks and logged selector errors/timing. A fallback
+must have its actual deterministic propensity and `sampled=False`, while
+proposer validity remains separately visible. Acceptance awaits that repair,
+focused checks and measured cold/warm/full-roster latency.
+
+Synchronous model work remains non-preemptive. For this isolated pilot,
+a measured soft budget with honest overrun/fallback accounting is a
+proportionate boundary; a persistent isolated encoder worker would be
+needed for true hard interruption. No hard deadline or production-readiness
+claim is accepted from post-hoc timing alone. The current H2 semantic driver
+is explicitly a placeholder, not an executable delivery.
+
+The semantic fitting start must be E's behavior checkpoint, not its
+subsequent REINFORCE result. Otherwise the old-policy equality gate must
+reject E's logged propensities. Shared fit-input eligibility helpers retain
+the reproduction-audit limits noted above. Artifact validation and encoder
+staging provenance, permutation/critic-isolation/KL-rollback checks and
+actual new artifact reload remain pending.
+
+## Semantic completed-source static pass
+
+The completed semantic module adds shape/dtype/finite tensor checks,
+weights-only loading, explicit tensor checksums and staged encoder-file
+hash verification. It fixes eager fallback-path metadata access and checks
+its soft deadline after lazy loading, embedding, neural computation and
+host conversion. The eight focused real-Torch checks cover exact prior
+logits, nonzero-residual candidate permutation, authorized context,
+clipping signs, game weighting/fixed advantages/critic isolation, full
+rollback with populated optimizer states, Torch-free artifact validation
+and late embedding/host conversion.
+
+Root's runtime repair now validates semantic indices and categorical mass,
+catches loading/inference/timeout failures, uses the existing legal rules
+alternative with deterministic probability, and marks failed selection as
+unsampled fallback while retaining proposer-validity information. The
+Reviewer requested a public-policy integration regression for error, late,
+malformed and successful semantic selection, including delivery and log
+flags; standalone model checks do not establish that boundary. Final freeze
+acceptance awaits that focused integration check's source inspection.
+
+The semantic H2 training driver now runs existing regression/accounting
+checks, audits the separate linear reference, stages the pinned encoder,
+runs semantic checks, fits exactly the thirty behavior episodes and reloads
+the new artifact for real encoder/inference checks. The readiness driver
+exercises two real HF processes and actual competition construction before
+allowing the SDK collector. At this inspection its second worker uses the
+hybrid direct-choice factory rather than the actual `LLMPolicy('direct')`
+opponent, so it establishes two-model synthetic contention, not exact
+mixed-roster gameplay timing. Cold/warm measurements, actual direct-opponent
+load and the live delivery canary must qualify broader readiness claims.
+No new game-strength or architecture-superiority evidence is asserted.
+
+### Semantic final freeze acceptance
+
+The Reviewer inspected the ninth semantic check, which exercises public
+`choose_action` through semantic success, runtime exception, timeout,
+post-return lateness, nonfinite mass, wrong-length mass and invalid index.
+It verifies a legal rules fallback, actual one-hot fallback probabilities,
+proposer-valid versus selector-error flags, `sampled=False` after failure,
+accepted delivery callback, exact offered labels and only day/phase context.
+Neural layers now explicitly request float32, preserving the separate
+float64 base. These source checks close the requested integration gap;
+H2 execution remains required.
+
+The readiness benchmark now pairs the semantic competition factory with
+an actual `LLMPolicy('direct')` model-call worker. Review found an initial
+unconditional `_speech` call on that direct policy, which has no such
+method; the root repaired it to construct hybrid speech options only for
+the semantic worker. The repaired model-call outputs and logging fields
+were re-inspected. No material source blocker remains for the isolated
+H2 snapshot, checks and training after the frozen E cohort completes.
+
+This grants static freeze acceptance, not test success or launch/promotion
+based on unexecuted code. The intended gates remain successful H2 checks,
+real frozen-encoder/artifact reload, initial-policy equality, recorded PPO
+trust bounds, cold/warm two-model readiness and a fresh live-delivery
+canary. The benchmark uses synthetic observations and model calls; it does
+not itself establish SDK delivery or stronger tournament play.

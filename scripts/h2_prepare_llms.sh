@@ -44,6 +44,13 @@ fi
 if [[ "$WEREWOLF_MODEL_DEVICE" == cuda ]]; then
     "$python_bin" -c 'import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name())'
 fi
+if [[ "${WEREWOLF_SEMANTIC_STAGE:-0}" == 1 ]]; then
+    export WEREWOLF_SEMANTIC_ENCODER="$runtime/all-MiniLM-L6-v2"
+    "$runtime/venv/bin/hf" download sentence-transformers/all-MiniLM-L6-v2 \
+      --local-dir "$WEREWOLF_SEMANTIC_ENCODER" \
+      --revision 1110a243fdf4706b3f48f1d95db1a4f5529b4d41 \
+      --include 'model.safetensors' '*.json' 'vocab.txt'
+fi
 models=("$@")
 if (( ${#models[@]} == 0 )); then
     models=(Qwen/Qwen3-8B mistralai/Mistral-7B-Instruct-v0.3)
@@ -92,6 +99,12 @@ for model in "${models[@]}"; do
     fi
     if [[ "${WEREWOLF_COLLECT_AFTER_BENCH:-0}" == 1 ]]; then
         export WEREWOLF_MODEL_PATH="$model_dir"
+        if [[ "${WEREWOLF_SEMANTIC_STAGE:-0}" == 1 ]]; then
+            : "${WEREWOLF_SEMANTIC_CHECKPOINT:?Set the frozen semantic policy artifact}"
+            "$python_bin" -m scripts.bench_semantic_runtime \
+                --checkpoint "$WEREWOLF_SEMANTIC_CHECKPOINT" \
+                --out "outputs/hybrid-$SLURM_JOB_ID/semantic-runtime.json"
+        fi
         export WEREWOLF_PROPOSER="${WEREWOLF_PROPOSER:-ids}"
         export WEREWOLF_HYBRID_MODE="${WEREWOLF_HYBRID_MODE:-hybrid_collect}"
         export WEREWOLF_LOG_DIR="$project_dir/outputs/hybrid-$SLURM_JOB_ID/decisions"

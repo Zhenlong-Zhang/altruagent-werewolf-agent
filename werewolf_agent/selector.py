@@ -55,3 +55,13 @@ class Selector:
             return self.rng.choices(range(len(mass)), weights=mass)[0], mass
         choice = max(range(len(mass)), key=mass.__getitem__)
         return choice, [float(i == choice) for i in range(len(mass))]
+
+
+def load_selector(mode, weights_path=None, seed=None):
+    """Dispatch checkpoint formats without importing a neural runtime for legacy use."""
+    if weights_path is not None:
+        record = json.loads(Path(weights_path).read_text())
+        if record.get("schema_version") == 2:
+            from .semantic_selector import SemanticSelector
+            return SemanticSelector(mode, weights_path, seed)
+    return Selector(mode, weights_path, seed)
