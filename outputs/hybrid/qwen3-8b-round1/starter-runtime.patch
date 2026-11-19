@@ -1,0 +1,44 @@
+diff --git a/altruagent/runner.py b/altruagent/runner.py
+index 28f1c76..e51abea 100644
+--- a/altruagent/runner.py
++++ b/altruagent/runner.py
+@@ -805,6 +805,9 @@ def run_game(
+     decision_fn = _resolve_decision_fn(choose_action)
+     message_decision_fn = _resolve_message_decision_fn(choose_action)
+     result_hook = _resolve_result_hook(choose_action)
++    message_result_hook = getattr(choose_action, "on_message_result", None)
++    if not callable(message_result_hook):
++        message_result_hook = None
+     long_poll_supported = True
+     config_fetched = False
+     retry = _TransientRetry(sleep=sleep, now=now, log=log)
+@@ -882,6 +885,7 @@ def run_game(
+                     )
+             except AltruAgentError as exc:
+                 code = exc.error_code if isinstance(exc, MCPToolError) else None
++                _report_result(message_result_hook, {"error": code or "MESSAGE_DELIVERY_UNKNOWN"}, context)
+                 if code in _RACE_ERROR_CODES:
+                     state = read(game.get_state)
+                     continue
+@@ -908,6 +912,7 @@ def run_game(
+                 raise
+             retry.succeeded()
+             # send_message's own result already carries the post-call phase.
++            _report_result(message_result_hook, result, context)
+             # Terminating is idempotent server-side, so a contestant that
+             # already terminated this round (or the default auto-terminate)
+             # would just get a no-op success back while the others are still
+diff --git a/altruagent/worker.py b/altruagent/worker.py
+index d4cc869..cb034c8 100644
+--- a/altruagent/worker.py
++++ b/altruagent/worker.py
+@@ -371,6 +371,9 @@ def run_tournament_worker(
+             seat_position=grant.seat_position,
+         )
+         final_state = run_game_fn(game, context, contestant)
++        on_game_result = getattr(contestant, "on_game_result", None)
++        if callable(on_game_result):
++            on_game_result(final_state, context)
+         print_line(f"{label} {finished_line(final_state, grant.agent_id, grant.seat_position)}")
+         return EXIT_SUCCESS
+     except KeyboardInterrupt:

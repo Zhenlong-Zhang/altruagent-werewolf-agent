@@ -55,6 +55,73 @@ full. Its blocked dependent job 1875323 was canceled. Replacement job
 Mistral-7B-Instruct-v0.3 sequentially on scheduler-managed node-local
 storage. The 20B candidate needs a separate hardware and runtime check.
 
+Job 1875375 received an H200 but failed while pip downloaded PyTorch.
+Jobs 1979164 and 1979255 were canceled while pending. Job 1979285
+uses CUDA 12.8 wheels and also permits the L40S, H100 and RTX PRO 6000.
+It stages Qwen3-8B, checks its proposer, and starts official Testing
+collection on the same allocation. The job checks collected logs every
+30 seconds and writes the first selector checkpoint after 30 usable
+matches. The platform's Testing page creates the matches separately.
+
+Job 1979285 completed both probes on an RTX PRO 6000 Blackwell.
+Qwen3-8B ranked the reference first in 20/42 ID presentations and 4/42
+Yes/No presentations. The first-option control scored 21/42. The job
+stopped before collection because it looked for the private environment
+file in the starter checkout. Replacement job 1982203 reads the file from
+the project checkout. At that stage no Qwen3-8B selector checkpoint had been produced.
+
+Job 1982203 connected to Testing but received no games and timed out after
+six hours with zero usable episodes. Collection requires creating matches
+on the Testing page. On November 19, match
+`edd71920-6f66-4ff3-9304-f5ba912d8290` was created with seven self-hosted
+seats. CPU latency job 2104644 started on n6134 after reducing its request
+to four CPUs and 48 GiB. CPU collection job 2105587 started on n1184.
+GPU job 2104491 was canceled while pending to keep one collection runtime.
+The CPU collection then demonstrated delivered actions before scaling games.
+
+## First Qwen3-8B parameter update
+
+Job 2105587 completed on n1184 using four CPUs and 48 GiB. Qwen3-8B
+ran in float32 from revision `b968826d9c46dd6066d109eabc6255188de91218`.
+Its development probe returned valid proposals in all 42 presentations,
+with a 5.662-second median and 12.899-second maximum including cold start.
+The older-node timing probe, job 2104644 on n6134, reached its 15-minute
+limit before producing a complete probe result.
+
+The official collection completed 30 eligible focal-seat games against six
+rules opponents, covering 17 villager, eight wolf and five seer roles.
+All 65 sampled choices had accepted delivery acknowledgements, with zero
+model fallbacks. Maximum measured model time in collection was 15.157
+seconds. The collecting policy won 16 games. These are training outcomes.
+
+One on-policy REINFORCE update produced checkpoint `d7ebf7670444067a`
+from parent `c2cdbc1abfba2673`. Seventeen of the 20 selector parameters
+changed, with L2 change 0.005207830814243517. A second training invocation
+inside job 2107750 reproduced the checkpoint byte for byte from the
+archived trajectories.
+
+The checkpoint, training summary, exact runtime dependencies and source
+checksums are in [the round artifacts](../../outputs/hybrid/qwen3-8b-round1/).
+The 210 seat logs are retained locally under
+`data/qwen3-8b-round1/decisions` and on Hoffman2 under
+`outputs/hybrid-2105587/decisions`. The public artifacts include the starter
+commit and runtime patch needed to record outcomes and delivery.
+
+Job 2107750 completed on n1182 with the trained checkpoint in
+`hybrid_greedy` mode. All three fresh games completed, all seven selected
+decisions received accepted acknowledgements, and no model fallback
+occurred. Maximum model time was 20.502 seconds. All three games were
+wins, across two villager roles and one seer role. Their match hashes are
+disjoint from training. These three games check operation and checkpoint
+loading. A comparative win-rate assessment against LLM-first and the
+initial selector remains open.
+
+The checkpoint and summaries have been downloaded to the local project.
+Training and validation jobs both ended with exit code zero. Full
+validation logs are retained under `data/qwen3-8b-validation/decisions`.
+The webpage login token expired during the attempted 29th creation;
+refreshing the page restored creation, and all 30 training games completed.
+
 [Hoffman2 Slurm](https://www.hoffman2.idre.ucla.edu/Using-H2/Computing/Computing-Slurm.html)
 [Hoffman2 temporary storage](https://www.hoffman2.idre.ucla.edu/Using-H2/Storage/Storage.html)
 [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B)

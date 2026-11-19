@@ -1,0 +1,20 @@
+{
+  "validation_job": 2107750,
+  "node": "n1182",
+  "checkpoint_id": "d7ebf7670444067a",
+  "mode": "hybrid_greedy",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "completed_games": 3,
+  "roles": {
+    "villager": 2,
+    "seer": 1
+  },
+  "wins": 3,
+  "decisions": 7,
+  "accepted_decisions": 7,
+  "model_fallbacks": 0,
+  "max_model_seconds": 20.502,
+  "disjoint_from_training": true,
+  "purpose": "Operational validation of checkpoint loading and delivered decisions; comparative win-rate assessment remains open."
+}

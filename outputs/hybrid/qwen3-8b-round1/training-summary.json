@@ -1,0 +1,33 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "device": "cpu",
+  "dtype": "float32",
+  "training_job": 2105587,
+  "training_node": "n1184",
+  "opponents": [
+    "rules",
+    "rules",
+    "rules",
+    "rules",
+    "rules",
+    "rules"
+  ],
+  "train_games": 30,
+  "checkpoint_id": "d7ebf7670444067a",
+  "parent_checkpoint_id": "c2cdbc1abfba2673",
+  "parameter_count": 20,
+  "changed_parameters": 17,
+  "parameter_delta_l2": 0.005207830814243517,
+  "roles": {
+    "wolf": 8,
+    "villager": 17,
+    "seer": 5
+  },
+  "training_wins": 16,
+  "sampled_decisions": 65,
+  "confirmed_sampled_decisions": 65,
+  "model_fallbacks": 0,
+  "max_model_seconds": 15.157,
+  "exact_reproduction": true
+}
