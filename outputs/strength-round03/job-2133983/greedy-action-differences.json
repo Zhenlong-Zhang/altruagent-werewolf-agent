@@ -1,0 +1,1496 @@
+{
+  "audit_integrity_passed": true,
+  "observed_NN_logs_complete": true,
+  "interpretation": "Recorded NN and old guarded greedy choices differed on some identical observed slates. This establishes conditional decision changes, not that either alternative would win more games.",
+  "protocol_issues": [],
+  "incomplete_reasons": [],
+  "assigned_NN_games": 21,
+  "NN_games_with_eligible_decisions": 21,
+  "NN_games_with_any_changed_decision": 1,
+  "changed_game_hashes": [
+    "f57afe07b8cae9a1"
+  ],
+  "unchanged_eligible_game_hashes": [
+    "015414f1949c98f8",
+    "046d3d28c53758af",
+    "072cb366f96c0ee6",
+    "08f0e65211a83a3d",
+    "1931bc0502b82c0c",
+    "1f989196fa350f36",
+    "2d06c040ce2bd5a7",
+    "32b8a077508a513c",
+    "39decf72bec9f8b8",
+    "489e814d76671cb8",
+    "4e46c9d3271331ab",
+    "5159046586f1f408",
+    "56324e267d8835d0",
+    "83cb2bd6224daa40",
+    "9102fc32c5ae2221",
+    "9146b57ffcec91fc",
+    "9df599d4d6d00e0d",
+    "b71d9f59c1879570",
+    "ca4dd1d6767c0287",
+    "da30b69d89e1b432"
+  ],
+  "counts": {
+    "all_NN_focal_choices": 99,
+    "forced_singleton_choices": 1,
+    "used_fallback_choices": 0,
+    "selector_error_choices": 0,
+    "model_invalid_choices_including_forced": 1,
+    "excluded_forced_singleton": 1
+  },
+  "conditional_comparison": {
+    "eligible_decisions": 98,
+    "changed_decisions": 1,
+    "changed_fraction": 0.01020408163265306,
+    "games_with_eligible_decisions": 21,
+    "games_with_any_change": 1
+  },
+  "by_role": {
+    "seer": {
+      "eligible_decisions": 6,
+      "changed_decisions": 1,
+      "changed_fraction": 0.16666666666666666,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 1
+    },
+    "villager": {
+      "eligible_decisions": 46,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 12,
+      "games_with_any_change": 0
+    },
+    "wolf": {
+      "eligible_decisions": 46,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 8,
+      "games_with_any_change": 0
+    }
+  },
+  "by_phase": {
+    "day_vote": {
+      "eligible_decisions": 42,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 21,
+      "games_with_any_change": 0
+    },
+    "night_seer": {
+      "eligible_decisions": 3,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    "night_wolf": {
+      "eligible_decisions": 10,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 7,
+      "games_with_any_change": 0
+    },
+    "speech": {
+      "eligible_decisions": 43,
+      "changed_decisions": 1,
+      "changed_fraction": 0.023255813953488372,
+      "games_with_eligible_decisions": 21,
+      "games_with_any_change": 1
+    }
+  },
+  "per_NN_game": [
+    {
+      "match_hash": "2d06c040ce2bd5a7",
+      "role": "villager",
+      "eligible_decisions": 6,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "56324e267d8835d0",
+      "role": "villager",
+      "eligible_decisions": 4,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "9102fc32c5ae2221",
+      "role": "wolf",
+      "eligible_decisions": 5,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "9df599d4d6d00e0d",
+      "role": "villager",
+      "eligible_decisions": 4,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "f57afe07b8cae9a1",
+      "role": "seer",
+      "eligible_decisions": 6,
+      "changed_decisions": 1,
+      "changed_fraction": 0.16666666666666666,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 1
+    },
+    {
+      "match_hash": "da30b69d89e1b432",
+      "role": "wolf",
+      "eligible_decisions": 5,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "39decf72bec9f8b8",
+      "role": "villager",
+      "eligible_decisions": 4,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "4e46c9d3271331ab",
+      "role": "villager",
+      "eligible_decisions": 4,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "1931bc0502b82c0c",
+      "role": "villager",
+      "eligible_decisions": 4,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "role": "wolf",
+      "eligible_decisions": 8,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "5159046586f1f408",
+      "role": "villager",
+      "eligible_decisions": 4,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "08f0e65211a83a3d",
+      "role": "wolf",
+      "eligible_decisions": 5,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "role": "wolf",
+      "eligible_decisions": 8,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "role": "wolf",
+      "eligible_decisions": 8,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "ca4dd1d6767c0287",
+      "role": "villager",
+      "eligible_decisions": 6,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "072cb366f96c0ee6",
+      "role": "villager",
+      "eligible_decisions": 2,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "489e814d76671cb8",
+      "role": "villager",
+      "eligible_decisions": 2,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "1f989196fa350f36",
+      "role": "wolf",
+      "eligible_decisions": 5,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "046d3d28c53758af",
+      "role": "villager",
+      "eligible_decisions": 4,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "32b8a077508a513c",
+      "role": "wolf",
+      "eligible_decisions": 2,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    },
+    {
+      "match_hash": "83cb2bd6224daa40",
+      "role": "villager",
+      "eligible_decisions": 2,
+      "changed_decisions": 0,
+      "changed_fraction": 0.0,
+      "games_with_eligible_decisions": 1,
+      "games_with_any_change": 0
+    }
+  ],
+  "eligible_decision_comparisons": [
+    {
+      "match_hash": "2d06c040ce2bd5a7",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "2d06c040ce2bd5a7",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "2d06c040ce2bd5a7",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "2d06c040ce2bd5a7",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "2d06c040ce2bd5a7",
+      "decision_id": 5,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "2d06c040ce2bd5a7",
+      "decision_id": 6,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "56324e267d8835d0",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "56324e267d8835d0",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "5",
+      "recorded_NN_candidate_id": "5"
+    },
+    {
+      "match_hash": "56324e267d8835d0",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "56324e267d8835d0",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "5",
+      "recorded_NN_candidate_id": "5"
+    },
+    {
+      "match_hash": "9102fc32c5ae2221",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "9102fc32c5ae2221",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "9102fc32c5ae2221",
+      "decision_id": 3,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "9102fc32c5ae2221",
+      "decision_id": 4,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "9102fc32c5ae2221",
+      "decision_id": 5,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "3",
+      "recorded_NN_candidate_id": "3"
+    },
+    {
+      "match_hash": "9df599d4d6d00e0d",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "9df599d4d6d00e0d",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "9df599d4d6d00e0d",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "9df599d4d6d00e0d",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "f57afe07b8cae9a1",
+      "decision_id": 1,
+      "role": "seer",
+      "phase": "night_seer",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "0",
+      "recorded_NN_candidate_id": "0"
+    },
+    {
+      "match_hash": "f57afe07b8cae9a1",
+      "decision_id": 2,
+      "role": "seer",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "f57afe07b8cae9a1",
+      "decision_id": 3,
+      "role": "seer",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "f57afe07b8cae9a1",
+      "decision_id": 4,
+      "role": "seer",
+      "phase": "night_seer",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "f57afe07b8cae9a1",
+      "decision_id": 5,
+      "role": "seer",
+      "phase": "speech",
+      "changed": true,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 1,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "0"
+    },
+    {
+      "match_hash": "f57afe07b8cae9a1",
+      "decision_id": 7,
+      "role": "seer",
+      "phase": "night_seer",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "da30b69d89e1b432",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "da30b69d89e1b432",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "da30b69d89e1b432",
+      "decision_id": 3,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "da30b69d89e1b432",
+      "decision_id": 4,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "da30b69d89e1b432",
+      "decision_id": 5,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "5",
+      "recorded_NN_candidate_id": "5"
+    },
+    {
+      "match_hash": "39decf72bec9f8b8",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "39decf72bec9f8b8",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "39decf72bec9f8b8",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "39decf72bec9f8b8",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "4e46c9d3271331ab",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "4e46c9d3271331ab",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "5",
+      "recorded_NN_candidate_id": "5"
+    },
+    {
+      "match_hash": "4e46c9d3271331ab",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "4e46c9d3271331ab",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "5",
+      "recorded_NN_candidate_id": "5"
+    },
+    {
+      "match_hash": "1931bc0502b82c0c",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "1931bc0502b82c0c",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "1931bc0502b82c0c",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "1931bc0502b82c0c",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 3,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 4,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 5,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 6,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "3",
+      "recorded_NN_candidate_id": "3"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 7,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "015414f1949c98f8",
+      "decision_id": 8,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "5159046586f1f408",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "5159046586f1f408",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "5159046586f1f408",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "5159046586f1f408",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "08f0e65211a83a3d",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "08f0e65211a83a3d",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "08f0e65211a83a3d",
+      "decision_id": 3,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "08f0e65211a83a3d",
+      "decision_id": 4,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "08f0e65211a83a3d",
+      "decision_id": 5,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 3,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 4,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 5,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 6,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 7,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "9146b57ffcec91fc",
+      "decision_id": 8,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "5",
+      "recorded_NN_candidate_id": "5"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "5",
+      "recorded_NN_candidate_id": "5"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 3,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 4,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 5,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 6,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 7,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "b71d9f59c1879570",
+      "decision_id": 8,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "3",
+      "recorded_NN_candidate_id": "3"
+    },
+    {
+      "match_hash": "ca4dd1d6767c0287",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "ca4dd1d6767c0287",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "ca4dd1d6767c0287",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "ca4dd1d6767c0287",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "ca4dd1d6767c0287",
+      "decision_id": 5,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "ca4dd1d6767c0287",
+      "decision_id": 6,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "072cb366f96c0ee6",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "072cb366f96c0ee6",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "489e814d76671cb8",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "489e814d76671cb8",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "1f989196fa350f36",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "1f989196fa350f36",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "6",
+      "recorded_NN_candidate_id": "6"
+    },
+    {
+      "match_hash": "1f989196fa350f36",
+      "decision_id": 3,
+      "role": "wolf",
+      "phase": "night_wolf",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "1f989196fa350f36",
+      "decision_id": 4,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "1f989196fa350f36",
+      "decision_id": 5,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "046d3d28c53758af",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "046d3d28c53758af",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "4",
+      "recorded_NN_candidate_id": "4"
+    },
+    {
+      "match_hash": "046d3d28c53758af",
+      "decision_id": 3,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "046d3d28c53758af",
+      "decision_id": 4,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "32b8a077508a513c",
+      "decision_id": 1,
+      "role": "wolf",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "32b8a077508a513c",
+      "decision_id": 2,
+      "role": "wolf",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "2",
+      "recorded_NN_candidate_id": "2"
+    },
+    {
+      "match_hash": "83cb2bd6224daa40",
+      "decision_id": 1,
+      "role": "villager",
+      "phase": "speech",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "1",
+      "recorded_NN_candidate_id": "1"
+    },
+    {
+      "match_hash": "83cb2bd6224daa40",
+      "decision_id": 2,
+      "role": "villager",
+      "phase": "day_vote",
+      "changed": false,
+      "old_guarded_argmax_index": 0,
+      "recorded_NN_argmax_index": 0,
+      "old_guarded_candidate_id": "3",
+      "recorded_NN_candidate_id": "3"
+    }
+  ],
+  "comparator": {
+    "old_checkpoint_id": "d7ebf7670444067a",
+    "NN_checkpoint_id": "6ca4df8fd98821e6",
+    "state": "Exact recorded before-decision guarded candidate features/order; first-index greedy ties."
+  },
+  "provenance": {
+    "helper_sha256": "495a251fc1526e9da48d9210f0873707f3b150d0f4791678d317afbba1ad7e20",
+    "summary_sha256": "38b947e01356d70b14ef80081feeb278903727147046da70b4732b31e1b47c42",
+    "legacy_selector_source_sha256": "6366f66f501ace135a4bf0b5602cf7269cdf330c9cabbce11155f343643adf5f",
+    "legacy_selector_source": "/u/home/z/zzl/werewolf-strength-r03h/werewolf_agent/selector.py",
+    "old_sha256": "764cb201aed463e95252a9c789608ac65e1e199e2d7bd438c2e4849b4291cda6",
+    "NN_metadata_sha256": "46c50a807b5b3375ecce9b6facd0bed927851f20577f430a24f163a6a9b10f6a",
+    "NN_tensor_sha256": "ef009b1fad459baecec35e7488e8cc6231681c83a1d8fbb34a6e93c83d742303",
+    "E_G_overlap_hashes": [],
+    "NN_focal_log_sha256_manifest": [
+      {
+        "path": "match_015414f1949c98f8_seat_5.jsonl",
+        "match_hash": "015414f1949c98f8",
+        "sha256": "83f9542d2190297c9d9b143fe53aba9beca2bd540780d909c1a635aa13503ec0"
+      },
+      {
+        "path": "match_046d3d28c53758af_seat_5.jsonl",
+        "match_hash": "046d3d28c53758af",
+        "sha256": "1d677abb477e76c3c98af81e684076e21dd74f8c012858504ea4f338f67f7d22"
+      },
+      {
+        "path": "match_072cb366f96c0ee6_seat_0.jsonl",
+        "match_hash": "072cb366f96c0ee6",
+        "sha256": "3276d954548fbab59842b94bd765a09fa9b7eea051471f7c0a858b762b07f953"
+      },
+      {
+        "path": "match_08f0e65211a83a3d_seat_5.jsonl",
+        "match_hash": "08f0e65211a83a3d",
+        "sha256": "25f3dea89de44c999687b0371738aa2e42cdb6ef86cb1d0bd7d230d868547931"
+      },
+      {
+        "path": "match_1931bc0502b82c0c_seat_5.jsonl",
+        "match_hash": "1931bc0502b82c0c",
+        "sha256": "d01553f1889e19c148e7bd3793788307e17f2ea6588d029551aa939d5cedf885"
+      },
+      {
+        "path": "match_1f989196fa350f36_seat_1.jsonl",
+        "match_hash": "1f989196fa350f36",
+        "sha256": "2a1f74c5ecaeb3f08f65f16ca79df02dd080308ed5d0dfe5e6eee9d894122366"
+      },
+      {
+        "path": "match_2d06c040ce2bd5a7_seat_3.jsonl",
+        "match_hash": "2d06c040ce2bd5a7",
+        "sha256": "9661eac2bebccddc2311325064237ffdde764f973f1bfd9ca5b44634446600ca"
+      },
+      {
+        "path": "match_32b8a077508a513c_seat_0.jsonl",
+        "match_hash": "32b8a077508a513c",
+        "sha256": "ed46057c22b2742f8c488d30cea778ac9a56de7bb39b25567825b5613a1e82a3"
+      },
+      {
+        "path": "match_39decf72bec9f8b8_seat_1.jsonl",
+        "match_hash": "39decf72bec9f8b8",
+        "sha256": "40d148e15a64ea3273587b25c3914347954d4e1a95b6bf9a6d8a064d9d6d74da"
+      },
+      {
+        "path": "match_489e814d76671cb8_seat_1.jsonl",
+        "match_hash": "489e814d76671cb8",
+        "sha256": "4c5415ddfcf1db2d41dc9e243d3087e7ab03a65156c2365576ffa928ec9a9532"
+      },
+      {
+        "path": "match_4e46c9d3271331ab_seat_4.jsonl",
+        "match_hash": "4e46c9d3271331ab",
+        "sha256": "898c7cce552064b6cbdd0473b6a67c5643e95d84fe6dae071f2b5653f8d2afb8"
+      },
+      {
+        "path": "match_5159046586f1f408_seat_3.jsonl",
+        "match_hash": "5159046586f1f408",
+        "sha256": "20194defc3e0cbb84bb0c4a588663cd8cf4042efe1d2b4ea2bc5a142a7f45a1e"
+      },
+      {
+        "path": "match_56324e267d8835d0_seat_1.jsonl",
+        "match_hash": "56324e267d8835d0",
+        "sha256": "770650e620db01c41591a3d1d72bd2b271b5e6151f74e404e22f66104746e69e"
+      },
+      {
+        "path": "match_83cb2bd6224daa40_seat_0.jsonl",
+        "match_hash": "83cb2bd6224daa40",
+        "sha256": "d3a084e67506dddaf6da44b1b0d3788e6cadd0ca2fe24aac4c9687de0aa41eb5"
+      },
+      {
+        "path": "match_9102fc32c5ae2221_seat_6.jsonl",
+        "match_hash": "9102fc32c5ae2221",
+        "sha256": "3eacc13dc395ab301e008b8469de15ff061a88cd39541331e943c2cc67c755e2"
+      },
+      {
+        "path": "match_9146b57ffcec91fc_seat_2.jsonl",
+        "match_hash": "9146b57ffcec91fc",
+        "sha256": "ee1dd32e7d73c48fd3be9aa066eb26d7699bcb0ddfbd20719f320da588a8180d"
+      },
+      {
+        "path": "match_9df599d4d6d00e0d_seat_4.jsonl",
+        "match_hash": "9df599d4d6d00e0d",
+        "sha256": "0e088bc227bfe13019229983aa56adb673e01599202eb87baf312eb2beb04240"
+      },
+      {
+        "path": "match_b71d9f59c1879570_seat_6.jsonl",
+        "match_hash": "b71d9f59c1879570",
+        "sha256": "1d36415022bf231822585343dca39300162f8f5e2f7a84d447fc36deec80c4e1"
+      },
+      {
+        "path": "match_ca4dd1d6767c0287_seat_5.jsonl",
+        "match_hash": "ca4dd1d6767c0287",
+        "sha256": "793f8b2fa7ea63c7984854911a1d323dd10f5c262422d23e478eac3aca6442a1"
+      },
+      {
+        "path": "match_da30b69d89e1b432_seat_6.jsonl",
+        "match_hash": "da30b69d89e1b432",
+        "sha256": "5497f2c34493cdc27c6b6863c592367aeb6bf0e367beeb44f0bd0c0b91c45a50"
+      },
+      {
+        "path": "match_f57afe07b8cae9a1_seat_5.jsonl",
+        "match_hash": "f57afe07b8cae9a1",
+        "sha256": "6b4e272a0ed07fa72864ad96115316a95071bd6c29c28660f97b2ece97ba0631"
+      }
+    ]
+  }
+}

@@ -1358,3 +1358,107 @@ module's imports are standard-library-only; its lazy schema-2 relative
 import is never invoked by this comparator. No selection algorithm was
 copied and the frozen 37-file runtime remains untouched. Rerun on the
 stable H2 prefix; successful diagnostic results remain pending.
+
+## Reproducible delivery preparation review
+
+The Reviewer re-inspected `competition_entry`: it enables tournament handling
+for the assigned contestant seat, requires a staged local model and explicit
+selector weights for selector modes, and validates the configured model
+without loading weights at construction. Practice-table factories retain
+their tournament guard. This is a release route, not evidence of actual
+tournament registration or connection.
+
+The tracked incumbent artifact independently hashes to checkpoint
+`d7ebf7670444067a`, file SHA256
+`764cb201aed463e95252a9c789608ac65e1e199e2d7bd438c2e4849b4291cda6`.
+The Reviewer requested an explicit selected-default environment block in
+`16_deployment_release.md`: IDs proposer, greedy mode, guard none, cyclic
+none, exact D7 path/hash and core source commit. Its initial generic
+'choose profile' wording and setup list could inherit experimental
+proposer/guard/mode settings. The parent agreed to repair documentation;
+no runtime change or tournament action is required.
+
+The draft English HTML and closeout were checked against computed artifacts:
+30,421 actor plus 1,345 critic parameters, E30/136/32 epochs, recorded KL,
+training TV 4.09% and four changed training argmaxes, F wins/Wilson intervals/
+role counts, focal proposal maximum 5.968 seconds and selector maximum
+0.122 seconds all match their JSON sources. They correctly remain drafts,
+state G pending, retain the incumbent and avoid token-fine-tuning/MAPPO or
+strength-promotion claims. Final delivery acceptance awaits actual bounded
+G evidence, updated report, repaired release documentation and final review.
+No WORKPLAN or user image was edited by the Reviewer.
+
+## Final bounded G evidence and delivery acceptance
+
+The Reviewer independently verified the completed G artifacts, census and
+raw focal metadata without running model inference or training locally.
+All 378 worker-log SHA256 values match the final operations manifest; the
+operations, conditional-comparison helper and legacy selector source hashes
+match the inspected files. All 54 controller UUIDs independently reproduce
+the declared hash-assigned arm and seat, and their match hashes exactly
+match the final summary. Raw focal terminal scores/counts reproduce:
+
+| G greedy profile | Wins / games | Wilson 95% interval | V / S / W games |
+| --- | --- | --- | --- |
+| Incumbent, no guard | 16/21 (76.2%) | 54.9–89.4% | 13 / 3 / 5 |
+| D7 with guard | 7/12 (58.3%) | 32.0–80.7% | 7 / 2 / 3 |
+| Semantic PPO with guard | 11/21 (52.4%) | 32.4–71.7% | 12 / 1 / 8 |
+
+All 239 focal choices were acknowledged; no model/selector fallback,
+delivery error, controller/configuration problem or late receipt is recorded.
+The final operations and conditional-choice audits are integrity-clean and
+complete. Independent match-set comparison confirms E30/F53/G54 pairwise
+disjointness. Split-audit input hashes match all three current files.
+
+Before the final created game, counts were NN21/guarded11/incumbent21;
+the last assigned guarded game reaches twelve. Thus the 54-game total
+satisfies the first all-arms minimum with hash oversampling retained,
+rather than an outcome-tuned extension. Receipt timestamps run
+19:41:41.281Z–21:19:02.008Z, below the 75-game cap and before the declared
+22:30:11Z creation cutoff. The allocation record reports completion in
+1:45:35. Stopping/integrity evidence supports accepting the bounded protocol.
+
+The H2 same-observed-slate diagnostic reports one changed recorded index
+among 98 eligible NN greedy choices, across one of 21 NN games. The Reviewer
+checked that raw decision: a seer speech changes from generic evidence-
+request to disclosure of a confirmed Player1 wolf. One forced singleton is
+excluded. No other eligible choice differs from the old guarded argmax on
+those logged features/order. This is conditional observed-state evidence,
+not a simulation of alternative trajectories or an attribution of game wins.
+
+The incumbent has the highest observed G rate, but broad intervals, unequal
+roles/seats and the fixed mixed roster do not prove intrinsic superiority
+or tournament-wide generalization. Neither sampled F nor greedy G establishes
+a semantic improvement. Accept retaining D7/IDs/greedy/no guard as the
+predeclared conservative delivery choice; do not promote the trained NN.
+
+### Final audit attempts and reproducible release
+
+Successful H2 audit 2141810's retained log records operations, split and
+conditional-choice success. The later duplicate 2146450 log records refusal
+to replace existing immutable outputs. The regenerated summary's current
+SHA256 remains exactly the original split-audited value
+`38b947e01356d70b14ef80081feeb278903727147046da70b4732b31e1b47c42`.
+The allocation record preserves both attempts, including the failed exact-
+prior fit and duplicate audit. No further analysis rerun is required from
+these matching source/data hashes; the duplicate is not misreported as a
+new successful audit.
+
+`selected-release.json`, corrected deployment instructions, tracked D7
+file hash and competition entry agree on source core, checkpoint, IDs
+proposer, no guard, greedy mode, BF16 Qwen revision and four threads. The
+release manifest distinguishes candidate retention from selection, and
+records that actual tournament connection was not performed. Model/weights
+staging and private authentication remain operator requirements. Serving
+capacity, reconnect recovery and live tournament connectivity are explicitly
+unverified rather than implied by Testing delivery.
+
+The finalized English HTML and `05_closeout.md` match the computed F/G
+figures, role counts, parameter counts, training diagnostics and conditional
+choice result. They keep F/G separate, report failures/repairs truthfully,
+retain the incumbent and explicitly state the competition-winning objective
+remains unproven. No material factual blocker remains for **bounded experiment
+and reproducible artifact delivery acceptance**. This acceptance does not
+mean the user's broader goal of winning the competition has been achieved.
+Any later improvement requires newly separated training/evaluation evidence;
+this review authorizes no outcome-tuned rerun of the frozen cohorts.

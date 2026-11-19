@@ -1,0 +1,27 @@
+{
+  "gameplay_job": 2133983,
+  "gameplay_state": "COMPLETED",
+  "gameplay_elapsed": "01:45:35",
+  "gameplay_exit_code": "0:0",
+  "successful_final_audit_job": 2141810,
+  "successful_audit_elapsed": "00:00:03",
+  "successful_audit_exit_code": "0:0",
+  "recovery_attempt": {
+    "job": 2146450,
+    "state": "FAILED",
+    "elapsed": "00:00:02",
+    "exit_code": "1:0",
+    "reason": "Existing immutable final audit outputs rejected duplicate analysis after SSH recovery. No model fitting or gameplay was rerun; the regenerated summary is byte-identical to the successfully audited input."
+  },
+  "successful_summary_sha256": "38b947e01356d70b14ef80081feeb278903727147046da70b4732b31e1b47c42",
+  "artifact_integrity": {
+    "operations_audit_passed": true,
+    "split_audit_passed": true,
+    "conditional_action_audit_passed": true
+  },
+  "logs": [
+    "final-audit-2141810.log",
+    "final-audit-2146450.log"
+  ],
+  "allocation_accounting": "../allocation-accounting.psv"
+}

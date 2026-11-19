@@ -6,7 +6,9 @@ A role-aware, inspectable Werewolf policy and match-analysis toolkit for the Alt
 
 The frozen Qwen3-8B proposer now supports a frozen MiniLM semantic encoder and a trained attention/PPO actor–critic (30,421 actor parameters, 1,345 critic parameters). The language-model weights remain frozen. Training used30 completed games and136 sampled decisions; the trained artifact is [checkpoint6ca4df8fd98821e6](outputs/strength-round03/job-2123930/selector.json).
 
-The first fresh four-profile comparison completed53 games with251/251 focal decisions acknowledged and no focal fallback or delivery error. Semantic sampled won5/13 versus6/12 for the old sampled control; this does **not** demonstrate improved strength. Greedy controls won7/14 (incumbent) and8/14 (guarded). Intervals are wide and roles differ. [Results and audit](outputs/strength-round03/job-2123942/final-summary.json) preserve every assignment. A separately predeclared, bounded greedy-mode comparison is ongoing; the neural candidate has not been promoted.
+The fresh sampled-policy comparison completed53 games: semantic sampled won5/13 versus6/12 for the old sampled control; incumbent and guarded greedy controls won7/14 and8/14. A separately predeclared greedy comparison completed54 games: incumbent16/21, guarded7/12 and semantic11/21. All490 focal decisions across these two pilots were acknowledged with no focal fallback or delivery error. Small samples and unequal roles leave wide uncertainty; neither pilot demonstrates improved semantic-policy strength. On identical observed candidate slates, the NN changed only1/98 eligible greedy choices relative to the old guarded head. **The incumbent remains the selected release.**
+
+Read the concise [English report](outputs/strength-round03/strength_report.html), [G results](outputs/strength-round03/job-2133983/final-summary.json), [operations audit](outputs/strength-round03/job-2133983/final-operations.json), and [selected release manifest](outputs/strength-round03/selected-release.json). Training, evaluation, failure accounting and artifacts are complete for this round; tournament-wide superiority and actual tournament deployment remain unverified.
 
 Use the dedicated `werewolf_agent.competition_entry` for a selected competition profile; see [release instructions](rounds/03_strength/16_deployment_release.md) and [the frozen validation contract](rounds/03_strength/17_greedy_validation_contract.md). The prototype entry examples below remain historical controls and do not select the experimental neural release automatically.
 
@@ -66,11 +68,11 @@ The platform has 7 seats: 2 wolves, 1 seer, 4 villagers. Each registered contest
 
 The prospective 25-game pilot favored legacy IDs (9/12 wins) over grounded
 (5/13). Grounded is not promoted. Legacy IDs remains the competition incumbent.
-The next experiment keeps its prompt/ranking/speech and enables only
+The subsequent experiment kept its prompt/ranking/speech and enabled only
 `WEREWOLF_EVIDENCE_GUARD=verified-innocent-v1` to exclude privately checked
 nonwolves from a seer vote when unknown targets remain. The
 [incumbent pivot](rounds/03_strength/13_winning_incumbent_pivot.md) records the
-revised training and complete-policy comparison.
+revised training and complete-policy comparison. Those evaluations are now complete above; the guard and neural candidate were not promoted.
 
 The [strength round](rounds/03_strength/00_intake.md) adds an experimental
 `WEREWOLF_PROPOSER=grounded` backend. It separates confirmed observations from

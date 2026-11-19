@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "E_F_disjoint": true,
+    "E_G_disjoint": true,
+    "F_G_disjoint": true,
+    "G_seed": true,
+    "F_seed": true
+  },
+  "passed": true,
+  "counts": {
+    "E_training": 30,
+    "F_assigned": 53,
+    "G_assigned": 54
+  },
+  "input_sha256": {
+    "/u/home/z/zzl/werewolf-strength-r03g/outputs/hybrid-2123942/final-summary.json": "83e59e68ed67580e9787ccf36b0f1a1487f728828258f85412585fa3cc3c8043",
+    "outputs/hybrid-2133983/final-summary.json": "38b947e01356d70b14ef80081feeb278903727147046da70b4732b31e1b47c42",
+    "/u/home/z/zzl/werewolf-strength-r03g/outputs/semantic-2123930/selector.json": "46c50a807b5b3375ecce9b6facd0bed927851f20577f430a24f163a6a9b10f6a"
+  }
+}

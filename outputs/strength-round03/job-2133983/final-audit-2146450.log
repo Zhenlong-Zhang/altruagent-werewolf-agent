@@ -1,0 +1,12 @@
+usage: analyze_strength_operations.py [-h] --summary SUMMARY
+                                      --training-artifact TRAINING_ARTIFACT
+                                      [--profile-set {sampled4,greedy3}] --out
+                                      OUT
+                                      log_dir
+analyze_strength_operations.py: error: Choose a new audit output path
+Traceback (most recent call last):
+  File "<stdin>", line 15, in <module>
+  File "/u/local/apps/python/3.12.13/gcc-11.5.0/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: 'outputs/hybrid-2133983/split-audit.json'

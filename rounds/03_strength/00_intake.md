@@ -25,4 +25,4 @@ The current proposer scores immediate action-ID tokens. The selector uses handcr
 - Rejected alternatives: light continuity is insufficient for implementation and prospective evaluation; artifact-production skills do not cover this task.
 - Main agent ownership: experiment orchestration, hybrid practice routing, scheduler jobs, platform games and synthesis.
 - Worker ownership: proposal backend, HybridPolicy changes, dedicated competition factory and focused regression checks.
-- Execution and evidence: in progress, to be recorded in the round log and review.
+- Execution and evidence: completed experiment delivery. E trained the semantic actor/critic on30 games/136 choices; F evaluated53 games and G54. Final audits and independent review are recorded in04_review.md and05_closeout.md, with computed evidence in outputs/strength-round03. No demonstrated neural-policy strength gain; the incumbent remains selected. The user's broader competition-winning objective remains unproven.

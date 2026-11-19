@@ -1,0 +1,55 @@
+{
+  "status": "selected incumbent for delivery; actual tournament connection not performed",
+  "selection_reason": "No demonstrated semantic PPO improvement in the frozen sampled or greedy pilots; retain incumbent under predeclared selection rule.",
+  "policy_core_commit": "63bb8ddd0706565cc751d2ae97dbbac476ed6ab9",
+  "entrypoint": "werewolf_agent.competition_entry",
+  "official_command": "python -m agent --tournament --agent werewolf_agent.competition_entry",
+  "checkpoint": {
+    "id": "d7ebf7670444067a",
+    "path": "outputs/hybrid/qwen3-8b-round1/selector.json",
+    "sha256": "764cb201aed463e95252a9c789608ac65e1e199e2d7bd438c2e4849b4291cda6"
+  },
+  "model": {
+    "id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "threads": 4
+  },
+  "environment": {
+    "WEREWOLF_PROPOSER": "ids",
+    "WEREWOLF_GROUNDED_ORDER_BALANCE": "none",
+    "WEREWOLF_EVIDENCE_GUARD": "none",
+    "WEREWOLF_HYBRID_MODE": "hybrid_greedy",
+    "WEREWOLF_MODEL_DEVICE": "cpu",
+    "WEREWOLF_MODEL_DTYPE": "bfloat16",
+    "WEREWOLF_CPU_THREADS": "4",
+    "WEREWOLF_MODEL_REVISION": "b968826d9c46dd6066d109eabc6255188de91218"
+  },
+  "operator_staging_required": {
+    "WEREWOLF_MODEL_PATH": "verified local model directory",
+    "WEREWOLF_HYBRID_WEIGHTS": "absolute path to checkpoint above",
+    "authentication": "official key supplied privately inside compute allocation"
+  },
+  "sdk_provenance": "starter-runtime-source.json",
+  "evidence": {
+    "training_games": 30,
+    "sampled_audit_job": 2136086,
+    "greedy_audit_job": 2141810,
+    "greedy_summary_sha256": "38b947e01356d70b14ef80081feeb278903727147046da70b4732b31e1b47c42",
+    "phase_f_evaluation_games": 53,
+    "phase_g_greedy_evaluation_games": 54
+  },
+  "experimental_candidate_retained": {
+    "id": "6ca4df8fd98821e6",
+    "metadata": "job-2123930/selector.json",
+    "tensor": "job-2123930/selector.pt",
+    "selected": false,
+    "encoder_override_required": "WEREWOLF_SEMANTIC_ENCODER"
+  },
+  "limitations": [
+    "Small fixed-roster policy-selection pilots, unequal realized roles and seats, not an untouched postselection tournament test.",
+    "Serving allocation must be running throughout competition; queued allocation is unavailable.",
+    "Actual tournament connectivity, concurrent-assignment capacity and reconnect recovery remain unverified."
+  ]
+}

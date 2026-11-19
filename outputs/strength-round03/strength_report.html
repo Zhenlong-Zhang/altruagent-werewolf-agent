@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Werewolf Agent — Strength Evaluation</title>
+<style>
+:root{color-scheme:light;--ink:#172737;--muted:#526475;--line:#dce4eb;--blue:#174f82;--paper:#fff;--wash:#f3f6f9}
+*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1000px;margin:36px auto;padding:42px 48px;background:var(--paper);border:1px solid var(--line);border-radius:14px}header{border-bottom:2px solid var(--blue);padding-bottom:22px;margin-bottom:26px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}h1{font-size:32px;line-height:1.15;letter-spacing:-.025em;margin:9px 0 12px}h2{font-size:19px;margin:28px 0 8px}p{margin:9px 0}.lead{font-size:18px;max-width:830px}.muted,small{color:var(--muted)}.status{padding:13px 17px;border-left:4px solid #bb811e;background:#fff7e7;border-radius:4px;margin:18px 0}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;margin:15px 0 8px;font-size:14px;font-variant-numeric:tabular-nums}th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{background:var(--wash);font-size:12px;color:var(--muted)}td:first-child{font-weight:650}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat{border:1px solid var(--line);border-radius:8px;padding:13px 16px}.stat strong{display:block;font-size:22px;color:var(--blue)}.stat span{font-size:13px;color:var(--muted)}a{color:var(--blue);text-underline-offset:3px}code{font-size:12px;overflow-wrap:anywhere}footer{border-top:1px solid var(--line);margin-top:28px;padding-top:14px;font-size:12px;color:var(--muted)}ul{padding-left:22px;margin:8px 0}li{margin:5px 0}@media(max-width:650px){main{margin:0;padding:25px 20px;border-radius:0;border:0}h1{font-size:27px}.stats{grid-template-columns:1fr}}@media print{body{background:#fff}main{border:0;margin:0;max-width:none;padding:15px}h2,table{break-inside:avoid}a{color:inherit}}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">Round 03 · Completed bounded evaluation</div>
+<h1>Werewolf Agent: Strength Evaluation</h1>
+<p class="lead">Training and both prospective pilots are complete. The semantic PPO selector did <strong>not demonstrate improved playing strength</strong>. Retain the original greedy policy; winning the competition remains an unproven objective.</p>
+</header>
+
+<h2>1. Objective and agent</h2>
+<p>Maximize faction wins in AltruAgent’s seven-player Werewolf game. A frozen <strong>Qwen3-8B</strong> proposer ranks offered actions and bounded speech templates. The learned selector combines eight numeric candidate features with frozen <strong>MiniLM</strong> embeddings of candidate text and the acting player’s coarse context.</p>
+<p>A width-32 attention actor adds a bounded residual to the existing 20-coefficient policy. The actor and critic contain <strong>31,766 trainable parameters</strong>. Qwen and MiniLM weights remain frozen: this is <strong>small-head reinforcement learning, not language-model token fine-tuning or full MAPPO</strong>. The optional seer guard excludes privately verified nonwolves only when an unknown voting target remains.</p>
+
+<h2>2. Training and verification</h2>
+<div class="stats">
+<div class="stat"><strong>30 games</strong><span>136 acknowledged sampled training decisions</span></div>
+<div class="stat"><strong>32 epochs</strong><span>Accepted full-batch PPO updates</span></div>
+<div class="stat"><strong>4 / 136</strong><span>Training-state greedy choices changed</span></div>
+</div>
+<p>Training used terminal faction rewards, fixed Monte Carlo advantages, PPO clipping at 0.2, and rollback if training-state mean/max KL exceeded 0.02/0.1. Initial probabilities reproduced the collection policy. Final mean/max KL was <strong>0.00594 / 0.03503</strong>; mean total variation was <strong>4.09%</strong>. These describe changes on training states, not expected win-rate gains.</p>
+
+<h2>3. Completed prospective pilot: Phase F</h2>
+<p>All <strong>53 assigned games resolved</strong>. Each game used one focal agent against one direct Qwen3-8B opponent and five rule agents. Policy and focal seat were assigned by a frozen session hash before private observations. The candidate generator and inference settings were fixed; platform-assigned roles were uncontrolled.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Policy</th><th>Wins / games</th><th>Win rate</th><th>95% Wilson interval</th><th>Roles: V / S / W</th></tr></thead>
+<tbody>
+<tr><td>Incumbent · greedy</td><td>7 / 14</td><td>50.0%</td><td>26.8–73.2%</td><td>5 / 2 / 7</td></tr>
+<tr><td>Old head + guard · greedy</td><td>8 / 14</td><td>57.1%</td><td>32.6–78.6%</td><td>7 / 4 / 3</td></tr>
+<tr><td>Old head + guard · sampled</td><td>6 / 12</td><td>50.0%</td><td>25.4–74.6%</td><td>8 / 2 / 2</td></tr>
+<tr><td>Semantic PPO + guard · sampled</td><td>5 / 13</td><td>38.5%</td><td>17.7–64.5%</td><td>4 / 2 / 7</td></tr>
+</tbody></table></div>
+<p>The NN sampled policy’s observed rate was lower than the old sampled policy’s. The small samples and unequal role mixes leave substantial uncertainty; they do not establish a reliable ranking or prove that the NN is intrinsically worse. <strong>F provides no evidence supporting promotion of the sampled NN policy.</strong></p>
+<p><strong>Operational checks passed:</strong> zero focal or direct-opponent model fallbacks, zero selector errors, all focal decisions acknowledged, and no training/evaluation match overlap. The largest logged focal proposal call was 5.968 s; the NN selector’s recorded maximum was 0.122 s. These are individual call timings, not a hard end-to-end deadline guarantee.</p>
+
+<h2>4. Completed greedy deployment pilot: Phase G</h2>
+<p>The same frozen checkpoints were evaluated on <strong>54 fresh games, all resolved</strong>. G was declared before the aggregate F readout; an individual F canary had already been inspected for operational validation. The stopping rule required at least 12 completed games per arm, with a 75-game/three-hour cap. Oversampled games were retained. No parameters were changed.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Policy · all greedy</th><th>Wins / games</th><th>Win rate</th><th>95% Wilson interval</th><th>Roles: V / S / W</th></tr></thead>
+<tbody>
+<tr><td>Incumbent · no guard</td><td>16 / 21</td><td>76.2%</td><td>54.9–89.4%</td><td>13 / 3 / 5</td></tr>
+<tr><td>Old head + guard</td><td>7 / 12</td><td>58.3%</td><td>32.0–80.7%</td><td>7 / 2 / 3</td></tr>
+<tr><td>Semantic PPO + guard</td><td>11 / 21</td><td>52.4%</td><td>32.4–71.7%</td><td>12 / 1 / 8</td></tr>
+</tbody></table></div>
+<p>The incumbent had the highest observed G win rate. These are small, role-imbalanced samples, so the comparison does not prove an intrinsic policy ranking. G recorded <strong>239 acknowledged focal decisions, zero model/selector fallbacks or errors</strong>, and passed its configuration, controller and split audits. E, F and G match sets are disjoint.</p>
+<p><strong>What did the NN change?</strong> On the NN arm’s exact recorded guarded slates, its greedy choice differed from the old guarded head in <strong>1 of 98 eligible decisions</strong>: one seer speech choice, in 1 of 21 games. One forced singleton was excluded. This is a comparison of recorded choices on identical observed states, not a simulation of alternative trajectories or counterfactual wins.</p>
+
+<h2>5. Delivery decision and limits</h2>
+<div class="status"><strong>Retain checkpoint <code>d7ebf7670444067a</code>, greedy mode, no evidence guard.</strong> Keep the trained semantic checkpoint as an evaluated research artifact, without promoting it as a stronger competition policy.</div>
+<p>The project delivered a reproducible trained semantic actor/critic and verified execution. It did not establish an improvement over the incumbent or tournament-wide superiority. F and G remain separate, roster-specific policy-selection pilots, not an untouched final test after selection. No adaptive tuning occurred within this frozen pilot; future improvement would require a fresh evaluation.</p>
+
+<footer>
+Evidence: <a href="job-2123942/final-summary.json">F results</a> · <a href="job-2123942/final-operations.json">F operations</a> · <a href="job-2133983/final-summary.json">G results</a> · <a href="job-2133983/final-operations.json">G operations</a> · <a href="job-2133983/greedy-action-differences.json">Observed-slate choices</a> · <a href="job-2133983/split-audit.json">Split audit</a> · <a href="job-2123930/training-report.json">PPO training</a> · <a href="job-2123942/semantic-update-audit.json">Training-state audit</a>.<br>
+Checkpoints: incumbent <code>d7ebf7670444067a</code>; semantic PPO <code>6ca4df8fd98821e6</code>. Status: completed experiment delivery; competition-winning objective remains unproven.
+</footer>
+</main></body></html>

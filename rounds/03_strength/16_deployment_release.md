@@ -2,6 +2,25 @@
 
 Keep the competition incumbent until the fresh four-profile comparison supports a change. The semantic checkpoint is a trained candidate, not automatically the selected release. Training and serving use separate output directories and allocations.
 
+The current delivery default is the incumbent. Its policy core is frozen at commit `63bb8ddd0706565cc751d2ae97dbbac476ed6ab9`; later evaluation and documentation commits do not change that core. The tracked [selector](../../outputs/hybrid/qwen3-8b-round1/selector.json) has checkpoint ID `d7ebf7670444067a` and file SHA-256 `764cb201aed463e95252a9c789608ac65e1e199e2d7bd438c2e4849b4291cda6`.
+
+Set these values explicitly inside the serving allocation, replacing the two staging paths with verified local paths. This block selects the incumbent, including its absence of the experimental guard:
+
+```bash
+export WEREWOLF_MODEL_PATH=/path/to/staged/Qwen3-8B
+export WEREWOLF_MODEL_REVISION=b968826d9c46dd6066d109eabc6255188de91218
+export WEREWOLF_MODEL_DEVICE=cpu
+export WEREWOLF_MODEL_DTYPE=bfloat16
+export WEREWOLF_CPU_THREADS=4
+export WEREWOLF_PROPOSER=ids
+export WEREWOLF_GROUNDED_ORDER_BALANCE=none
+export WEREWOLF_EVIDENCE_GUARD=none
+export WEREWOLF_HYBRID_MODE=hybrid_greedy
+export WEREWOLF_HYBRID_WEIGHTS=/path/to/werewolf_agent/outputs/hybrid/qwen3-8b-round1/selector.json
+```
+
+The encoder override below applies only to the optional semantic candidate. The incumbent does not require that encoder. Keep the release configuration separate from experimental profile settings.
+
 The official starter's current CLI supports `--tournament` for tournament assignments, `--match` for Testing and both flags in one process. Use `werewolf_agent.competition_entry` for the contestant. Practice table factories deliberately fall back to rules for tournament contexts and must not be deployed as the competition agent.
 
 The tested official starter is commit be680b1435c12569beb8ea1d239538efff8d8f82 with the two checked-in settlement/message-result callback patches applied. [SDK provenance](../../outputs/strength-round03/starter-runtime-source.json) records the commit, patch hashes and modified-file hashes. Preserve those callbacks when reproducing delivery and terminal-result accounting.

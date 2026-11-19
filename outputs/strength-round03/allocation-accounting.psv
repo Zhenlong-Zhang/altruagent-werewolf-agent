@@ -1,0 +1,9 @@
+JobID|JobName|State|Elapsed|ExitCode|AllocCPUS|ReqMem|Account
+2116767|wolf-r03e-train|COMPLETED|01:20:04|0:0|8|64G|pi_ra_lab
+2122369|wolf-r03f-ppo|FAILED|00:01:07|1:0|2|8G|pi_ra_lab
+2123930|wolf-r03g-ppo|COMPLETED|00:01:07|0:0|2|8G|pi_ra_lab
+2123942|wolf-r03g-policies|COMPLETED|02:34:29|0:0|8|64G|pi_ra_lab
+2133983|wolf-r03h-greedy|COMPLETED|01:45:35|0:0|8|64G|pi_ra_lab
+2136086|wolf-r03-final-audit|COMPLETED|00:00:02|0:0|1|1G|pi_ra_lab
+2141810|wolf-r03-greedy-audit|COMPLETED|00:00:03|0:0|1|1G|pi_ra_lab
+2146450|wolf-r03-greedy-audit|FAILED|00:00:02|1:0|1|1G|pi_ra_lab
