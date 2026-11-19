@@ -1,0 +1,3177 @@
+{
+  "analysis": "semantic_saved_actor_in_sample_training_slate_audit",
+  "interpretation": "E training-slate distribution changes only; no F inputs or counterfactual win claims.",
+  "metric_weighting": "Equal weight per acknowledged sampled E slate; stable first-index argmax ties.",
+  "audit_passed": true,
+  "checks": {
+    "feature_schema_matches": true,
+    "parent_checkpoint_matches": true,
+    "parent_sha256_matches": true,
+    "eligible_match_set_matches_artifact": true,
+    "census_match_set_matches_artifact": true,
+    "eligible_match_count_matches": true,
+    "training_report_artifact_matches": true,
+    "training_source_match_set_matches": true,
+    "training_log_sha256_matches": true,
+    "training_source_relative_paths_match": true,
+    "training_roles_match_artifact": true,
+    "sampled_choice_count_matches_artifact": true,
+    "all_actor_and_critic_parameters_trainable": true,
+    "encoder_frozen_eval": true,
+    "final_mean_kl_matches_training_report": true,
+    "final_max_kl_matches_training_report": true
+  },
+  "inputs": {
+    "log_dir": "/u/home/z/zzl/werewolf-strength-r03e/outputs/hybrid-2116767/decisions",
+    "start": "/u/home/z/zzl/altruagent-werewolf-agent/outputs/hybrid/qwen3-8b-round1/selector.json",
+    "start_sha256": "764cb201aed463e95252a9c789608ac65e1e199e2d7bd438c2e4849b4291cda6",
+    "artifact": "outputs/semantic-2123930/selector.json",
+    "artifact_sha256": "46c50a807b5b3375ecce9b6facd0bed927851f20577f430a24f163a6a9b10f6a",
+    "tensor_sha256": "ef009b1fad459baecec35e7488e8cc6231681c83a1d8fbb34a6e93c83d742303",
+    "census_sha256": "67b2b8fd5467103efd1a26cc9ed0053939a975b77e2d243a20b9d949217740ff",
+    "training_report_sha256": "1068aec8efc165941eaf674d6046ce1a73eca1e3c8b50bb4bff34a75329fbc87",
+    "audit_script_sha256": "275fff45d7f932ce224d0dca6aae80ea59c4338388318a77f3491c4a88596ae0"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "torch": "2.7.1+cpu",
+    "torch_intraop_threads": 1
+  },
+  "parent_checkpoint_id": "d7ebf7670444067a",
+  "semantic_checkpoint_id": "6ca4df8fd98821e6",
+  "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+  "architecture": {
+    "version": "semantic-candidate-attention-v2",
+    "width": 32,
+    "heads": 1,
+    "embedding_dim": 384,
+    "context_dim": 8,
+    "residual_bound": 1.0,
+    "base_dtype": "float64",
+    "neural_dtype": "float32",
+    "base_accumulation": "python-sum-float64-primal+straight-through-linear-v1",
+    "context_version": "coarse-self-context-v1",
+    "max_length": 256,
+    "pooling": "attention-mask-mean-l2-v1",
+    "dropout": 0.0,
+    "critic_pool_detached": true
+  },
+  "encoder_identity": {
+    "name": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "model_path": "/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2",
+    "files_sha256": {
+      "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+      "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+      "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3"
+    }
+  },
+  "resolved_local_encoder_path": "/work/zzl/2123942/wolfreasoner-models.oUa5W0/all-MiniLM-L6-v2",
+  "eligible_games": 30,
+  "eligible_hashes": [
+    "0f053091edefcaab",
+    "1057750af9a55a8c",
+    "1bcad85fe142b2d8",
+    "22b5b918eb826eab",
+    "2a9fab68a3afa8aa",
+    "30ba86c1fb8cc8d7",
+    "3c4d79f00ee4a66f",
+    "3e6167d78f3020ef",
+    "3fc77d16e89622ba",
+    "4e87e5fa13574e00",
+    "5b69e4b1de9c0775",
+    "5ff334b618a79016",
+    "602b9513b556a262",
+    "617841495f31abcd",
+    "6380b198b2721aee",
+    "64fd493ef48e79ec",
+    "76417f0297798bb1",
+    "817de5815fd4a542",
+    "83c4ce40333faef8",
+    "97ee2ffd4eb1acd8",
+    "a43bfc5ecb0ff8cb",
+    "be1841a8376d8bfb",
+    "caaba685417e2284",
+    "dbebbf6a581003db",
+    "e132946435c2b31f",
+    "e598b61d6d7ffed0",
+    "e6b7413094f83bf0",
+    "eb646d6320c3a867",
+    "eecce000f58620b3",
+    "f71aec7647b6fe8f"
+  ],
+  "census_hashes": [
+    "0f053091edefcaab",
+    "1057750af9a55a8c",
+    "1bcad85fe142b2d8",
+    "22b5b918eb826eab",
+    "2a9fab68a3afa8aa",
+    "30ba86c1fb8cc8d7",
+    "3c4d79f00ee4a66f",
+    "3e6167d78f3020ef",
+    "3fc77d16e89622ba",
+    "4e87e5fa13574e00",
+    "5b69e4b1de9c0775",
+    "5ff334b618a79016",
+    "602b9513b556a262",
+    "617841495f31abcd",
+    "6380b198b2721aee",
+    "64fd493ef48e79ec",
+    "76417f0297798bb1",
+    "817de5815fd4a542",
+    "83c4ce40333faef8",
+    "97ee2ffd4eb1acd8",
+    "a43bfc5ecb0ff8cb",
+    "be1841a8376d8bfb",
+    "caaba685417e2284",
+    "dbebbf6a581003db",
+    "e132946435c2b31f",
+    "e598b61d6d7ffed0",
+    "e6b7413094f83bf0",
+    "eb646d6320c3a867",
+    "eecce000f58620b3",
+    "f71aec7647b6fe8f"
+  ],
+  "eligible_log_sources": {
+    "0f053091edefcaab": {
+      "path": "match_0f053091edefcaab_seat_6.jsonl",
+      "sha256": "eee05dec32efb7da5905fe53b448d3c099d3bf76990ea8bceaaf5d0643f53e78"
+    },
+    "1057750af9a55a8c": {
+      "path": "match_1057750af9a55a8c_seat_5.jsonl",
+      "sha256": "34ec54b4947c7083ff47ddfb2b733ac822a544f82d27a9ad48ef041ba94b4021"
+    },
+    "1bcad85fe142b2d8": {
+      "path": "match_1bcad85fe142b2d8_seat_0.jsonl",
+      "sha256": "c05975a38f48359e47473dd60fe0136db278865fc9e3685540795f8f57533a26"
+    },
+    "22b5b918eb826eab": {
+      "path": "match_22b5b918eb826eab_seat_5.jsonl",
+      "sha256": "a2b16a2b8096576de38f06a6b437d9db4f6314f2338a6152ee86f3c6c5757a4d"
+    },
+    "2a9fab68a3afa8aa": {
+      "path": "match_2a9fab68a3afa8aa_seat_2.jsonl",
+      "sha256": "22b4997249ba98c56913e7196381ab03972d2cdac6263b17229ca77017ec070f"
+    },
+    "30ba86c1fb8cc8d7": {
+      "path": "match_30ba86c1fb8cc8d7_seat_1.jsonl",
+      "sha256": "258f56678d5bc625f9e975744743d5850e8edb7ec8cfc6ce3c9e80322faf2d9c"
+    },
+    "3c4d79f00ee4a66f": {
+      "path": "match_3c4d79f00ee4a66f_seat_3.jsonl",
+      "sha256": "7571ce704eb4d404032ea1355a5ef94e860046f2d023e3c08bd5f1f4c6b1cbd1"
+    },
+    "3e6167d78f3020ef": {
+      "path": "match_3e6167d78f3020ef_seat_5.jsonl",
+      "sha256": "849787e5818dd51fe9f596001bf6f49f1dbd6428dfcbb18d3bbcf6ef84cef9ed"
+    },
+    "3fc77d16e89622ba": {
+      "path": "match_3fc77d16e89622ba_seat_0.jsonl",
+      "sha256": "40373f0a6c1f7f254d8c4c412d7505c1cc1a03fb36921a6f871fa8ad75815e03"
+    },
+    "4e87e5fa13574e00": {
+      "path": "match_4e87e5fa13574e00_seat_6.jsonl",
+      "sha256": "f8f3c9de29f4c9e91965b8746b88fee0be215473175c6468e14593a8df43e15a"
+    },
+    "5b69e4b1de9c0775": {
+      "path": "match_5b69e4b1de9c0775_seat_1.jsonl",
+      "sha256": "7accb00a393a50b33c3fd73f85d30a2fbd7cf2fad4df9c2f37ac777530ce9c9b"
+    },
+    "5ff334b618a79016": {
+      "path": "match_5ff334b618a79016_seat_3.jsonl",
+      "sha256": "1ca43306920fc3ecf19c939ae6e792a6d4f5a1926f43bf7cc47b968227af250e"
+    },
+    "602b9513b556a262": {
+      "path": "match_602b9513b556a262_seat_3.jsonl",
+      "sha256": "a865496ac847adffb4870557ebf73494411bf4f29d690d3a7fd4eeb9dc478dfb"
+    },
+    "617841495f31abcd": {
+      "path": "match_617841495f31abcd_seat_1.jsonl",
+      "sha256": "ad8612c22e33cdd86481b2402ec749ebd148af8d0f969292927f4ad102273fe8"
+    },
+    "6380b198b2721aee": {
+      "path": "match_6380b198b2721aee_seat_2.jsonl",
+      "sha256": "49b60a79be4466311ee8befea138ba554392ef0b8a20d20aa5c7ef9912465d11"
+    },
+    "64fd493ef48e79ec": {
+      "path": "match_64fd493ef48e79ec_seat_6.jsonl",
+      "sha256": "07cbdf981350fd2527bb0d7f7ef19855823e883acf63b54cc3accfdf1e8eb2c8"
+    },
+    "76417f0297798bb1": {
+      "path": "match_76417f0297798bb1_seat_1.jsonl",
+      "sha256": "17aca5f8182dcf924fe76b123642cc4b26d75cf274ad0a876656899db8ecb858"
+    },
+    "817de5815fd4a542": {
+      "path": "match_817de5815fd4a542_seat_3.jsonl",
+      "sha256": "771e2a66bc1d9def0aba3315e3d97974cdcf1a049ae1216a1d41e25c85f46f10"
+    },
+    "83c4ce40333faef8": {
+      "path": "match_83c4ce40333faef8_seat_6.jsonl",
+      "sha256": "25e2e1e0aa64c293e223e2b8d11309a10b7891cb979f9cf8e2d90b9c357e8d54"
+    },
+    "97ee2ffd4eb1acd8": {
+      "path": "match_97ee2ffd4eb1acd8_seat_2.jsonl",
+      "sha256": "8922410b55e6ae44dde47e1cc03e47791153340c6a4aed91d92a473f196e221b"
+    },
+    "a43bfc5ecb0ff8cb": {
+      "path": "match_a43bfc5ecb0ff8cb_seat_3.jsonl",
+      "sha256": "e81bc4485f758f094a4d123586015928def40c6b7118ad3a55fe9ce0c925d858"
+    },
+    "be1841a8376d8bfb": {
+      "path": "match_be1841a8376d8bfb_seat_5.jsonl",
+      "sha256": "c35b62919975a6e7db17cbd5ed3c8548974050ce7612968162f1a6b10ea5840e"
+    },
+    "caaba685417e2284": {
+      "path": "match_caaba685417e2284_seat_4.jsonl",
+      "sha256": "a85618c28fcf6c35a0f045f7947c90e2ff13a58f8c9daa315122654e1eefcb88"
+    },
+    "dbebbf6a581003db": {
+      "path": "match_dbebbf6a581003db_seat_2.jsonl",
+      "sha256": "09e796244911907046f2eaedc3a3f7d3586a1dbf21533569d064506d8dabbf89"
+    },
+    "e132946435c2b31f": {
+      "path": "match_e132946435c2b31f_seat_5.jsonl",
+      "sha256": "8e37235583e38c11ff444f8c2f0d6b8055c5aa57177e6c2d10e52b17af19b337"
+    },
+    "e598b61d6d7ffed0": {
+      "path": "match_e598b61d6d7ffed0_seat_6.jsonl",
+      "sha256": "100f5b9b1f1311089cb5e1e770e84984ac921ad40b5019b798aa06f9a8025738"
+    },
+    "e6b7413094f83bf0": {
+      "path": "match_e6b7413094f83bf0_seat_1.jsonl",
+      "sha256": "cf831ae743491669cc66622eae9ace0ceb04a5d62df8ff27b1b964f1ffbff490"
+    },
+    "eb646d6320c3a867": {
+      "path": "match_eb646d6320c3a867_seat_3.jsonl",
+      "sha256": "ca553b01a4f8c98cd386117115ce692122e57881d9c7f123563d0191239435e7"
+    },
+    "eecce000f58620b3": {
+      "path": "match_eecce000f58620b3_seat_1.jsonl",
+      "sha256": "baae21852874b56400a33dcd67a7d8c8046025bda2f2e5c2959c754343878656"
+    },
+    "f71aec7647b6fe8f": {
+      "path": "match_f71aec7647b6fe8f_seat_4.jsonl",
+      "sha256": "d81b3052a3ba97d5b8a173f8e7037227da59615f3d25c947f12b472c170a443b"
+    }
+  },
+  "excluded_seat_logs": {
+    "no_sampled_choices": 180
+  },
+  "training_log_sha_reference_available": true,
+  "observed_training_roles": {
+    "wolf": 11,
+    "seer": 7,
+    "villager": 12
+  },
+  "observed_training_scores": {
+    "1.0": 19,
+    "-1.0": 11
+  },
+  "observed_training_roles_and_scores": {
+    "wolf:1.0": 4,
+    "seer:-1.0": 3,
+    "wolf:-1.0": 7,
+    "seer:1.0": 4,
+    "villager:1.0": 11,
+    "villager:-1.0": 1
+  },
+  "training_terminals": [
+    {
+      "match_hash": "0f053091edefcaab",
+      "seat": 6,
+      "role": "wolf",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "seat": 5,
+      "role": "seer",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "1bcad85fe142b2d8",
+      "seat": 0,
+      "role": "wolf",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "22b5b918eb826eab",
+      "seat": 5,
+      "role": "seer",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "2a9fab68a3afa8aa",
+      "seat": 2,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "30ba86c1fb8cc8d7",
+      "seat": 1,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "seat": 3,
+      "role": "wolf",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "3e6167d78f3020ef",
+      "seat": 5,
+      "role": "seer",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "3fc77d16e89622ba",
+      "seat": 0,
+      "role": "wolf",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "seat": 6,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "5b69e4b1de9c0775",
+      "seat": 1,
+      "role": "wolf",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "5ff334b618a79016",
+      "seat": 3,
+      "role": "wolf",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "602b9513b556a262",
+      "seat": 3,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "617841495f31abcd",
+      "seat": 1,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "6380b198b2721aee",
+      "seat": 2,
+      "role": "seer",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "64fd493ef48e79ec",
+      "seat": 6,
+      "role": "wolf",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "76417f0297798bb1",
+      "seat": 1,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "817de5815fd4a542",
+      "seat": 3,
+      "role": "wolf",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "seat": 6,
+      "role": "seer",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "97ee2ffd4eb1acd8",
+      "seat": 2,
+      "role": "wolf",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "a43bfc5ecb0ff8cb",
+      "seat": 3,
+      "role": "wolf",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "seat": 5,
+      "role": "seer",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "seat": 4,
+      "role": "seer",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "dbebbf6a581003db",
+      "seat": 2,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "seat": 5,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "e598b61d6d7ffed0",
+      "seat": 6,
+      "role": "villager",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "e6b7413094f83bf0",
+      "seat": 1,
+      "role": "wolf",
+      "observed_training_score": -1.0
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "seat": 3,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "eecce000f58620b3",
+      "seat": 1,
+      "role": "villager",
+      "observed_training_score": 1.0
+    },
+    {
+      "match_hash": "f71aec7647b6fe8f",
+      "seat": 4,
+      "role": "villager",
+      "observed_training_score": 1.0
+    }
+  ],
+  "old_probability_reproduction_max_abs_error": 0.0,
+  "parameter_counts": {
+    "actor_including_base": 30421,
+    "neural_actor_excluding_base": 30401,
+    "critic": 1345
+  },
+  "parameter_counts_by_name": {
+    "actor_including_base": {
+      "base_weights": 20,
+      "candidate.0.weight": 12544,
+      "candidate.0.bias": 32,
+      "query.0.weight": 12544,
+      "query.0.bias": 32,
+      "key.weight": 1024,
+      "key.bias": 32,
+      "value.weight": 1024,
+      "value.bias": 32,
+      "actor.0.weight": 3072,
+      "actor.0.bias": 32,
+      "actor.2.weight": 32,
+      "actor.2.bias": 1
+    },
+    "neural_actor_excluding_base": {
+      "candidate.0.weight": 12544,
+      "candidate.0.bias": 32,
+      "query.0.weight": 12544,
+      "query.0.bias": 32,
+      "key.weight": 1024,
+      "key.bias": 32,
+      "value.weight": 1024,
+      "value.bias": 32,
+      "actor.0.weight": 3072,
+      "actor.0.bias": 32,
+      "actor.2.weight": 32,
+      "actor.2.bias": 1
+    },
+    "critic": {
+      "critic.0.weight": 1280,
+      "critic.0.bias": 32,
+      "critic.2.weight": 32,
+      "critic.2.bias": 1
+    }
+  },
+  "total_actor_critic_parameters": 31766,
+  "frozen_encoder_parameters": 22713216,
+  "neural_named_parameter_norms": {
+    "base_weights": {
+      "shape": [
+        20
+      ],
+      "dtype": "torch.float64",
+      "l2_norm": 1.6978000074989228
+    },
+    "candidate.0.weight": {
+      "shape": [
+        32,
+        392
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 3.3556577481095085
+    },
+    "candidate.0.bias": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.12391838144406955
+    },
+    "query.0.weight": {
+      "shape": [
+        32,
+        392
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 3.2751545014085393
+    },
+    "query.0.bias": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.14974120029540225
+    },
+    "key.weight": {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 3.266286917053051
+    },
+    "key.bias": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.4929054117094445
+    },
+    "value.weight": {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 3.26351854180195
+    },
+    "value.bias": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.5716632308252113
+    },
+    "actor.0.weight": {
+      "shape": [
+        32,
+        96
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 3.275802156322479
+    },
+    "actor.0.bias": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.32307050240901514
+    },
+    "actor.2.weight": {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.04428449963333395
+    },
+    "actor.2.bias": {
+      "shape": [
+        1
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.00020055606728419662
+    },
+    "critic.0.weight": {
+      "shape": [
+        32,
+        40
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 3.47386360952417
+    },
+    "critic.0.bias": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.5836896235022523
+    },
+    "critic.2.weight": {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.1673500539777814
+    },
+    "critic.2.bias": {
+      "shape": [
+        1
+      ],
+      "dtype": "torch.float32",
+      "l2_norm": 0.025682348757982254
+    }
+  },
+  "zero_initialized_actor_head_changed": true,
+  "base_20_change": {
+    "l2": 0.9053316209471016,
+    "max_abs": 0.3270207065857228,
+    "changed_at_1e_minus_12": 19,
+    "coefficients": [
+      {
+        "name": "llm_score",
+        "old": 1.4974813920292074,
+        "trained": 1.2967196375248915,
+        "delta": -0.20076175450431588
+      },
+      {
+        "name": "rule_score",
+        "old": 0.5001098984155534,
+        "trained": 0.6697219863848027,
+        "delta": 0.16961208796924931
+      },
+      {
+        "name": "public_support",
+        "old": 0.0001796532958113155,
+        "trained": -0.20683918957812863,
+        "delta": -0.20701884287393996
+      },
+      {
+        "name": "known_alignment",
+        "old": 0.0010786361142370343,
+        "trained": 0.07349504021671846,
+        "delta": 0.07241640410248143
+      },
+      {
+        "name": "llm_score * alive_fraction",
+        "old": -0.002511887658842717,
+        "trained": -0.1781902438079036,
+        "delta": -0.17567835614906088
+      },
+      {
+        "name": "rule_score * alive_fraction",
+        "old": 0.00011775824724519255,
+        "trained": 0.14308645109531717,
+        "delta": 0.14296869284807198
+      },
+      {
+        "name": "public_support * alive_fraction",
+        "old": 0.00015398853926684182,
+        "trained": -0.025685086264707065,
+        "delta": -0.025839074803973905
+      },
+      {
+        "name": "known_alignment * alive_fraction",
+        "old": 0.0010786361142370343,
+        "trained": 0.06593261596752725,
+        "delta": 0.06485397985329022
+      },
+      {
+        "name": "llm_score * is_speech",
+        "old": -0.001893414937575021,
+        "trained": -0.10902488514682153,
+        "delta": -0.1071314702092465
+      },
+      {
+        "name": "rule_score * is_speech",
+        "old": 0.0011180946032305827,
+        "trained": -0.22387594696070395,
+        "delta": -0.22499404156393454
+      },
+      {
+        "name": "public_support * is_speech",
+        "old": 0.0,
+        "trained": 0.31523140096765945,
+        "delta": 0.31523140096765945
+      },
+      {
+        "name": "known_alignment * is_speech",
+        "old": 0.0020155969490466977,
+        "trained": 0.07443200105152813,
+        "delta": 0.07241640410248143
+      },
+      {
+        "name": "llm_score * is_wolf",
+        "old": 0.0007177403277147122,
+        "trained": 0.3277384469134375,
+        "delta": 0.3270207065857228
+      },
+      {
+        "name": "rule_score * is_wolf",
+        "old": -0.00016359977156855195,
+        "trained": 0.3180410908721672,
+        "delta": 0.31820469064373574
+      },
+      {
+        "name": "public_support * is_wolf",
+        "old": 0.0,
+        "trained": 0.31680374747657253,
+        "delta": 0.31680374747657253
+      },
+      {
+        "name": "known_alignment * is_wolf",
+        "old": 0.0,
+        "trained": 0.0,
+        "delta": 0.0
+      },
+      {
+        "name": "llm_score * is_seer",
+        "old": -0.0009907265576016378,
+        "trained": -0.2652876440377924,
+        "delta": -0.2642969174801908
+      },
+      {
+        "name": "rule_score * is_seer",
+        "old": 0.0006653711849799488,
+        "trained": -0.29691395886215394,
+        "delta": -0.2975793300471339
+      },
+      {
+        "name": "public_support * is_seer",
+        "old": 0.0001796532958113155,
+        "trained": -0.08554057633527995,
+        "delta": -0.08572022963109127
+      },
+      {
+        "name": "known_alignment * is_seer",
+        "old": 0.0010786361142370343,
+        "trained": 0.07349504021671846,
+        "delta": 0.07241640410248143
+      }
+    ]
+  },
+  "in_sample_training_slate_metrics": {
+    "sampled_training_slates": 136,
+    "mean_kl_logged_old_to_nn": 0.005937964270559938,
+    "max_kl_logged_old_to_nn": 0.035033282161515716,
+    "mean_total_variation": 0.040919927082109564,
+    "max_total_variation": 0.1320374967359032,
+    "greedy_argmax_changed_count": 4,
+    "greedy_argmax_changed_fraction": 0.029411764705882353
+  },
+  "in_sample_by_role": {
+    "seer": {
+      "sampled_training_slates": 36,
+      "mean_kl_logged_old_to_nn": 0.013219253409298545,
+      "max_kl_logged_old_to_nn": 0.035033282161515716,
+      "mean_total_variation": 0.07606381400816743,
+      "max_total_variation": 0.1320374967359032,
+      "greedy_argmax_changed_count": 2,
+      "greedy_argmax_changed_fraction": 0.05555555555555555
+    },
+    "villager": {
+      "sampled_training_slates": 48,
+      "mean_kl_logged_old_to_nn": 0.0049606283484456065,
+      "max_kl_logged_old_to_nn": 0.012878744521646033,
+      "mean_total_variation": 0.0454061118221249,
+      "max_total_variation": 0.07366621583960807,
+      "greedy_argmax_changed_count": 0,
+      "greedy_argmax_changed_fraction": 0.0
+    },
+    "wolf": {
+      "sampled_training_slates": 52,
+      "mean_kl_logged_old_to_nn": 0.0017992280256925943,
+      "max_kl_logged_old_to_nn": 0.03476807961683834,
+      "mean_total_variation": 0.012448450219439963,
+      "max_total_variation": 0.13159264315589383,
+      "greedy_argmax_changed_count": 2,
+      "greedy_argmax_changed_fraction": 0.038461538461538464
+    }
+  },
+  "in_sample_by_kind": {
+    "action": {
+      "sampled_training_slates": 78,
+      "mean_kl_logged_old_to_nn": 0.005770465831396524,
+      "max_kl_logged_old_to_nn": 0.03476807961683834,
+      "mean_total_variation": 0.04007344919001324,
+      "max_total_variation": 0.13159264315589383,
+      "greedy_argmax_changed_count": 2,
+      "greedy_argmax_changed_fraction": 0.02564102564102564
+    },
+    "speech": {
+      "sampled_training_slates": 58,
+      "mean_kl_logged_old_to_nn": 0.006163220792193494,
+      "max_kl_logged_old_to_nn": 0.035033282161515716,
+      "mean_total_variation": 0.042058293902514976,
+      "max_total_variation": 0.1320374967359032,
+      "greedy_argmax_changed_count": 2,
+      "greedy_argmax_changed_fraction": 0.034482758620689655
+    }
+  },
+  "training_report_kl_comparison": {
+    "final_mean_kl": {
+      "recorded": 0.005937964267001589,
+      "recomputed": 0.005937964270559938,
+      "absolute_error": 3.5583489280122116e-12,
+      "rtol": 1e-06,
+      "atol": 1e-08
+    },
+    "final_max_kl": {
+      "recorded": 0.0350332823767123,
+      "recomputed": 0.035033282161515716,
+      "absolute_error": 2.1519658277568965e-10,
+      "rtol": 1e-06,
+      "atol": 1e-08
+    }
+  },
+  "training_slate_diagnostics": [
+    {
+      "match_hash": "0f053091edefcaab",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 9.040837768814263e-06,
+      "tv": 0.001936342948699099,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7071380398815673,
+        0.2928619601184326
+      ]
+    },
+    {
+      "match_hash": "0f053091edefcaab",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.00010566942569515195,
+      "tv": 0.006813452078756194,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787086538480536,
+        0.3212913461519463
+      ],
+      "nn_probabilities": [
+        0.6718952017692974,
+        0.32810479823070254
+      ]
+    },
+    {
+      "match_hash": "0f053091edefcaab",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 0.00018145122811934894,
+      "tv": 0.008938161256894978,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787283619862328,
+        0.3212716380137671
+      ],
+      "nn_probabilities": [
+        0.6697902007293378,
+        0.33020979927066213
+      ]
+    },
+    {
+      "match_hash": "0f053091edefcaab",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 0.000954550856998141,
+      "tv": 0.02017337683358314,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052573412392993,
+        0.2947426587607007
+      ],
+      "nn_probabilities": [
+        0.6850839644057162,
+        0.3149160355942839
+      ]
+    },
+    {
+      "match_hash": "0f053091edefcaab",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 5.5134638928325264e-05,
+      "tv": 0.004916376216980489,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787778769715411,
+        0.3212221230284589
+      ],
+      "nn_probabilities": [
+        0.6738615007545606,
+        0.32613849924543936
+      ]
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "decision_id": 1,
+      "kind": "action",
+      "kl": 0.01176825891657364,
+      "tv": 0.07404085029900107,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6044814982266055,
+        0.3955185017733945
+      ]
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "decision_id": 2,
+      "kind": "speech",
+      "kl": 0.035033282161515716,
+      "tv": 0.1320374967359032,
+      "old_argmax": 0,
+      "nn_argmax": 1,
+      "old_logged_probabilities": [
+        0.6021625561937827,
+        0.3978374438062173
+      ],
+      "nn_probabilities": [
+        0.47012505945787947,
+        0.5298749405421205
+      ]
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.014054551064654544,
+      "tv": 0.08110628839782122,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785767925552236,
+        0.32142320744477626
+      ],
+      "nn_probabilities": [
+        0.5974705041574024,
+        0.4025294958425975
+      ]
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.02642302773680963,
+      "tv": 0.11461527085173251,
+      "old_argmax": 0,
+      "nn_argmax": 1,
+      "old_logged_probabilities": [
+        0.6023115187644297,
+        0.3976884812355703
+      ],
+      "nn_probabilities": [
+        0.48769624791269717,
+        0.5123037520873028
+      ]
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "decision_id": 7,
+      "kind": "action",
+      "kl": 0.00619925760774883,
+      "tv": 0.052985268386352063,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6881054237990493,
+        0.3118945762009506
+      ],
+      "nn_probabilities": [
+        0.6351201554126973,
+        0.36487984458730277
+      ]
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "decision_id": 8,
+      "kind": "speech",
+      "kl": 0.018566672331623957,
+      "tv": 0.09214697929710819,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052128957320518,
+        0.29478710426794824
+      ],
+      "nn_probabilities": [
+        0.6130659164349436,
+        0.3869340835650564
+      ]
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "decision_id": 9,
+      "kind": "action",
+      "kl": 0.00821370422187203,
+      "tv": 0.061198968361440814,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6881596115477017,
+        0.31184038845229833
+      ],
+      "nn_probabilities": [
+        0.6269606431862609,
+        0.3730393568137392
+      ]
+    },
+    {
+      "match_hash": "1bcad85fe142b2d8",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 7.247691635590969e-06,
+      "tv": 0.0017339485218639261,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7069356454547322,
+        0.2930643545452678
+      ]
+    },
+    {
+      "match_hash": "1bcad85fe142b2d8",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 4.648999774357291e-05,
+      "tv": 0.004513813706684799,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787086538480536,
+        0.3212913461519463
+      ],
+      "nn_probabilities": [
+        0.6741948401413689,
+        0.32580515985863123
+      ]
+    },
+    {
+      "match_hash": "22b5b918eb826eab",
+      "decision_id": 1,
+      "kind": "action",
+      "kl": 0.01176825891657364,
+      "tv": 0.07404085029900107,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6044814982266055,
+        0.3955185017733945
+      ]
+    },
+    {
+      "match_hash": "22b5b918eb826eab",
+      "decision_id": 2,
+      "kind": "speech",
+      "kl": 0.0046325425005534285,
+      "tv": 0.043329747793430684,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7460398053358809,
+        0.2539601946641191
+      ],
+      "nn_probabilities": [
+        0.7027100575424502,
+        0.2972899424575498
+      ]
+    },
+    {
+      "match_hash": "22b5b918eb826eab",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.007894431332173837,
+      "tv": 0.059972445027862836,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6880299742138365,
+        0.31197002578616356
+      ],
+      "nn_probabilities": [
+        0.6280575291859737,
+        0.3719424708140264
+      ]
+    },
+    {
+      "match_hash": "2a9fab68a3afa8aa",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "2a9fab68a3afa8aa",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.004899083382268847,
+      "tv": 0.047434942237133765,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6737014955491434,
+        0.3262985044508566
+      ],
+      "nn_probabilities": [
+        0.6262665533120095,
+        0.3737334466879903
+      ]
+    },
+    {
+      "match_hash": "2a9fab68a3afa8aa",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.005193943868771991,
+      "tv": 0.04777776726458499,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052084449813569,
+        0.29479155501864307
+      ],
+      "nn_probabilities": [
+        0.657430677716772,
+        0.3425693222832281
+      ]
+    },
+    {
+      "match_hash": "2a9fab68a3afa8aa",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.00127253500228567,
+      "tv": 0.023675174480352307,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6881681670573767,
+        0.3118318329426233
+      ],
+      "nn_probabilities": [
+        0.6644929925770244,
+        0.3355070074229756
+      ]
+    },
+    {
+      "match_hash": "30ba86c1fb8cc8d7",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.005686999457454059,
+      "tv": 0.05005446441054984,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6550811246604815,
+        0.3449188753395184
+      ]
+    },
+    {
+      "match_hash": "30ba86c1fb8cc8d7",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.0038545204868682403,
+      "tv": 0.04184545502317538,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786303924473088,
+        0.32136960755269117
+      ],
+      "nn_probabilities": [
+        0.6367849374241334,
+        0.36321506257586655
+      ]
+    },
+    {
+      "match_hash": "30ba86c1fb8cc8d7",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.0048382281298378,
+      "tv": 0.04607255343389283,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052084449813569,
+        0.29479155501864307
+      ],
+      "nn_probabilities": [
+        0.6591358915474641,
+        0.3408641084525359
+      ]
+    },
+    {
+      "match_hash": "30ba86c1fb8cc8d7",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.012004165486322577,
+      "tv": 0.07199684386901223,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5856693683243074,
+        0.2772248926045601,
+        0.13710573907113258
+      ],
+      "nn_probabilities": [
+        0.5136725244552952,
+        0.3051271587822218,
+        0.1812003167624832
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 9.040837768814263e-06,
+      "tv": 0.001936342948699099,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7071380398815673,
+        0.2928619601184326
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 4.949383250646335e-05,
+      "tv": 0.004657712648305307,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787086538480536,
+        0.3212913461519463
+      ],
+      "nn_probabilities": [
+        0.6740509411997483,
+        0.32594905880025166
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 4.347242612416733e-06,
+      "tv": 0.0013758400218181754,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787574851978961,
+        0.3212425148021038
+      ],
+      "nn_probabilities": [
+        0.6801333252197144,
+        0.3198666747802857
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 0.0020056725677692067,
+      "tv": 0.03056916670093987,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6506661500855361,
+        0.349333849914464
+      ],
+      "nn_probabilities": [
+        0.6200969833845962,
+        0.3799030166154038
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 0.00027148776559861917,
+      "tv": 0.011483840648037966,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5801166175875607,
+        0.2850113390360063,
+        0.13487204337643297
+      ],
+      "nn_probabilities": [
+        0.5686327769395227,
+        0.29217443405241805,
+        0.13919278900805915
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 6,
+      "kind": "action",
+      "kl": 0.01576916012973895,
+      "tv": 0.07496490906696371,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5533805639509969,
+        0.261815945209355,
+        0.18480349083964806
+      ],
+      "nn_probabilities": [
+        0.5065113464363937,
+        0.23372025365699448,
+        0.25976839990661177
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 7,
+      "kind": "speech",
+      "kl": 0.0012040037515092944,
+      "tv": 0.023622367511112685,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.650749621829792,
+        0.34925037817020793
+      ],
+      "nn_probabilities": [
+        0.6271272543186793,
+        0.3728727456813206
+      ]
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "decision_id": 8,
+      "kind": "action",
+      "kl": 0.0006984615255570328,
+      "tv": 0.017074014339490406,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6917983949740844,
+        0.30820160502591565
+      ],
+      "nn_probabilities": [
+        0.7088724093135748,
+        0.29112759068642524
+      ]
+    },
+    {
+      "match_hash": "3e6167d78f3020ef",
+      "decision_id": 1,
+      "kind": "action",
+      "kl": 0.01176825891657364,
+      "tv": 0.07404085029900107,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6044814982266055,
+        0.3955185017733945
+      ]
+    },
+    {
+      "match_hash": "3e6167d78f3020ef",
+      "decision_id": 2,
+      "kind": "speech",
+      "kl": 0.0046325425005534285,
+      "tv": 0.043329747793430684,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7460398053358809,
+        0.2539601946641191
+      ],
+      "nn_probabilities": [
+        0.7027100575424502,
+        0.2972899424575498
+      ]
+    },
+    {
+      "match_hash": "3e6167d78f3020ef",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.010489289698264112,
+      "tv": 0.06939141905155272,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6880450389095305,
+        0.3119549610904695
+      ],
+      "nn_probabilities": [
+        0.6186536198579777,
+        0.38134638014202216
+      ]
+    },
+    {
+      "match_hash": "3fc77d16e89622ba",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 7.247691635590969e-06,
+      "tv": 0.0017339485218639261,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7069356454547322,
+        0.2930643545452678
+      ]
+    },
+    {
+      "match_hash": "3fc77d16e89622ba",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 6.636665216798281e-06,
+      "tv": 0.0016927498922545414,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6835958449395599,
+        0.3164041550604401
+      ],
+      "nn_probabilities": [
+        0.6852885948318145,
+        0.3147114051681856
+      ]
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.004220804153697681,
+      "tv": 0.04382552238572576,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786303924473088,
+        0.32136960755269117
+      ],
+      "nn_probabilities": [
+        0.634804870061583,
+        0.3651951299384169
+      ]
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.005169861486643064,
+      "tv": 0.04766412121302918,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052084449813569,
+        0.29479155501864307
+      ],
+      "nn_probabilities": [
+        0.6575443237683278,
+        0.34245567623167233
+      ]
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.001773275275863826,
+      "tv": 0.02820879396615175,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786996244501429,
+        0.32130037554985724
+      ],
+      "nn_probabilities": [
+        0.650490830483991,
+        0.3495091695160089
+      ]
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.0045114986044475155,
+      "tv": 0.044449915639165644,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052812904141311,
+        0.29471870958586893
+      ],
+      "nn_probabilities": [
+        0.6608313747749655,
+        0.33916862522503455
+      ]
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "decision_id": 6,
+      "kind": "action",
+      "kl": 0.0009723000077909855,
+      "tv": 0.020661103838971073,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6882490207937928,
+        0.3117509792062072
+      ],
+      "nn_probabilities": [
+        0.6675879169548218,
+        0.33241208304517833
+      ]
+    },
+    {
+      "match_hash": "5b69e4b1de9c0775",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 9.040837768814263e-06,
+      "tv": 0.001936342948699099,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7071380398815673,
+        0.2928619601184326
+      ]
+    },
+    {
+      "match_hash": "5b69e4b1de9c0775",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.00023693192124493896,
+      "tv": 0.010205255281469039,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5891082845142142,
+        0.27887576309467516,
+        0.13201595239111066
+      ],
+      "nn_probabilities": [
+        0.5789030292327452,
+        0.28372371449011075,
+        0.13737325627714417
+      ]
+    },
+    {
+      "match_hash": "5b69e4b1de9c0775",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 3.0426517484754764e-06,
+      "tv": 0.0011526331285500735,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.678747777615179,
+        0.32125222238482093
+      ],
+      "nn_probabilities": [
+        0.6775951444866289,
+        0.322404855513371
+      ]
+    },
+    {
+      "match_hash": "5b69e4b1de9c0775",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 5.3074977794169594e-05,
+      "tv": 0.004682655483906006,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052745433362487,
+        0.29472545666375116
+      ],
+      "nn_probabilities": [
+        0.7099571988201548,
+        0.29004280117984527
+      ]
+    },
+    {
+      "match_hash": "5b69e4b1de9c0775",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 5.404178070319345e-05,
+      "tv": 0.00458319727422285,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5916893918929245,
+        0.27581685253235105,
+        0.13249375557472445
+      ],
+      "nn_probabilities": [
+        0.5959232313147477,
+        0.27123365525812826,
+        0.13284311342712415
+      ]
+    },
+    {
+      "match_hash": "5ff334b618a79016",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 7.247691635590969e-06,
+      "tv": 0.0017339485218639261,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7069356454547322,
+        0.2930643545452678
+      ]
+    },
+    {
+      "match_hash": "5ff334b618a79016",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 5.277992532105478e-08,
+      "tv": 0.0001511149050472671,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6835958449395599,
+        0.3164041550604401
+      ],
+      "nn_probabilities": [
+        0.6834447300345127,
+        0.3165552699654874
+      ]
+    },
+    {
+      "match_hash": "5ff334b618a79016",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 0.03160232318570255,
+      "tv": 0.12547975830707442,
+      "old_argmax": 0,
+      "nn_argmax": 1,
+      "old_logged_probabilities": [
+        0.5861289235057283,
+        0.4138710764942718
+      ],
+      "nn_probabilities": [
+        0.46064916519865384,
+        0.5393508348013462
+      ]
+    },
+    {
+      "match_hash": "5ff334b618a79016",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 0.0020056725677692067,
+      "tv": 0.03056916670093987,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6506661500855361,
+        0.349333849914464
+      ],
+      "nn_probabilities": [
+        0.6200969833845962,
+        0.3799030166154038
+      ]
+    },
+    {
+      "match_hash": "5ff334b618a79016",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 0.00016550491244100678,
+      "tv": 0.008598668920250602,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6689059745764179,
+        0.33109402542358213
+      ],
+      "nn_probabilities": [
+        0.6603073056561672,
+        0.3396926943438327
+      ]
+    },
+    {
+      "match_hash": "602b9513b556a262",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "602b9513b556a262",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.00963306468785937,
+      "tv": 0.06312916874809726,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5889934983183929,
+        0.27892150353458456,
+        0.1320849981470226
+      ],
+      "nn_probabilities": [
+        0.5258643295702956,
+        0.30192264445979367,
+        0.17221302596991075
+      ]
+    },
+    {
+      "match_hash": "617841495f31abcd",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.005686999457454059,
+      "tv": 0.05005446441054984,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6550811246604815,
+        0.3449188753395184
+      ]
+    },
+    {
+      "match_hash": "617841495f31abcd",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.009264596744673177,
+      "tv": 0.06104491324899877,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5889934983183929,
+        0.27892150353458456,
+        0.1320849981470226
+      ],
+      "nn_probabilities": [
+        0.527948585069394,
+        0.29966004180406935,
+        0.1723913731265365
+      ]
+    },
+    {
+      "match_hash": "617841495f31abcd",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.0054074791015943785,
+      "tv": 0.05053784496795341,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6505752769834758,
+        0.34942472301652416
+      ],
+      "nn_probabilities": [
+        0.6000374320155224,
+        0.39996256798447755
+      ]
+    },
+    {
+      "match_hash": "617841495f31abcd",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.0006720404965913536,
+      "tv": 0.017146604423397188,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6881592875971063,
+        0.31184071240289374
+      ],
+      "nn_probabilities": [
+        0.6710126831737091,
+        0.3289873168262909
+      ]
+    },
+    {
+      "match_hash": "6380b198b2721aee",
+      "decision_id": 1,
+      "kind": "action",
+      "kl": 0.011789039639474183,
+      "tv": 0.0741079244413918,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6044144240842148,
+        0.39558557591578525
+      ]
+    },
+    {
+      "match_hash": "6380b198b2721aee",
+      "decision_id": 2,
+      "kind": "speech",
+      "kl": 0.0046325425005534285,
+      "tv": 0.043329747793430684,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7460398053358809,
+        0.2539601946641191
+      ],
+      "nn_probabilities": [
+        0.7027100575424502,
+        0.2972899424575498
+      ]
+    },
+    {
+      "match_hash": "6380b198b2721aee",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.007747652783113131,
+      "tv": 0.059398151829023416,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6880299742138365,
+        0.31197002578616356
+      ],
+      "nn_probabilities": [
+        0.6286318223848131,
+        0.371368177615187
+      ]
+    },
+    {
+      "match_hash": "6380b198b2721aee",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.019966320937247553,
+      "tv": 0.09569264563243213,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051400404617827,
+        0.2948599595382172
+      ],
+      "nn_probabilities": [
+        0.6094473948293506,
+        0.3905526051706494
+      ]
+    },
+    {
+      "match_hash": "6380b198b2721aee",
+      "decision_id": 6,
+      "kind": "action",
+      "kl": 0.009544318042929878,
+      "tv": 0.0661045558819029,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6880832323455545,
+        0.31191676765444565
+      ],
+      "nn_probabilities": [
+        0.6219786764636516,
+        0.37802132353634854
+      ]
+    },
+    {
+      "match_hash": "64fd493ef48e79ec",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 9.040837768814263e-06,
+      "tv": 0.001936342948699099,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7071380398815673,
+        0.2928619601184326
+      ]
+    },
+    {
+      "match_hash": "64fd493ef48e79ec",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.00022367614946262795,
+      "tv": 0.009727256882858623,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5891082845142142,
+        0.27887576309467516,
+        0.13201595239111066
+      ],
+      "nn_probabilities": [
+        0.5793810276313556,
+        0.28313227174322686,
+        0.13748670062541762
+      ]
+    },
+    {
+      "match_hash": "64fd493ef48e79ec",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 6.498025208349261e-06,
+      "tv": 0.001684926702301609,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.678747777615179,
+        0.321252222384821
+      ],
+      "nn_probabilities": [
+        0.6770628509128774,
+        0.3229371490871226
+      ]
+    },
+    {
+      "match_hash": "64fd493ef48e79ec",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 4.3652193725029e-05,
+      "tv": 0.004247932483529837,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052745433362487,
+        0.29472545666375116
+      ],
+      "nn_probabilities": [
+        0.7095224758197787,
+        0.29047752418022144
+      ]
+    },
+    {
+      "match_hash": "64fd493ef48e79ec",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 6.056716357604472e-06,
+      "tv": 0.0016237147400794127,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787868988729064,
+        0.32121310112709367
+      ],
+      "nn_probabilities": [
+        0.6804106136129858,
+        0.31958938638701423
+      ]
+    },
+    {
+      "match_hash": "76417f0297798bb1",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.005686999457454059,
+      "tv": 0.05005446441054984,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6550811246604815,
+        0.3449188753395184
+      ]
+    },
+    {
+      "match_hash": "76417f0297798bb1",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.00963306468785937,
+      "tv": 0.06312916874809726,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5889934983183929,
+        0.27892150353458456,
+        0.1320849981470226
+      ],
+      "nn_probabilities": [
+        0.5258643295702956,
+        0.30192264445979367,
+        0.17221302596991075
+      ]
+    },
+    {
+      "match_hash": "817de5815fd4a542",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 7.247691635590969e-06,
+      "tv": 0.0017339485218639261,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7069356454547322,
+        0.2930643545452678
+      ]
+    },
+    {
+      "match_hash": "817de5815fd4a542",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 5.277992532105478e-08,
+      "tv": 0.0001511149050472671,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6835958449395599,
+        0.3164041550604401
+      ],
+      "nn_probabilities": [
+        0.6834447300345127,
+        0.3165552699654874
+      ]
+    },
+    {
+      "match_hash": "817de5815fd4a542",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 0.03476807961683834,
+      "tv": 0.13159264315589383,
+      "old_argmax": 0,
+      "nn_argmax": 1,
+      "old_logged_probabilities": [
+        0.5861073236151971,
+        0.4138926763848029
+      ],
+      "nn_probabilities": [
+        0.4545146804593032,
+        0.5454853195406967
+      ]
+    },
+    {
+      "match_hash": "817de5815fd4a542",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 0.0021469304764795377,
+      "tv": 0.023803147779055983,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5826665789302727,
+        0.269158906502439,
+        0.14817451456728822
+      ],
+      "nn_probabilities": [
+        0.5611229994651837,
+        0.26689933818847206,
+        0.17197766234634423
+      ]
+    },
+    {
+      "match_hash": "817de5815fd4a542",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 7.355246760828472e-05,
+      "tv": 0.0057241675078974485,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6689151385017917,
+        0.3310848614982082
+      ],
+      "nn_probabilities": [
+        0.6631909709938943,
+        0.3368090290061057
+      ]
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "decision_id": 1,
+      "kind": "action",
+      "kl": 0.011357365955624962,
+      "tv": 0.07270273046711342,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6058196180584932,
+        0.3941803819415069
+      ]
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "decision_id": 2,
+      "kind": "speech",
+      "kl": 0.02136859149911864,
+      "tv": 0.09912910808778619,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7050671747160407,
+        0.2949328252839592
+      ],
+      "nn_probabilities": [
+        0.6059380666282546,
+        0.3940619333717454
+      ]
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 0.01211051092661411,
+      "tv": 0.07513840302171201,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6033839455038945,
+        0.39661605449610543
+      ]
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.01377818522390166,
+      "tv": 0.08028289194359253,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785767925552236,
+        0.32142320744477626
+      ],
+      "nn_probabilities": [
+        0.5982939006116311,
+        0.4017060993883688
+      ]
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.005688388684586751,
+      "tv": 0.04817343954175776,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7460452599698497,
+        0.2539547400301504
+      ],
+      "nn_probabilities": [
+        0.6978718204280919,
+        0.30212817957190813
+      ]
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "decision_id": 7,
+      "kind": "action",
+      "kl": 0.015723208364561078,
+      "tv": 0.08591865782420033,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786262056092931,
+        0.3213737943907069
+      ],
+      "nn_probabilities": [
+        0.5927075477850928,
+        0.4072924522149073
+      ]
+    },
+    {
+      "match_hash": "97ee2ffd4eb1acd8",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 9.040837768814263e-06,
+      "tv": 0.001936342948699099,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7071380398815673,
+        0.2928619601184326
+      ]
+    },
+    {
+      "match_hash": "97ee2ffd4eb1acd8",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.00010566942569515195,
+      "tv": 0.006813452078756194,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787086538480536,
+        0.3212913461519463
+      ],
+      "nn_probabilities": [
+        0.6718952017692974,
+        0.32810479823070254
+      ]
+    },
+    {
+      "match_hash": "97ee2ffd4eb1acd8",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 2.4769574768579525e-07,
+      "tv": 0.0003287199421568021,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787574851978961,
+        0.3212425148021038
+      ],
+      "nn_probabilities": [
+        0.6784287652557394,
+        0.32157123474426064
+      ]
+    },
+    {
+      "match_hash": "97ee2ffd4eb1acd8",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 7.0945623051143e-05,
+      "tv": 0.005411231813740647,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052745433362487,
+        0.29472545666375116
+      ],
+      "nn_probabilities": [
+        0.7106857751499894,
+        0.28931422485001057
+      ]
+    },
+    {
+      "match_hash": "97ee2ffd4eb1acd8",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 2.807566416109311e-05,
+      "tv": 0.0034826779081847115,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6820488169458093,
+        0.31795118305419073
+      ],
+      "nn_probabilities": [
+        0.685531494853994,
+        0.314468505146006
+      ]
+    },
+    {
+      "match_hash": "a43bfc5ecb0ff8cb",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 9.040837768814263e-06,
+      "tv": 0.001936342948699099,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7071380398815673,
+        0.2928619601184326
+      ]
+    },
+    {
+      "match_hash": "a43bfc5ecb0ff8cb",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.0002175716096136423,
+      "tv": 0.009573104671722898,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5891082845142142,
+        0.27887576309467516,
+        0.13201595239111066
+      ],
+      "nn_probabilities": [
+        0.5795351798424913,
+        0.28302850637351773,
+        0.137436313783991
+      ]
+    },
+    {
+      "match_hash": "a43bfc5ecb0ff8cb",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 8.475516578120793e-05,
+      "tv": 0.006099618041520427,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787364519067312,
+        0.3212635480932689
+      ],
+      "nn_probabilities": [
+        0.6726368338652107,
+        0.3273631661347893
+      ]
+    },
+    {
+      "match_hash": "a43bfc5ecb0ff8cb",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 4.3652193725029e-05,
+      "tv": 0.004247932483529837,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052745433362487,
+        0.29472545666375116
+      ],
+      "nn_probabilities": [
+        0.7095224758197787,
+        0.29047752418022144
+      ]
+    },
+    {
+      "match_hash": "a43bfc5ecb0ff8cb",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 5.071326395148261e-06,
+      "tv": 0.0014858839903043042,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787868988729064,
+        0.32121310112709367
+      ],
+      "nn_probabilities": [
+        0.6802727828632107,
+        0.3197272171367893
+      ]
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "decision_id": 1,
+      "kind": "action",
+      "kl": 0.01176825891657364,
+      "tv": 0.07404085029900107,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6044814982266055,
+        0.3955185017733945
+      ]
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "decision_id": 2,
+      "kind": "speech",
+      "kl": 0.02136859149911864,
+      "tv": 0.09912910808778619,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7050671747160407,
+        0.2949328252839592
+      ],
+      "nn_probabilities": [
+        0.6059380666282546,
+        0.3940619333717454
+      ]
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 0.011700998772366272,
+      "tv": 0.07382336333045145,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6046989851951552,
+        0.395301014804845
+      ]
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.01096289916372438,
+      "tv": 0.07139443477444216,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.678561484234819,
+        0.32143851576518107
+      ],
+      "nn_probabilities": [
+        0.6071670494603768,
+        0.3928329505396232
+      ]
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.019814395284943803,
+      "tv": 0.09531493063786936,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051261009299126,
+        0.2948738990700874
+      ],
+      "nn_probabilities": [
+        0.6098111702920432,
+        0.39018882970795676
+      ]
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "decision_id": 6,
+      "kind": "action",
+      "kl": 0.0125699014514679,
+      "tv": 0.07658444182884097,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786152393808368,
+        0.3213847606191632
+      ],
+      "nn_probabilities": [
+        0.6020307975519958,
+        0.3979692024480042
+      ]
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "decision_id": 1,
+      "kind": "action",
+      "kl": 0.01176825891657364,
+      "tv": 0.07404085029900107,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6044814982266055,
+        0.3955185017733945
+      ]
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "decision_id": 2,
+      "kind": "speech",
+      "kl": 0.021271789192917348,
+      "tv": 0.09889568497498952,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7050671747160407,
+        0.2949328252839592
+      ],
+      "nn_probabilities": [
+        0.6061714897410513,
+        0.39382851025894877
+      ]
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 0.012061212695626156,
+      "tv": 0.07498123710737983,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6785223485256066,
+        0.32147765147439344
+      ],
+      "nn_probabilities": [
+        0.6035411114182268,
+        0.3964588885817733
+      ]
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.014721950180426241,
+      "tv": 0.08261551944300152,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6880601032075824,
+        0.31193989679241757
+      ],
+      "nn_probabilities": [
+        0.6054445837645809,
+        0.3945554162354191
+      ]
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.009079107938960773,
+      "tv": 0.06578752966721971,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6504400817736228,
+        0.3495599182263772
+      ],
+      "nn_probabilities": [
+        0.5846525521064031,
+        0.41534744789359695
+      ]
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "decision_id": 6,
+      "kind": "action",
+      "kl": 0.013655556258832968,
+      "tv": 0.07947491478606339,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6880976211681679,
+        0.31190237883183225
+      ],
+      "nn_probabilities": [
+        0.6086227063821044,
+        0.3913772936178955
+      ]
+    },
+    {
+      "match_hash": "dbebbf6a581003db",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "dbebbf6a581003db",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.0034278353059308125,
+      "tv": 0.039285682677600214,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6835198114286307,
+        0.3164801885713693
+      ],
+      "nn_probabilities": [
+        0.6442341287510305,
+        0.35576587124896947
+      ]
+    },
+    {
+      "match_hash": "dbebbf6a581003db",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.005527983198672398,
+      "tv": 0.04932923970786671,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051998428832741,
+        0.2948001571167259
+      ],
+      "nn_probabilities": [
+        0.6558706031754074,
+        0.3441293968245926
+      ]
+    },
+    {
+      "match_hash": "dbebbf6a581003db",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.003305870596535497,
+      "tv": 0.03843699018095359,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6881859255631037,
+        0.31181407443689646
+      ],
+      "nn_probabilities": [
+        0.6497489353821501,
+        0.35025106461785005
+      ]
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.0040366083530146216,
+      "tv": 0.042840657163588175,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786303924473088,
+        0.32136960755269117
+      ],
+      "nn_probabilities": [
+        0.6357897352837206,
+        0.3642102647162793
+      ]
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.004812926941938356,
+      "tv": 0.04763424332748473,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.650584683236115,
+        0.349415316763885
+      ],
+      "nn_probabilities": [
+        0.6029504399086303,
+        0.39704956009136977
+      ]
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.0019321042213344686,
+      "tv": 0.029462120427466237,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786996244501429,
+        0.3213003755498572
+      ],
+      "nn_probabilities": [
+        0.6492375040226767,
+        0.35076249597732345
+      ]
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.0045114986044475155,
+      "tv": 0.044449915639165644,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052812904141311,
+        0.29471870958586893
+      ],
+      "nn_probabilities": [
+        0.6608313747749655,
+        0.33916862522503455
+      ]
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "decision_id": 6,
+      "kind": "action",
+      "kl": 0.0014032335542974762,
+      "tv": 0.024874866832248016,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6882534130171829,
+        0.31174658698281715
+      ],
+      "nn_probabilities": [
+        0.6633785461849349,
+        0.33662145381506514
+      ]
+    },
+    {
+      "match_hash": "e598b61d6d7ffed0",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "e598b61d6d7ffed0",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.004220804153697681,
+      "tv": 0.04382552238572576,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786303924473088,
+        0.32136960755269117
+      ],
+      "nn_probabilities": [
+        0.634804870061583,
+        0.3651951299384169
+      ]
+    },
+    {
+      "match_hash": "e598b61d6d7ffed0",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.012878744521646033,
+      "tv": 0.07366621583960807,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.5785961444124148,
+        0.27415889390192666,
+        0.14724496168565854
+      ],
+      "nn_probabilities": [
+        0.5049299285728067,
+        0.29882487914742617,
+        0.19624519227976708
+      ]
+    },
+    {
+      "match_hash": "e598b61d6d7ffed0",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.0033336689866366453,
+      "tv": 0.038863440096792295,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787086475090133,
+        0.3212913524909868
+      ],
+      "nn_probabilities": [
+        0.639845207412221,
+        0.36015479258777905
+      ]
+    },
+    {
+      "match_hash": "e6b7413094f83bf0",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 9.040837768814263e-06,
+      "tv": 0.001936342948699099,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052016969328683,
+        0.29479830306713173
+      ],
+      "nn_probabilities": [
+        0.7071380398815673,
+        0.2928619601184326
+      ]
+    },
+    {
+      "match_hash": "e6b7413094f83bf0",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.00010566942569515195,
+      "tv": 0.006813452078756194,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787086538480536,
+        0.3212913461519463
+      ],
+      "nn_probabilities": [
+        0.6718952017692974,
+        0.32810479823070254
+      ]
+    },
+    {
+      "match_hash": "e6b7413094f83bf0",
+      "decision_id": 3,
+      "kind": "action",
+      "kl": 5.3885733824596185e-06,
+      "tv": 0.0015316538118803347,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787574851978961,
+        0.3212425148021038
+      ],
+      "nn_probabilities": [
+        0.6802891390097765,
+        0.3197108609902235
+      ]
+    },
+    {
+      "match_hash": "e6b7413094f83bf0",
+      "decision_id": 4,
+      "kind": "speech",
+      "kl": 5.3074977794169594e-05,
+      "tv": 0.004682655483906006,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7052745433362487,
+        0.29472545666375116
+      ],
+      "nn_probabilities": [
+        0.7099571988201548,
+        0.29004280117984527
+      ]
+    },
+    {
+      "match_hash": "e6b7413094f83bf0",
+      "decision_id": 5,
+      "kind": "action",
+      "kl": 5.756193121679229e-06,
+      "tv": 0.0015856992981238272,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787868988729063,
+        0.32121310112709367
+      ],
+      "nn_probabilities": [
+        0.6772011995747825,
+        0.3227988004252175
+      ]
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.0038279724234199647,
+      "tv": 0.04169847211251165,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786303924473088,
+        0.32136960755269117
+      ],
+      "nn_probabilities": [
+        0.6369319203347972,
+        0.3630680796652028
+      ]
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.005789250777435501,
+      "tv": 0.050511471472703046,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051998428832741,
+        0.2948001571167259
+      ],
+      "nn_probabilities": [
+        0.654688371410571,
+        0.34531162858942893
+      ]
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.0043295766510271574,
+      "tv": 0.044394774468423936,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6787176704344412,
+        0.32128232956555886
+      ],
+      "nn_probabilities": [
+        0.6343228959660172,
+        0.36567710403398274
+      ]
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "decision_id": 5,
+      "kind": "speech",
+      "kl": 0.003976662705166736,
+      "tv": 0.043234546301737065,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6506587587834013,
+        0.34934124121659865
+      ],
+      "nn_probabilities": [
+        0.6074242124816642,
+        0.3925757875183357
+      ]
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "decision_id": 6,
+      "kind": "action",
+      "kl": 0.002900155985885902,
+      "tv": 0.03643814575581744,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6691710874567511,
+        0.3308289125432488
+      ],
+      "nn_probabilities": [
+        0.6327329417009337,
+        0.3672670582990663
+      ]
+    },
+    {
+      "match_hash": "eecce000f58620b3",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.005686999457454059,
+      "tv": 0.05005446441054984,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6550811246604815,
+        0.3449188753395184
+      ]
+    },
+    {
+      "match_hash": "eecce000f58620b3",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.0038545204868682403,
+      "tv": 0.04184545502317538,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786303924473088,
+        0.32136960755269117
+      ],
+      "nn_probabilities": [
+        0.6367849374241334,
+        0.36321506257586655
+      ]
+    },
+    {
+      "match_hash": "f71aec7647b6fe8f",
+      "decision_id": 1,
+      "kind": "speech",
+      "kl": 0.0058548500618322355,
+      "tv": 0.05080689168415717,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.7051355890710314,
+        0.2948644109289686
+      ],
+      "nn_probabilities": [
+        0.6543286973868743,
+        0.34567130261312584
+      ]
+    },
+    {
+      "match_hash": "f71aec7647b6fe8f",
+      "decision_id": 2,
+      "kind": "action",
+      "kl": 0.0038545204868682403,
+      "tv": 0.04184545502317538,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6786303924473088,
+        0.32136960755269117
+      ],
+      "nn_probabilities": [
+        0.6367849374241334,
+        0.36321506257586655
+      ]
+    },
+    {
+      "match_hash": "f71aec7647b6fe8f",
+      "decision_id": 3,
+      "kind": "speech",
+      "kl": 0.004110628096105136,
+      "tv": 0.04396895552575028,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6505940893715366,
+        0.34940591062846343
+      ],
+      "nn_probabilities": [
+        0.6066251338457863,
+        0.3933748661542137
+      ]
+    },
+    {
+      "match_hash": "f71aec7647b6fe8f",
+      "decision_id": 4,
+      "kind": "action",
+      "kl": 0.0031683347466107473,
+      "tv": 0.03761431289700648,
+      "old_argmax": 0,
+      "nn_argmax": 0,
+      "old_logged_probabilities": [
+        0.6881859255631037,
+        0.3118140744368964
+      ],
+      "nn_probabilities": [
+        0.6505716126660972,
+        0.3494283873339029
+      ]
+    }
+  ]
+}

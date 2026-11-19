@@ -1,0 +1,16 @@
+{
+  "focused_checks_passed": 10,
+  "encoder_cold_seconds": 0.674817229853943,
+  "encoder_cached_seconds": 1.6415026038885117e-05,
+  "encoder_parameters": 22713216,
+  "encoder_frozen_eval": true,
+  "artifact_validation_seconds": 0.0836073812097311,
+  "semantic_cold_seconds": 0.07525830110535026,
+  "semantic_cached_seconds": 0.0003717609215527773,
+  "checkpoint_id": "6ca4df8fd98821e6",
+  "probabilities": [
+    0.4427036198714187,
+    0.3369072358885497,
+    0.2203891442400317
+  ]
+}

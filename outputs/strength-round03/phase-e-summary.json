@@ -1,0 +1,1319 @@
+{
+  "seed": "r03-ids-guard-onpolicy-v1",
+  "receipt_count": 30,
+  "games": [
+    {
+      "match_hash": "e6b7413094f83bf0",
+      "seat": 1,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.262,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 1,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "4e87e5fa13574e00",
+      "seat": 6,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 6,
+      "phase_counts": {
+        "speech": 3,
+        "day_vote": 3
+      },
+      "sampled": 6,
+      "sampled_confirmed": 6,
+      "confirmed_decisions": 6,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.032,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 6,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "22b5b918eb826eab",
+      "seat": 5,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "seer",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "night_seer": 2,
+        "speech": 1,
+        "day_vote": 1
+      },
+      "sampled": 3,
+      "sampled_confirmed": 3,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.445,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 5,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "eecce000f58620b3",
+      "seat": 1,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 2,
+      "phase_counts": {
+        "speech": 1,
+        "day_vote": 1
+      },
+      "sampled": 2,
+      "sampled_confirmed": 2,
+      "confirmed_decisions": 2,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.023,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 1,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "dbebbf6a581003db",
+      "seat": 2,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 4,
+      "sampled_confirmed": 4,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.836,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 2,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "caaba685417e2284",
+      "seat": 4,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "seer",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 6,
+      "phase_counts": {
+        "night_seer": 2,
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 6,
+      "sampled_confirmed": 6,
+      "confirmed_decisions": 6,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.388,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 4,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "2a9fab68a3afa8aa",
+      "seat": 2,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 4,
+      "sampled_confirmed": 4,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.17,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 2,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "a43bfc5ecb0ff8cb",
+      "seat": 3,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.367,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 3,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "e598b61d6d7ffed0",
+      "seat": 6,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 4,
+      "sampled_confirmed": 4,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.177,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 6,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "1057750af9a55a8c",
+      "seat": 5,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "seer",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 9,
+      "phase_counts": {
+        "night_seer": 3,
+        "speech": 3,
+        "day_vote": 3
+      },
+      "sampled": 7,
+      "sampled_confirmed": 7,
+      "confirmed_decisions": 9,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.056,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 5,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "3fc77d16e89622ba",
+      "seat": 0,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 2,
+      "phase_counts": {
+        "speech": 1,
+        "day_vote": 1
+      },
+      "sampled": 2,
+      "sampled_confirmed": 2,
+      "confirmed_decisions": 2,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.078,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 0,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "1bcad85fe142b2d8",
+      "seat": 0,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 2,
+      "phase_counts": {
+        "speech": 1,
+        "day_vote": 1
+      },
+      "sampled": 2,
+      "sampled_confirmed": 2,
+      "confirmed_decisions": 2,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.789,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 0,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "e132946435c2b31f",
+      "seat": 5,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 6,
+      "phase_counts": {
+        "speech": 3,
+        "day_vote": 3
+      },
+      "sampled": 6,
+      "sampled_confirmed": 6,
+      "confirmed_decisions": 6,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.876,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 5,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "f71aec7647b6fe8f",
+      "seat": 4,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 4,
+      "sampled_confirmed": 4,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.433,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 4,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "6380b198b2721aee",
+      "seat": 2,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "seer",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 6,
+      "phase_counts": {
+        "night_seer": 2,
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 6,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.42,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 2,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "3e6167d78f3020ef",
+      "seat": 5,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "seer",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "night_seer": 2,
+        "speech": 1,
+        "day_vote": 1
+      },
+      "sampled": 3,
+      "sampled_confirmed": 3,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.673,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 5,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "76417f0297798bb1",
+      "seat": 1,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 2,
+      "phase_counts": {
+        "speech": 1,
+        "day_vote": 1
+      },
+      "sampled": 2,
+      "sampled_confirmed": 2,
+      "confirmed_decisions": 2,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.856,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 1,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "be1841a8376d8bfb",
+      "seat": 5,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "seer",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 6,
+      "phase_counts": {
+        "night_seer": 2,
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 6,
+      "sampled_confirmed": 6,
+      "confirmed_decisions": 6,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.858,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 5,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "617841495f31abcd",
+      "seat": 1,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 4,
+      "sampled_confirmed": 4,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.529,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 1,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "602b9513b556a262",
+      "seat": 3,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 2,
+      "phase_counts": {
+        "speech": 1,
+        "day_vote": 1
+      },
+      "sampled": 2,
+      "sampled_confirmed": 2,
+      "confirmed_decisions": 2,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.116,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 3,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "eb646d6320c3a867",
+      "seat": 3,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 6,
+      "phase_counts": {
+        "speech": 3,
+        "day_vote": 3
+      },
+      "sampled": 6,
+      "sampled_confirmed": 6,
+      "confirmed_decisions": 6,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.749,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 3,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "5b69e4b1de9c0775",
+      "seat": 1,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 6.199,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 1,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "97ee2ffd4eb1acd8",
+      "seat": 2,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 6.497,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 2,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "30ba86c1fb8cc8d7",
+      "seat": 1,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "villager",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 4,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 4,
+      "sampled_confirmed": 4,
+      "confirmed_decisions": 4,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.545,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 1,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "5ff334b618a79016",
+      "seat": 3,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.152,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 3,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "3c4d79f00ee4a66f",
+      "seat": 3,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 8,
+      "phase_counts": {
+        "speech": 3,
+        "day_vote": 3,
+        "night_wolf": 2
+      },
+      "sampled": 8,
+      "sampled_confirmed": 8,
+      "confirmed_decisions": 8,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.8,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 3,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "83c4ce40333faef8",
+      "seat": 6,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "seer",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 7,
+      "phase_counts": {
+        "night_seer": 3,
+        "speech": 2,
+        "day_vote": 2
+      },
+      "sampled": 6,
+      "sampled_confirmed": 6,
+      "confirmed_decisions": 7,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 4.916,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 6,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "817de5815fd4a542",
+      "seat": 3,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": -1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.283,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 3,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "64fd493ef48e79ec",
+      "seat": 6,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.576,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 6,
+      "controller_receipt_late": false
+    },
+    {
+      "match_hash": "0f053091edefcaab",
+      "seat": 6,
+      "mode": "hybrid_collect",
+      "arm": "ids",
+      "assignment_seed": "r03-ids-guard-onpolicy-v1",
+      "assignment_version": "wolf-collect-v1",
+      "role": "wolf",
+      "score": 1.0,
+      "termination_reason": "completed",
+      "terminal_count": 1,
+      "decisions": 5,
+      "phase_counts": {
+        "speech": 2,
+        "day_vote": 2,
+        "night_wolf": 1
+      },
+      "sampled": 5,
+      "sampled_confirmed": 5,
+      "confirmed_decisions": 5,
+      "delivery_errors": 0,
+      "incomplete_tail": false,
+      "model_fallbacks": 0,
+      "max_model_seconds": 5.565,
+      "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+      "generator_ids": [
+        "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B"
+      ],
+      "checkpoint_id": "d7ebf7670444067a",
+      "opponent_pool": [
+        "direct",
+        "rules",
+        "rules",
+        "rules",
+        "rules",
+        "rules"
+      ],
+      "assigned_arm": "ids",
+      "assigned_seat": 6,
+      "controller_receipt_late": false
+    }
+  ],
+  "protocol_problems": [],
+  "assignment_version": "wolf-collect-v1",
+  "late_receipt_count": 0,
+  "arms": {
+    "ids": {
+      "assigned": 30,
+      "resolved": 30,
+      "unresolved": 0,
+      "wins": 19,
+      "win_rate_resolved": 0.6333333333333333,
+      "wilson95": [
+        0.4551356365479487,
+        0.7812607919389929
+      ],
+      "roles": {
+        "villager": {
+          "games": 12,
+          "wins": 11,
+          "win_rate": 0.9166666666666666,
+          "wilson95": [
+            0.646120088858883,
+            0.9851349055950829
+          ]
+        },
+        "seer": {
+          "games": 7,
+          "wins": 4,
+          "win_rate": 0.5714285714285714,
+          "wilson95": [
+            0.2504583645276572,
+            0.8417801447485302
+          ]
+        },
+        "wolf": {
+          "games": 11,
+          "wins": 4,
+          "win_rate": 0.36363636363636365,
+          "wilson95": [
+            0.15166471095367573,
+            0.6461988254921511
+          ]
+        }
+      },
+      "seat_counts": {
+        "1": 6,
+        "6": 5,
+        "5": 5,
+        "2": 4,
+        "4": 2,
+        "3": 6,
+        "0": 2
+      },
+      "role_standardized_win_rate": 0.7093382807668521,
+      "all_assigned_win_bounds": [
+        0.6333333333333333,
+        0.6333333333333333
+      ],
+      "selected_decisions": 142,
+      "confirmed_decisions": 142,
+      "model_fallbacks": 0,
+      "delivery_errors": 0,
+      "termination_reasons": {
+        "completed": 30
+      }
+    }
+  },
+  "observed_model_configurations": [
+    {
+      "proposer": "ids",
+      "prompt_version": "legacy-v1",
+      "requested_dtype": "bfloat16",
+      "actual_dtype": "bfloat16",
+      "device": "cpu",
+      "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "evidence_guard_version": "verified-innocent-v1",
+      "requested_cpu_threads": 4,
+      "actual_cpu_threads": 4
+    }
+  ],
+  "model_configurations_by_arm": {
+    "ids": [
+      {
+        "proposer": "ids",
+        "prompt_version": "legacy-v1",
+        "requested_dtype": "bfloat16",
+        "actual_dtype": "bfloat16",
+        "device": "cpu",
+        "requested_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "actual_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "evidence_guard_version": "verified-innocent-v1",
+        "requested_cpu_threads": 4,
+        "actual_cpu_threads": 4
+      }
+    ]
+  },
+  "interpretation": "Prospective roster-specific results. Report unresolved assignments and role imbalance before promotion."
+}

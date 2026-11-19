@@ -1049,3 +1049,76 @@ version. That diagnostic can substantiate the suspected accumulation cause
 without changing the policy target. No material source blocker remains for
 this new frozen retry. H2 execution and the measured residuals remain
 pending; the first failure must not be rewritten as a successful update.
+
+## Successful semantic retry: independent artifact audit
+
+The Reviewer inspected the transferred JSON metadata/reports, tensor-file
+hash and log from H2 retry job 2123930 without executing neural computation
+locally. The transcript records 35 focused, 11 comparison, five accounting
+and ten semantic checks before fitting, and ten semantic checks after
+fitting, all successful.
+
+The recorded batch is exactly the thirty hashed matches in the frozen E
+controller census and the separate linear-reference artifact. Every one
+of the thirty reported focal-log SHA256 values matches its local source.
+Those logs contain 142 selected decisions, 136 sampled decisions and 142
+accepted deliveries, with zero recorded delivery errors/fallbacks. Roles
+are eleven wolf, seven seer and twelve villager games. All sampled choices
+share the recorded IDs-plus-guard generator. The starting checkpoint's file
+hash matches D7, and the artifact parent is `d7ebf7670444067a`. No F matches
+are part of this recorded batch; thirty terminal games remain thirty
+observations despite multiple choices/epochs.
+
+All 136 initial logits now match the legacy prior exactly. Maximum initial
+probability error is 1.1102230246251565e-16 within the unchanged tolerance.
+The separately reconstructed former sequential prior differs by up to
+4.440892098500626e-16 on these actual states under CPython 3.12.13. This
+confirms the numerical implementation mismatch, consistent with the
+previously documented summation explanation; no threshold was relaxed.
+
+All 32 epochs were accepted and satisfy the predeclared training-state KL
+limits. Final old-to-new categorical mean KL is 0.005937964267001589 and
+maximum is 0.0350332823767123. The artifact records the agreed clip 0.2,
+entropy 0.001, game-averaged actor/entropy sums, decision-mean critic MSE,
+fixed unnormalized MC advantages, learning rates, seed, full rollback rule
+and runtime versions. Reports confirm frozen encoder and unchanged
+advantages. These establish optimization and provenance, not improved
+playing strength.
+
+The metadata equals the report's artifact copy, and `selector.pt` matches
+its recorded SHA256. Independently deriving the checkpoint identifier from
+metadata bytes and tensor hash yields `6ca4df8fd98821e6`, matching the
+post-training reload report. All 35 phase-G manifest hashes match the
+reviewed local files at commit `63bb8ddd0706565cc751d2ae97dbbac476ed6ab9`,
+archive SHA256
+`9c97d9b2aafcc7aa139c5b7cba6381422bb96c64cff1d36190de44d9283d4098`.
+
+Training artifact acceptance is granted. Cold/cached component timings in
+the training allocation are informative only; the separate two-HF runtime
+screen, actual delivery canary and prospective held-out comparison remain
+required before launch/promotion claims. No policy is promoted from this
+training result alone.
+
+## Read-only semantic distribution audit source review
+
+The Reviewer inspected the new `analyze_semantic_update.py` without running
+neural computation locally. Static acceptance is granted for the planned
+H2 E-only audit with `--training-report`. Before neural evaluation it checks
+the exact census/eligible/artifact match set, parent ID/file hash, copied
+training artifact and each fitting log's relative path/SHA256. Encoder
+relocation preserves pinned revision and recorded file-hash checks.
+
+The script evaluates full categorical old-to-saved-NN KL, total variation
+and stable greedy changes on all eligible sampled training slates, split by
+role/kind. It reports actual named actor/critic parameter counts, the
+zero-initialized head's change, base-coefficient deltas and frozen encoder
+identity, then reconciles training KL with declared numerical tolerance.
+Role/score labels remain reporting data, not model inputs. Exclusive output
+creation does not replace inputs, and no fitting or F access occurs.
+
+The audit reuses the frozen eligibility/probability helpers and is therefore
+a reproducibility/distribution audit, not independent validation of every
+shared helper. Omitting the optional training report weakens per-log hash
+provenance; the actual run should supply it. Parameter counts do not increase
+the thirty independent terminal observations, and logged-slate movement
+cannot establish counterfactual wins. Actual H2 audit results remain pending.

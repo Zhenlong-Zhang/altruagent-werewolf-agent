@@ -1,0 +1,163 @@
+  /work/zzl/2123930/pip-build-env-81shst53/overlay/lib/python3.12/site-packages/setuptools/command/editable_wheel.py:354: BuildBackendWarning: Editable installation.
+  !!
+  
+          ********************************************************************************
+          Please be careful with folders in your working directory with the same
+          name as your package as they may take precedence during imports.
+          ********************************************************************************
+  
+  !!
+    with strategy, WheelFile(wheel_path, "w") as wheel_obj:
+  /work/zzl/2123930/pip-build-env-o7m95qvb/overlay/lib/python3.12/site-packages/setuptools/command/editable_wheel.py:354: BuildBackendWarning: Editable installation.
+  !!
+  
+          ********************************************************************************
+          Please be careful with folders in your working directory with the same
+          name as your package as they may take precedence during imports.
+          ********************************************************************************
+  
+  !!
+    with strategy, WheelFile(wheel_path, "w") as wheel_obj:
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Downloading 'data_config.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/x2Rt2861-Bgu_eYvy93NIBMPOFg=.2e85f0eac205cf444bdf97ede4935603ca6a0416.incomplete'
+Downloading 'model.safetensors' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/xGOKKLRSlIhH692hSVvI1-gpoa8=.53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db.incomplete'
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/data_config.json
+Downloading 'modules.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/rqDUs8AfQpUqG2NjnkGNseO9-Z4=.952a9b81c0bfd99800fabf352f69c7ccd46c5e43.incomplete'
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/modules.json
+Downloading 'config.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/8_PA_wEVGiVa2goH2H4KQOQpvVY=.72b987fd805cfa2b58c4c8c952b274a11bfd5a00.incomplete'
+Downloading 'sentence_bert_config.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/lGVMDuXJ-eOxWaZOviD6MtO-75w=.59d594003bf59880a884c574bf88ef7555bb0202.incomplete'
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/config.json
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/sentence_bert_config.json
+Downloading 'special_tokens_map.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/ahkChHUJFxEmOdq5GDFEmerRzCY=.e7b0375001f109a6b8873d756ad4f7bbb15fbaa5.incomplete'
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/special_tokens_map.json
+Downloading 'config_sentence_transformers.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/7FlMl4FxR6n7kBtLngDIJQ5nHiI=.fd1b291129c607e5d49799f87cb219b27f98acdf.incomplete'
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/config_sentence_transformers.json
+Downloading 'tokenizer.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/HgM_lKo9sdSCfRtVg7MMFS7EKqo=.cb202bfe2e3c98645018a6d12f182a434c9d3e02.incomplete'
+Downloading 'tokenizer_config.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/vzaExXFZNBay89bvlQv-ZcI6BTg=.c79f2b6a0cea6f4b564fed1938984bace9d30ff0.incomplete'
+Downloading '1_Pooling/config.json' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/1_Pooling/8_PA_wEVGiVa2goH2H4KQOQpvVY=.d1514c3162bbe87b343f565fadc62e6c06f04f03.incomplete'
+Downloading 'vocab.txt' to '/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/.cache/huggingface/download/E2zehc7lrIVb8gRdx7qjK54iiZY=.fb140275c155a9c7c5a3b3e0e77a9e839594a938.incomplete'
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/tokenizer_config.json
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/tokenizer.json
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/1_Pooling/config.json
+Fetching 11 files:  73%|███████▎  | 8/11 [00:00<00:00, 37.12it/s]Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/vocab.txt
+Download complete. Moving file to /work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2/model.safetensors
+Fetching 11 files: 100%|██████████| 11/11 [00:01<00:00,  9.85it/s]
+/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2
+test_bad_rank_output_has_deterministic_legal_fallback (__main__.StrengthChecks.test_bad_rank_output_has_deterministic_legal_fallback) ... ok
+test_cold_load_counts_against_soft_budget (__main__.StrengthChecks.test_cold_load_counts_against_soft_budget) ... ok
+test_competition_logs_and_delivers_legal_fallback_on_bad_model_output (__main__.StrengthChecks.test_competition_logs_and_delivers_legal_fallback_on_bad_model_output) ... ok
+test_competition_rejects_missing_checkpoint_and_bad_mode (__main__.StrengthChecks.test_competition_rejects_missing_checkpoint_and_bad_mode) ... ok
+test_competition_routes_arbitrary_seat_action_and_speech_to_checkpoint (__main__.StrengthChecks.test_competition_routes_arbitrary_seat_action_and_speech_to_checkpoint) ... ok
+test_competition_validates_model_configuration_before_play (__main__.StrengthChecks.test_competition_validates_model_configuration_before_play) ... ok
+test_cpu_thread_configuration_rejects_invalid_or_oversubscribed_startup (__main__.StrengthChecks.test_cpu_thread_configuration_rejects_invalid_or_oversubscribed_startup) ... ok
+test_cyclic_cancels_additive_slot_bias_and_preserves_content_signal (__main__.StrengthChecks.test_cyclic_cancels_additive_slot_bias_and_preserves_content_signal) ... ok
+test_cyclic_generator_is_distinct_while_none_matches_absent (__main__.StrengthChecks.test_cyclic_generator_is_distinct_while_none_matches_absent) ... ok
+test_cyclic_rejects_bad_second_pass_without_partial_ranking (__main__.StrengthChecks.test_cyclic_rejects_bad_second_pass_without_partial_ranking) ... ok
+test_cyclic_validates_bounds_ids_and_configuration (__main__.StrengthChecks.test_cyclic_validates_bounds_ids_and_configuration) ... ok
+test_empty_rationale_is_rejected (__main__.StrengthChecks.test_empty_rationale_is_rejected) ... ok
+test_explicit_cpu_threads_apply_to_cached_calls_and_version_provenance (__main__.StrengthChecks.test_explicit_cpu_threads_apply_to_cached_calls_and_version_provenance) ... ok
+test_grounded_absent_and_explicit_none_preserve_single_pass (__main__.StrengthChecks.test_grounded_absent_and_explicit_none_preserve_single_pass) ... ok
+test_grounded_claimed_seer_remains_soft_for_wolf (__main__.StrengthChecks.test_grounded_claimed_seer_remains_soft_for_wolf) ... ok
+test_grounded_competition_filters_known_innocent_without_changing_ids_control (__main__.StrengthChecks.test_grounded_competition_filters_known_innocent_without_changing_ids_control) ... ok
+test_grounded_compiles_int_string_keys_and_keeps_claims_unverified (__main__.StrengthChecks.test_grounded_compiles_int_string_keys_and_keeps_claims_unverified) ... ok
+test_grounded_maps_slots_to_arbitrary_ids_without_generation (__main__.StrengthChecks.test_grounded_maps_slots_to_arbitrary_ids_without_generation) ... ok
+test_grounded_rejects_contradictory_trusted_facts (__main__.StrengthChecks.test_grounded_rejects_contradictory_trusted_facts) ... ok
+test_grounded_target_resolution_never_guesses_seat_from_action_id (__main__.StrengthChecks.test_grounded_target_resolution_never_guesses_seat_from_action_id) ... ok
+test_ids_verified_guard_leaves_other_roles_phases_and_speech_unchanged (__main__.StrengthChecks.test_ids_verified_guard_leaves_other_roles_phases_and_speech_unchanged) ... ok
+test_ids_verified_guard_normal_entry_opaque_targets_and_all_known_fallback (__main__.StrengthChecks.test_ids_verified_guard_normal_entry_opaque_targets_and_all_known_fallback) ... ok
+test_ids_verified_guard_preserves_absent_none_prompt_and_identity (__main__.StrengthChecks.test_ids_verified_guard_preserves_absent_none_prompt_and_identity) ... ok
+test_invalid_verified_guard_fails_factory_and_legacy_falls_back_with_raw_request (__main__.StrengthChecks.test_invalid_verified_guard_fails_factory_and_legacy_falls_back_with_raw_request) ... ok
+test_late_ranking_is_rejected_after_synchronization (__main__.StrengthChecks.test_late_ranking_is_rejected_after_synchronization) ... ok
+test_legacy_bad_cpu_threads_keep_legal_fallback_and_raw_diagnostic (__main__.StrengthChecks.test_legacy_bad_cpu_threads_keep_legal_fallback_and_raw_diagnostic) ... ok
+test_legacy_bad_reasoning_configuration_keeps_legal_fallback (__main__.StrengthChecks.test_legacy_bad_reasoning_configuration_keeps_legal_fallback) ... ok
+test_legacy_ids_do_not_generate_rationale (__main__.StrengthChecks.test_legacy_ids_do_not_generate_rationale) ... ok
+test_local_model_metadata_uses_actual_backend_name (__main__.StrengthChecks.test_local_model_metadata_uses_actual_backend_name) ... ok
+test_nonfinite_ranking_is_rejected (__main__.StrengthChecks.test_nonfinite_ranking_is_rejected) ... ok
+test_original_practice_policy_retains_tournament_guard (__main__.StrengthChecks.test_original_practice_policy_retains_tournament_guard) ... ok
+test_provenance_distinguishes_precision_and_preserves_historical_default (__main__.StrengthChecks.test_provenance_distinguishes_precision_and_preserves_historical_default) ... ok
+test_reasoned_conditions_ranking_on_authorized_analysis (__main__.StrengthChecks.test_reasoned_conditions_ranking_on_authorized_analysis) ... ok
+test_singleton_has_no_stale_rationale (__main__.StrengthChecks.test_singleton_has_no_stale_rationale) ... ok
+test_unsupported_reasoned_backend_is_rejected_before_network (__main__.StrengthChecks.test_unsupported_reasoned_backend_is_rejected_before_network) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.709s
+
+OK
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.463s
+
+OK
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK
+{"ids": {"assigned": 1, "resolved": 0, "unresolved": 1, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {"6": 1}, "role_standardized_win_rate": null, "all_assigned_win_bounds": [0.0, 1.0], "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {"unresolved": 1}}, "reasoned": {"assigned": 0, "resolved": 0, "unresolved": 0, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {}, "role_standardized_win_rate": null, "all_assigned_win_bounds": null, "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {}}}
+{"ids": {"assigned": 0, "resolved": 0, "unresolved": 0, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {}, "role_standardized_win_rate": null, "all_assigned_win_bounds": null, "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {}}, "reasoned": {"assigned": 1, "resolved": 0, "unresolved": 1, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {"4": 1}, "role_standardized_win_rate": null, "all_assigned_win_bounds": [0.0, 1.0], "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {"unresolved": 1}}}
+{"ids": {"assigned": 0, "resolved": 0, "unresolved": 0, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {}, "role_standardized_win_rate": null, "all_assigned_win_bounds": null, "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {}}, "reasoned": {"assigned": 1, "resolved": 0, "unresolved": 1, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {"5": 1}, "role_standardized_win_rate": null, "all_assigned_win_bounds": [0.0, 1.0], "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {"unresolved": 1}}}
+{"audit_passed": true, "checks": {"feature_schema_matches": true, "parent_checkpoint_matches": true, "estimator_matches": true, "eligible_match_hash_set_matches": true, "eligible_match_count_matches": true, "recorded_role_counts_match": true, "recomputed_weights_match": true}, "coefficient_change": {"changed_count_at_1e_minus_12": 19, "total_coefficients": 20, "l2_delta": 0.09342470210214017, "max_absolute_delta": 0.0563482121311365, "max_reproduction_error": 0.0}, "in_sample_training_slate_metrics": {"sampled_training_slates": 136, "mean_kl_old_to_new": 0.00039421645470136935, "max_kl_old_to_new": 0.0010740024721310922, "mean_total_variation": 0.012675152288064371, "max_total_variation": 0.022818664206426253, "greedy_argmax_changed_count": 0, "greedy_argmax_changed_fraction": 0.0}}
+test_artifact_validation_is_torch_free_and_checksum_checked (__main__.SemanticChecks.test_artifact_validation_is_torch_free_and_checksum_checked) ... ok
+test_attention_permutation_equivariance_after_nonzero_residual (__main__.SemanticChecks.test_attention_permutation_equivariance_after_nonzero_residual) ... ok
+test_context_ignores_future_metadata_and_canonicalizes_speech (__main__.SemanticChecks.test_context_ignores_future_metadata_and_canonicalizes_speech) ... ok
+test_episode_weighting_fixed_advantages_and_separate_critic (__main__.SemanticChecks.test_episode_weighting_fixed_advantages_and_separate_critic) ... ok
+test_initial_logits_exact_legacy_and_context_not_rounded (__main__.SemanticChecks.test_initial_logits_exact_legacy_and_context_not_rounded) ... ok
+test_kl_rejection_restores_full_model_and_populated_optimizer_states (__main__.SemanticChecks.test_kl_rejection_restores_full_model_and_populated_optimizer_states) ... ok
+test_normal_hybrid_semantic_success_and_failures_keep_legal_delivery_and_flags (__main__.SemanticChecks.test_normal_hybrid_semantic_success_and_failures_keep_legal_delivery_and_flags) ... ok
+test_ppo_clips_both_advantage_signs (__main__.SemanticChecks.test_ppo_clips_both_advantage_signs) ... ok
+test_real_twenty_coefficient_prior_exact_sum_and_linear_gradient (__main__.SemanticChecks.test_real_twenty_coefficient_prior_exact_sum_and_linear_gradient) ... ok
+test_semantic_budget_rejects_after_embedding_and_final_host_conversion (__main__.SemanticChecks.test_semantic_budget_rejects_after_embedding_and_final_host_conversion) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.613s
+
+OK
+{"focused_checks_passed": 10, "encoder_cold_seconds": 0.6763397338800132, "encoder_cached_seconds": 1.581292599439621e-05, "encoder_parameters": 22713216, "encoder_frozen_eval": true}
+{"initial_prior_checks": 136, "initial_logits_exact_legacy": true, "original_sequential_max_abs_logit_error": 4.440892098500626e-16, "python_version": "3.12.13"}
+{"epoch": 1, "accepted": true, "actor_loss": -0.8696090909638527, "policy_loss": -0.8666666666666667, "entropy_game_mean_sum": 2.9424242971860313, "critic_mse_decision_mean": 1.0, "actor_gradient_norm_before_clip": 0.18777071808027598, "critic_gradient_norm_before_clip": 0.46276378631591797, "mean_kl": 2.133526551410882e-05, "max_kl": 0.00043491463003597977}
+{"epoch": 2, "accepted": true, "actor_loss": -0.8746494494664805, "policy_loss": -0.8716993673377704, "entropy_game_mean_sum": 2.9500821287101084, "critic_mse_decision_mean": 0.9984257276484272, "actor_gradient_norm_before_clip": 0.1883086271302772, "critic_gradient_norm_before_clip": 0.4531174302101135, "mean_kl": 8.558375442503473e-05, "max_kl": 0.0017479837600587016}
+{"epoch": 3, "accepted": true, "actor_loss": -0.8797201818020558, "policy_loss": -0.8767625839893085, "entropy_game_mean_sum": 2.957597812747274, "critic_mse_decision_mean": 0.9967661285208304, "actor_gradient_norm_before_clip": 0.18890849396066584, "critic_gradient_norm_before_clip": 0.4479424059391022, "mean_kl": 0.00019312467467520565, "max_kl": 0.003951927804857813}
+{"epoch": 4, "accepted": true, "actor_loss": -0.8848201349777534, "policy_loss": -0.881855166916806, "entropy_game_mean_sum": 2.9649680609473648, "critic_mse_decision_mean": 0.9950067838519107, "actor_gradient_norm_before_clip": 0.18949510091823432, "critic_gradient_norm_before_clip": 0.4427700340747833, "mean_kl": 0.0003443354776844169, "max_kl": 0.007058408087614043}
+{"epoch": 5, "accepted": true, "actor_loss": -0.8899474540701511, "policy_loss": -0.8869752632460649, "entropy_game_mean_sum": 2.9721908240861747, "critic_mse_decision_mean": 0.9931478359235705, "actor_gradient_norm_before_clip": 0.19006745661047383, "critic_gradient_norm_before_clip": 0.4373115599155426, "mean_kl": 0.0005395738670774693, "max_kl": 0.011077507362034361}
+{"epoch": 6, "accepted": true, "actor_loss": -0.895100102084612, "policy_loss": -0.892120838076074, "entropy_game_mean_sum": 2.9792640085380047, "critic_mse_decision_mean": 0.9911923022991215, "actor_gradient_norm_before_clip": 0.19062853414233205, "critic_gradient_norm_before_clip": 0.43144139647483826, "mean_kl": 0.0007791632555014097, "max_kl": 0.016016920602962628}
+{"epoch": 7, "accepted": true, "actor_loss": -0.9002759351996724, "policy_loss": -0.8972897488985608, "entropy_game_mean_sum": 2.986186301111608, "critic_mse_decision_mean": 0.9891448413699129, "actor_gradient_norm_before_clip": 0.19118282127115394, "critic_gradient_norm_before_clip": 0.42507797479629517, "mean_kl": 0.001063375512282779, "max_kl": 0.02188096927973056}
+{"epoch": 8, "accepted": true, "actor_loss": -0.9054727423483242, "policy_loss": -0.9024797848796222, "entropy_game_mean_sum": 2.992957468701971, "critic_mse_decision_mean": 0.9870114731161199, "actor_gradient_norm_before_clip": 0.19173609417639167, "critic_gradient_norm_before_clip": 0.41815635561943054, "mean_kl": 0.0013924121914311496, "max_kl": 0.028669464367368128}
+{"epoch": 9, "accepted": true, "actor_loss": -0.9106882958604511, "policy_loss": -0.9076887172150312, "entropy_game_mean_sum": 2.999578645419897, "critic_mse_decision_mean": 0.9847995033145023, "actor_gradient_norm_before_clip": 0.192295554142876, "critic_gradient_norm_before_clip": 0.41062024235725403, "mean_kl": 0.0017663823883225327, "max_kl": 0.03637630906428113}
+{"epoch": 10, "accepted": true, "actor_loss": -0.9151390927600348, "policy_loss": -0.9121330400953396, "entropy_game_mean_sum": 3.0060526646952583, "critic_mse_decision_mean": 0.9825173512630684, "actor_gradient_norm_before_clip": 0.1812542610729094, "critic_gradient_norm_before_clip": 0.4024237096309662, "mean_kl": 0.0021491238002602007, "max_kl": 0.042899451792999796}
+{"epoch": 11, "accepted": true, "actor_loss": -0.9193722410071056, "policy_loss": -0.9163588724548194, "entropy_game_mean_sum": 3.013368552286189, "critic_mse_decision_mean": 0.9801747236798107, "actor_gradient_norm_before_clip": 0.17743382158757473, "critic_gradient_norm_before_clip": 0.3935244679450989, "mean_kl": 0.002513824137039264, "max_kl": 0.046708749349184564}
+{"epoch": 12, "accepted": true, "actor_loss": -0.9236917284680282, "policy_loss": -0.9206701308681389, "entropy_game_mean_sum": 3.02159759988934, "critic_mse_decision_mean": 0.9777829017017874, "actor_gradient_norm_before_clip": 0.1787514708378579, "critic_gradient_norm_before_clip": 0.383892685174942, "mean_kl": 0.0028800745790783836, "max_kl": 0.048458872966766764}
+{"epoch": 13, "accepted": true, "actor_loss": -0.9282681822317843, "policy_loss": -0.9252378847914086, "entropy_game_mean_sum": 3.0302974403757656, "critic_mse_decision_mean": 0.9753544297812724, "actor_gradient_norm_before_clip": 0.18035301721851962, "critic_gradient_norm_before_clip": 0.3735128939151764, "mean_kl": 0.003262903807354062, "max_kl": 0.048557267449333474}
+{"epoch": 14, "accepted": true, "actor_loss": -0.9325666029704051, "policy_loss": -0.9295273168820926, "entropy_game_mean_sum": 3.039286088312466, "critic_mse_decision_mean": 0.9729032340951692, "actor_gradient_norm_before_clip": 0.15626649100959877, "critic_gradient_norm_before_clip": 0.36239126324653625, "mean_kl": 0.0036688999507695085, "max_kl": 0.0473879732387702}
+{"epoch": 15, "accepted": true, "actor_loss": -0.936752151249366, "policy_loss": -0.9337038811545233, "entropy_game_mean_sum": 3.0482700948426147, "critic_mse_decision_mean": 0.9704438735629417, "actor_gradient_norm_before_clip": 0.15790945717254387, "critic_gradient_norm_before_clip": 0.350561261177063, "mean_kl": 0.004107907427324872, "max_kl": 0.04520394083893775}
+{"epoch": 16, "accepted": true, "actor_loss": -0.941060331952732, "policy_loss": -0.9380031172183543, "entropy_game_mean_sum": 3.057214734377683, "critic_mse_decision_mean": 0.9679915175237904, "actor_gradient_norm_before_clip": 0.15970243977898385, "critic_gradient_norm_before_clip": 0.33809366822242737, "mean_kl": 0.004589207721932542, "max_kl": 0.04223398518411513}
+{"epoch": 17, "accepted": true, "actor_loss": -0.9448124744568971, "policy_loss": -0.9417463867631585, "entropy_game_mean_sum": 3.066087693738638, "critic_mse_decision_mean": 0.9655609556033768, "actor_gradient_norm_before_clip": 0.129145334722247, "critic_gradient_norm_before_clip": 0.3251034617424011, "mean_kl": 0.005112136561553217, "max_kl": 0.039514691259664655}
+{"epoch": 18, "accepted": true, "actor_loss": -0.9474688124743775, "policy_loss": -0.9443943260445035, "entropy_game_mean_sum": 3.074486429874037, "critic_mse_decision_mean": 0.9631621915706576, "actor_gradient_norm_before_clip": 0.1025027763563839, "critic_gradient_norm_before_clip": 0.3117239475250244, "mean_kl": 0.00558993186153827, "max_kl": 0.03771446304732866}
+{"epoch": 19, "accepted": true, "actor_loss": -0.9486117020205131, "policy_loss": -0.9455306956028421, "entropy_game_mean_sum": 3.0810064176710616, "critic_mse_decision_mean": 0.9608086399876409, "actor_gradient_norm_before_clip": 0.10282382700658037, "critic_gradient_norm_before_clip": 0.29812848567962646, "mean_kl": 0.00601919687622613, "max_kl": 0.036302679334482876}
+{"epoch": 20, "accepted": true, "actor_loss": -0.9499001062078796, "policy_loss": -0.946813942699502, "entropy_game_mean_sum": 3.0861635083775565, "critic_mse_decision_mean": 0.9585120409324119, "actor_gradient_norm_before_clip": 0.1148569433691501, "critic_gradient_norm_before_clip": 0.2845037281513214, "mean_kl": 0.006384489836097387, "max_kl": 0.035095196325541644}
+{"epoch": 21, "accepted": true, "actor_loss": -0.9508816667416476, "policy_loss": -0.9477916477668207, "entropy_game_mean_sum": 3.090018974827021, "critic_mse_decision_mean": 0.9562833003932594, "actor_gradient_norm_before_clip": 0.14334884919626703, "critic_gradient_norm_before_clip": 0.271053284406662, "mean_kl": 0.006644990787779137, "max_kl": 0.03389142753377085}
+{"epoch": 22, "accepted": true, "actor_loss": -0.9519822025135984, "policy_loss": -0.9488899588313252, "entropy_game_mean_sum": 3.0922436822731956, "critic_mse_decision_mean": 0.954134462570903, "actor_gradient_norm_before_clip": 0.14327931322879026, "critic_gradient_norm_before_clip": 0.2580348551273346, "mean_kl": 0.006811571139547262, "max_kl": 0.032641443495558156}
+{"epoch": 23, "accepted": true, "actor_loss": -0.9530730250713163, "policy_loss": -0.9499799263764905, "entropy_game_mean_sum": 3.0930986948257915, "critic_mse_decision_mean": 0.9520758835829957, "actor_gradient_norm_before_clip": 0.19012111258020659, "critic_gradient_norm_before_clip": 0.24575406312942505, "mean_kl": 0.006868805302774198, "max_kl": 0.0329513268078811}
+{"epoch": 24, "accepted": true, "actor_loss": -0.9547301509807232, "policy_loss": -0.9516380036433861, "entropy_game_mean_sum": 3.0921473373371184, "critic_mse_decision_mean": 0.9501150851840249, "actor_gradient_norm_before_clip": 0.18990910783771303, "critic_gradient_norm_before_clip": 0.23456712067127228, "mean_kl": 0.006834542546725823, "max_kl": 0.034474075027695644}
+{"epoch": 25, "accepted": true, "actor_loss": -0.9571225372580788, "policy_loss": -0.9540328659096563, "entropy_game_mean_sum": 3.0896713484224927, "critic_mse_decision_mean": 0.9482561904617474, "actor_gradient_norm_before_clip": 0.18943157471187672, "critic_gradient_norm_before_clip": 0.22486013174057007, "mean_kl": 0.0067298607886894955, "max_kl": 0.037025274065284636}
+{"epoch": 26, "accepted": true, "actor_loss": -0.9596648852826881, "policy_loss": -0.9565790146298426, "entropy_game_mean_sum": 3.0858706528455175, "critic_mse_decision_mean": 0.946499075540069, "actor_gradient_norm_before_clip": 0.13024783385751654, "critic_gradient_norm_before_clip": 0.2170162945985794, "mean_kl": 0.006594716305438446, "max_kl": 0.039194623163700926}
+{"epoch": 27, "accepted": true, "actor_loss": -0.9619047679756443, "policy_loss": -0.9588233036274268, "entropy_game_mean_sum": 3.081464348217386, "critic_mse_decision_mean": 0.9448380468917689, "actor_gradient_norm_before_clip": 0.1109799739554084, "critic_gradient_norm_before_clip": 0.21132493019104004, "mean_kl": 0.006446840428524734, "max_kl": 0.04099038415007153}
+{"epoch": 28, "accepted": true, "actor_loss": -0.9641444130182779, "policy_loss": -0.9610677560917047, "entropy_game_mean_sum": 3.0766569265731647, "critic_mse_decision_mean": 0.9432612076734199, "actor_gradient_norm_before_clip": 0.1197605765307386, "critic_gradient_norm_before_clip": 0.20790405571460724, "mean_kl": 0.006283177808331571, "max_kl": 0.04166653544763024}
+{"epoch": 29, "accepted": true, "actor_loss": -0.9651854492398604, "policy_loss": -0.9621138734474617, "entropy_game_mean_sum": 3.0715757923987366, "critic_mse_decision_mean": 0.9417515340435074, "actor_gradient_norm_before_clip": 0.09358964490131477, "critic_gradient_norm_before_clip": 0.20668551325798035, "mean_kl": 0.0061606143689523695, "max_kl": 0.0412899780506419}
+{"epoch": 30, "accepted": true, "actor_loss": -0.9659212524844937, "policy_loss": -0.9628540661026778, "entropy_game_mean_sum": 3.067186381815954, "critic_mse_decision_mean": 0.9402846950439979, "actor_gradient_norm_before_clip": 0.0953365243577, "critic_gradient_norm_before_clip": 0.20731458067893982, "mean_kl": 0.006062869054891223, "max_kl": 0.039830920951069895}
+{"epoch": 31, "accepted": true, "actor_loss": -0.9667256712035595, "policy_loss": -0.9636623003351799, "entropy_game_mean_sum": 3.0633708683795806, "critic_mse_decision_mean": 0.9388364155608135, "actor_gradient_norm_before_clip": 0.09616009473726411, "critic_gradient_norm_before_clip": 0.20928649604320526, "mean_kl": 0.005986768273736141, "max_kl": 0.03747939835566569}
+{"epoch": 32, "accepted": true, "actor_loss": -0.9676446658823594, "policy_loss": -0.9645845866790315, "entropy_game_mean_sum": 3.0600792033280038, "critic_mse_decision_mean": 0.9373835012555191, "actor_gradient_norm_before_clip": 0.08822016420785925, "critic_gradient_norm_before_clip": 0.21204416453838348, "mean_kl": 0.005937964267001589, "max_kl": 0.0350332823767123}
+test_artifact_validation_is_torch_free_and_checksum_checked (__main__.SemanticChecks.test_artifact_validation_is_torch_free_and_checksum_checked) ... ok
+test_attention_permutation_equivariance_after_nonzero_residual (__main__.SemanticChecks.test_attention_permutation_equivariance_after_nonzero_residual) ... ok
+test_context_ignores_future_metadata_and_canonicalizes_speech (__main__.SemanticChecks.test_context_ignores_future_metadata_and_canonicalizes_speech) ... ok
+test_episode_weighting_fixed_advantages_and_separate_critic (__main__.SemanticChecks.test_episode_weighting_fixed_advantages_and_separate_critic) ... ok
+test_initial_logits_exact_legacy_and_context_not_rounded (__main__.SemanticChecks.test_initial_logits_exact_legacy_and_context_not_rounded) ... ok
+test_kl_rejection_restores_full_model_and_populated_optimizer_states (__main__.SemanticChecks.test_kl_rejection_restores_full_model_and_populated_optimizer_states) ... ok
+test_normal_hybrid_semantic_success_and_failures_keep_legal_delivery_and_flags (__main__.SemanticChecks.test_normal_hybrid_semantic_success_and_failures_keep_legal_delivery_and_flags) ... ok
+test_ppo_clips_both_advantage_signs (__main__.SemanticChecks.test_ppo_clips_both_advantage_signs) ... ok
+test_real_twenty_coefficient_prior_exact_sum_and_linear_gradient (__main__.SemanticChecks.test_real_twenty_coefficient_prior_exact_sum_and_linear_gradient) ... ok
+test_semantic_budget_rejects_after_embedding_and_final_host_conversion (__main__.SemanticChecks.test_semantic_budget_rejects_after_embedding_and_final_host_conversion) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.618s
+
+OK
+{"focused_checks_passed": 10, "encoder_cold_seconds": 0.674817229853943, "encoder_cached_seconds": 1.6415026038885117e-05, "encoder_parameters": 22713216, "encoder_frozen_eval": true, "artifact_validation_seconds": 0.0836073812097311, "semantic_cold_seconds": 0.07525830110535026, "semantic_cached_seconds": 0.0003717609215527773, "checkpoint_id": "6ca4df8fd98821e6", "probabilities": [0.4427036198714187, 0.3369072358885497, 0.2203891442400317]}

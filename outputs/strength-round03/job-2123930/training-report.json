@@ -1,0 +1,662 @@
+{
+  "interpretation": "In-sample fixed-batch training diagnostics, not held-out playing strength.",
+  "artifact": {
+    "schema_version": 2,
+    "features": [
+      "llm_score",
+      "rule_score",
+      "public_support",
+      "known_alignment",
+      "alive_fraction",
+      "is_speech",
+      "is_wolf",
+      "is_seer"
+    ],
+    "architecture": {
+      "version": "semantic-candidate-attention-v2",
+      "width": 32,
+      "heads": 1,
+      "embedding_dim": 384,
+      "context_dim": 8,
+      "residual_bound": 1.0,
+      "base_dtype": "float64",
+      "neural_dtype": "float32",
+      "base_accumulation": "python-sum-float64-primal+straight-through-linear-v1",
+      "context_version": "coarse-self-context-v1",
+      "max_length": 256,
+      "pooling": "attention-mask-mean-l2-v1",
+      "dropout": 0.0,
+      "critic_pool_detached": true
+    },
+    "runtime": {
+      "python_version": "3.12.13",
+      "python_implementation": "CPython",
+      "torch_version": "2.7.1+cpu"
+    },
+    "encoder": {
+      "name": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "model_path": "/work/zzl/2123930/wolf-semantic.HwVh7l/all-MiniLM-L6-v2",
+      "files_sha256": {
+        "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+        "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+        "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+        "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3"
+      }
+    },
+    "base_weights": [
+      1.2967196375248915,
+      0.6697219863848027,
+      -0.20683918957812863,
+      0.07349504021671846,
+      -0.1781902438079036,
+      0.14308645109531717,
+      -0.025685086264707065,
+      0.06593261596752725,
+      -0.10902488514682153,
+      -0.22387594696070395,
+      0.31523140096765945,
+      0.07443200105152813,
+      0.3277384469134375,
+      0.3180410908721672,
+      0.31680374747657253,
+      0.0,
+      -0.2652876440377924,
+      -0.29691395886215394,
+      -0.08554057633527995,
+      0.07349504021671846
+    ],
+    "weights_file": "selector.pt",
+    "weights_sha256": "ef009b1fad459baecec35e7488e8cc6231681c83a1d8fbb34a6e93c83d742303",
+    "parent": "d7ebf7670444067a",
+    "parent_sha256": "764cb201aed463e95252a9c789608ac65e1e199e2d7bd438c2e4849b4291cda6",
+    "generator_id": "hybrid-slate-v1-verified-innocent-v1-cfg-bbf02b167889:Qwen3-8B",
+    "train_games": 30,
+    "train_match_hashes": [
+      "0f053091edefcaab",
+      "1057750af9a55a8c",
+      "1bcad85fe142b2d8",
+      "22b5b918eb826eab",
+      "2a9fab68a3afa8aa",
+      "30ba86c1fb8cc8d7",
+      "3c4d79f00ee4a66f",
+      "3e6167d78f3020ef",
+      "3fc77d16e89622ba",
+      "4e87e5fa13574e00",
+      "5b69e4b1de9c0775",
+      "5ff334b618a79016",
+      "602b9513b556a262",
+      "617841495f31abcd",
+      "6380b198b2721aee",
+      "64fd493ef48e79ec",
+      "76417f0297798bb1",
+      "817de5815fd4a542",
+      "83c4ce40333faef8",
+      "97ee2ffd4eb1acd8",
+      "a43bfc5ecb0ff8cb",
+      "be1841a8376d8bfb",
+      "caaba685417e2284",
+      "dbebbf6a581003db",
+      "e132946435c2b31f",
+      "e598b61d6d7ffed0",
+      "e6b7413094f83bf0",
+      "eb646d6320c3a867",
+      "eecce000f58620b3",
+      "f71aec7647b6fe8f"
+    ],
+    "train_roles": {
+      "wolf": 11,
+      "seer": 7,
+      "villager": 12
+    },
+    "train_sampled_choices": 136,
+    "training": {
+      "estimator": "focal_fixed_batch_categorical_ppo_mc_v1",
+      "clip": 0.2,
+      "base_lr": 0.01,
+      "neural_actor_lr": 0.0003,
+      "critic_lr": 0.001,
+      "gradient_norm": 0.5,
+      "entropy_coefficient": 0.001,
+      "maximum_epochs": 32,
+      "actor_reduction": "sum_decision_surrogates_per_game_mean_over_games",
+      "entropy_reduction": "sum_decision_entropies_per_game_mean_over_games",
+      "critic_reduction": "decision_mean_mse",
+      "advantage_normalization": false,
+      "advantages": "fixed_terminal_score_minus_initial_critic_zero",
+      "kl_direction": "old_logged_full_categorical_to_new",
+      "kl_mean_limit": 0.02,
+      "kl_max_limit": 0.1,
+      "rollback": "entire_model_and_all_optimizer_states_then_halt",
+      "base_coefficient_clip": [
+        -8.0,
+        8.0
+      ],
+      "seed": 7391
+    },
+    "accepted_epochs": 32
+  },
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "accepted": true,
+      "actor_loss": -0.8696090909638527,
+      "policy_loss": -0.8666666666666667,
+      "entropy_game_mean_sum": 2.9424242971860313,
+      "critic_mse_decision_mean": 1.0,
+      "actor_gradient_norm_before_clip": 0.18777071808027598,
+      "critic_gradient_norm_before_clip": 0.46276378631591797,
+      "mean_kl": 2.133526551410882e-05,
+      "max_kl": 0.00043491463003597977
+    },
+    {
+      "epoch": 2,
+      "accepted": true,
+      "actor_loss": -0.8746494494664805,
+      "policy_loss": -0.8716993673377704,
+      "entropy_game_mean_sum": 2.9500821287101084,
+      "critic_mse_decision_mean": 0.9984257276484272,
+      "actor_gradient_norm_before_clip": 0.1883086271302772,
+      "critic_gradient_norm_before_clip": 0.4531174302101135,
+      "mean_kl": 8.558375442503473e-05,
+      "max_kl": 0.0017479837600587016
+    },
+    {
+      "epoch": 3,
+      "accepted": true,
+      "actor_loss": -0.8797201818020558,
+      "policy_loss": -0.8767625839893085,
+      "entropy_game_mean_sum": 2.957597812747274,
+      "critic_mse_decision_mean": 0.9967661285208304,
+      "actor_gradient_norm_before_clip": 0.18890849396066584,
+      "critic_gradient_norm_before_clip": 0.4479424059391022,
+      "mean_kl": 0.00019312467467520565,
+      "max_kl": 0.003951927804857813
+    },
+    {
+      "epoch": 4,
+      "accepted": true,
+      "actor_loss": -0.8848201349777534,
+      "policy_loss": -0.881855166916806,
+      "entropy_game_mean_sum": 2.9649680609473648,
+      "critic_mse_decision_mean": 0.9950067838519107,
+      "actor_gradient_norm_before_clip": 0.18949510091823432,
+      "critic_gradient_norm_before_clip": 0.4427700340747833,
+      "mean_kl": 0.0003443354776844169,
+      "max_kl": 0.007058408087614043
+    },
+    {
+      "epoch": 5,
+      "accepted": true,
+      "actor_loss": -0.8899474540701511,
+      "policy_loss": -0.8869752632460649,
+      "entropy_game_mean_sum": 2.9721908240861747,
+      "critic_mse_decision_mean": 0.9931478359235705,
+      "actor_gradient_norm_before_clip": 0.19006745661047383,
+      "critic_gradient_norm_before_clip": 0.4373115599155426,
+      "mean_kl": 0.0005395738670774693,
+      "max_kl": 0.011077507362034361
+    },
+    {
+      "epoch": 6,
+      "accepted": true,
+      "actor_loss": -0.895100102084612,
+      "policy_loss": -0.892120838076074,
+      "entropy_game_mean_sum": 2.9792640085380047,
+      "critic_mse_decision_mean": 0.9911923022991215,
+      "actor_gradient_norm_before_clip": 0.19062853414233205,
+      "critic_gradient_norm_before_clip": 0.43144139647483826,
+      "mean_kl": 0.0007791632555014097,
+      "max_kl": 0.016016920602962628
+    },
+    {
+      "epoch": 7,
+      "accepted": true,
+      "actor_loss": -0.9002759351996724,
+      "policy_loss": -0.8972897488985608,
+      "entropy_game_mean_sum": 2.986186301111608,
+      "critic_mse_decision_mean": 0.9891448413699129,
+      "actor_gradient_norm_before_clip": 0.19118282127115394,
+      "critic_gradient_norm_before_clip": 0.42507797479629517,
+      "mean_kl": 0.001063375512282779,
+      "max_kl": 0.02188096927973056
+    },
+    {
+      "epoch": 8,
+      "accepted": true,
+      "actor_loss": -0.9054727423483242,
+      "policy_loss": -0.9024797848796222,
+      "entropy_game_mean_sum": 2.992957468701971,
+      "critic_mse_decision_mean": 0.9870114731161199,
+      "actor_gradient_norm_before_clip": 0.19173609417639167,
+      "critic_gradient_norm_before_clip": 0.41815635561943054,
+      "mean_kl": 0.0013924121914311496,
+      "max_kl": 0.028669464367368128
+    },
+    {
+      "epoch": 9,
+      "accepted": true,
+      "actor_loss": -0.9106882958604511,
+      "policy_loss": -0.9076887172150312,
+      "entropy_game_mean_sum": 2.999578645419897,
+      "critic_mse_decision_mean": 0.9847995033145023,
+      "actor_gradient_norm_before_clip": 0.192295554142876,
+      "critic_gradient_norm_before_clip": 0.41062024235725403,
+      "mean_kl": 0.0017663823883225327,
+      "max_kl": 0.03637630906428113
+    },
+    {
+      "epoch": 10,
+      "accepted": true,
+      "actor_loss": -0.9151390927600348,
+      "policy_loss": -0.9121330400953396,
+      "entropy_game_mean_sum": 3.0060526646952583,
+      "critic_mse_decision_mean": 0.9825173512630684,
+      "actor_gradient_norm_before_clip": 0.1812542610729094,
+      "critic_gradient_norm_before_clip": 0.4024237096309662,
+      "mean_kl": 0.0021491238002602007,
+      "max_kl": 0.042899451792999796
+    },
+    {
+      "epoch": 11,
+      "accepted": true,
+      "actor_loss": -0.9193722410071056,
+      "policy_loss": -0.9163588724548194,
+      "entropy_game_mean_sum": 3.013368552286189,
+      "critic_mse_decision_mean": 0.9801747236798107,
+      "actor_gradient_norm_before_clip": 0.17743382158757473,
+      "critic_gradient_norm_before_clip": 0.3935244679450989,
+      "mean_kl": 0.002513824137039264,
+      "max_kl": 0.046708749349184564
+    },
+    {
+      "epoch": 12,
+      "accepted": true,
+      "actor_loss": -0.9236917284680282,
+      "policy_loss": -0.9206701308681389,
+      "entropy_game_mean_sum": 3.02159759988934,
+      "critic_mse_decision_mean": 0.9777829017017874,
+      "actor_gradient_norm_before_clip": 0.1787514708378579,
+      "critic_gradient_norm_before_clip": 0.383892685174942,
+      "mean_kl": 0.0028800745790783836,
+      "max_kl": 0.048458872966766764
+    },
+    {
+      "epoch": 13,
+      "accepted": true,
+      "actor_loss": -0.9282681822317843,
+      "policy_loss": -0.9252378847914086,
+      "entropy_game_mean_sum": 3.0302974403757656,
+      "critic_mse_decision_mean": 0.9753544297812724,
+      "actor_gradient_norm_before_clip": 0.18035301721851962,
+      "critic_gradient_norm_before_clip": 0.3735128939151764,
+      "mean_kl": 0.003262903807354062,
+      "max_kl": 0.048557267449333474
+    },
+    {
+      "epoch": 14,
+      "accepted": true,
+      "actor_loss": -0.9325666029704051,
+      "policy_loss": -0.9295273168820926,
+      "entropy_game_mean_sum": 3.039286088312466,
+      "critic_mse_decision_mean": 0.9729032340951692,
+      "actor_gradient_norm_before_clip": 0.15626649100959877,
+      "critic_gradient_norm_before_clip": 0.36239126324653625,
+      "mean_kl": 0.0036688999507695085,
+      "max_kl": 0.0473879732387702
+    },
+    {
+      "epoch": 15,
+      "accepted": true,
+      "actor_loss": -0.936752151249366,
+      "policy_loss": -0.9337038811545233,
+      "entropy_game_mean_sum": 3.0482700948426147,
+      "critic_mse_decision_mean": 0.9704438735629417,
+      "actor_gradient_norm_before_clip": 0.15790945717254387,
+      "critic_gradient_norm_before_clip": 0.350561261177063,
+      "mean_kl": 0.004107907427324872,
+      "max_kl": 0.04520394083893775
+    },
+    {
+      "epoch": 16,
+      "accepted": true,
+      "actor_loss": -0.941060331952732,
+      "policy_loss": -0.9380031172183543,
+      "entropy_game_mean_sum": 3.057214734377683,
+      "critic_mse_decision_mean": 0.9679915175237904,
+      "actor_gradient_norm_before_clip": 0.15970243977898385,
+      "critic_gradient_norm_before_clip": 0.33809366822242737,
+      "mean_kl": 0.004589207721932542,
+      "max_kl": 0.04223398518411513
+    },
+    {
+      "epoch": 17,
+      "accepted": true,
+      "actor_loss": -0.9448124744568971,
+      "policy_loss": -0.9417463867631585,
+      "entropy_game_mean_sum": 3.066087693738638,
+      "critic_mse_decision_mean": 0.9655609556033768,
+      "actor_gradient_norm_before_clip": 0.129145334722247,
+      "critic_gradient_norm_before_clip": 0.3251034617424011,
+      "mean_kl": 0.005112136561553217,
+      "max_kl": 0.039514691259664655
+    },
+    {
+      "epoch": 18,
+      "accepted": true,
+      "actor_loss": -0.9474688124743775,
+      "policy_loss": -0.9443943260445035,
+      "entropy_game_mean_sum": 3.074486429874037,
+      "critic_mse_decision_mean": 0.9631621915706576,
+      "actor_gradient_norm_before_clip": 0.1025027763563839,
+      "critic_gradient_norm_before_clip": 0.3117239475250244,
+      "mean_kl": 0.00558993186153827,
+      "max_kl": 0.03771446304732866
+    },
+    {
+      "epoch": 19,
+      "accepted": true,
+      "actor_loss": -0.9486117020205131,
+      "policy_loss": -0.9455306956028421,
+      "entropy_game_mean_sum": 3.0810064176710616,
+      "critic_mse_decision_mean": 0.9608086399876409,
+      "actor_gradient_norm_before_clip": 0.10282382700658037,
+      "critic_gradient_norm_before_clip": 0.29812848567962646,
+      "mean_kl": 0.00601919687622613,
+      "max_kl": 0.036302679334482876
+    },
+    {
+      "epoch": 20,
+      "accepted": true,
+      "actor_loss": -0.9499001062078796,
+      "policy_loss": -0.946813942699502,
+      "entropy_game_mean_sum": 3.0861635083775565,
+      "critic_mse_decision_mean": 0.9585120409324119,
+      "actor_gradient_norm_before_clip": 0.1148569433691501,
+      "critic_gradient_norm_before_clip": 0.2845037281513214,
+      "mean_kl": 0.006384489836097387,
+      "max_kl": 0.035095196325541644
+    },
+    {
+      "epoch": 21,
+      "accepted": true,
+      "actor_loss": -0.9508816667416476,
+      "policy_loss": -0.9477916477668207,
+      "entropy_game_mean_sum": 3.090018974827021,
+      "critic_mse_decision_mean": 0.9562833003932594,
+      "actor_gradient_norm_before_clip": 0.14334884919626703,
+      "critic_gradient_norm_before_clip": 0.271053284406662,
+      "mean_kl": 0.006644990787779137,
+      "max_kl": 0.03389142753377085
+    },
+    {
+      "epoch": 22,
+      "accepted": true,
+      "actor_loss": -0.9519822025135984,
+      "policy_loss": -0.9488899588313252,
+      "entropy_game_mean_sum": 3.0922436822731956,
+      "critic_mse_decision_mean": 0.954134462570903,
+      "actor_gradient_norm_before_clip": 0.14327931322879026,
+      "critic_gradient_norm_before_clip": 0.2580348551273346,
+      "mean_kl": 0.006811571139547262,
+      "max_kl": 0.032641443495558156
+    },
+    {
+      "epoch": 23,
+      "accepted": true,
+      "actor_loss": -0.9530730250713163,
+      "policy_loss": -0.9499799263764905,
+      "entropy_game_mean_sum": 3.0930986948257915,
+      "critic_mse_decision_mean": 0.9520758835829957,
+      "actor_gradient_norm_before_clip": 0.19012111258020659,
+      "critic_gradient_norm_before_clip": 0.24575406312942505,
+      "mean_kl": 0.006868805302774198,
+      "max_kl": 0.0329513268078811
+    },
+    {
+      "epoch": 24,
+      "accepted": true,
+      "actor_loss": -0.9547301509807232,
+      "policy_loss": -0.9516380036433861,
+      "entropy_game_mean_sum": 3.0921473373371184,
+      "critic_mse_decision_mean": 0.9501150851840249,
+      "actor_gradient_norm_before_clip": 0.18990910783771303,
+      "critic_gradient_norm_before_clip": 0.23456712067127228,
+      "mean_kl": 0.006834542546725823,
+      "max_kl": 0.034474075027695644
+    },
+    {
+      "epoch": 25,
+      "accepted": true,
+      "actor_loss": -0.9571225372580788,
+      "policy_loss": -0.9540328659096563,
+      "entropy_game_mean_sum": 3.0896713484224927,
+      "critic_mse_decision_mean": 0.9482561904617474,
+      "actor_gradient_norm_before_clip": 0.18943157471187672,
+      "critic_gradient_norm_before_clip": 0.22486013174057007,
+      "mean_kl": 0.0067298607886894955,
+      "max_kl": 0.037025274065284636
+    },
+    {
+      "epoch": 26,
+      "accepted": true,
+      "actor_loss": -0.9596648852826881,
+      "policy_loss": -0.9565790146298426,
+      "entropy_game_mean_sum": 3.0858706528455175,
+      "critic_mse_decision_mean": 0.946499075540069,
+      "actor_gradient_norm_before_clip": 0.13024783385751654,
+      "critic_gradient_norm_before_clip": 0.2170162945985794,
+      "mean_kl": 0.006594716305438446,
+      "max_kl": 0.039194623163700926
+    },
+    {
+      "epoch": 27,
+      "accepted": true,
+      "actor_loss": -0.9619047679756443,
+      "policy_loss": -0.9588233036274268,
+      "entropy_game_mean_sum": 3.081464348217386,
+      "critic_mse_decision_mean": 0.9448380468917689,
+      "actor_gradient_norm_before_clip": 0.1109799739554084,
+      "critic_gradient_norm_before_clip": 0.21132493019104004,
+      "mean_kl": 0.006446840428524734,
+      "max_kl": 0.04099038415007153
+    },
+    {
+      "epoch": 28,
+      "accepted": true,
+      "actor_loss": -0.9641444130182779,
+      "policy_loss": -0.9610677560917047,
+      "entropy_game_mean_sum": 3.0766569265731647,
+      "critic_mse_decision_mean": 0.9432612076734199,
+      "actor_gradient_norm_before_clip": 0.1197605765307386,
+      "critic_gradient_norm_before_clip": 0.20790405571460724,
+      "mean_kl": 0.006283177808331571,
+      "max_kl": 0.04166653544763024
+    },
+    {
+      "epoch": 29,
+      "accepted": true,
+      "actor_loss": -0.9651854492398604,
+      "policy_loss": -0.9621138734474617,
+      "entropy_game_mean_sum": 3.0715757923987366,
+      "critic_mse_decision_mean": 0.9417515340435074,
+      "actor_gradient_norm_before_clip": 0.09358964490131477,
+      "critic_gradient_norm_before_clip": 0.20668551325798035,
+      "mean_kl": 0.0061606143689523695,
+      "max_kl": 0.0412899780506419
+    },
+    {
+      "epoch": 30,
+      "accepted": true,
+      "actor_loss": -0.9659212524844937,
+      "policy_loss": -0.9628540661026778,
+      "entropy_game_mean_sum": 3.067186381815954,
+      "critic_mse_decision_mean": 0.9402846950439979,
+      "actor_gradient_norm_before_clip": 0.0953365243577,
+      "critic_gradient_norm_before_clip": 0.20731458067893982,
+      "mean_kl": 0.006062869054891223,
+      "max_kl": 0.039830920951069895
+    },
+    {
+      "epoch": 31,
+      "accepted": true,
+      "actor_loss": -0.9667256712035595,
+      "policy_loss": -0.9636623003351799,
+      "entropy_game_mean_sum": 3.0633708683795806,
+      "critic_mse_decision_mean": 0.9388364155608135,
+      "actor_gradient_norm_before_clip": 0.09616009473726411,
+      "critic_gradient_norm_before_clip": 0.20928649604320526,
+      "mean_kl": 0.005986768273736141,
+      "max_kl": 0.03747939835566569
+    },
+    {
+      "epoch": 32,
+      "accepted": true,
+      "actor_loss": -0.9676446658823594,
+      "policy_loss": -0.9645845866790315,
+      "entropy_game_mean_sum": 3.0600792033280038,
+      "critic_mse_decision_mean": 0.9373835012555191,
+      "actor_gradient_norm_before_clip": 0.08822016420785925,
+      "critic_gradient_norm_before_clip": 0.21204416453838348,
+      "mean_kl": 0.005937964267001589,
+      "max_kl": 0.0350332823767123
+    }
+  ],
+  "final_mean_kl": 0.005937964267001589,
+  "final_max_kl": 0.0350332823767123,
+  "initial_logits_exact_legacy": true,
+  "initial_probability_max_abs_error": 1.1102230246251565e-16,
+  "original_sequential_max_abs_logit_error": 4.440892098500626e-16,
+  "fixed_advantages_unchanged": true,
+  "encoder_frozen": true,
+  "excluded_seat_logs": {
+    "no_sampled_choices": 180
+  },
+  "singleton_sampled_choices_skipped": 0,
+  "train_log_sources": {
+    "0f053091edefcaab": {
+      "path": "match_0f053091edefcaab_seat_6.jsonl",
+      "sha256": "eee05dec32efb7da5905fe53b448d3c099d3bf76990ea8bceaaf5d0643f53e78"
+    },
+    "1057750af9a55a8c": {
+      "path": "match_1057750af9a55a8c_seat_5.jsonl",
+      "sha256": "34ec54b4947c7083ff47ddfb2b733ac822a544f82d27a9ad48ef041ba94b4021"
+    },
+    "1bcad85fe142b2d8": {
+      "path": "match_1bcad85fe142b2d8_seat_0.jsonl",
+      "sha256": "c05975a38f48359e47473dd60fe0136db278865fc9e3685540795f8f57533a26"
+    },
+    "22b5b918eb826eab": {
+      "path": "match_22b5b918eb826eab_seat_5.jsonl",
+      "sha256": "a2b16a2b8096576de38f06a6b437d9db4f6314f2338a6152ee86f3c6c5757a4d"
+    },
+    "2a9fab68a3afa8aa": {
+      "path": "match_2a9fab68a3afa8aa_seat_2.jsonl",
+      "sha256": "22b4997249ba98c56913e7196381ab03972d2cdac6263b17229ca77017ec070f"
+    },
+    "30ba86c1fb8cc8d7": {
+      "path": "match_30ba86c1fb8cc8d7_seat_1.jsonl",
+      "sha256": "258f56678d5bc625f9e975744743d5850e8edb7ec8cfc6ce3c9e80322faf2d9c"
+    },
+    "3c4d79f00ee4a66f": {
+      "path": "match_3c4d79f00ee4a66f_seat_3.jsonl",
+      "sha256": "7571ce704eb4d404032ea1355a5ef94e860046f2d023e3c08bd5f1f4c6b1cbd1"
+    },
+    "3e6167d78f3020ef": {
+      "path": "match_3e6167d78f3020ef_seat_5.jsonl",
+      "sha256": "849787e5818dd51fe9f596001bf6f49f1dbd6428dfcbb18d3bbcf6ef84cef9ed"
+    },
+    "3fc77d16e89622ba": {
+      "path": "match_3fc77d16e89622ba_seat_0.jsonl",
+      "sha256": "40373f0a6c1f7f254d8c4c412d7505c1cc1a03fb36921a6f871fa8ad75815e03"
+    },
+    "4e87e5fa13574e00": {
+      "path": "match_4e87e5fa13574e00_seat_6.jsonl",
+      "sha256": "f8f3c9de29f4c9e91965b8746b88fee0be215473175c6468e14593a8df43e15a"
+    },
+    "5b69e4b1de9c0775": {
+      "path": "match_5b69e4b1de9c0775_seat_1.jsonl",
+      "sha256": "7accb00a393a50b33c3fd73f85d30a2fbd7cf2fad4df9c2f37ac777530ce9c9b"
+    },
+    "5ff334b618a79016": {
+      "path": "match_5ff334b618a79016_seat_3.jsonl",
+      "sha256": "1ca43306920fc3ecf19c939ae6e792a6d4f5a1926f43bf7cc47b968227af250e"
+    },
+    "602b9513b556a262": {
+      "path": "match_602b9513b556a262_seat_3.jsonl",
+      "sha256": "a865496ac847adffb4870557ebf73494411bf4f29d690d3a7fd4eeb9dc478dfb"
+    },
+    "617841495f31abcd": {
+      "path": "match_617841495f31abcd_seat_1.jsonl",
+      "sha256": "ad8612c22e33cdd86481b2402ec749ebd148af8d0f969292927f4ad102273fe8"
+    },
+    "6380b198b2721aee": {
+      "path": "match_6380b198b2721aee_seat_2.jsonl",
+      "sha256": "49b60a79be4466311ee8befea138ba554392ef0b8a20d20aa5c7ef9912465d11"
+    },
+    "64fd493ef48e79ec": {
+      "path": "match_64fd493ef48e79ec_seat_6.jsonl",
+      "sha256": "07cbdf981350fd2527bb0d7f7ef19855823e883acf63b54cc3accfdf1e8eb2c8"
+    },
+    "76417f0297798bb1": {
+      "path": "match_76417f0297798bb1_seat_1.jsonl",
+      "sha256": "17aca5f8182dcf924fe76b123642cc4b26d75cf274ad0a876656899db8ecb858"
+    },
+    "817de5815fd4a542": {
+      "path": "match_817de5815fd4a542_seat_3.jsonl",
+      "sha256": "771e2a66bc1d9def0aba3315e3d97974cdcf1a049ae1216a1d41e25c85f46f10"
+    },
+    "83c4ce40333faef8": {
+      "path": "match_83c4ce40333faef8_seat_6.jsonl",
+      "sha256": "25e2e1e0aa64c293e223e2b8d11309a10b7891cb979f9cf8e2d90b9c357e8d54"
+    },
+    "97ee2ffd4eb1acd8": {
+      "path": "match_97ee2ffd4eb1acd8_seat_2.jsonl",
+      "sha256": "8922410b55e6ae44dde47e1cc03e47791153340c6a4aed91d92a473f196e221b"
+    },
+    "a43bfc5ecb0ff8cb": {
+      "path": "match_a43bfc5ecb0ff8cb_seat_3.jsonl",
+      "sha256": "e81bc4485f758f094a4d123586015928def40c6b7118ad3a55fe9ce0c925d858"
+    },
+    "be1841a8376d8bfb": {
+      "path": "match_be1841a8376d8bfb_seat_5.jsonl",
+      "sha256": "c35b62919975a6e7db17cbd5ed3c8548974050ce7612968162f1a6b10ea5840e"
+    },
+    "caaba685417e2284": {
+      "path": "match_caaba685417e2284_seat_4.jsonl",
+      "sha256": "a85618c28fcf6c35a0f045f7947c90e2ff13a58f8c9daa315122654e1eefcb88"
+    },
+    "dbebbf6a581003db": {
+      "path": "match_dbebbf6a581003db_seat_2.jsonl",
+      "sha256": "09e796244911907046f2eaedc3a3f7d3586a1dbf21533569d064506d8dabbf89"
+    },
+    "e132946435c2b31f": {
+      "path": "match_e132946435c2b31f_seat_5.jsonl",
+      "sha256": "8e37235583e38c11ff444f8c2f0d6b8055c5aa57177e6c2d10e52b17af19b337"
+    },
+    "e598b61d6d7ffed0": {
+      "path": "match_e598b61d6d7ffed0_seat_6.jsonl",
+      "sha256": "100f5b9b1f1311089cb5e1e770e84984ac921ad40b5019b798aa06f9a8025738"
+    },
+    "e6b7413094f83bf0": {
+      "path": "match_e6b7413094f83bf0_seat_1.jsonl",
+      "sha256": "cf831ae743491669cc66622eae9ace0ceb04a5d62df8ff27b1b964f1ffbff490"
+    },
+    "eb646d6320c3a867": {
+      "path": "match_eb646d6320c3a867_seat_3.jsonl",
+      "sha256": "ca553b01a4f8c98cd386117115ce692122e57881d9c7f123563d0191239435e7"
+    },
+    "eecce000f58620b3": {
+      "path": "match_eecce000f58620b3_seat_1.jsonl",
+      "sha256": "baae21852874b56400a33dcd67a7d8c8046025bda2f2e5c2959c754343878656"
+    },
+    "f71aec7647b6fe8f": {
+      "path": "match_f71aec7647b6fe8f_seat_4.jsonl",
+      "sha256": "d81b3052a3ba97d5b8a173f8e7037227da59615f3d25c947f12b472c170a443b"
+    }
+  },
+  "log_dir": "/u/home/z/zzl/werewolf-strength-r03e/outputs/hybrid-2116767/decisions",
+  "optimizer_states_saved": false
+}

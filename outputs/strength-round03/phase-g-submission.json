@@ -1,0 +1,18 @@
+{
+  "retry_of_failed_training_job": 2122369,
+  "failed_job_status": "FAILED 00:01:07 exit1 before any PPO update",
+  "cancelled_unstarted_evaluation_job": 2122623,
+  "training_job": 2123930,
+  "evaluation_job": 2123942,
+  "evaluation_dependency": "afterok:2123930",
+  "source_manifest": "phase-g-source.json",
+  "source_commit": "63bb8ddd0706565cc751d2ae97dbbac476ed6ab9",
+  "evaluation_script": "evaluate-semantic-v2.sbatch",
+  "evaluation_script_sha256": "396606d1614ce30bad21b1e8497e32cb16674e7f857f961a4a46a1a1ace39069",
+  "training_data": "same frozen30 eligible E games and136 sampled choices",
+  "training_settings": "unchanged from14 contract and15 execution",
+  "architecture": "semantic-candidate-attention-v2",
+  "correction": "exact Python-sum primal with zero-valued differentiable linear bridge",
+  "evaluation_seed": "r03-ids-guard-heldout-v1",
+  "heldout_matches_at_submission": 0
+}

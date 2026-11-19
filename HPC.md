@@ -2,6 +2,14 @@
 
 This project uses the production Slurm cluster (`hoffman2.oarc.ucla.edu`). The project checkout is separate from existing class/research folders and jobs.
 
+## Current strength round (19 November 2026)
+
+The frozen E collection is job2116767 in `/u/home/z/zzl/werewolf-strength-r03e`:30 completed eligible games,136 sampled choices and142 acknowledged decisions. The isolated semantic-PPO retry is job2123930 in `/u/home/z/zzl/werewolf-strength-r03g`; its32 accepted updates and verified checkpoint are archived at [job-2123930](outputs/strength-round03/job-2123930). Both Qwen3-8B and the MiniLM encoder remain frozen. The actor/critic is trained; this does not fine-tune the language model.
+
+The separate evaluation job2123942 uses8 CPUs,64GB, one live game at a time and4 CPU threads per HF process. Its exact submission is [evaluate-semantic-v2.sbatch](outputs/strength-round03/evaluate-semantic-v2.sbatch). No training occurs in that job. Source hashes, prior failed attempts and the fixed comparison contract are preserved under [round03](rounds/03_strength/15_semantic_execution.md). These instructions supersede the earlier prototype configurations below.
+
+Tournament serving uses `werewolf_agent.competition_entry`, never a practice comparison table. Stage the pinned model/tokenizer, explicit selector checkpoint and, for schema2, the pinned MiniLM encoder with `WEREWOLF_SEMANTIC_ENCODER`. Run the official starter inside an already active allocation covering the competition window. Only one runtime may use an Official Agent Key. Keep the private `.env` outside Git and freeze the chosen guard, mode, precision and thread settings with the release. The final serving profile must follow the heldout comparison; a successful training job alone is insufficient. Actual tournament-context connection, schedule and simultaneous-assignment capacity still require verification for the competition window.
+
 ## Current cluster snapshot
 
 - Account: `pi_ra_lab`, routed to campus; no highp access.
