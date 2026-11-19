@@ -995,3 +995,57 @@ manifest at commit `8cfcbfcc6511a20906e982c3fed9de439d033a4a`; source
 archive SHA256 is
 `8f63eb65f50b66b2871071eb658e088c849e147611c6795ac459a6ce527a68b8`.
 This is source correspondence, not execution success or strength promotion.
+
+## First semantic fit failure and exact-prior repair assessment
+
+The parent reports job 2122369 passed the 35/11/5 existing checks, nine
+semantic checks and the linear-reference audit, then failed before any PPO
+update at exact initial-logit equality. All 136 logged-slate probability
+parity checks reportedly passed. The failed source and outputs are to remain
+archived; no F matches or parameter updates occurred. Independent inspection
+of the transferred failure transcript is pending.
+
+The initial fixture used the two-nonzero-coefficient built-in prior and
+missed the real twenty-coefficient accumulation difference. This limitation
+was missed in the earlier static acceptance. The strict real-data gate
+correctly prevented training. Sequential Torch additions are not guaranteed
+to reproduce Python's built-in floating sum: Python documents a float-sum
+algorithm change in 3.12 ([official Python documentation](https://docs.python.org/3.12/library/functions.html#sum)).
+That supports the proposed diagnosis but is not by itself measurement of
+the failed rows' residuals.
+
+The Reviewer conditionally accepts the proposed repair: compute the exact
+legacy Python primal from **current**, detached float64 weights, and add
+`(linear - linear.detach())` as a zero-valued differentiable bridge. The
+parentheses are essential: form the zero before adding it to the primal,
+rather than evaluating primal-plus-linear-minus-detached in sequence.
+The forward value then follows the legacy implementation while the tangent
+is the linear design row. This is an explicit numerical/autograd bridge,
+not tolerance relaxation or a change to the initial policy target.
+
+Require twenty nonzero coefficients with fractional features, exact primal
+checks before and after modifying weights, and a regression verifying base
+coefficient gradients. Version the accumulation rule and record Python
+runtime identity. Keep the real 136-slate equality and existing probability
+tolerances unchanged on the isolated retry. New code and actual retry
+results remain pending; cancelling dependent evaluation is appropriate.
+
+### Exact-prior repair final source acceptance
+
+The Reviewer inspected all three repaired files before isolated r03g
+retry. `forward` now builds the Python legacy primal from current detached
+weights and the untouched design rows, then adds the explicitly parenthesized
+zero-valued differentiable bridge. The architecture is versioned v2 and
+records the accumulation rule. The added fixture uses archived D7 and
+all-twenty-nonzero coefficients with fractional features across seer/wolf/
+speech contexts; it checks exact logits, exact design-row base gradients
+and exact primal values after changing weights.
+
+The trainer retains the strict real-state `torch.equal` gate and unchanged
+legacy propensity tolerances. It separately reconstructs the old sequential
+Torch prior across all recorded states, reports its maximum error against
+Python before fitting, and records Python implementation/version plus Torch
+version. That diagnostic can substantiate the suspected accumulation cause
+without changing the policy target. No material source blocker remains for
+this new frozen retry. H2 execution and the measured residuals remain
+pending; the first failure must not be rewritten as a successful update.

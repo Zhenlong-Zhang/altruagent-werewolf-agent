@@ -18,9 +18,10 @@ from .selector import FEATURES, WIDTH, design_row
 ENCODER_REVISION = "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
 ENCODER_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 ARCHITECTURE = {
-    "version": "semantic-candidate-attention-v1", "width": 32, "heads": 1,
+    "version": "semantic-candidate-attention-v2", "width": 32, "heads": 1,
     "embedding_dim": 384, "context_dim": 8, "residual_bound": 1.0,
     "base_dtype": "float64", "neural_dtype": "float32",
+    "base_accumulation": "python-sum-float64-primal+straight-through-linear-v1",
     "context_version": "coarse-self-context-v1", "max_length": 256,
     "pooling": "attention-mask-mean-l2-v1", "dropout": 0.0,
     "critic_pool_detached": True,
@@ -145,7 +146,8 @@ def build_network(base_weights):
 
         def forward(self, features, label_vectors, context_vector, context_embedding):
             # Keep the untouched Python float64 features for the legacy prior.
-            design = torch.tensor([design_row(row) for row in features], dtype=torch.float64)
+            design_values = [design_row(row) for row in features]
+            design = torch.tensor(design_values, dtype=torch.float64)
             numeric = torch.tensor(features, dtype=torch.float32)
             state = torch.tensor(context_vector, dtype=torch.float32)
             candidates = self.candidate(torch.cat((label_vectors.float(), numeric), dim=-1))
@@ -154,10 +156,15 @@ def build_network(base_weights):
             pooled = (attention.unsqueeze(-1) * self.value(candidates)).sum(dim=0)
             merged = torch.cat((candidates, query.expand_as(candidates), pooled.expand_as(candidates)), dim=-1)
             residual = torch.tanh(self.actor(merged).squeeze(-1)).double()
-            # Sequential multiply/add mirrors sum(design_row * old weights).
+            # Python 3.12 sum uses compensated accumulation. Preserve its
+            # exact primal while differentiating the ordinary linear form.
+            current_weights = self.base_weights.detach().tolist()
+            exact_base = torch.tensor([sum(value * weight for value, weight in zip(row, current_weights))
+                                       for row in design_values], dtype=torch.float64)
             base = torch.zeros(len(features), dtype=torch.float64)
             for index in range(WIDTH):
                 base = base + design[:, index] * self.base_weights[index]
+            base = exact_base + (base - base.detach())
             value = self.critic(torch.cat((state, pooled.detach()), dim=-1)).squeeze(-1)
             return base + residual, value
 

@@ -1,0 +1,121 @@
+  /work/zzl/2122369/pip-build-env-7wi42isi/overlay/lib/python3.12/site-packages/setuptools/command/editable_wheel.py:354: BuildBackendWarning: Editable installation.
+  !!
+  
+          ********************************************************************************
+          Please be careful with folders in your working directory with the same
+          name as your package as they may take precedence during imports.
+          ********************************************************************************
+  
+  !!
+    with strategy, WheelFile(wheel_path, "w") as wheel_obj:
+  /work/zzl/2122369/pip-build-env-d9r3pdyl/overlay/lib/python3.12/site-packages/setuptools/command/editable_wheel.py:354: BuildBackendWarning: Editable installation.
+  !!
+  
+          ********************************************************************************
+          Please be careful with folders in your working directory with the same
+          name as your package as they may take precedence during imports.
+          ********************************************************************************
+  
+  !!
+    with strategy, WheelFile(wheel_path, "w") as wheel_obj:
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Downloading 'config_sentence_transformers.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/7FlMl4FxR6n7kBtLngDIJQ5nHiI=.fd1b291129c607e5d49799f87cb219b27f98acdf.incomplete'
+Downloading 'sentence_bert_config.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/lGVMDuXJ-eOxWaZOviD6MtO-75w=.59d594003bf59880a884c574bf88ef7555bb0202.incomplete'
+Downloading '1_Pooling/config.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/1_Pooling/8_PA_wEVGiVa2goH2H4KQOQpvVY=.d1514c3162bbe87b343f565fadc62e6c06f04f03.incomplete'
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/config_sentence_transformers.json
+Downloading 'modules.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/rqDUs8AfQpUqG2NjnkGNseO9-Z4=.952a9b81c0bfd99800fabf352f69c7ccd46c5e43.incomplete'
+Downloading 'data_config.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/x2Rt2861-Bgu_eYvy93NIBMPOFg=.2e85f0eac205cf444bdf97ede4935603ca6a0416.incomplete'
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/sentence_bert_config.json
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/1_Pooling/config.json
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/modules.json
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/data_config.json
+Downloading 'model.safetensors' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/xGOKKLRSlIhH692hSVvI1-gpoa8=.53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db.incomplete'
+Downloading 'special_tokens_map.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/ahkChHUJFxEmOdq5GDFEmerRzCY=.e7b0375001f109a6b8873d756ad4f7bbb15fbaa5.incomplete'
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/special_tokens_map.json
+Downloading 'config.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/8_PA_wEVGiVa2goH2H4KQOQpvVY=.72b987fd805cfa2b58c4c8c952b274a11bfd5a00.incomplete'
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/config.json
+Downloading 'tokenizer.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/HgM_lKo9sdSCfRtVg7MMFS7EKqo=.cb202bfe2e3c98645018a6d12f182a434c9d3e02.incomplete'
+Downloading 'vocab.txt' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/E2zehc7lrIVb8gRdx7qjK54iiZY=.fb140275c155a9c7c5a3b3e0e77a9e839594a938.incomplete'
+Downloading 'tokenizer_config.json' to '/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/.cache/huggingface/download/vzaExXFZNBay89bvlQv-ZcI6BTg=.c79f2b6a0cea6f4b564fed1938984bace9d30ff0.incomplete'
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/tokenizer_config.json
+Fetching 11 files:  73%|███████▎  | 8/11 [00:00<00:00, 35.40it/s]Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/vocab.txt
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/tokenizer.json
+Download complete. Moving file to /work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2/model.safetensors
+Fetching 11 files: 100%|██████████| 11/11 [00:01<00:00,  8.98it/s]
+/work/zzl/2122369/wolf-semantic.uD3MCU/all-MiniLM-L6-v2
+test_bad_rank_output_has_deterministic_legal_fallback (__main__.StrengthChecks.test_bad_rank_output_has_deterministic_legal_fallback) ... ok
+test_cold_load_counts_against_soft_budget (__main__.StrengthChecks.test_cold_load_counts_against_soft_budget) ... ok
+test_competition_logs_and_delivers_legal_fallback_on_bad_model_output (__main__.StrengthChecks.test_competition_logs_and_delivers_legal_fallback_on_bad_model_output) ... ok
+test_competition_rejects_missing_checkpoint_and_bad_mode (__main__.StrengthChecks.test_competition_rejects_missing_checkpoint_and_bad_mode) ... ok
+test_competition_routes_arbitrary_seat_action_and_speech_to_checkpoint (__main__.StrengthChecks.test_competition_routes_arbitrary_seat_action_and_speech_to_checkpoint) ... ok
+test_competition_validates_model_configuration_before_play (__main__.StrengthChecks.test_competition_validates_model_configuration_before_play) ... ok
+test_cpu_thread_configuration_rejects_invalid_or_oversubscribed_startup (__main__.StrengthChecks.test_cpu_thread_configuration_rejects_invalid_or_oversubscribed_startup) ... ok
+test_cyclic_cancels_additive_slot_bias_and_preserves_content_signal (__main__.StrengthChecks.test_cyclic_cancels_additive_slot_bias_and_preserves_content_signal) ... ok
+test_cyclic_generator_is_distinct_while_none_matches_absent (__main__.StrengthChecks.test_cyclic_generator_is_distinct_while_none_matches_absent) ... ok
+test_cyclic_rejects_bad_second_pass_without_partial_ranking (__main__.StrengthChecks.test_cyclic_rejects_bad_second_pass_without_partial_ranking) ... ok
+test_cyclic_validates_bounds_ids_and_configuration (__main__.StrengthChecks.test_cyclic_validates_bounds_ids_and_configuration) ... ok
+test_empty_rationale_is_rejected (__main__.StrengthChecks.test_empty_rationale_is_rejected) ... ok
+test_explicit_cpu_threads_apply_to_cached_calls_and_version_provenance (__main__.StrengthChecks.test_explicit_cpu_threads_apply_to_cached_calls_and_version_provenance) ... ok
+test_grounded_absent_and_explicit_none_preserve_single_pass (__main__.StrengthChecks.test_grounded_absent_and_explicit_none_preserve_single_pass) ... ok
+test_grounded_claimed_seer_remains_soft_for_wolf (__main__.StrengthChecks.test_grounded_claimed_seer_remains_soft_for_wolf) ... ok
+test_grounded_competition_filters_known_innocent_without_changing_ids_control (__main__.StrengthChecks.test_grounded_competition_filters_known_innocent_without_changing_ids_control) ... ok
+test_grounded_compiles_int_string_keys_and_keeps_claims_unverified (__main__.StrengthChecks.test_grounded_compiles_int_string_keys_and_keeps_claims_unverified) ... ok
+test_grounded_maps_slots_to_arbitrary_ids_without_generation (__main__.StrengthChecks.test_grounded_maps_slots_to_arbitrary_ids_without_generation) ... ok
+test_grounded_rejects_contradictory_trusted_facts (__main__.StrengthChecks.test_grounded_rejects_contradictory_trusted_facts) ... ok
+test_grounded_target_resolution_never_guesses_seat_from_action_id (__main__.StrengthChecks.test_grounded_target_resolution_never_guesses_seat_from_action_id) ... ok
+test_ids_verified_guard_leaves_other_roles_phases_and_speech_unchanged (__main__.StrengthChecks.test_ids_verified_guard_leaves_other_roles_phases_and_speech_unchanged) ... ok
+test_ids_verified_guard_normal_entry_opaque_targets_and_all_known_fallback (__main__.StrengthChecks.test_ids_verified_guard_normal_entry_opaque_targets_and_all_known_fallback) ... ok
+test_ids_verified_guard_preserves_absent_none_prompt_and_identity (__main__.StrengthChecks.test_ids_verified_guard_preserves_absent_none_prompt_and_identity) ... ok
+test_invalid_verified_guard_fails_factory_and_legacy_falls_back_with_raw_request (__main__.StrengthChecks.test_invalid_verified_guard_fails_factory_and_legacy_falls_back_with_raw_request) ... ok
+test_late_ranking_is_rejected_after_synchronization (__main__.StrengthChecks.test_late_ranking_is_rejected_after_synchronization) ... ok
+test_legacy_bad_cpu_threads_keep_legal_fallback_and_raw_diagnostic (__main__.StrengthChecks.test_legacy_bad_cpu_threads_keep_legal_fallback_and_raw_diagnostic) ... ok
+test_legacy_bad_reasoning_configuration_keeps_legal_fallback (__main__.StrengthChecks.test_legacy_bad_reasoning_configuration_keeps_legal_fallback) ... ok
+test_legacy_ids_do_not_generate_rationale (__main__.StrengthChecks.test_legacy_ids_do_not_generate_rationale) ... ok
+test_local_model_metadata_uses_actual_backend_name (__main__.StrengthChecks.test_local_model_metadata_uses_actual_backend_name) ... ok
+test_nonfinite_ranking_is_rejected (__main__.StrengthChecks.test_nonfinite_ranking_is_rejected) ... ok
+test_original_practice_policy_retains_tournament_guard (__main__.StrengthChecks.test_original_practice_policy_retains_tournament_guard) ... ok
+test_provenance_distinguishes_precision_and_preserves_historical_default (__main__.StrengthChecks.test_provenance_distinguishes_precision_and_preserves_historical_default) ... ok
+test_reasoned_conditions_ranking_on_authorized_analysis (__main__.StrengthChecks.test_reasoned_conditions_ranking_on_authorized_analysis) ... ok
+test_singleton_has_no_stale_rationale (__main__.StrengthChecks.test_singleton_has_no_stale_rationale) ... ok
+test_unsupported_reasoned_backend_is_rejected_before_network (__main__.StrengthChecks.test_unsupported_reasoned_backend_is_rejected_before_network) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 1.024s
+
+OK
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.586s
+
+OK
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.006s
+
+OK
+{"ids": {"assigned": 1, "resolved": 0, "unresolved": 1, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {"6": 1}, "role_standardized_win_rate": null, "all_assigned_win_bounds": [0.0, 1.0], "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {"unresolved": 1}}, "reasoned": {"assigned": 0, "resolved": 0, "unresolved": 0, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {}, "role_standardized_win_rate": null, "all_assigned_win_bounds": null, "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {}}}
+{"ids": {"assigned": 0, "resolved": 0, "unresolved": 0, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {}, "role_standardized_win_rate": null, "all_assigned_win_bounds": null, "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {}}, "reasoned": {"assigned": 1, "resolved": 0, "unresolved": 1, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {"4": 1}, "role_standardized_win_rate": null, "all_assigned_win_bounds": [0.0, 1.0], "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {"unresolved": 1}}}
+{"ids": {"assigned": 0, "resolved": 0, "unresolved": 0, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {}, "role_standardized_win_rate": null, "all_assigned_win_bounds": null, "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {}}, "reasoned": {"assigned": 1, "resolved": 0, "unresolved": 1, "wins": 0, "win_rate_resolved": null, "wilson95": null, "roles": {"villager": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "seer": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}, "wolf": {"games": 0, "wins": 0, "win_rate": null, "wilson95": null}}, "seat_counts": {"5": 1}, "role_standardized_win_rate": null, "all_assigned_win_bounds": [0.0, 1.0], "selected_decisions": 0, "confirmed_decisions": 0, "model_fallbacks": 0, "delivery_errors": 0, "termination_reasons": {"unresolved": 1}}}
+{"audit_passed": true, "checks": {"feature_schema_matches": true, "parent_checkpoint_matches": true, "estimator_matches": true, "eligible_match_hash_set_matches": true, "eligible_match_count_matches": true, "recorded_role_counts_match": true, "recomputed_weights_match": true}, "coefficient_change": {"changed_count_at_1e_minus_12": 19, "total_coefficients": 20, "l2_delta": 0.09342470210214017, "max_absolute_delta": 0.0563482121311365, "max_reproduction_error": 0.0}, "in_sample_training_slate_metrics": {"sampled_training_slates": 136, "mean_kl_old_to_new": 0.00039421645470136935, "max_kl_old_to_new": 0.0010740024721310922, "mean_total_variation": 0.012675152288064371, "max_total_variation": 0.022818664206426253, "greedy_argmax_changed_count": 0, "greedy_argmax_changed_fraction": 0.0}}
+test_artifact_validation_is_torch_free_and_checksum_checked (__main__.SemanticChecks.test_artifact_validation_is_torch_free_and_checksum_checked) ... ok
+test_attention_permutation_equivariance_after_nonzero_residual (__main__.SemanticChecks.test_attention_permutation_equivariance_after_nonzero_residual) ... ok
+test_context_ignores_future_metadata_and_canonicalizes_speech (__main__.SemanticChecks.test_context_ignores_future_metadata_and_canonicalizes_speech) ... ok
+test_episode_weighting_fixed_advantages_and_separate_critic (__main__.SemanticChecks.test_episode_weighting_fixed_advantages_and_separate_critic) ... ok
+test_initial_logits_exact_legacy_and_context_not_rounded (__main__.SemanticChecks.test_initial_logits_exact_legacy_and_context_not_rounded) ... ok
+test_kl_rejection_restores_full_model_and_populated_optimizer_states (__main__.SemanticChecks.test_kl_rejection_restores_full_model_and_populated_optimizer_states) ... ok
+test_normal_hybrid_semantic_success_and_failures_keep_legal_delivery_and_flags (__main__.SemanticChecks.test_normal_hybrid_semantic_success_and_failures_keep_legal_delivery_and_flags) ... ok
+test_ppo_clips_both_advantage_signs (__main__.SemanticChecks.test_ppo_clips_both_advantage_signs) ... ok
+test_semantic_budget_rejects_after_embedding_and_final_host_conversion (__main__.SemanticChecks.test_semantic_budget_rejects_after_embedding_and_final_host_conversion) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.699s
+
+OK
+{"focused_checks_passed": 9, "encoder_cold_seconds": 0.8712896329816431, "encoder_cached_seconds": 2.281717024743557e-05, "encoder_parameters": 22713216, "encoder_frozen_eval": true}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/u/home/z/zzl/werewolf-strength-r03f/scripts/train_semantic_ppo.py", line 271, in <module>
+    main()
+  File "/u/home/z/zzl/werewolf-strength-r03f/scripts/train_semantic_ppo.py", line 197, in main
+    raise ValueError("Initial float64 logits must exactly reproduce the legacy design")
+ValueError: Initial float64 logits must exactly reproduce the legacy design

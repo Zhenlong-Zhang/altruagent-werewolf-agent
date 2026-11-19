@@ -9,6 +9,7 @@ from collections import Counter
 import copy
 import json
 import math
+import platform
 from pathlib import Path
 
 from scripts.train_hybrid import episode
@@ -159,7 +160,7 @@ def main():
     torch.manual_seed(args.seed)
     model = build_network(old.weights)
     encoder = FrozenEncoder(encoder_path)
-    prepared, initial_errors, exact_base_checks = [], [], []
+    prepared, initial_errors, exact_base_checks, sequential_errors = [], [], [], []
     role_counts, singleton_count = Counter(), 0
     for match, (terminal, choices) in games.items():
         role_counts[terminal["role_for_eval_only"]] += 1
@@ -177,6 +178,11 @@ def main():
                 logits, old_value = model(features, embeddings[:-1], values, embeddings[-1])
                 expected_logits = torch.tensor([sum(x * w for x, w in zip(design_row(row), old.weights))
                                                 for row in features], dtype=torch.float64)
+                design = torch.tensor([design_row(row) for row in features], dtype=torch.float64)
+                original_sequential = torch.zeros(len(features), dtype=torch.float64)
+                for column, weight in enumerate(old.weights):
+                    original_sequential = original_sequential + design[:, column] * weight
+                sequential_errors.append(float((original_sequential - expected_logits).abs().max()))
                 exact_base_checks.append(bool(torch.equal(logits, expected_logits)))
                 expected = torch.tensor(choice["probabilities"], dtype=torch.float64)
                 actual = torch.softmax(logits, dim=0)
@@ -193,6 +199,10 @@ def main():
                              "context_embedding": embeddings[-1].detach(), "old_probs": expected.detach().clone(),
                              "old_full_logp": old_logp, "old_selected_logp": old_logp[choice["choice_index"]].clone(),
                              "advantage": advantage, "return": target})
+    print(json.dumps({"initial_prior_checks": len(exact_base_checks),
+                      "initial_logits_exact_legacy": all(exact_base_checks),
+                      "original_sequential_max_abs_logit_error": max(sequential_errors, default=None),
+                      "python_version": platform.python_version()}), flush=True)
     if not prepared or not all(exact_base_checks):
         raise ValueError("Initial float64 logits must exactly reproduce the legacy design")
     if encoder._runtime is None or any(parameter.requires_grad for parameter in encoder._runtime[1].parameters()):
@@ -234,6 +244,9 @@ def main():
         torch.save(model.state_dict(), stream)
     metadata = {
         "schema_version": 2, "features": FEATURES, "architecture": ARCHITECTURE,
+        "runtime": {"python_version": platform.python_version(),
+                    "python_implementation": platform.python_implementation(),
+                    "torch_version": str(torch.__version__)},
         "encoder": {"name": ENCODER_NAME, "revision": ENCODER_REVISION,
                     "model_path": str(encoder_path.resolve()),
                     "files_sha256": {name: file_sha256(encoder_path / name)
@@ -257,6 +270,7 @@ def main():
         "final_mean_kl": mean_kl, "final_max_kl": max_kl,
         "initial_logits_exact_legacy": all(exact_base_checks),
         "initial_probability_max_abs_error": max(initial_errors),
+        "original_sequential_max_abs_logit_error": max(sequential_errors),
         "fixed_advantages_unchanged": True, "encoder_frozen": True,
         "excluded_seat_logs": dict(exclusions), "singleton_sampled_choices_skipped": singleton_count,
         "train_log_sources": sources, "log_dir": str(args.log_dir.resolve()),

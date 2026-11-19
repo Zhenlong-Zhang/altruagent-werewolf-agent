@@ -82,6 +82,42 @@ class SemanticChecks(unittest.TestCase):
                                       torch.tensor(probabilities(FEATURE_ROWS, INITIAL_WEIGHTS), dtype=torch.float64),
                                       rtol=1e-12, atol=1e-12))
 
+    def test_real_twenty_coefficient_prior_exact_sum_and_linear_gradient(self):
+        # Archived D7 coefficients exercise the actual compensated-sum path;
+        # tiny nonzero replacements also cover all twenty derivative terms.
+        archived = [1.4974813920292074, .5001098984155534, .0001796532958113155,
+                    .0010786361142370343, -.002511887658842717, .00011775824724519255,
+                    .00015398853926684182, .0010786361142370343, -.001893414937575021,
+                    .0011180946032305827, 0., .0020155969490466977, .0007177403277147122,
+                    -.00016359977156855195, 0., 0., -.0009907265576016378,
+                    .0006653711849799488, .0001796532958113155, .0010786361142370343]
+        all_nonzero = [value if value else (index + 1) * 1e-16 for index, value in enumerate(archived)]
+        feature_sets = [FEATURE_ROWS,
+                        [[.1234567891234567, -.9876543219876543, .3333333333333333, -1.,
+                          .8571428571428571, 1., 0., 1.],
+                         [.9876543211234567, .1111111111111111, .7142857142857143, 0.,
+                          .8571428571428571, 1., 0., 1.]]]
+        feature_sets.append([row[:6] + [1., 0.] for row in feature_sets[1]])
+        for weights in (archived, all_nonzero):
+            for features in feature_sets:
+                with self.subTest(weights=weights, features=features):
+                    model = build_network(weights)
+                    values, _ = context_inputs(features, {"day": 2, "phase": "day_vote"})
+                    embeddings, state = torch.randn(len(features), 384), torch.randn(384)
+                    logits, _ = model(features, embeddings, values, state)
+                    expected = torch.tensor([sum(x * w for x, w in zip(design_row(row), weights))
+                                             for row in features], dtype=torch.float64)
+                    self.assertTrue(torch.equal(logits, expected))
+                    gradient, = torch.autograd.grad(logits[0], model.base_weights)
+                    self.assertTrue(torch.equal(gradient, torch.tensor(design_row(features[0]), dtype=torch.float64)))
+                    with torch.no_grad():
+                        model.base_weights.add_(torch.linspace(-.001, .001, 20, dtype=torch.float64))
+                    current = model.base_weights.detach().tolist()
+                    updated, _ = model(features, embeddings, values, state)
+                    expected_updated = torch.tensor([sum(x * w for x, w in zip(design_row(row), current))
+                                                     for row in features], dtype=torch.float64)
+                    self.assertTrue(torch.equal(updated, expected_updated))
+
     def test_attention_permutation_equivariance_after_nonzero_residual(self):
         model = build_network(INITIAL_WEIGHTS)
         with torch.no_grad():
