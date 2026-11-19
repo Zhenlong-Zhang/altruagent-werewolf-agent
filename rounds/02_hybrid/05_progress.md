@@ -139,3 +139,8 @@ fallback, latency and missed delivery with the same denominators as the
 win-rate comparison.
 
 Paper decisions and benchmark design are in [the round contract](02_contract.md).
+
+The [2026-11-19 literature and deployment review](06_papers_and_deployment.md)
+records the ICML paper architecture gaps, the paper's tested cross-LLM
+selector transfer, and the tournament routing changes needed before release.
+Model and policy selection continue to use competition outcomes.
