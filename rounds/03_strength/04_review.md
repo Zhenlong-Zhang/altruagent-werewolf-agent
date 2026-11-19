@@ -1122,3 +1122,42 @@ shared helper. Omitting the optional training report weakens per-log hash
 provenance; the actual run should supply it. Parameter counts do not increase
 the thirty independent terminal observations, and logged-slate movement
 cannot establish counterfactual wins. Actual H2 audit results remain pending.
+
+## F operations helper initial static review
+
+The Reviewer inspected the new standard-library-only
+`analyze_strength_operations.py`. It joins supplied assigned-arm/focal-seat
+records to all worker logs, checks complete-policy profiles and fingerprints,
+keeps E/F overlap empty, validates logged actual probability mass/sampling
+flags and counts delivery/selector/direct-opponent errors without removing
+assigned games. Guard usage depends on actual before/retained slate change.
+It reports integrity failure, incomplete cohort and completed cohort through
+distinct exit statuses, with outcome-free status stdout.
+
+One configuration gap was raised before acceptance: the warm-generator
+normalization replaces actual CPU threads by the requested count, so a
+self-consistent two-thread call with a four-thread request could incorrectly
+match the four-thread E counterpart. Require the explicit requested count
+of four, actual count four or unloaded as appropriate, and model-backed
+choices with actual count four. Digest consistency alone is insufficient
+for runtime homogeneity.
+
+Controller assignment integrity is inherited from the supplied summary and
+its protocol checks; this helper does not independently recompute raw UUID
+assignment. Run against a stable between-games snapshot: an incomplete live
+JSON tail is currently classified as integrity failure, rather than merely
+an unfinished game. SHA manifests preserve the inspected log snapshot.
+No policy selection, fitting or return claim is performed by this helper.
+
+### F operations helper final acceptance
+
+The Reviewer verified the thread repair: requested threads must be integer
+four, actual threads are constrained to four or unloaded, and loaded BF16/
+model-valid proposals require four. A model-load failure after applying
+threads may correctly report actual four with unloaded dtype and fallback.
+The helper additionally separates forced-singleton choices, proposer error
+types and valid-proposal call latency while retaining all-choice timing.
+No material source blocker remains for an H2 run on a stable between-games
+snapshot. An integrity-clean partial canary should return exit 2 for
+incompleteness; that is not an integrity failure or a basis for outcome-
+dependent cohort stopping. Actual run evidence remains pending.
