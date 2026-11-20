@@ -1,0 +1,17 @@
+{
+  "job": 2183063,
+  "purpose": "Pinned public assets and CUDA environment staging only",
+  "script_sha256": "26ad2192bcc38a980b3f6ca249ee9e97ab4e5642c837110d90e428bab38477e2",
+  "resources": {
+    "cpus": 4,
+    "memory_gib": 12,
+    "max_hours": 1,
+    "gpu": 0
+  },
+  "remote": "/u/home/z/zzl/werewolf-round04",
+  "stage": "/u/scratch/z/zzl/werewolf-round04",
+  "no_model_inference_or_training_at_submission": true,
+  "status": "FAILED before environment/model download",
+  "failure": "Global scratch user quota exceeded",
+  "recovery": "Use compute-job-local TMPDIR, retaining public models only during the allocation. Do not delete or move other projects. Home currently lacks capacity for both 8B models."
+}

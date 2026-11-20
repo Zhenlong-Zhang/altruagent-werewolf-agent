@@ -1,0 +1,12 @@
+{
+  "job": "2183616",
+  "packages": {
+    "torch": "2.7.1+cu126",
+    "transformers": "4.51.3",
+    "huggingface_hub": "0.36.0",
+    "accelerate": "1.6.0",
+    "httpx": "0.28.1"
+  },
+  "model_storage": "allocated node TMPDIR only; no global scratch writes",
+  "purpose": "Environment setup only; no model load, inference or training"
+}
