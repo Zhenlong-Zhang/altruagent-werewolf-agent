@@ -18,6 +18,14 @@ def fingerprint(value):
                                      ensure_ascii=False, allow_nan=False).encode()).hexdigest()
 
 
+def generation_seed(base_seed, owner, decision_id):
+    """Replayable native-model randomness, separated by session/seat/request."""
+    if type(base_seed) is not int or not 0 <= base_seed < 2**32 or type(decision_id) is not int or decision_id < 0:
+        raise ValueError("Invalid native request seed identity")
+    return int(fingerprint({"seed": base_seed, "owner": owner, "decision_id": decision_id,
+                            "purpose": "owned-native-generation-v1"})[:8], 16)
+
+
 def seat(value):
     if isinstance(value, bool):
         raise ValueError("Boolean is not a player seat")

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/u/home/z/zzl/werewolf-round04/phase-bc-attempt1/scripts/check_strategy_transport.py", line 127, in <module>
+    main()
+  File "/u/home/z/zzl/werewolf-round04/phase-bc-attempt1/scripts/check_strategy_transport.py", line 109, in main
+    exercise(True)
+  File "/u/home/z/zzl/werewolf-round04/phase-bc-attempt1/scripts/check_strategy_transport.py", line 14, in exercise
+    from altruagent import DecisionContext, TERMINATE_MESSAGING
+  File "/work/zzl/2187275/tmprxbtc22m/overlay/altruagent/__init__.py", line 121, in <module>
+    from .client import AltruAgentClient
+  File "/work/zzl/2187275/tmprxbtc22m/overlay/altruagent/client.py", line 41, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/u/home/z/zzl/werewolf-round04/phase-bc-attempt1/scripts/check_strategy_transport.py", line 127, in <module>
+    main()
+  File "/u/home/z/zzl/werewolf-round04/phase-bc-attempt1/scripts/check_strategy_transport.py", line 123, in main
+    subprocess.run([sys.executable, str(Path(__file__).resolve()), "--child"], env=environment, check=True)
+  File "/u/local/apps/python/3.12.13/gcc-11.5.0/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/u/home/z/zzl/werewolf-round04/venv/bin/python', '/u/home/z/zzl/werewolf-round04/phase-bc-attempt1/scripts/check_strategy_transport.py', '--child']' returned non-zero exit status 1.

@@ -1,0 +1,13 @@
+test_clean_fragment_bootstraps_without_tracing_into_next_fragment (__main__.PrimitiveChecks.test_clean_fragment_bootstraps_without_tracing_into_next_fragment) ... ok
+test_faction_outcome_survives_death_and_learned_values_affect_gae (__main__.PrimitiveChecks.test_faction_outcome_survives_death_and_learned_values_affect_gae) ... ok
+test_invalid_mask_and_fake_terminal_trace_reject (__main__.PrimitiveChecks.test_invalid_mask_and_fake_terminal_trace_reject) ... ok
+test_kl_rejects_invalid_mass_but_valid_support_loss_is_infinite (__main__.PrimitiveChecks.test_kl_rejects_invalid_mass_but_valid_support_loss_is_infinite) ... ok
+test_padding_does_not_change_real_slot_outputs (__main__.PrimitiveChecks.test_padding_does_not_change_real_slot_outputs) ... ok
+test_singleton_has_zero_actor_gradient_and_padding_zero_probability (__main__.PrimitiveChecks.test_singleton_has_zero_actor_gradient_and_padding_zero_probability) ... ok
+test_slot_permutation_equivariance (__main__.PrimitiveChecks.test_slot_permutation_equivariance) ... ok
+test_value_clipping_and_exact_full_slate_kl (__main__.PrimitiveChecks.test_value_clipping_and_exact_full_slate_kl) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.694s
+
+OK

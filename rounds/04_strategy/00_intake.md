@@ -14,5 +14,5 @@ Constraints: preserve acting-seat private information, real platform rules/limit
 - Mapping: Planner=planner_strength, Worker=worker_strength, Reviewer=reviewer_strength (existing agents reused).
 - Rationale: source-level architecture audit, paper/code fit assessment and new training/evaluation require independent roles.
 - Rejected alternatives: repeated small-head tuning ignores observed action/candidate bottleneck; paper name alone is not evidence of a faithful or effective reproduction.
-- Execution result/evidence: review underway; implementation pending accepted contract.
+- Execution result/evidence: method/literature review completed before implementation; opt-in B/C source implemented, independently reviewed and verified by Slurm2189749 (seven suites/51 synthetic/SDK correctness cases). See08_execution.md for preserved failures and exact claim boundaries. New real-model gameplay/training remains pending GPU capacity and measured service readiness; winning strength is not established.
 - Resource decisions/sample counts remain agent-proposed until independently justified and frozen before outcome inspection. User authorizes substantial server use; scheduler maxima are not a mandatory consumption target.

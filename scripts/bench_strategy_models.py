@@ -102,12 +102,13 @@ def main():
     parser.add_argument("--seconds", type=float, default=30.)
     parser.add_argument("--temperature", type=float, default=.6)
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--dtype", choices=("bfloat16", "float16"), default="bfloat16")
     args = parser.parse_args()
     if not os.environ.get("SLURM_JOB_ID"):
         parser.error("Run model diagnostics on a Slurm compute node")
     if args.out.exists():
         parser.error("Never replace an existing diagnostic")
-    engine = HFGenerationBackend(args.model_path, args.model_id, args.revision)
+    engine = HFGenerationBackend(args.model_path, args.model_id, args.revision, dtype=args.dtype)
     engine.load()
     tasks = list(scenarios())
     if args.limit is not None:

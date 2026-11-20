@@ -1,0 +1,26 @@
+{
+  "job": 2189749,
+  "scheduler_state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_seconds": 47,
+  "source_manifest": "source-phase-bc-attempt4.json",
+  "archive_sha256": "7fd2ee5b449692738af9db244346a158275b3cb7df15ed79b7acfeb1ab7bc41b",
+  "suites": {
+    "controller": 12,
+    "actual_isolated_sdk_runner": 4,
+    "attention_ppo_primitives": 8,
+    "contextual_selector": 6,
+    "contextual_ppo_and_checkpoint": 8,
+    "pinned_runtime_entry": 7,
+    "fresh_journal_and_bc": 6
+  },
+  "all_suites_passed": true,
+  "scope": "Hoffman2 CPU correctness and synthetic optimizer checks; no real language-model inference/gameplay/win-rate experiment",
+  "prior_attempts": {
+    "2187275": "Failed transport dependency inheritance; other suites passed",
+    "2187511": "Passed earlier five-suite36-case snapshot",
+    "2189527": "Failed saved/reloaded snapshot tuple/list equality; other six suites and5/6 data methods passed"
+  },
+  "incumbent_promoted_or_replaced": false,
+  "live_training_completed": false
+}

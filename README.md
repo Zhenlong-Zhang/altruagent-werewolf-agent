@@ -110,3 +110,36 @@ and is included in its provenance. Budget concurrent processes together within
 the Slurm allocation. Cyclic display-order aggregation is an opt-in diagnostic,
 `WEREWOLF_GROUNDED_ORDER_BALANCE=cyclic`; the full-context seven-option test
 exceeded the initial 30-second soft budget, so it is not the default policy.
+
+## Full-state strategy and contextual learning (development)
+
+The [method audit](rounds/04_strategy/03_method_audit.md) found trusted-fact
+scoring and late-transcript bugs, narrow action/speech candidates, state
+aliasing and insufficient fresh-batch learning in the earlier experiment.
+The new opt-in path adds owned persistent memory, all engine-legal actions,
+typed contextual speech plans and ACK-controlled responses. It does not
+replace the incumbent or establish a win-rate improvement.
+
+The structured actor and separate critic use per-slot frozen text embeddings,
+typed player/reference relations and attributed MIT attention/PPO primitives
+from SLA/MAPPO; see [sources and adaptations](werewolf_agent/vendor/SOURCES.md).
+The public MARSHAL-Generalist-Qwen3-8B checkpoint is a screened transfer
+candidate, not a Werewolf-trained champion. Model IDs/revisions and the
+[literature fit](rounds/04_strategy/07_literature_fit.md) are recorded explicitly.
+
+The [runtime contract](rounds/04_strategy/12_runtime_contract.md) defines the
+source-pinned teacher/sample/greedy factory. The
+[data and learning contract](rounds/04_strategy/13_data_learning_integration.md)
+defines fresh-journal verification, game-disjoint teacher imitation (C0), and
+multiple fresh PPO batches with the previous trained critic. JSONL requests
+retain actual probabilities even when the fixed executor rejects or overrides
+them. BC confirmation filters do not censor PPO requests. Death is distinct
+from eventual faction terminal; incomplete games are never fabricated losses.
+
+The scripts `prepare_contextual_data.py`, `train_contextual_bc.py` and
+`train_contextual_ppo.py` require Slurm and explicit input/config/output paths.
+Runtime and optimizer checks use synthetic fixtures; actual new-generator
+collection, service throughput and prospective win-rate comparisons remain
+required before promotion. Follow the [execution receipts](rounds/04_strategy/08_execution.md)
+for current verified status rather than treating source implementation as
+completed competition training.

@@ -1,0 +1,8 @@
+{
+  "job": "2186290",
+  "source_commit": "75a6cd625def57bb039cd61ad3aae0df6267dcfe",
+  "interface_methods": 16,
+  "backend_methods": 11,
+  "all_passed": true,
+  "scope": "Real unit/adapter checks on Slurm CPU; synthetic HF weights only, no language-model inference or gameplay"
+}

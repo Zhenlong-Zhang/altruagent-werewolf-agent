@@ -1,0 +1,21 @@
+{
+  "scope": "Scheduler estimates only; NO replacement model job submitted",
+  "probe_script_sha256": "33d119fef5d7dd04957e7fa8e5ddbef6ac50c5fd437ca3f0b22e19ec286f647e",
+  "added_feature": "vmem32G",
+  "precisions_proposed": "BF16 if supported, otherwise FP16 for BOTH models; not executed",
+  "test_only_estimates": [
+    {
+      "query_id": 2187545,
+      "wall_minutes": 120,
+      "estimated_start": "2026-11-24T13:25:34",
+      "node": "g36"
+    },
+    {
+      "query_id": 2187547,
+      "wall_minutes": 30,
+      "estimated_start": "2026-11-24T13:25:34",
+      "node": "g36"
+    }
+  ],
+  "decision": "Keep existing queued2184544 and its source/protocol; resubmission would lose its earlier queue position. Query IDs are not real submitted jobs."
+}

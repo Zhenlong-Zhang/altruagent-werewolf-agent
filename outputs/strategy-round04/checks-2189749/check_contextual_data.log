@@ -1,0 +1,11 @@
+test_bc_game_disjoint_fit_uses_actual_teacher_targets (__main__.DataChecks.test_bc_game_disjoint_fit_uses_actual_teacher_targets) ... ok
+test_full_registry_accounts_missing_games_and_pins_raw_sources (__main__.DataChecks.test_full_registry_accounts_missing_games_and_pins_raw_sources) ... ok
+test_greedy_evaluation_binds_actual_checkpoint_and_generator (__main__.DataChecks.test_greedy_evaluation_binds_actual_checkpoint_and_generator) ... ok
+test_missing_terminal_stale_runtime_and_changed_sampler_reject (__main__.DataChecks.test_missing_terminal_stale_runtime_and_changed_sampler_reject) ... ok
+test_request_rejection_unknown_keeps_original_sample (__main__.DataChecks.test_request_rejection_unknown_keeps_original_sample) ... ok
+test_teacher_label_requires_actual_preference_and_confirmed_execution (__main__.DataChecks.test_teacher_label_requires_actual_preference_and_confirmed_execution) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.802s
+
+OK

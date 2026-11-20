@@ -1,0 +1,16 @@
+{
+  "job": "2184543",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "transformers": "4.51.3",
+    "huggingface_hub": "0.36.0",
+    "accelerate": "1.6.0",
+    "httpx": "0.28.1"
+  },
+  "reason": "Official PyTorch2.7 CUDA12.8 build adds Blackwell kernels; enables campus97GB GPUs",
+  "references": [
+    "https://pytorch.org/blog/pytorch-2-7/",
+    "https://pytorch.org/get-started/previous-versions/"
+  ],
+  "environment_scope": "Only the new round04 private venv; previous GPU job cancelled unstarted before upgrade"
+}

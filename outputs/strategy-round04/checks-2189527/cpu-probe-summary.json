@@ -1,0 +1,67 @@
+{
+  "scope": "16-thread BF16 CPU operation-only probe; two views/model,90-second cap; not GPU screen or wins",
+  "models": [
+    {
+      "model": "marshal",
+      "source_sha256": "0524b10af1823594b901c306dd3bd38a20f6be992bb0d2110e7b43f0df5b0305",
+      "cases": 2,
+      "valid": 0,
+      "errors": {
+        "BackendError": 2
+      },
+      "per_case": [
+        {
+          "scenario": "verified_wolf_over_claim",
+          "valid": false,
+          "elapsed_seconds": 90.16125532612205,
+          "error": {
+            "type": "BackendError",
+            "message": "Late generation rejected; partial reasoning is never an action"
+          },
+          "generation": null
+        },
+        {
+          "scenario": "defend_verified_nonwolf",
+          "valid": false,
+          "elapsed_seconds": 90.16433756100014,
+          "error": {
+            "type": "BackendError",
+            "message": "Late generation rejected; partial reasoning is never an action"
+          },
+          "generation": null
+        }
+      ]
+    },
+    {
+      "model": "vanilla",
+      "source_sha256": "b8379f3564851cdfbeafa42f2b3e790503722be40bea34696d824ec90f15799c",
+      "cases": 2,
+      "valid": 0,
+      "errors": {
+        "BackendError": 2
+      },
+      "per_case": [
+        {
+          "scenario": "verified_wolf_over_claim",
+          "valid": false,
+          "elapsed_seconds": 90.11871409812011,
+          "error": {
+            "type": "BackendError",
+            "message": "Late generation rejected; partial reasoning is never an action"
+          },
+          "generation": null
+        },
+        {
+          "scenario": "defend_verified_nonwolf",
+          "valid": false,
+          "elapsed_seconds": 90.16165800509043,
+          "error": {
+            "type": "BackendError",
+            "message": "Late generation rejected; partial reasoning is never an action"
+          },
+          "generation": null
+        }
+      ]
+    }
+  ]
+}

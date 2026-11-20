@@ -1,0 +1,24 @@
+{
+  "job": 2184544,
+  "dependency": "afterok:2184543",
+  "source_commit": "75a6cd625def57bb039cd61ad3aae0df6267dcfe",
+  "source_manifest": "source-phase-a.json",
+  "script": "screen-models-blackwell.sbatch",
+  "script_sha256": "42d93b59c4e4bbff804ecc210c91850800f1761aa21c4bd296827fb7e18525b5",
+  "environment_job": 2184543,
+  "environment": "torch2.7.1+cu128; other reviewed packages unchanged",
+  "replaces_unstarted_cancelled_job": 2184358,
+  "model_and_scenario_protocol": "Unchanged70cases/model,nativeBF16,temp.6,2048newtokens,30ssoftdeadline,8192input,samepair/modelseeds",
+  "resources": {
+    "gpu": 1,
+    "cpus": 4,
+    "memory_gib": 48,
+    "hours": 2,
+    "eligible_gpu_features": "vmem40G|vmem48G|vmem80G|vmem94G|vmem97G|vmem141G"
+  },
+  "official_compatibility_sources": [
+    "https://pytorch.org/blog/pytorch-2-7/",
+    "https://pytorch.org/get-started/previous-versions/"
+  ],
+  "not_a_strength_or_training_run": true
+}

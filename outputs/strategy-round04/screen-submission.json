@@ -1,0 +1,29 @@
+{
+  "job": 2184358,
+  "source_commit": "75a6cd625def57bb039cd61ad3aae0df6267dcfe",
+  "source_manifest": "source-phase-a.json",
+  "script": "screen-models.sbatch",
+  "script_sha256": "b8e41a8d6006e61ee962e2f7e2286518c3b5e38f64dee8068d1ed53711ae9dc5",
+  "resources": {
+    "gpu": 1,
+    "cpus": 4,
+    "memory_gib": 48,
+    "max_hours": 2,
+    "gpu_features": "vmem40G|vmem48G|vmem80G|vmem94G|vmem141G"
+  },
+  "protocol": {
+    "cases_per_model": 70,
+    "models": 2,
+    "thinking": true,
+    "temperature": 0.6,
+    "max_new_tokens": 2048,
+    "max_input_tokens": 8192,
+    "soft_seconds": 30,
+    "seed": "97001+10*seat_shift+scenario_index; same across order pairs and models"
+  },
+  "pre_inference_at_submission": true,
+  "all_gameplay_and_training_not_started": true,
+  "status": "CANCELLED unstarted",
+  "elapsed": "00:00:00",
+  "reason": "Scheduler diagnosis: no free matching GPUs, campus sees no starts on selected nodes in last24h and1461higher-priority pi_shared jobs; broaden valid hardware with supported CUDA12.8 build before resubmission."
+}

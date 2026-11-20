@@ -1,0 +1,15 @@
+{
+  "base_phase_a_commit": "75a6cd625def57bb039cd61ad3aae0df6267dcfe",
+  "base_archive_sha256": "7f686d51b18d8f84dcecc17e21aeeadf7b39fb07d32b6a09f423a194738027c4",
+  "scope": "Separate operational CPU fallback probe and primitive checks; no GPU-screen mutation, no win-rate evaluation",
+  "overlay_files": {
+    "scripts/probe_strategy_cpu.py": "0436800f000ee2685cf417e8e4507f658f8ca66a1780ba414469b1d874e9aa1e",
+    "scripts/check_contextual_primitives.py": "4c52551470afdf580c5ba1fdb36c637bdb40d17ba108c3c5b8cd8cba205305fc",
+    "werewolf_agent/vendor/SOURCES.md": "23c82925311b79ca0d2c3aa1d7ba9d1f5ccc0c6c0573d1f258eaf35385c96255",
+    "werewolf_agent/vendor/__init__.py": "1738cf0ebd87ecb21e6422dc10d44bdd542425e4cedc03c12963cee38dba0c55",
+    "werewolf_agent/vendor/MAPPO_LICENSE": "0335be1babd64ea33302d4d365cdecc5985aaf5c4481236e0c5da07eb37a4580",
+    "werewolf_agent/vendor/event_ppo.py": "7d81ef5a4f3b441d5e189ee083237dc16a2434076625fe4b631f6c6cd3947db8",
+    "werewolf_agent/vendor/slot_attention.py": "72873bc6a7f86d3ec10fb39f3494e7b3acb2e6eebb5955dada7296b5d3f95935"
+  },
+  "script_sha256": "02c15988def91607d2262d92d5b7694408cf758b501945b19a9911e26a61a1af"
+}

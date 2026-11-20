@@ -332,3 +332,421 @@ This accepts Phase A capability/operation screening only. Persistent bounded
 summaries, phase-transition transcript refresh, responsive ACK controller,
 fresh contextual learning and population evaluation still require their
 later concrete implementation/data/budget reviews.
+
+### Phase C conceptual learning review — proposal10
+
+The Reviewer read `10_learning_contract_proposal.md` in full. Conceptually
+accepted for the later concrete source contract, **not yet C implementation,
+collection, or model acceptance**. The route adds real capacity relative to
+R03: protected source-bound player/fact/claim tokens, contextual candidate
+cross-attention, all engine-legal actions, a separately parameterized value
+network, fresh successive on-policy batches and a matched pre-PPO C0 control.
+The proposed reuse identifies actual MIT attention/optimizer/buffer
+components while removing joint-private-state assumptions; it does not
+mislabel this decentralized learner as a faithful MAPPO reproduction.
+The exact Phase B transport/controller must be settled first.
+
+The request-action formulation is sound and preferable to ACK-conditioned
+sample deletion. If the policy samples request a with recorded probability
+pi_old(a|authorized observation, frozen slate), a frozen executor may reject,
+delay, acknowledge or deterministically fall back. Those are transition/
+execution outcomes of that request, not grounds to replace its probability
+with a fictitious probability of the fallback. A rejected draw can therefore
+remain on-policy. The frozen generator's stochastic slate is observed before
+the actor draw; its generation/validation identity and the whole candidate
+slate must be retained. Changing generator/controller/realizer/population
+inside a collected batch breaks the claimed fixed transition conditions.
+
+Source-contract conditions and concrete counterexamples:
+
+- **Unknown delivery is not automatically off-policy.** Keep exact pending
+  uncertainty as the actor observed it. A completed game with intact sampled
+  request, behavior probabilities, actor observations and faction result may
+  remain usable even if the receipt was ambiguous. No ACK-dependent filtering
+  is justified merely by saying on-policy. Missing sampled-action provenance,
+  missing later observations or unknown faction result is different: archive
+  it with a declared eligibility/censoring reason. Do not promote a future ACK
+  into an earlier packet or issue blind retries that can duplicate delivery.
+- **Use separate return masks.** At true faction terminal both bootstrap and
+  GAE recursion are0. At an authorized clean fragment boundary bootstrap
+  uses the stored old next-value, but recursion stops: bootstrap mask1,
+  recursion mask0. A single continuation flag in both recurrence positions
+  cannot express this. Death is neither a technical loss nor a faction
+  terminal. Attach eventual faction reward to the dead seat's final own
+  decision without placing it in any earlier actor input. Unresolved transport
+  is not a clean bootstrap boundary just because a time budget expired.
+- **Expose controller state and preserve observation causality.** Pending
+  request, attempt/ACK quota, stale-window status and available execution
+  time affect decisions and transition behavior. Serialize their authorized
+  pre-action values. This remains a policy over bounded partial observations;
+  do not claim the summarized packet proves a fully observable Markov state.
+  Preserve source/channel/subject bindings and explicit overflow handling.
+- **Freeze the estimator and reduction.** Gamma1 matches eventual faction
+  return without wall-time discount. Lambda0.95 remains an estimator choice:
+  inserting additional own speech/request events changes GAE propagation,
+  and bootstrapped finite-sample bias can remain. Specify per-game/per-seat/
+  per-role weighting before collection so a long discussion or games with
+  more learning seats do not silently dominate. Correlated seat trajectories
+  remain one game cluster for uncertainty, not independent games.
+- **Pin exact learner mechanics before code.** Define token/numeric schema,
+  pointer and padding masks, actor/critic parameter partition, categorical
+  entropy, old-value/value-clipping conventions, advantage normalization,
+  minibatch/reduction, optimizer settings and full-state rollback semantics.
+  Candidate permutation tests must include cross-referenced evidence and
+  targets; padding and unsupported overflow must not create sampleable
+  actions. Replay stored old full-slate probabilities and values before an
+  update, including rejected requests and multiple alive/dead seats.
+- **Separate learning and generator evidence.** C0's recorded demonstration
+  teacher decisions need identity/source provenance and game-disjoint
+  validation. BC loss alone does not establish strength. More than one fresh
+  rollout/update batch is needed to exercise the learned old critic; final
+  comparison retains C0 and D7 with declared deployment modes and a withheld
+  population. Exact finite counts are chosen from measured A/B throughput,
+  not invented here. A screen win or lower PPO loss is not promotion evidence.
+
+Required fixtures should include identical policy draws with ACK/rejection/
+unknown-delivery outcomes (same stored behavior mass), rejected request then
+executor fallback without a second fake actor draw, clean truncation versus
+terminal masks, death followed by faction win, immutable earlier packets
+after later receipts, padding/permutation, and actor/value isolation. A real
+completed-game rollout must establish schema/controller compatibility before
+scaling. No source was implemented and no local tests/model computation were
+run for this review. The GPU compatibility/resource change is operational;
+its new allocations are not evidence for this learner's feasibility or wins.
+
+### Phase B controller contract09 — accepted for implementation
+
+The Reviewer read `09_controller_contract.md` in full and accepts the new
+isolated Phase B implementation against its stated interfaces. This is source
+scope acceptance, not yet H2 readiness or live collection approval. No Phase A
+model winner is presumed, and the frozen A source remains unchanged.
+
+The contract now addresses the actual earlier capacity/transport defects:
+exact session/seat/day discussion ownership; recursively typed pending state
+and immutable before-packets; three accepted/four attempted shared chat bounds
+and one accepted buddy message; idempotent ACKs; unknown-delivery locks and
+exact new own-message reconciliation without blind retries; monotonic aging
+of server time; an isolated SDK overlay that ingests result payloads and the
+same acting transport's authorized final transcript before voting; bounded
+source-preserving per-player memory; and an actual generated teacher preference
+rather than treating slate position0 as a recommendation. REQUEST-MDP logs
+remain distinct from demonstrations and executed effects.
+
+Two implementation interpretations must stay explicit:
+
+- A local phase check cannot atomically prevent a server phase change between
+  checking and the RPC. Revalidate latest-known owner/phase/deadline before
+  sending, rely on authoritative transport acceptance/rejection, and record a
+  raced attempted request accurately. Do not promise a hard phase/send atomic
+  guarantee or a preemptive model deadline where only soft checks exist.
+- Preserve the actual teacher preference when a controller gate rejects,
+  overrides or cannot deliver it. Record preferred request, gate and executed
+  effect separately. BC eligibility may select valid teacher demonstrations,
+  with that selection documented; it must not silently rewrite teacher labels
+  or become ACK-conditioned deletion of later sampled PPO requests.
+
+The specified H2 checks are appropriate: malicious nested/owner/private data,
+ACK/unknown/quota paths, clock/queue/phase races, the actual hooked runner's
+final-message transition and unchanged legacy path, over-budget long history,
+protected facts/channel separation and preference-order mapping. Before live
+collection the manifest still needs exact slot/token caps, clock settings,
+SDK base/overlay hashes and real shared-service burst measurements. A memory
+projection retaining fewer raw claims is a bounded observation, not complete
+history. No local execution was performed for this contract review.
+
+### Frozen A CPU evidence and initial attributed C primitives
+
+Actual Slurm evidence in `outputs/strategy-round04/checks-2186290/` was
+inspected: result metadata pins75a6cd625def57bb039cd61ad3aae0df6267dcfe;
+interface16 and backend11 methods both report OK. This establishes those
+unit/adapter boundaries on H2, with synthetic HF weights only. It does not
+establish real checkpoint generation, gameplay or strength. GPU output is
+still pending at this review.
+
+The initial `vendor/slot_attention.py`, `event_ppo.py`, source manifest,
+retained MIT license and seven focused checks were statically reviewed.
+One-seat masked attention, PPO clipping, clipped-value objective and separate
+bootstrap/trace GAE equations match the conceptual10 route. The license text
+matches the inspected SLA license and the reuse manifest identifies source
+commits/ranges. These small attributed primitives are not the complete
+contextual learner or a source-acceptance shortcut for the eventual11 contract.
+
+One concrete repair was requested before their later source gate:
+`exact_categorical_kl` checks off-mask zeros but does not validate finite,
+nonnegative normalized probability masses or a boolean nonempty mask. It can
+return a finite number for invalid categorical inputs, undermining a trust-
+bound decision. Validate full simplexes with explicit floating-point sum
+accuracy and add malformed/negative/nonfinite/empty-mask fixtures. A genuinely
+valid old-positive mass mapping to new zero should still yield infinity.
+The attention padding fixtures currently cover finite padded values; reject
+nonfinite valid slot values at serialization and zero masked slots explicitly
+if asserting immunity to arbitrary padded values. No local tests or model
+computations were run. B implementation is incomplete and not live-accepted;
+concrete C11 was not yet present at this inspection.
+
+### Concrete C11 source architecture and primitive repair review
+
+The KL repair was re-inspected: boolean/nonempty legal masks, finite
+nonnegative masses, off-mask zeros and explicitly tolerance-normalized sums
+are now checked. Valid support loss produces infinity for its affected row.
+Attention explicitly zeroes masked padded entries, including NaNs, and rejects
+nonfinite real slots. Added adversarial checks cover these boundaries. The
+static primitive blocker is cleared; all eight focused methods still require
+actual H2 execution.
+
+`11_learning_contract.md` was read fully. Its numeric dimensions were counted
+independently: global27, player17, fact13, source12, own-ACK29 and candidate/
+pending32 match their enumerated fields. Typed relation pointers, separate
+actor/value parameters, owner-visible inputs, replayed old values, distinct
+bootstrap/trace masks, delayed death-to-faction credit, whole-state rollback
+and the game-sum actor versus per-game decision-mean value reductions are
+explicit. Natural role weighting and role-standardized evaluation are kept
+separate. This accepts the C source architecture, subject to the following
+interface/binding clarification before its relevant implementation boundary.
+
+Reconcile its draft API with accepted09: constructor owns mode/owner RNG;
+`choose(packet,candidates,deadline=...,decision_id=...)` supports the B seam
+with optional decision ID, returns09's `log_probability` and other required
+keys, and may add the proposed metadata/full-vector aliases. Full logits are
+requested in11 prose but need an explicit output field. The exact B typed
+protected-ACK/ballot/pending schema mapping must be agreed before collector
+code consumes it; a guessed nested field is not an accepted binding. No live
+collection is accepted by this review: source identity, memory projection,
+measured populations, minibatches, finite budgets and operation checks remain
+to be fixed before gameplay. Parent/Planner were informed of these conditions.
+
+A separately labeled two-native-prompt-per-checkpoint CPU performance probe
+may diagnose queue-independent feasibility. A different90-second/16-thread
+CPU configuration is not a substitute for the matched GPU30-second screen
+or evidence of strategic superiority. No local tests/inference were run.
+
+### Initial B implementation and contextual C runtime inspection
+
+Statically inspected the new memory/dialogue/candidate/policy/transport/entry
+modules, SDK builder and controller checks, plus contextual slots/network/
+selector. No local execution. The pipeline preserves sampled requests across
+late executor fallback, keeps raw teacher preference distinct from BC
+eligibility, binds canonical delivery to its before-packet, and uses the
+acting transport for transcript refresh. C's API is now09-compatible. Relative
+text entities are bound back to player records through typed relations rather
+than absolute seat embeddings. No other-seat private-input path was found in
+these inspected modules. Source remains under repair, not live-accepted.
+
+Concrete issues sent to Worker/parent before freeze:
+
+- `apply_delivery` rejects accepted-to-rejected receipt conflicts but silently
+  accepts the reverse rejected-to-accepted conflict. Final contradictory
+  receipts need symmetric explicit handling rather than counter mutation.
+- B caps64 raw accepted-message records before C's semantic deduplication;
+  updated11 protects64 semantic entries, and one message may contain multiple
+  assertions. Align the projection/capacity contract while preserving the
+  complete raw journal and explicit overflow behavior.
+- Relevance checks only self, verified-fact subjects and prior commitments.
+  An ordinary villager's new message about a different legal but unverified
+  vote target does not trigger the promised response. Match declared legal-
+  target relevance and normalized Player aliases, or explicitly amend the
+  heuristic scope before collection.
+- Nine B controller checks do not yet exercise the actual admissibility path
+  through opening/response/changed commitment and shared private cap; several
+  directly call memory.prepare, bypassing those gates. Add focused actual-
+  controller checks alongside the three isolated real-runner transport cases.
+- C currently classifies singleton by strictly positive floating-point masses.
+  Extreme finite logits can underflow FP32 softmax to one positive mass while
+  several candidates remain available. Determine forced-singleton status from
+  the legal candidate mask; preserve the actual representable sampling
+  distribution, and test that underflow is not mislabeled as an engine-forced
+  decision. This is accounting/eligibility correctness, not a claim that normal
+  initial weights already exhibit that numerical extreme.
+
+These are source repairs/verification conditions, not reasons to block an
+initial isolated H2 CPU-check run or the separately frozen A diagnostics.
+
+### Contextual PPO core and B repair reinspection
+
+The new `contextual_ppo.py` and five synthetic optimizer/replay checks were
+read. The core retains rejected/unknown sampled requests, replays the recorded
+uniform draw, validates old full categorical masses and behavior values before
+optimization, freezes GAE through epochs and accumulates the complete declared
+game-weighted gradient across packing chunks. Independent optimizers and
+transactional rollback cover actor and critic; the fixtures include populated
+Adam-state corruption recovery and singleton-only batches not moving an actor
+through old momentum. No static blocker was found to the isolated H2 suites.
+This is core acceptance for verification, not a live trajectory adapter.
+
+Raw platform terminal/source validation, chronological request linkage, batch
+freshness and consumption remain adapter requirements. A truthy core
+`terminal_provenance` field is not platform evidence by itself, and assigning
+a new caller checkpoint label is not proof that games were freshly sampled.
+Those validations must precede actual collection/training. One denominator
+clarification was sent: code averages actor terms over games containing a
+nonforced actor request;11's wording excludes only no-request games. Declare
+the intended actor-eligible-game denominator explicitly before collection,
+including the effect of singleton-only games, instead of changing it silently.
+
+B repairs were inspected: contradictory receipt handling is now symmetric;
+relevance includes legal targets and normalized Player aliases; protected
+memory compacts semantic first/latest records in original ACK chronology,
+retaining the complete raw journal. The70-duplicate and A→B→A commitment
+fixture targets the chronology pitfall. C singleton classification now uses
+the available mask rather than positive floating-point support. Actual H2
+results remain pending; no local checks/inference were executed. Additional
+actual-controller changed-commitment/private-cap paths remain a useful live-
+readiness condition alongside the prepared real-runner transport fixtures.
+
+### Actual B/C verification attempt2 — source/core accepted
+
+Inspected `checks-2187511`: controller12 methods OK, isolated actual SDK
+runner3 cases passed, primitive8 methods OK, selector6 methods OK and PPO7
+methods OK. These are36 checks/cases on H2, not36 games. The added controller
+paths cover response/changed commitment and private/shared quota behavior.
+The actor denominator now includes all games with requests, leaving a
+singleton-only game's actor contribution zero, matching11. Checkpoint
+roundtrip/tamper and weighting fixtures are present. No local tests were run.
+
+The SDK builder now copies an explicit17-module source allowlist plus optional
+fixed root metadata, rejects selected symlinks, excludes extraneous runtime/
+configuration directories, and records original/modified per-file hashes.
+The fresh-interpreter transport check inherits required job dependencies
+after overlay/project paths, repairing the first attempt's missing dependency.
+The failed initial attempt remains distinct from the successful repair.
+
+`contextual_checkpoint.py` and the Slurm-only training CLI were inspected:
+strict architecture/schema/fixed filenames, safetensors actor/value tensors,
+manifest identity and tensor/report/optional-optimizer checksums, weights-only
+optimizer loading and immutable new output directories are coherent. The CLI
+requires declared lineage and a verified-episodes schema rather than deriving
+labels itself. The actual fresh-journal verification adapter remains required;
+a schema label alone does not prove real terminal or source provenance.
+
+Read-only integrity comparison against `source-phase-bc-attempt2.json` found
+73/74 local files match; current `scripts/bench_strategy_models.py` differs.
+Parent was informed to record its new source boundary. This does not rewrite
+the frozen remote verification evidence or invalidate tested modules, which
+match. No additional model/check rerun was requested solely for that drift.
+
+The source/core and its H2 verification are accepted, **not live collection or
+competition-strength completion**. Runtime factory/verified fresh-journal
+adapter, actual BC/collection and real-model synchronized burst readiness are
+still missing. The separately recorded16-thread CPU probe had four of four
+native calls rejected after the90-second soft limit; that configuration is
+unusable for this controller, not evidence against GPU feasibility or either
+model's strategic quality. The GPU screen remains pending.
+
+### Runtime, data preparation and BC integration prefreeze review
+
+Read contracts12/13 and runtime entry, fresh data adapter and BC core/CLI.
+The strict eight-field lineage binds generator settings and source identity;
+backend provenance is checked before answer parsing; owner reopening requires
+identical runtime metadata. Terminal audit remains outside actor inputs.
+Sampled request retention is independent of ACK, while teacher BC confirmation
+requires its exact preferred request and receipt. BC uses game-disjoint
+teacher development cross entropy, separate training-only value fitting and
+matching selected-epoch optimizer states. These are appropriate integration
+choices, not yet proof of platform learning or live readiness.
+
+Concrete issues sent before the next freeze:
+
+1. Runtime's required source-file set omits actively imported
+   `vendor/slot_attention.py`. Enforce that dependency in the manifest
+   validator, rather than relying on the current full manifest incidentally
+   including it; add an omitted-active-file fixture.
+2. Population version rules disagree: trainer permits population-only changes
+   between batches, while deployment requires full checkpoint/runtime lineage
+   equality. Either explicitly freeze the population for this whole lineage,
+   or bind a population-only runtime transition to the new protocol without
+   weakening the other seven checkpoint lineage fields.
+3. Greedy evaluation preparation currently counts requests without validating
+   its recorded checkpoint/mode/index/serialized snapshot/generator as the
+   sampled path does. Add equivalent identity validation before actual final
+   evaluation; evaluation logs need integrity even without gradient fitting.
+4. The trainer's `verify_sources(prepared)` checks protocol/registry/journal/
+   runtime-config receipts, not current source-manifest bytes and enumerated
+   implementation files. Contract13's immediate prefit source-reverification
+   claim is therefore stronger than the current code. Bind an actual training
+   source manifest and verify portable current project files before fitting;
+   do not demand expired node-local model paths merely because they appeared
+   in an archived runtime config. Collection-time factory checks alone do not
+   pin subsequently imported trainer implementation.
+
+These are concrete source/contract repairs, not a request for arbitrary live
+counts or a reason to skip an isolated check run. No local model computation,
+training or test execution occurred. Actual fresh collection/BC/PPO/evaluation
+budgets and shared-model burst readiness remain pending.
+
+### Integration attempt3 source gate — accepted for H2 verification
+
+All four prefreeze findings were re-inspected after repair. Runtime now
+requires the complete small policy package in its source manifest, including
+lazy/vendor dependencies; an omitted attention module is a rejection fixture.
+Deployment allows only population-version changes between declared batches,
+while preserving the exact checkpoint and the other seven lineage fields;
+new-population acceptance and controller-change rejection are explicit tests.
+Learned SDK workers set one Torch thread to avoid uncontrolled CPU fan-out.
+
+Data preparation now checks greedy checkpoint/mode/decision/argmax/slate and
+generator identity. The fitter verifies archived manifest receipts plus actual
+portable current implementation bytes before importing a batch into fitting;
+expired node-local model paths are not treated as required source files.
+Owner/session/seat/decision-derived generation seeds match runtime and replay.
+PPO rollback reports preserve rejection but sanitize infinite metric fields
+for JSON serialization. BC's ACK confirmation remains limited to imitation.
+
+Source3 is statically accepted for the complete isolated H2 verification
+suites. No further source blocker was identified or theoretical gate added.
+Actual suite results and real-model shared-service readiness are still pending;
+this is not acceptance of live collection, completed learning, improved play
+or tournament deployment. No local tests/inference/training were performed.
+
+### Attempt3 JSON replay failure and narrow repair
+
+Parent reported actual H2 job2189527: six suites passed (controller12,
+actual runner4, primitive8, selector6, PPO8, entry7); data passed five of six
+including the synthetic two-epoch BC fit, but its file-backed registry fixture
+produced no eligible episode. These logs were not yet local at the expected
+path during this review, so that execution status is parent-attested here.
+
+Static inspection confirms the identified integration defect and repair:
+serializer graph edges were Python tuples, but JSON journals reload them as
+lists, causing exact full-snapshot replay equality to reject otherwise
+identical data. Edges now originate as JSON lists. The selector fixture
+explicitly asserts full snapshot equality across JSON roundtrip; the
+file-backed data fixture now prints exclusion reasons on failure. This changes
+representation, not graph values or actor tensors. The narrow repair and full
+H2 attempt4 verification are accepted without repeating the conceptual gate.
+The failed attempt remains evidence of a real serialization defect, not a
+successful end-to-end registry test. No local computation was performed.
+
+### Final implemented-pipeline acceptance — actual attempt4 evidence
+
+Independent read-only comparison found **all81 files match**
+`source-phase-bc-attempt4.json`, with zero local mismatches. The verification
+summary pins archive SHA256
+`7fd2ee5b449692738af9db244346a158275b3cb7df15ed79b7acfeb1ab7bc41b`
+and records actual H2 job2189749, COMPLETED, exit0:0, elapsed47seconds.
+Every actual suite log was inspected: controller12; actual isolated SDK
+runner4; attention/PPO primitives8; contextual selector6; PPO/checkpoint8;
+pinned runtime entry7; data/BC6. **All51 cases pass.** The file-backed registry
+and synthetic two-epoch BC fit now pass, rather than only in-memory fixtures.
+
+The prior actual2189527 logs were also inspected after transfer: its data
+fixture failed0-versus1 eligible completed games, while five other data methods
+and the six other suites passed. This preserves the failed JSON replay attempt
+and distinguishes it from the successful representation repair. No additional
+rerun is required merely to repeat already-passing evidence.
+
+The **implemented and tested B/C pipeline is accepted at this correctness
+scope**: owned reactive transport/memory, source-pinned runtime, relational
+actor/critic, safe checkpoint/replay, request-preserving PPO, confirmed-teacher
+BC, and file-backed collection accounting. These are synthetic CPU correctness
+and optimizer checks on H2, not real language-model playing experiments.
+
+The overall competition-winning objective remains **unproven and unfinished**.
+No actual new platform teacher collection, live PPO training or prospective
+strength comparison has completed in this evidence. Real GPU generation and
+synchronized service readiness remain pending; the four90-second CPU native
+calls failed their deadline. No incumbent promotion/replacement or tournament
+readiness claim is accepted. D7 remains the retained incumbent. The next
+empirical steps are real-model readiness, finite prospective collection and
+multiple fresh learning batches, followed by isolated strength evaluation.
+Only file-integrity verification and source/log inspection ran locally; no
+local model inference, training, gameplay or test execution occurred.

@@ -25,7 +25,7 @@ class BackendError(RuntimeError):
     pass
 
 
-def validate_request(messages, max_new_tokens, temperature, seed, deadline):
+def validate_messages(messages):
     if not isinstance(messages, list) or not 1 <= len(messages) <= 8:
         raise BackendError("Expected one to eight complete chat messages")
     for message in messages:
@@ -33,6 +33,10 @@ def validate_request(messages, max_new_tokens, temperature, seed, deadline):
                 or message["role"] not in {"system", "user", "assistant"}
                 or not isinstance(message["content"], str) or not message["content"]):
             raise BackendError("Invalid stateless message envelope")
+
+
+def validate_request(messages, max_new_tokens, temperature, seed, deadline):
+    validate_messages(messages)
     if type(max_new_tokens) is not int or not 1 <= max_new_tokens <= 2048:
         raise BackendError("Invalid completion token budget")
     if (isinstance(temperature, bool) or not isinstance(temperature, (int, float))
@@ -45,6 +49,30 @@ def validate_request(messages, max_new_tokens, temperature, seed, deadline):
         raise BackendError("Request expired before generation")
     if deadline - time.monotonic() > 120:
         raise BackendError("Request deadline exceeds supported window")
+
+
+class LocalTokenCounter:
+    """Small per-worker tokenizer; exact native input sizing without an RPC."""
+
+    def __init__(self, model_path, revision):
+        self.path, self.revision = Path(model_path), revision
+        metadata = self.path / ".cache/huggingface/download/config.json.metadata"
+        lines = metadata.read_text().splitlines() if metadata.is_file() else []
+        if not lines or lines[0] != revision:
+            raise BackendError("Token counter requires the exact staged model revision")
+        self._tokenizer = None
+
+    def __call__(self, messages):
+        validate_messages(messages)
+        if self._tokenizer is None:
+            from transformers import AutoTokenizer
+            self._tokenizer = AutoTokenizer.from_pretrained(
+                self.path, local_files_only=True, trust_remote_code=False)
+        tokens = self._tokenizer.apply_chat_template(
+            messages, tokenize=True, add_generation_prompt=True, enable_thinking=True)
+        if not isinstance(tokens, list) or not tokens or any(type(token) is not int for token in tokens):
+            raise BackendError("Unexpected native tokenizer output")
+        return len(tokens)
 
 
 class GenerationClient:

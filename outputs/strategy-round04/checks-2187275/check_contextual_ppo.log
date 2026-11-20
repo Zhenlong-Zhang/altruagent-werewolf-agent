@@ -1,0 +1,10 @@
+test_nonfinite_step_rolls_back_populated_moments (__main__.PPOChecks.test_nonfinite_step_rolls_back_populated_moments) ... ok
+test_offpolicy_missing_terminal_and_duplicate_draws_reject (__main__.PPOChecks.test_offpolicy_missing_terminal_and_duplicate_draws_reject) ... ok
+test_real_optimizer_steps_keep_requests_and_fixed_advantages (__main__.PPOChecks.test_real_optimizer_steps_keep_requests_and_fixed_advantages) ... ok
+test_singleton_after_learning_cannot_move_actor_via_adam_momentum (__main__.PPOChecks.test_singleton_after_learning_cannot_move_actor_via_adam_momentum) ... ok
+test_trust_bound_restores_both_networks_and_optimizers (__main__.PPOChecks.test_trust_bound_restores_both_networks_and_optimizers) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.492s
+
+OK

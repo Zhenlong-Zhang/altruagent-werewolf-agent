@@ -1,0 +1,21 @@
+test_answer_parser_uses_final_answer_not_reasoning_json (__main__.StrategyChecks.test_answer_parser_uses_final_answer_not_reasoning_json) ... ok
+test_arbitrary_prose_cannot_bypass_typed_realization_or_leak_partner (__main__.StrategyChecks.test_arbitrary_prose_cannot_bypass_typed_realization_or_leak_partner) ... ok
+test_deliberate_wolf_bluff_does_not_change_verified_role (__main__.StrategyChecks.test_deliberate_wolf_bluff_does_not_change_verified_role) ... ok
+test_distinct_tactics_and_platform_limits (__main__.StrategyChecks.test_distinct_tactics_and_platform_limits) ... ok
+test_empty_private_section_cannot_capture_a_later_public_line (__main__.StrategyChecks.test_empty_private_section_cannot_capture_a_later_public_line) ... ok
+test_engine_history_and_window_do_not_import_future_evaluation_fields (__main__.StrategyChecks.test_engine_history_and_window_do_not_import_future_evaluation_fields) ... ok
+test_full_legal_actions_include_abstain_and_opaque_target_ids (__main__.StrategyChecks.test_full_legal_actions_include_abstain_and_opaque_target_ids) ... ok
+test_negated_or_quoted_mention_is_not_rendered_as_positive_attribution (__main__.StrategyChecks.test_negated_or_quoted_mention_is_not_rendered_as_positive_attribution) ... ok
+test_other_roles_cannot_invent_wolf_bluffs_or_private_recipients (__main__.StrategyChecks.test_other_roles_cannot_invent_wolf_bluffs_or_private_recipients) ... ok
+test_owned_window_accounting_validation (__main__.StrategyChecks.test_owned_window_accounting_validation) ... ok
+test_owner_and_private_envelope_checks (__main__.StrategyChecks.test_owner_and_private_envelope_checks) ... ok
+test_packet_hash_and_injection_cannot_change_configuration (__main__.StrategyChecks.test_packet_hash_and_injection_cannot_change_configuration) ... ok
+test_public_engine_role_and_negative_check_alignment_are_distinct (__main__.StrategyChecks.test_public_engine_role_and_negative_check_alignment_are_distinct) ... ok
+test_repeated_claims_never_invert_private_fact_or_projected_score (__main__.StrategyChecks.test_repeated_claims_never_invert_private_fact_or_projected_score) ... ok
+test_sequence_dedup_and_conflict (__main__.StrategyChecks.test_sequence_dedup_and_conflict) ... ok
+test_verified_speech_is_canonical_and_negative_check_is_not_exact_role (__main__.StrategyChecks.test_verified_speech_is_canonical_and_negative_check_is_not_exact_role) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.008s
+
+OK

@@ -1,0 +1,11 @@
+test_changed_claim_is_visible_but_does_not_rewrite_fact (__main__.ContextualChecks.test_changed_claim_is_visible_but_does_not_rewrite_fact) ... ok
+test_critic_update_does_not_change_actor (__main__.ContextualChecks.test_critic_update_does_not_change_actor) ... ok
+test_expired_before_draw_and_underflow_is_not_forced (__main__.ContextualChecks.test_expired_before_draw_and_underflow_is_not_forced) ... ok
+test_owner_future_private_and_snapshot_modification_reject (__main__.ContextualChecks.test_owner_future_private_and_snapshot_modification_reject) ... ok
+test_snapshot_replay_and_actual_sample_distribution (__main__.ContextualChecks.test_snapshot_replay_and_actual_sample_distribution) ... ok
+test_typed_seat_rotation_and_candidate_order (__main__.ContextualChecks.test_typed_seat_rotation_and_candidate_order) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 8.842s
+
+OK
